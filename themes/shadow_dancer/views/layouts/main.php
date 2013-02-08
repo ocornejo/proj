@@ -64,7 +64,7 @@
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Inicio', 'url'=>array('/site/index')),
-				array('label'=>'Ingreso datos', 'url'=>array('/trabajo/ingresodatos')),
+				array('label'=>'Ingreso datos', 'url'=>array('/trabajo/create')),
                                 //array('label'=>'Ingreso datos', 'url'=>array('/site/page', 'view'=>'ingresodatos')),
                                 array('label'=>'Bajar datos', 'url'=>array('/site/page', 'view'=>'bajardatos')),
                                 array('label'=>'Críticos', 'url'=>array('/site/page', 'view'=>'criticos')),

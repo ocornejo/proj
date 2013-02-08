@@ -9,6 +9,11 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'trabajo-form',
 	'enableAjaxValidation'=>false,
+        'stateful'=>true, 
+        'htmlOptions'=>array(
+            'enctype' => 'multipart/form-data'
+        )
+        
 )); ?>
 
         <p class="note">Campos con<span class="required">*</span> son requeridos.</p>
@@ -36,10 +41,10 @@
 		<?php //echo $form->textField($model,'AVION_MATRICULA',array('size'=>7,'maxlength'=>7)); ?>
 		<?php echo $form->error($model,'AVION_MATRICULA'); ?>
 	</div>
-        
+        <div class="row">
         <?php echo CHtml::label('Flota:', '');
               echo CHtml::textField('flotaId', '', array('style' => 'width:45px','readonly'=>'true'));?>
-
+        </div>
 	<div class="row">
 		<?php echo $form->labelEx($model,'USUARIO_BP'); ?>
 		<?php echo $form->textField($model,'USUARIO_BP'); ?>
@@ -48,20 +53,56 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'PLANIFICADO'); ?>
-		<?php echo $form->checkBox($model,'PLANIFICADO', false, array('value'=>1, 'uncheckValue'=>0))
-                        //echo $form->textField($model,'PLANIFICADO'); ?>
+		<?php echo $form->checkBox($model,'PLANIFICADO', false, array('value'=>1, 'uncheckValue'=>0))?>
 		<?php echo $form->error($model,'PLANIFICADO'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'HORA_INICIO'); ?>
-		<?php echo $form->textField($model,'HORA_INICIO',array('style' => 'width:40px','maxlength'=>5)); ?>
+		<?php $this->widget('application.extensions.jui_timepicker.JTimePicker', array(
+                    'model'=>$model,
+                     'attribute'=>'HORA_INICIO',
+                     // additional javascript options for the date picker plugin
+                     'options'=>array(
+                         'showPeriod'=>true,
+                         'hours'=>array('starts'=>1, 'ends'=>23),
+                         'minutes'=>array('interval'=>1),
+                         'showPeriodLabels'=> false,
+                         'showPeriod'=> false,
+                         'hourText'=> 'Hora',
+                         'minuteText'=> 'Minuto', 
+                         'rows'=> 6,
+                         'showCloseButton'=>true,
+                         'closeButtonText'=> 'Listo',
+                         ),
+                     'htmlOptions'=>array('size'=>4,'maxlength'=>5),
+                 ));
+                ?>
+
 		<?php echo $form->error($model,'HORA_INICIO'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'HORA_TERMINO'); ?>
-		<?php echo $form->textField($model,'HORA_TERMINO',array('style' => 'width:40px','maxlength'=>5)); ?>
+		<?php $this->widget('application.extensions.jui_timepicker.JTimePicker', array(
+                    'model'=>$model,
+                     'attribute'=>'HORA_TERMINO',
+                     // additional javascript options for the date picker plugin
+                     'options'=>array(
+                         'showPeriod'=>true,
+                         'hours'=>array('starts'=>1, 'ends'=>23),
+                         'minutes'=>array('interval'=>1),
+                         'showPeriodLabels'=> false,
+                         'showPeriod'=> false,
+                         'hourText'=> 'Hora',
+                         'minuteText'=> 'Minuto', 
+                         'rows'=> 6,
+                         'showCloseButton'=>true,
+                         'closeButtonText'=> 'Listo',
+                         ),
+                     'htmlOptions'=>array('size'=>4,'maxlength'=>5),
+                 ));
+                ?>
 		<?php echo $form->error($model,'HORA_TERMINO'); ?>
 	</div>
 
@@ -122,32 +163,28 @@
                              )));?>
 		<?php echo $form->error($model,'ASEO_ID_ASEO'); ?>
 	</div>
-
-	<div class="row">
+        <div class="row">
 		<?php echo $form->labelEx($model,'TURNO_ID_TURNO'); ?>
 		<?php echo $form->textField($model,'TURNO_ID_TURNO'); ?>
 		<?php echo $form->error($model,'TURNO_ID_TURNO'); ?>
-	</div>
+        </div>
+	
+        <div class="row">
+        <?php 
+	
+            echo $form->labelEx($model, 'image');
+            echo $form->fileField($model, 'image');
+            echo $form->error($model, 'image');?>
         
-        <?php $form = $this->beginWidget(
-                    'CActiveForm',
-                    array(
-                        'id' => 'upload-form',
-                        'enableAjaxValidation' => false,
-                        'htmlOptions' => array('enctype' => 'multipart/form-data'),
-                    )
-                );
-                echo $form->labelEx($model, 'ARCHIVO');
-                echo $form->fileField($model, 'ARCHIVO');
-                echo $form->error($model, 'ARCHIVO'); ?>   
-                <div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
-            </div>
-
+        </div>
+        
+        
+        <div class="row buttons">
+              <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+        </div>
 	
 
-<?php $this->endWidget(); ?>
-<?php $this->endWidget(); ?>
+
+<?php $this->endWidget();?>
 
 </div><!-- form -->

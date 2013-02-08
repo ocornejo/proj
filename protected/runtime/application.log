@@ -4301,3 +4301,1240 @@ in C:\wamp\www\proj\index.php (13)
 2013/02/07 19:53:12 [warning] [application] Failed to set unsafe attribute "ARCHIVO" of "Trabajo".
 in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
 in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:24:15 [error] [exception.CException] exception 'CException' with message 'TrabajoController has an extra endWidget() call in its view.' in C:\Yii\framework\web\CBaseController.php:210
+Stack trace:
+#0 C:\wamp\www\proj\protected\views\trabajo\_form.php(145): CBaseController->endWidget()
+#1 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#2 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#3 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#4 C:\wamp\www\proj\protected\views\trabajo\create.php(15): CController->renderPartial('_form', Array)
+#5 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#6 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#7 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#8 C:\Yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#9 C:\wamp\www\proj\protected\controllers\TrabajoController.php(85): CController->render('create', Array)
+#10 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#11 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#16 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#17 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#18 C:\wamp\www\proj\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+HTTP_REFERER=http://localhost/proj/
+---
+2013/02/08 12:24:36 [error] [exception.CException] exception 'CException' with message 'TrabajoController has an extra endWidget() call in its view.' in C:\Yii\framework\web\CBaseController.php:210
+Stack trace:
+#0 C:\wamp\www\proj\protected\views\trabajo\_form.php(145): CBaseController->endWidget()
+#1 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#2 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#3 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#4 C:\wamp\www\proj\protected\views\trabajo\create.php(15): CController->renderPartial('_form', Array)
+#5 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#6 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#7 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#8 C:\Yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#9 C:\wamp\www\proj\protected\controllers\TrabajoController.php(85): CController->render('create', Array)
+#10 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#11 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#16 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#17 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#18 C:\wamp\www\proj\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+HTTP_REFERER=http://localhost/proj/
+---
+2013/02/08 12:24:42 [error] [exception.CException] exception 'CException' with message 'TrabajoController has an extra endWidget() call in its view.' in C:\Yii\framework\web\CBaseController.php:210
+Stack trace:
+#0 C:\wamp\www\proj\protected\views\trabajo\_form.php(145): CBaseController->endWidget()
+#1 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#2 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#3 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#4 C:\wamp\www\proj\protected\views\trabajo\create.php(15): CController->renderPartial('_form', Array)
+#5 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#6 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#7 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#8 C:\Yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#9 C:\wamp\www\proj\protected\controllers\TrabajoController.php(85): CController->render('create', Array)
+#10 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#11 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#16 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#17 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#18 C:\wamp\www\proj\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+HTTP_REFERER=http://localhost/proj/
+---
+2013/02/08 12:24:43 [error] [exception.CException] exception 'CException' with message 'TrabajoController has an extra endWidget() call in its view.' in C:\Yii\framework\web\CBaseController.php:210
+Stack trace:
+#0 C:\wamp\www\proj\protected\views\trabajo\_form.php(145): CBaseController->endWidget()
+#1 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#2 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#3 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#4 C:\wamp\www\proj\protected\views\trabajo\create.php(15): CController->renderPartial('_form', Array)
+#5 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#6 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#7 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#8 C:\Yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#9 C:\wamp\www\proj\protected\controllers\TrabajoController.php(85): CController->render('create', Array)
+#10 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#11 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#16 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#17 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#18 C:\wamp\www\proj\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+HTTP_REFERER=http://localhost/proj/
+---
+2013/02/08 12:25:57 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:26:19 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:26:24 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:30:14 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:30:19 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:32:52 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:33:02 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:34:26 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:34:30 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:37:07 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:37:16 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:37:16 [error] [exception.CException] exception 'CException' with message 'Property "Trabajo.archivoIm" is not defined.' in C:\Yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Yii\framework\db\ar\CActiveRecord.php(143): CComponent->__get('archivoIm')
+#1 C:\wamp\www\proj\protected\controllers\TrabajoController.php(74): CActiveRecord->__get('archivoIm')
+#2 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#3 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#9 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\wamp\www\proj\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+HTTP_REFERER=http://localhost/proj/index.php?r=trabajo/create
+---
+2013/02/08 12:37:37 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:37:45 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:38:33 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:38:42 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:41:39 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:41:48 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:48:25 [error] [exception.CException] exception 'CException' with message 'TrabajoController has an extra endWidget() call in its view.' in C:\Yii\framework\web\CBaseController.php:210
+Stack trace:
+#0 C:\wamp\www\proj\protected\views\trabajo\_form.php(154): CBaseController->endWidget()
+#1 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#2 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#3 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#4 C:\wamp\www\proj\protected\views\trabajo\create.php(15): CController->renderPartial('_form', Array)
+#5 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#6 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#7 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#8 C:\Yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#9 C:\wamp\www\proj\protected\controllers\TrabajoController.php(84): CController->render('create', Array)
+#10 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#11 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#16 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#17 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#18 C:\wamp\www\proj\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+---
+2013/02/08 12:49:21 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:49:40 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:49:51 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:49:56 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:50:18 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:50:21 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 12:50:21 [error] [exception.CException] exception 'CException' with message 'TrabajoController contains improperly nested widget tags in its view "C:\wamp\www\proj\protected\views\trabajo\_form.php". A CActiveForm widget does not have an endWidget() call.' in C:\Yii\framework\web\CBaseController.php:101
+Stack trace:
+#0 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#1 C:\wamp\www\proj\protected\views\trabajo\create.php(15): CController->renderPartial('_form', Array)
+#2 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#3 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#4 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#5 C:\Yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#6 C:\wamp\www\proj\protected\controllers\TrabajoController.php(84): CController->render('create', Array)
+#7 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#8 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#14 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\wamp\www\proj\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+HTTP_REFERER=http://localhost/proj/index.php?r=trabajo/create
+---
+2013/02/08 12:50:23 [error] [exception.CException] exception 'CException' with message 'TrabajoController contains improperly nested widget tags in its view "C:\wamp\www\proj\protected\views\trabajo\_form.php". A CActiveForm widget does not have an endWidget() call.' in C:\Yii\framework\web\CBaseController.php:101
+Stack trace:
+#0 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#1 C:\wamp\www\proj\protected\views\trabajo\create.php(15): CController->renderPartial('_form', Array)
+#2 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#3 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#4 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#5 C:\Yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#6 C:\wamp\www\proj\protected\controllers\TrabajoController.php(84): CController->render('create', Array)
+#7 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#8 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#14 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\wamp\www\proj\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+---
+2013/02/08 12:53:19 [error] [exception.CException] exception 'CException' with message 'CActiveForm has an extra endWidget() call in its view.' in C:\Yii\framework\web\CBaseController.php:210
+Stack trace:
+#0 C:\wamp\www\proj\protected\views\trabajo\_form.php(138): CBaseController->endWidget()
+#1 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#2 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#3 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#4 C:\wamp\www\proj\protected\views\trabajo\create.php(15): CController->renderPartial('_form', Array)
+#5 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#6 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#7 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#8 C:\Yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#9 C:\wamp\www\proj\protected\controllers\TrabajoController.php(84): CController->render('create', Array)
+#10 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#11 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#16 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#17 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#18 C:\wamp\www\proj\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+---
+2013/02/08 12:54:25 [error] [exception.CException] exception 'CException' with message 'CActiveForm has an extra endWidget() call in its view.' in C:\Yii\framework\web\CBaseController.php:210
+Stack trace:
+#0 C:\wamp\www\proj\protected\views\trabajo\_form.php(157): CBaseController->endWidget()
+#1 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#2 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#3 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#4 C:\wamp\www\proj\protected\views\trabajo\create.php(15): CController->renderPartial('_form', Array)
+#5 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#6 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#7 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#8 C:\Yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#9 C:\wamp\www\proj\protected\controllers\TrabajoController.php(84): CController->render('create', Array)
+#10 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#11 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#13 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#16 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#17 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#18 C:\wamp\www\proj\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+---
+2013/02/08 12:56:18 [error] [exception.CException] exception 'CException' with message 'TrabajoController contains improperly nested widget tags in its view "C:\wamp\www\proj\protected\views\trabajo\_form.php". A CActiveForm widget does not have an endWidget() call.' in C:\Yii\framework\web\CBaseController.php:101
+Stack trace:
+#0 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#1 C:\wamp\www\proj\protected\views\trabajo\create.php(15): CController->renderPartial('_form', Array)
+#2 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#3 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#4 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#5 C:\Yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#6 C:\wamp\www\proj\protected\controllers\TrabajoController.php(84): CController->render('create', Array)
+#7 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#8 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#14 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\wamp\www\proj\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+---
+2013/02/08 13:02:41 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 13:02:49 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 13:03:02 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 13:08:47 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 13:26:03 [error] [exception.CException] exception 'CException' with message 'TrabajoController contains improperly nested widget tags in its view "C:\wamp\www\proj\protected\views\trabajo\_form.php". A CActiveForm widget does not have an endWidget() call.' in C:\Yii\framework\web\CBaseController.php:101
+Stack trace:
+#0 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#1 C:\wamp\www\proj\protected\views\trabajo\create.php(15): CController->renderPartial('_form', Array)
+#2 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#3 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#4 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#5 C:\Yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#6 C:\wamp\www\proj\protected\controllers\TrabajoController.php(84): CController->render('create', Array)
+#7 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#8 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#14 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\wamp\www\proj\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+HTTP_REFERER=http://localhost/proj/
+---
+2013/02/08 13:26:28 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 13:26:35 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 13:26:46 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 13:31:09 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 13:31:13 [error] [php] Undefined index: Trabajo (C:\wamp\www\proj\protected\controllers\TrabajoController.php:72)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): TrabajoController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): TrabajoController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): TrabajoController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=trabajo/create
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 13:37:05 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 13:37:19 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 13:48:47 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 13:48:57 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 13:49:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "chrome-extension:".' in C:\Yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Yii\framework\web\CController.php(270): CController->missingAction('chrome-extensio...')
+#1 C:\Yii\framework\web\CWebApplication.php(282): CController->run('chrome-extensio...')
+#2 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/chrome-...')
+#3 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\proj\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/chrome-extension://bfbmjmiodbnnpllbbbfblcplfjjepjdn/js/injected.js
+HTTP_REFERER=http://localhost/proj/index.php?r=trabajo/create
+---
+2013/02/08 13:49:54 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 13:51:52 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 13:52:04 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (73)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 13:52:45 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (73)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 13:53:09 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (73)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 13:53:16 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (73)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 13:54:20 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (73)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 13:54:24 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (73)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 14:02:55 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (73)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 14:31:40 [error] [exception.CException] exception 'CException' with message 'TrabajoController contains improperly nested widget tags in its view "C:\wamp\www\proj\protected\views\trabajo\_form.php". A CActiveForm widget does not have an endWidget() call.' in C:\Yii\framework\web\CBaseController.php:101
+Stack trace:
+#0 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#1 C:\wamp\www\proj\protected\views\trabajo\create.php(15): CController->renderPartial('_form', Array)
+#2 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#3 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#4 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#5 C:\Yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#6 C:\wamp\www\proj\protected\controllers\TrabajoController.php(85): CController->render('create', Array)
+#7 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#8 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#14 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\wamp\www\proj\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+HTTP_REFERER=http://localhost/proj/
+---
+2013/02/08 14:31:56 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (73)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 14:32:02 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (73)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 14:35:22 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (73)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 14:35:36 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (73)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 14:38:44 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 14:38:55 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (73)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 14:38:55 [error] [exception.CException] exception 'CException' with message 'Property "Trabajo.image" is not defined.' in C:\Yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Yii\framework\db\ar\CActiveRecord.php(143): CComponent->__get('image')
+#1 C:\wamp\www\proj\protected\controllers\TrabajoController.php(78): CActiveRecord->__get('image')
+#2 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#3 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#8 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#9 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\wamp\www\proj\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+HTTP_REFERER=http://localhost/proj/index.php?r=trabajo/create
+---
+2013/02/08 14:39:58 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 14:40:15 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (73)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 14:40:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\wamp\www\proj\protected\controllers\TrabajoController.php:174
+Stack trace:
+#0 C:\wamp\www\proj\protected\controllers\TrabajoController.php(55): TrabajoController->loadModel('')
+#1 [internal function]: TrabajoController->actionView('')
+#2 C:\Yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TrabajoController), Array)
+#3 C:\Yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TrabajoController), Object(ReflectionMethod), Array)
+#4 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Yii\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/view')
+#10 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\wamp\www\proj\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/view&id=
+HTTP_REFERER=http://localhost/proj/index.php?r=trabajo/create
+---
+2013/02/08 14:44:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ingresodatos".' in C:\Yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\Yii\framework\web\CController.php(270): CController->missingAction('ingresodatos')
+#1 C:\Yii\framework\web\CWebApplication.php(282): CController->run('ingresodatos')
+#2 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/ingreso...')
+#3 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\wamp\www\proj\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/ingresodatos
+---
+2013/02/08 14:51:13 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 14:51:24 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (71)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 14:51:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\wamp\www\proj\protected\controllers\TrabajoController.php:172
+Stack trace:
+#0 C:\wamp\www\proj\protected\controllers\TrabajoController.php(55): TrabajoController->loadModel('')
+#1 [internal function]: TrabajoController->actionView('')
+#2 C:\Yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TrabajoController), Array)
+#3 C:\Yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TrabajoController), Object(ReflectionMethod), Array)
+#4 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Yii\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/view')
+#10 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\wamp\www\proj\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/view&id=
+HTTP_REFERER=http://localhost/proj/index.php?r=trabajo/create
+---
+2013/02/08 14:53:42 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 14:53:51 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (71)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 14:54:01 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (71)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 14:56:08 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 14:56:12 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (71)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 14:57:44 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 14:57:49 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (71)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 14:58:34 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 14:58:40 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (71)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 15:01:51 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 15:01:56 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (71)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 15:41:52 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 15:42:12 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 16:50:07 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 16:50:26 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (71)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 17:16:41 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 17:16:47 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (71)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 17:21:16 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 17:21:26 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (71)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 17:27:57 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 17:28:04 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (71)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 17:29:58 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 17:30:03 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (71)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 17:30:37 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 17:30:43 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (71)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 17:32:43 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 17:32:48 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (71)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 17:42:04 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 17:42:11 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (71)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 17:52:05 [error] [exception.CException] exception 'CException' with message 'Alias "ext.yiiext.behaviors.model.ensureNull.EEnsureNullBehavior" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\Yii\framework\YiiBase.php:316
+Stack trace:
+#0 C:\Yii\framework\YiiBase.php(196): YiiBase::import('ext.yiiext.beha...', true)
+#1 C:\Yii\framework\base\CComponent.php(326): YiiBase::createComponent(Array)
+#2 C:\Yii\framework\base\CComponent.php(297): CComponent->attachBehavior('ensureNull', Array)
+#3 C:\Yii\framework\db\ar\CActiveRecord.php(388): CComponent->attachBehaviors(Array)
+#4 C:\Yii\framework\db\ar\CActiveRecord.php(402): CActiveRecord::model('Trabajo')
+#5 C:\Yii\framework\db\ar\CActiveRecord.php(77): CActiveRecord->getMetaData()
+#6 C:\wamp\www\proj\protected\controllers\TrabajoController.php(65): CActiveRecord->__construct()
+#7 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#8 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#14 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\wamp\www\proj\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+---
+2013/02/08 17:54:29 [error] [exception.CException] exception 'CException' with message 'Alias "ext.yiiext.behaviors.model.ensureNull.EEnsureNullBehavior" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\Yii\framework\YiiBase.php:316
+Stack trace:
+#0 C:\Yii\framework\YiiBase.php(196): YiiBase::import('ext.yiiext.beha...', true)
+#1 C:\Yii\framework\base\CComponent.php(326): YiiBase::createComponent(Array)
+#2 C:\Yii\framework\base\CComponent.php(297): CComponent->attachBehavior('ensureNull', Array)
+#3 C:\Yii\framework\db\ar\CActiveRecord.php(388): CComponent->attachBehaviors(Array)
+#4 C:\Yii\framework\db\ar\CActiveRecord.php(402): CActiveRecord::model('Trabajo')
+#5 C:\Yii\framework\db\ar\CActiveRecord.php(77): CActiveRecord->getMetaData()
+#6 C:\wamp\www\proj\protected\controllers\TrabajoController.php(65): CActiveRecord->__construct()
+#7 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#8 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#14 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\wamp\www\proj\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+---
+2013/02/08 17:57:59 [error] [exception.CException] exception 'CException' with message 'Alias "ext.yiiext.ensure-null-behavior-master.EEnsureNullBehavior" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\Yii\framework\YiiBase.php:316
+Stack trace:
+#0 C:\Yii\framework\YiiBase.php(196): YiiBase::import('ext.yiiext.ensu...', true)
+#1 C:\Yii\framework\base\CComponent.php(326): YiiBase::createComponent(Array)
+#2 C:\Yii\framework\base\CComponent.php(297): CComponent->attachBehavior('ensureNull', Array)
+#3 C:\Yii\framework\db\ar\CActiveRecord.php(388): CComponent->attachBehaviors(Array)
+#4 C:\Yii\framework\db\ar\CActiveRecord.php(402): CActiveRecord::model('Trabajo')
+#5 C:\Yii\framework\db\ar\CActiveRecord.php(77): CActiveRecord->getMetaData()
+#6 C:\wamp\www\proj\protected\controllers\TrabajoController.php(65): CActiveRecord->__construct()
+#7 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#8 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#14 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\wamp\www\proj\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+---
+2013/02/08 17:58:44 [error] [exception.CException] exception 'CException' with message 'Alias "ext.yiiext.ensureNullBehavior.EEnsureNullBehavior" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\Yii\framework\YiiBase.php:316
+Stack trace:
+#0 C:\Yii\framework\YiiBase.php(196): YiiBase::import('ext.yiiext.ensu...', true)
+#1 C:\Yii\framework\base\CComponent.php(326): YiiBase::createComponent(Array)
+#2 C:\Yii\framework\base\CComponent.php(297): CComponent->attachBehavior('ensureNull', Array)
+#3 C:\Yii\framework\db\ar\CActiveRecord.php(388): CComponent->attachBehaviors(Array)
+#4 C:\Yii\framework\db\ar\CActiveRecord.php(402): CActiveRecord::model('Trabajo')
+#5 C:\Yii\framework\db\ar\CActiveRecord.php(77): CActiveRecord->getMetaData()
+#6 C:\wamp\www\proj\protected\controllers\TrabajoController.php(65): CActiveRecord->__construct()
+#7 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#8 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#14 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\wamp\www\proj\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+---
+2013/02/08 17:59:48 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 17:59:54 [warning] [application] Failed to set unsafe attribute "image" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (71)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 18:01:43 [error] [php] Undefined variable: model (C:\wamp\www\proj\protected\views\trabajo\index.php:18)
+Stack trace:
+#0 C:\Yii\framework\web\CController.php(869): TrabajoController->renderFile()
+#1 C:\Yii\framework\web\CController.php(782): TrabajoController->renderPartial()
+#2 C:\wamp\www\proj\protected\controllers\TrabajoController.php(142): TrabajoController->render()
+#3 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionIndex()
+#4 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\Yii\framework\web\filters\CFilterChain.php(133): TrabajoController->runAction()
+#6 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\Yii\framework\web\CController.php(265): TrabajoController->runActionWithFilters()
+#8 C:\Yii\framework\web\CWebApplication.php(282): TrabajoController->run()
+#9 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=trabajo/index
+in C:\wamp\www\proj\protected\views\trabajo\index.php (18)
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (142)
+in C:\wamp\www\proj\index.php (13)
+2013/02/08 18:21:38 [error] [exception.CException] exception 'CException' with message 'Property "Trabajo.timeStart" is not defined.' in C:\Yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Yii\framework\db\ar\CActiveRecord.php(143): CComponent->__get('timeStart')
+#1 C:\Yii\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('timeStart')
+#2 C:\Yii\framework\web\helpers\CHtml.php(1980): CHtml::resolveValue(Object(Trabajo), 'timeStart')
+#3 C:\Yii\framework\web\helpers\CHtml.php(1257): CHtml::activeInputField('text', Object(Trabajo), 'timeStart', Array)
+#4 C:\wamp\www\proj\protected\extensions\jui_timepicker\JTimePicker.php(118): CHtml::activeTextField(Object(Trabajo), 'timeStart', Array)
+#5 C:\Yii\framework\web\CBaseController.php(173): JTimePicker->run()
+#6 C:\wamp\www\proj\protected\views\trabajo\_form.php(74): CBaseController->widget('application.ext...', Array)
+#7 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#8 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#9 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#10 C:\wamp\www\proj\protected\views\trabajo\create.php(15): CController->renderPartial('_form', Array)
+#11 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#12 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#13 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#14 C:\Yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#15 C:\wamp\www\proj\protected\controllers\TrabajoController.php(86): CController->render('create', Array)
+#16 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#17 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#22 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#23 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#24 C:\wamp\www\proj\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+HTTP_REFERER=http://localhost/proj/index.php?r=trabajo/index
+---
+2013/02/08 19:04:49 [error] [exception.CException] exception 'CException' with message 'Property "Trabajo.eventDate" is not defined.' in C:\Yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Yii\framework\db\ar\CActiveRecord.php(143): CComponent->__get('eventDate')
+#1 C:\Yii\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('eventDate')
+#2 C:\Yii\framework\web\helpers\CHtml.php(1980): CHtml::resolveValue(Object(Trabajo), 'eventDate')
+#3 C:\Yii\framework\web\helpers\CHtml.php(1257): CHtml::activeInputField('text', Object(Trabajo), 'eventDate', Array)
+#4 C:\wamp\www\proj\protected\extensions\CJuiDateTimePicker\CJuiDateTimePicker.php(38): CHtml::activeTextField(Object(Trabajo), 'eventDate', Array)
+#5 C:\Yii\framework\web\CBaseController.php(173): CJuiDateTimePicker->run()
+#6 C:\wamp\www\proj\protected\views\trabajo\_form.php(68): CBaseController->widget('CJuiDateTimePic...', Array)
+#7 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#8 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#9 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#10 C:\wamp\www\proj\protected\views\trabajo\create.php(15): CController->renderPartial('_form', Array)
+#11 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#12 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#13 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#14 C:\Yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#15 C:\wamp\www\proj\protected\controllers\TrabajoController.php(86): CController->render('create', Array)
+#16 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#17 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#22 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#23 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#24 C:\wamp\www\proj\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+---
+2013/02/08 19:15:48 [error] [exception.CException] exception 'CException' with message 'Property "timepicker.attribute" is not defined.' in C:\Yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Yii\framework\web\CWidgetFactory.php(161): CComponent->__set('attribute', 'HORA_INICIO')
+#1 C:\Yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(TrabajoController), 'application.ext...', Array)
+#2 C:\Yii\framework\web\CBaseController.php(172): CBaseController->createWidget('application.ext...', Array)
+#3 C:\wamp\www\proj\protected\views\trabajo\_form.php(75): CBaseController->widget('application.ext...', Array)
+#4 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#5 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#6 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#7 C:\wamp\www\proj\protected\views\trabajo\create.php(15): CController->renderPartial('_form', Array)
+#8 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#9 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#10 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#11 C:\Yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#12 C:\wamp\www\proj\protected\controllers\TrabajoController.php(86): CController->render('create', Array)
+#13 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#14 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#19 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#20 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\wamp\www\proj\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+---
+2013/02/08 19:15:58 [error] [exception.CException] exception 'CException' with message 'Property "Trabajo." is not defined.' in C:\Yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Yii\framework\db\ar\CActiveRecord.php(143): CComponent->__get('')
+#1 C:\wamp\www\proj\protected\extensions\timepicker\views\default.php(1): CActiveRecord->__get('')
+#2 C:\Yii\framework\web\CBaseController.php(130): require('C:\wamp\www\pro...')
+#3 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', NULL, false)
+#4 C:\Yii\framework\web\widgets\CWidget.php(243): CBaseController->renderFile('C:\wamp\www\pro...', NULL, false)
+#5 C:\wamp\www\proj\protected\extensions\timepicker\timepicker.php(60): CWidget->render('default')
+#6 C:\Yii\framework\web\CBaseController.php(173): timepicker->run()
+#7 C:\wamp\www\proj\protected\views\trabajo\_form.php(75): CBaseController->widget('application.ext...', Array)
+#8 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#9 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#10 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#11 C:\wamp\www\proj\protected\views\trabajo\create.php(15): CController->renderPartial('_form', Array)
+#12 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#13 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#14 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#15 C:\Yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#16 C:\wamp\www\proj\protected\controllers\TrabajoController.php(86): CController->render('create', Array)
+#17 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#18 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#20 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#23 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#24 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#25 C:\wamp\www\proj\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+---
+2013/02/08 19:17:03 [error] [exception.CException] exception 'CException' with message 'Alias "widgets.timepicker.timepicker" is invalid. Make sure it points to an existing directory or file.' in C:\Yii\framework\YiiBase.php:341
+Stack trace:
+#0 C:\Yii\framework\web\CWidgetFactory.php(146): YiiBase::import('widgets.timepic...', true)
+#1 C:\Yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(TrabajoController), 'widgets.timepic...', Array)
+#2 C:\Yii\framework\web\CBaseController.php(172): CBaseController->createWidget('widgets.timepic...', Array)
+#3 C:\wamp\www\proj\protected\views\trabajo\_form.php(66): CBaseController->widget('widgets.timepic...', Array)
+#4 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#5 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#6 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#7 C:\wamp\www\proj\protected\views\trabajo\create.php(15): CController->renderPartial('_form', Array)
+#8 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#9 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#10 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#11 C:\Yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#12 C:\wamp\www\proj\protected\controllers\TrabajoController.php(86): CController->render('create', Array)
+#13 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#14 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#19 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#20 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\wamp\www\proj\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+---
+2013/02/08 19:19:09 [error] [exception.CException] exception 'CException' with message 'Property "timepicker.time" is not defined.' in C:\Yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Yii\framework\web\CWidgetFactory.php(161): CComponent->__set('time', 'time')
+#1 C:\Yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(TrabajoController), 'application.ext...', Array)
+#2 C:\Yii\framework\web\CBaseController.php(172): CBaseController->createWidget('application.ext...', Array)
+#3 C:\wamp\www\proj\protected\views\trabajo\_form.php(75): CBaseController->widget('application.ext...', Array)
+#4 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#5 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#6 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#7 C:\wamp\www\proj\protected\views\trabajo\create.php(15): CController->renderPartial('_form', Array)
+#8 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#9 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#10 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#11 C:\Yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#12 C:\wamp\www\proj\protected\controllers\TrabajoController.php(86): CController->render('create', Array)
+#13 C:\Yii\framework\web\actions\CInlineAction.php(49): TrabajoController->actionCreate()
+#14 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\Yii\framework\web\CWebApplication.php(282): CController->run('create')
+#19 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#20 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#21 C:\wamp\www\proj\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+---

@@ -65,18 +65,18 @@ class TrabajoController extends Controller
 		$model=new Trabajo;
                
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Trabajo']))
+		//$this->performAjaxValidation($model);
+                if(isset($_POST['Trabajo']))
 		{
 			$model->attributes=$_POST['Trabajo'];
-                        $model->ARCHIVO=CUploadedFile::getInstance($model,'ARCHIVO');
+                        $model->image=CUploadedFile::getInstance($model,'image');
+                        $images_path = realpath(Yii::app()->basePath . '/../images');
+                        $path=$images_path . '/' .$model->AVION_MATRICULA."-".$model->FECHA."-".$model->ASEO_ID_ASEO.".JPG";
+                        $model->ARCHIVO=$path;
                         
-
-			if($model->save()){
-			    var_dump($_POST['Trabajo']);
-                            if(strlen($model->ARCHIVO)>0)
-                                $model->ARCHIVO->saveAs(Yii::getPathOfAlias('webroot').'/'.$model->ARCHIVO);
+                        if($model->save()){
+                            
+                            $model->image->saveAs($path);
                             $this->redirect(array('view','id'=>$model->ID_TRABAJO));
                         }
 		}
@@ -88,35 +88,6 @@ class TrabajoController extends Controller
     
 	}
         
-
-        
-        public function actionIngresodatos()
-	{
-		$model=new Trabajo;
-               
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Trabajo']))
-		{
-			$model->attributes=$_POST['Trabajo'];
-                        $model->ARCHIVO=CUploadedFile::getInstance($model,'ARCHIVO');
-                        
-
-			if($model->save()){
-				var_dump($_POST['Trabajo']);
-                            if(strlen($model->ARCHIVO)>0)
-                                $model->ARCHIVO->saveAs(Yii::app()->basePath.'/images/'.$model->ARCHIVO);
-                                //$this->redirect(array('view','id'=>$model->ID_TRABAJO));
-                        }
-		}
-
-		$this->render('ingresodatos',array(
-			'model'=>$model,
-		));
-	}
-        
-
 
 	/**
 	 * Updates a particular model.
@@ -133,14 +104,10 @@ class TrabajoController extends Controller
 		if(isset($_POST['Trabajo']))
 		{
 			$model->attributes=$_POST['Trabajo'];
-                        $model->ARCHIVO=CUploadedFile::getInstance($model,'ARCHIVO');
-                        
+          
 
 			if($model->save()){
-				//var_dump($_POST['Trabajo']);
-                            if(strlen($model->ARCHIVO)>0)
-                                $model->ARCHIVO->saveAs(Yii::app()->basePath.'/images/'.$model->ARCHIVO);
-                                $this->redirect(array('view','id'=>$model->ID_TRABAJO));
+                            $this->redirect(array('view','id'=>$model->ID_TRABAJO));
                         }
 		}
 
