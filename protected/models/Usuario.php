@@ -71,11 +71,11 @@ class Usuario extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'BP' => 'Bp',
+			'BP' => 'BP',
 			'NOMBRE' => 'Nombre',
-			'NIVEL_USUARIO' => 'Nivel Usuario',
+			'NIVEL_USUARIO' => 'Nivel de usuario',
 			'PASSWORD' => 'Password',
-			'FILIAL_ID_FILIAL' => 'Filial Id Filial',
+			'FILIAL_ID_FILIAL' => 'Filial',
 		);
 	}
 

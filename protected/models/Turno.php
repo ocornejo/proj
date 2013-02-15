@@ -69,8 +69,8 @@ class Turno extends CActiveRecord
 	{
 		return array(
 			'ID_TURNO' => 'Id Turno',
-			'FECHA' => 'Fecha',
-			'TIPO_TURNO_ID_TIPO_TURNO' => 'Tipo Turno Id Tipo Turno',
+			'FECHA' => 'Fecha turno',
+			'TIPO_TURNO_ID_TIPO_TURNO' => 'Tipo Turno',
 		);
 	}
 

@@ -10,7 +10,9 @@ return array(
 	'name'=>'Sistema Aseo-Cabina',
         'defaultController'=>'site/login',
         
-
+        'behaviors'=>array(
+             'class'=>'application.components.ApplicationBehavior',
+        ),
 	// preloading 'log' component
 	'preload'=>array('log'),
         // application theme

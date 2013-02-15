@@ -14,7 +14,7 @@ class AseoController extends Controller
 	public function filters()
 	{
 		return array(
-			'accessControl', // perform access control for CRUD operations
+			//'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
@@ -170,4 +170,20 @@ class AseoController extends Controller
 			Yii::app()->end();
 		}
 	}
+        
+        public function actionGetTipoByPond()
+        {   
+            $dataTemp= Yii::app()->db->createCommand(array(
+                         'select' => 'ASEO_ID_ASEO',
+                         'distinct' => 'true',
+                                   'from' => 'PONDERACION',
+                                               ))->queryColumn();
+            $data=0;  
+            foreach($dataTemp as $value)
+                if($value==(int)$_POST['id_aseo'])
+                    $data=1;
+
+            echo CJSON::encode($data);
+
+        }
 }

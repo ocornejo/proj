@@ -14,7 +14,7 @@ class NotaController extends Controller
 	public function filters()
 	{
 		return array(
-			'accessControl', // perform access control for CRUD operations
+			//'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
@@ -170,4 +170,69 @@ class NotaController extends Controller
 			Yii::app()->end();
 		}
 	}
+        
+        public function actionAddnewevaluacion() {
+            
+            $model=new Nota();
+            $flag=true;
+            
+            
+            if(isset($_POST['id_aseo']) && isset($_POST['id_flota'])){
+                
+            }
+//            if(isset($_POST['Nota']))
+//            {       $flag=false;
+//                $model->attributes=$_POST['Nota'];
+//
+//                if($model->save()) {
+//                    //Return an <option> and select it
+//                                echo CHtml::tag('option',array (
+//                                    'value'=>$model->jid,
+//                                    'selected'=>true
+//                                ),CHtml::encode($model->jdescr),true);
+//                            }
+//             }
+            
+//             if($flag) {
+//                Yii::app()->clientScript->scriptMap['jquery.js'] = false;
+//                //$this->renderPartial('createDialog',array('model'=>$model),false,true);
+//                $this->renderPartial('createDialog',array('variableloca'=>$variableloca),false,true);
+//             }
+
+ 
+ 
+        if (Yii::app()->request->isAjaxRequest)
+        {
+            $id_flota=Flota::model()->findByAttributes(array('NOMBRE_FLOTA'=>$_POST['id_flota']))->ID_FLOTA;
+            $id_aseo=$_POST['id_aseo'];
+            //$list = array(array());
+            
+            $sql= Yii::app()->db->createCommand('SELECT evaluacion.id_evaluacion, evaluacion.nombre, ponderacion.ponderacion
+                                                FROM evaluacion
+                                                INNER JOIN ponderacion ON (ponderacion.evaluacion_id_evaluacion = evaluacion.id_evaluacion
+                                                AND ponderacion.aseo_id_aseo=:id_aseo
+                                                AND ponderacion.flota_id_flota =:id_flota )')->bindValues(array(':id_aseo'=>$id_aseo,
+                                                                                                                ':id_flota'=>$id_flota))->queryAll();
+            
+
+            $sql2= Yii::app()->db->createCommand('SELECT item_se_evalua.item_id_item,item.evaluacion_id_evaluacion, item.nombre
+                                                FROM item_se_evalua
+                                                INNER JOIN item ON ( item_se_evalua.item_id_item = item.id_item
+                                                AND item_se_evalua.flota_id_flota =:id_flota
+                                                AND item_se_evalua.aseo_id_aseo =:id_aseo )')->bindValues(array(':id_aseo'=>$id_aseo,
+                                                                                                                ':id_flota'=>$id_flota))->queryAll();
+
+            echo CJSON::encode(array(
+                'status'=>'failure', 
+                'div'=>$this->renderPartial('_formDialog', array('model'=>$model,
+                                                                  'id_aseo'=>$id_aseo,
+                                                                  'id_flota'=>$id_flota,
+                                                                  'sql'=>$sql,      
+                                                                  'sql2'=>$sql2 ), true)));
+            exit;               
+        }
+        
+}
+        
+        
 }

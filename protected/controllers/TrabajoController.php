@@ -63,26 +63,51 @@ class TrabajoController extends Controller
 	public function actionCreate()
 	{
 		$model=new Trabajo;
+                $modelT= new Turno;
                
 		// Uncomment the following line if AJAX validation is needed
 		//$this->performAjaxValidation($model);
-                if(isset($_POST['Trabajo']))
+                if(isset($_POST['Trabajo'],$_POST['Turno']))
 		{
 			$model->attributes=$_POST['Trabajo'];
-                        $model->image=CUploadedFile::getInstance($model,'image');
-                        $images_path = realpath(Yii::app()->basePath . '/../images');
-                        $path=$images_path . '/' .$model->AVION_MATRICULA."-".$model->FECHA."-".$model->ASEO_ID_ASEO.".JPG";
-                        $model->ARCHIVO=$path;
+                        $modelT->attributes=$_POST['Turno'];
+    
                         
-                        if($model->save()){
-                            
-                            $model->image->saveAs($path);
-                            $this->redirect(array('view','id'=>$model->ID_TRABAJO));
+                        $valid=$modelT->validate();
+                        
+                        if($valid){
+                            if($modelT->save(false)){
+                                $model->TURNO_ID_TURNO=$modelT->ID_TURNO;
+                                if(isset($_FILES['Trabajo'])){
+                                        $images_path = realpath(Yii::app()->basePath . '/../images');
+                                        $path=$images_path . '/' .$model->AVION_MATRICULA."-".$model->FECHA."-".$model->ASEO_ID_ASEO.".JPG";
+                                        
+                                        $model->imagen=CUploadedFile::getInstance($model,'imagen');
+                                        if($model->imagen!==null){
+                                            $model->ARCHIVO=$path;
+                                            $model->imagen->saveAs($path);
+                                            if($model->save()){
+                                    
+                                                $this->redirect(array('view','id'=>$model->ID_TRABAJO));
+
+                                            }
+                                        }
+                                }
+                                else{
+                                    if($model->save()){
+
+                                        $this->redirect(array('view','id'=>$model->ID_TRABAJO));
+
+                                    }
+                                }
+                                
+                            }
                         }
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
+                        'modelT'=>$modelT,
 		));
                    
     
@@ -188,4 +213,5 @@ class TrabajoController extends Controller
 			Yii::app()->end();
 		}
 	}
+
 }

@@ -4,12 +4,12 @@
 
 $this->breadcrumbs=array(
 	'Trabajos'=>array('index'),
-	'Create',
+	'Ingresar',
 );
 
 
 ?>
 
-<h1>Create Trabajo</h1>
+<h1>Ingresar nuevo aseo</h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model,'modelT'=>$modelT)); ?>

@@ -36,7 +36,7 @@ class Trabajo extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return Trabajo the static model class
 	 */
-	public $image;
+	public $imagen;
         
         public static function model($className=__CLASS__)
 	{
@@ -64,7 +64,7 @@ class Trabajo extends CActiveRecord
 			array('FECHA','date', 'format'=>'yyyy-MM-dd'),
                         array('HORA_INICIO', 'date', 'format'=>'HH:mm'),
                         array('HORA_TERMINO','date', 'format'=>'HH:mm'),
-                        array('image', 'file', 'types'=>'jpg, gif, png','allowEmpty'=>true),
+                        array('imagen', 'file', 'types'=>'jpg, gif, png','allowEmpty'=>true,'on'=>'update'),
                         array('AVION_MATRICULA', 'length', 'max'=>7),
 			array('COMENTARIO', 'length', 'max'=>255),
 			array('HORA_INICIO, HORA_TERMINO, FECHA', 'safe'),
@@ -123,6 +123,7 @@ class Trabajo extends CActiveRecord
 			'ASEO_ID_ASEO' => 'Aseo',
 			'TURNO_ID_TURNO' => 'Turno',
                         'ARCHIVO'=> 'Archivo',
+                        'imagen'=>'Foto',
 		);
 	}
 
