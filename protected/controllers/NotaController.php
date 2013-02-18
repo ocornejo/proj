@@ -173,40 +173,32 @@ class NotaController extends Controller
         
         public function actionAddnewevaluacion() {
             
-            $model=new Nota();
+            
             $flag=true;
             
-            
-            if(isset($_POST['id_aseo']) && isset($_POST['id_flota'])){
+                        
+            if(isset($_POST['NOTA']))
+            {   
+                echo var_dump($_POST['NOTA']);
+                $flag = false;
+                $valid=true;
                 
-            }
-//            if(isset($_POST['Nota']))
-//            {       $flag=false;
-//                $model->attributes=$_POST['Nota'];
-//
-//                if($model->save()) {
-//                    //Return an <option> and select it
-//                                echo CHtml::tag('option',array (
-//                                    'value'=>$model->jid,
-//                                    'selected'=>true
-//                                ),CHtml::encode($model->jdescr),true);
-//                            }
-//             }
+                foreach($_POST['NOTA'] as $item)
+                {
+                    $model=new Nota();
+                    $model->attributes=$_POST['NOTA'];
+                    $valid = $item->validate() && $valid;
+                }
+                if ($flag) $this->redirect(array('view'));
+             }
             
-//             if($flag) {
-//                Yii::app()->clientScript->scriptMap['jquery.js'] = false;
-//                //$this->renderPartial('createDialog',array('model'=>$model),false,true);
-//                $this->renderPartial('createDialog',array('variableloca'=>$variableloca),false,true);
-//             }
 
- 
- 
-        if (Yii::app()->request->isAjaxRequest)
-        {
+        if ($flag)
+        {            
+            $model=new Nota();
             $id_flota=Flota::model()->findByAttributes(array('NOMBRE_FLOTA'=>$_POST['id_flota']))->ID_FLOTA;
             $id_aseo=$_POST['id_aseo'];
-            //$list = array(array());
-            
+                        
             $sql= Yii::app()->db->createCommand('SELECT evaluacion.id_evaluacion, evaluacion.nombre, ponderacion.ponderacion
                                                 FROM evaluacion
                                                 INNER JOIN ponderacion ON (ponderacion.evaluacion_id_evaluacion = evaluacion.id_evaluacion
@@ -222,14 +214,14 @@ class NotaController extends Controller
                                                 AND item_se_evalua.aseo_id_aseo =:id_aseo )')->bindValues(array(':id_aseo'=>$id_aseo,
                                                                                                                 ':id_flota'=>$id_flota))->queryAll();
 
-            echo CJSON::encode(array(
-                'status'=>'failure', 
-                'div'=>$this->renderPartial('_formDialog', array('model'=>$model,
+            
+                Yii::app()->clientScript->scriptMap['jquery.js'] = false;   
+                $this->renderPartial('createDialog', array('model'=>$model,
                                                                   'id_aseo'=>$id_aseo,
                                                                   'id_flota'=>$id_flota,
                                                                   'sql'=>$sql,      
-                                                                  'sql2'=>$sql2 ), true)));
-            exit;               
+                                                                  'sql2'=>$sql2 ),false, true);
+                         
         }
         
 }

@@ -104,7 +104,7 @@ class TrabajoController extends Controller
                             }
                         }
 		}
-
+                
 		$this->render('create',array(
 			'model'=>$model,
                         'modelT'=>$modelT,

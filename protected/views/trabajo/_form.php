@@ -7,7 +7,69 @@ $cs = Yii::app()->getClientScript();
 $cs->registerCssFile($baseUrl . '/css/jquery.css');
 ?>
 
+<script type="text/javascript">
+        window.arreglo= new Array();
+        window.global=1;
+        window.notasFinales=new Array();
+        window.temp = new Object();
+        window.tamano=0;
+        
+        $(document).ready(function(){
+            $("#showDialogEvaluacion").hide();
+        })
+        
+        Object.size = function(obj) {
+            var size = 0, key;
+            for (key in obj) {
+                if (obj.hasOwnProperty(key)) size++;
+            }
+            return size;
+        };
 
+        function inicia(var1){
+            var i;
+            for(i=0;i<var1.length;i++){
+                window.temp[var1[i]['evaluacion_id_evaluacion']]=0;
+                window.arreglo[i]=0;   
+            }
+            for(var key in window.temp){
+                tamano=parseInt(key);
+            }
+        }
+        function updateTag(var1,var2,var3){
+            final=0;
+            count=0;
+            total=0;
+            notaFinal=0;
+            var1=var1+1;
+            
+            for(var j=0;j<var2.length;j++){
+                if(var2[j]['evaluacion_id_evaluacion'] == var1){
+                    count=count+1;
+                    total = total + parseFloat(window.arreglo[j]);
+                    //console.log("total :"+total+" count: "+count+" parse: "+parseFloat(window.arreglo[j]));
+                }
+                
+           }
+           
+           final=Number(((total/count)*100).toFixed(0));
+           window.temp[var1]=(final*var3[var1-1]['ponderacion'])/100;
+           
+           for(var i=1;i<=window.tamano;i++){
+                if(window.temp[i]!=null)
+                    notaFinal=Number((notaFinal+window.temp[i]).toFixed(0));
+           }
+           //console.log("temp: "+window.temp[var1]+" notaFinal: "+notaFinal);
+           var1= var1-1;
+           variable1= "notaPond["+var1+"]";
+           
+           document.getElementById(variable1).innerHTML=final+"%";
+           $('#NotaFinal').val(notaFinal);
+           <?php print('$("#'.CHtml::activeId($model, 'CALIFICACION').'").val(notaFinal);');?>
+           
+
+        } 
+        </script> 
 
 <div class="form">
 
@@ -135,17 +197,11 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
                                                         
                                                         if(data=="1"){
                                                            
-                                                            $("#' . CHtml::activeId($model, 'CALIFICACION') . '").attr("onclick","").click(function(){
-                                                                                                                                                 addEvaluacion();
-                                                                                                                                                 $("#dialogEvaluacion").dialog("option", "position", "top").dialog("open");              
-                                                                                                                                             });
+                                                            $("#showDialogEvaluacion").show();
                                                         }
                                                         else{
                                                             
-                                                            $("#' . CHtml::activeId($model, 'CALIFICACION') . '").attr("onclick","").click(function(){
-                                                                                                                                                $("#dialogEvaluacion").dialog("option", "position", "top").dialog("close");              
-                                                                                                                                             });   
-                                                            $("#' . CHtml::activeId($model, 'CALIFICACION') . '").val("");            
+                                                            $("#showDialogEvaluacion").hide();            
                                                         }
 
                                                     }',
@@ -249,60 +305,16 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
             </td>
             <td>
                 <?php echo $form->textField($model, 'CALIFICACION', array('style' => 'width:30px', 'maxlength' => 3, 'readonly' => 'true')); ?>
-                <?php echo $form->error($model, 'CALIFICACION'); ?>
-     
-                <?php
-                $this->beginWidget('zii.widgets.jui.CJuiDialog', array(// the dialog
-                    'id' => 'dialogEvaluacion',
-                    'options' => array(
-                        'title' => 'Evaluar',
-                        'autoOpen' => false,
-                        'modal' => true,
-                        'width' => 700,
-                        'resizable' => false,
-                        'draggable' => false,
-                    //'height'=>470,
-                    ),
-                ));
-                ?>
-                <div class="divForForm"></div>
                 
-                <?php $this->endWidget(); ?>
-                
-                <script type="text/javascript">
-                    // here is the magic
-                    function addEvaluacion()
-                    {
-                        
-                <?php echo CHtml::ajax(array(
-                    'url' => array('nota/addnewevaluacion'),
-                    'data' => array('ajaxData' => 'js:$(this).serialize()',
-                        'id_aseo' => 'js:$("#' . CHtml::activeId($model, 'ASEO_ID_ASEO') . '").val()',
-                        'id_flota' => 'js:$("#flotaId").val()'),
-                    'type' => 'post',
-                    'dataType' => 'json',
-                    'success' => "function(data)
-                                            {
-                                                if (data.status == 'failure')
-                                                {
-                                                    $('#dialogEvaluacion div.divForForm').html(data.div);
-                                                          // Here is the trick: on submit-> once again this function!
-                                                    $('#dialogEvaluacion div.divForForm form').submit(addEvaluacion);
-                                                }
-                                                else
-                                                {
-                                                    $('#dialogEvaluacion div.divForForm').html(data.div);
-                                                    setTimeout(\"$('#dialogEvaluacion').dialog('close') \",3000);
-                                                }
-
-                                            } ",
-                ))
-                ?>;
-                                        return false;
-
-                                    }
-               </script>
-
+                <?php echo CHtml::ajaxLink(Yii::t('nota','Evaluar'),$this->createUrl('nota/addnewevaluacion'),
+                        array(
+                'type'=>'POST',
+                'data'=>array('id_aseo'=> 'js:$("#' . CHtml::activeId($model, 'ASEO_ID_ASEO') . '").val()',
+                               'id_flota' => 'js:$("#flotaId").val()' ),
+                'onclick'=>'$("#dialogEvaluacion").dialog("option", "position", "top").dialog("open"); return false;',
+                'update'=>'#dialogEvaluacion'
+                ),array('id'=>'showDialogEvaluacion','type'=>"hidden"));?>
+                <div id="dialogEvaluacion"></div>
                 
             </td>
 

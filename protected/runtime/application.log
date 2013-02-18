@@ -7749,3 +7749,389 @@ REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion
 in C:\wamp\www\proj\protected\views\nota\_formDialog.php (51)
 in C:\wamp\www\proj\protected\controllers\NotaController.php (231)
 in C:\wamp\www\proj\index.php (13)
+2013/02/18 14:11:38 [error] [php] Undefined index: NOTA (C:\wamp\www\proj\protected\controllers\NotaController.php:178)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): NotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion
+in C:\wamp\www\proj\protected\controllers\NotaController.php (178)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 14:26:49 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 14:27:00 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 14:27:24 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 14:28:13 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 14:28:17 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 14:28:28 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 14:28:33 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 14:28:37 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 14:29:05 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 14:30:35 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 14:55:31 [error] [php] Trying to get property of non-object (C:\wamp\www\proj\protected\controllers\NotaController.php:208)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): NotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion
+in C:\wamp\www\proj\protected\controllers\NotaController.php (208)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 17:12:48 [error] [php] Undefined variable: id_aseo (C:\wamp\www\proj\protected\controllers\NotaController.php:216)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): NotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion&id_aseo=&_=1361207568576
+in C:\wamp\www\proj\protected\controllers\NotaController.php (216)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 17:30:50 [error] [php] Undefined index: id_aseo (C:\wamp\www\proj\protected\controllers\NotaController.php:207)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): NotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion
+in C:\wamp\www\proj\protected\controllers\NotaController.php (207)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 17:37:59 [error] [php] Undefined index: id_aseo (C:\wamp\www\proj\protected\controllers\NotaController.php:207)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): NotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion
+in C:\wamp\www\proj\protected\controllers\NotaController.php (207)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 18:03:08 [error] [php] Trying to get property of non-object (C:\wamp\www\proj\protected\controllers\NotaController.php:209)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): NotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion
+in C:\wamp\www\proj\protected\controllers\NotaController.php (209)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 18:03:19 [error] [php] Trying to get property of non-object (C:\wamp\www\proj\protected\controllers\NotaController.php:209)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): NotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion
+in C:\wamp\www\proj\protected\controllers\NotaController.php (209)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 18:11:49 [error] [php] Undefined index: id_flota (C:\wamp\www\proj\protected\controllers\NotaController.php:209)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): NotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion&render=
+in C:\wamp\www\proj\protected\controllers\NotaController.php (209)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 18:27:46 [error] [php] Undefined index: id_flota (C:\wamp\www\proj\protected\controllers\NotaController.php:197)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): NotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion&render=
+in C:\wamp\www\proj\protected\controllers\NotaController.php (197)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 18:37:36 [error] [php] Undefined index: id_flota (C:\wamp\www\proj\protected\controllers\NotaController.php:197)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): NotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion&render=
+in C:\wamp\www\proj\protected\controllers\NotaController.php (197)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 18:38:15 [error] [php] Undefined index: id_flota (C:\wamp\www\proj\protected\controllers\NotaController.php:197)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): NotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion&render=
+in C:\wamp\www\proj\protected\controllers\NotaController.php (197)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 18:45:00 [error] [php] Undefined index: id_flota (C:\wamp\www\proj\protected\controllers\NotaController.php:198)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): NotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion
+in C:\wamp\www\proj\protected\controllers\NotaController.php (198)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 18:45:01 [error] [php] Undefined index: id_flota (C:\wamp\www\proj\protected\controllers\NotaController.php:198)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): NotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion
+in C:\wamp\www\proj\protected\controllers\NotaController.php (198)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 18:53:21 [error] [php] Undefined index: id_flota (C:\wamp\www\proj\protected\controllers\NotaController.php:198)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): NotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion
+in C:\wamp\www\proj\protected\controllers\NotaController.php (198)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 18:53:22 [error] [php] Undefined index: id_flota (C:\wamp\www\proj\protected\controllers\NotaController.php:198)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): NotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion
+in C:\wamp\www\proj\protected\controllers\NotaController.php (198)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 18:54:14 [error] [php] Undefined index: id_flota (C:\wamp\www\proj\protected\controllers\NotaController.php:198)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): NotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion
+in C:\wamp\www\proj\protected\controllers\NotaController.php (198)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 18:54:15 [error] [php] Undefined index: id_flota (C:\wamp\www\proj\protected\controllers\NotaController.php:198)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): NotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion
+in C:\wamp\www\proj\protected\controllers\NotaController.php (198)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 18:56:14 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 18:56:32 [error] [php] Undefined index: id_flota (C:\wamp\www\proj\protected\controllers\NotaController.php:198)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): NotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion
+in C:\wamp\www\proj\protected\controllers\NotaController.php (198)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 19:04:11 [error] [php] Undefined index: Nota (C:\wamp\www\proj\protected\controllers\NotaController.php:179)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): NotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion
+in C:\wamp\www\proj\protected\controllers\NotaController.php (179)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 19:04:16 [error] [php] Undefined index: Nota (C:\wamp\www\proj\protected\controllers\NotaController.php:179)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): NotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion
+in C:\wamp\www\proj\protected\controllers\NotaController.php (179)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 19:04:27 [error] [php] Undefined index: Nota (C:\wamp\www\proj\protected\controllers\NotaController.php:179)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): NotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion
+in C:\wamp\www\proj\protected\controllers\NotaController.php (179)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 19:12:46 [error] [php] Undefined index: Nota (C:\wamp\www\proj\protected\controllers\NotaController.php:183)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): NotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion&render=
+in C:\wamp\www\proj\protected\controllers\NotaController.php (183)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 19:16:01 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bd_aseo`.`nota`, CONSTRAINT `fk_Nota_Trabajo1` FOREIGN KEY (`TRABAJO_ID_TRABAJO`) REFERENCES `trabajo` (`ID_TRABAJO`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `nota` (`NOTA`, `ITEM_ID_ITEM`, `TRABAJO_ID_TRABAJO`) VALUES (:yp0, :yp1, :yp2).
+in C:\wamp\www\proj\protected\controllers\NotaController.php (187)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 19:16:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bd_aseo`.`nota`, CONSTRAINT `fk_Nota_Trabajo1` FOREIGN KEY (`TRABAJO_ID_TRABAJO`) REFERENCES `trabajo` (`ID_TRABAJO`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `nota` (`NOTA`, `ITEM_ID_ITEM`, `TRABAJO_ID_TRABAJO`) VALUES (:yp0, :yp1, :yp2)' in C:\Yii\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\Yii\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\Yii\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\proj\protected\controllers\NotaController.php(187): CActiveRecord->save()
+#3 C:\Yii\framework\web\actions\CInlineAction.php(49): NotaController->actionAddnewevaluacion()
+#4 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Yii\framework\web\CWebApplication.php(282): CController->run('addnewevaluacio...')
+#9 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nota/addneweval...')
+#10 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\wamp\www\proj\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion&render=
+HTTP_REFERER=http://localhost/proj/index.php?r=trabajo/create
+---
+2013/02/18 19:31:06 [error] [php] Attempt to assign property of non-object (C:\wamp\www\proj\protected\controllers\NotaController.php:189)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): NotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): NotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): NotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion&render=
+in C:\wamp\www\proj\protected\controllers\NotaController.php (189)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 19:47:10 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bd_aseo`.`nota`, CONSTRAINT `fk_Nota_Trabajo1` FOREIGN KEY (`TRABAJO_ID_TRABAJO`) REFERENCES `trabajo` (`ID_TRABAJO`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `nota` (`NOTA`, `ITEM_ID_ITEM`, `TRABAJO_ID_TRABAJO`) VALUES (:yp0, :yp1, :yp2).
+in C:\wamp\www\proj\protected\controllers\NotaController.php (190)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 19:47:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bd_aseo`.`nota`, CONSTRAINT `fk_Nota_Trabajo1` FOREIGN KEY (`TRABAJO_ID_TRABAJO`) REFERENCES `trabajo` (`ID_TRABAJO`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `nota` (`NOTA`, `ITEM_ID_ITEM`, `TRABAJO_ID_TRABAJO`) VALUES (:yp0, :yp1, :yp2)' in C:\Yii\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\Yii\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\Yii\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\proj\protected\controllers\NotaController.php(190): CActiveRecord->save()
+#3 C:\Yii\framework\web\actions\CInlineAction.php(49): NotaController->actionAddnewevaluacion()
+#4 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Yii\framework\web\CWebApplication.php(282): CController->run('addnewevaluacio...')
+#9 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nota/addneweval...')
+#10 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\wamp\www\proj\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion&render=
+HTTP_REFERER=http://localhost/proj/index.php?r=trabajo/create
+---
+2013/02/18 19:47:22 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bd_aseo`.`nota`, CONSTRAINT `fk_Nota_Trabajo1` FOREIGN KEY (`TRABAJO_ID_TRABAJO`) REFERENCES `trabajo` (`ID_TRABAJO`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `nota` (`NOTA`, `ITEM_ID_ITEM`, `TRABAJO_ID_TRABAJO`) VALUES (:yp0, :yp1, :yp2).
+in C:\wamp\www\proj\protected\controllers\NotaController.php (190)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 19:47:22 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bd_aseo`.`nota`, CONSTRAINT `fk_Nota_Trabajo1` FOREIGN KEY (`TRABAJO_ID_TRABAJO`) REFERENCES `trabajo` (`ID_TRABAJO`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `nota` (`NOTA`, `ITEM_ID_ITEM`, `TRABAJO_ID_TRABAJO`) VALUES (:yp0, :yp1, :yp2)' in C:\Yii\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\Yii\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\Yii\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\wamp\www\proj\protected\controllers\NotaController.php(190): CActiveRecord->save()
+#3 C:\Yii\framework\web\actions\CInlineAction.php(49): NotaController->actionAddnewevaluacion()
+#4 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Yii\framework\web\CWebApplication.php(282): CController->run('addnewevaluacio...')
+#9 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nota/addneweval...')
+#10 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\wamp\www\proj\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion&render=
+HTTP_REFERER=http://localhost/proj/index.php?r=trabajo/create
+---
+2013/02/18 19:49:27 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\Yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\Yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#3 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\Yii\framework\web\CWebApplication.php(282): CController->run('view')
+#5 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('nota/view')
+#6 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#7 C:\wamp\www\proj\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/proj/index.php?r=nota/view
+HTTP_REFERER=http://localhost/proj/index.php?r=trabajo/create
+---

@@ -12,57 +12,6 @@ $form=$this->beginWidget('CActiveForm', array(
 
 ?> 
 
-<script type="text/javascript">
-        window.arreglo= new Array();
-        window.global=1;
-        window.notasFinales=new Array();
-        
-        Object.size = function(obj) {
-            var size = 0, key;
-            for (key in obj) {
-                if (obj.hasOwnProperty(key)) size++;
-            }
-            return size;
-        };
-
-        function inicia(var1){
-            temp = new Object();
-            for(var i=0;i<var1.length;i++){
-                temp[var1[i]['evaluacion_id_evaluacion']]=parseInt(var1[i]['evaluacion_id_evaluacion']);
-                window.arreglo[i]=0;   
-                
-            }
-            console.log("tempCount: "+Object.size(temp));
-            //crear un arreglo del largo de la wea de arriba y guardar alli las notas y calcularas en la funcion de abajo
-            
-        }
-        function updateTag(var1,var2){
-            final=0;
-            count=0;
-            total=0;
-            var1=var1+1;
-            
-            for(var j=0;j<var2.length;j++){
-                if(var2[j]['evaluacion_id_evaluacion'] == var1){
-                    count=count+1;
-                    total = total + parseFloat(window.arreglo[j]);
-                    console.log("total :"+total+" count: "+count+" parse: "+parseFloat(window.arreglo[j]));
-                }
-                
-           }
-           //for(var i=0;i<temp.)
-           final=Number(((total/count)*100).toFixed(0));
-           console.log("final: "+final);
-           var1= var1-1;
-           variable1= "notaPond["+var1+"]";
-           
-           document.getElementById(variable1).innerHTML=final+"%";
-
-
-        } 
-        </script>    
- 
-
     <table valign="top" style="font-size:large;"> 
         <tr>
             <td> <?php echo CHtml::activeLabel(Trabajo::model(), 'ASEO_ID_ASEO'); ?></td>
@@ -70,6 +19,8 @@ $form=$this->beginWidget('CActiveForm', array(
 
             <td><?php echo CHtml::activeLabel(Flota::model(), 'NOMBRE_FLOTA'); ?></td>
             <td> <?php echo Chtml::textField('nombreFlota', Flota::model()->findByPk($id_flota)->NOMBRE_FLOTA, array('style' => 'width:40px', 'readonly' => 'readonly')); ?></td>    
+            <td><?php echo CHtml::label('Nota Final', 'notaFinal'); ?></td>
+            <td> <?php echo Chtml::textField('NotaFinal',0, array('style' => 'width:40px', 'readonly' => 'readonly')); ?></td>
         </tr>
     </table>
     <table valign="top" style="font-size:large;">
@@ -85,26 +36,35 @@ $form=$this->beginWidget('CActiveForm', array(
             if($sql2[$j]['evaluacion_id_evaluacion']==$sql[$i]['id_evaluacion']){
                 echo '<tr>
                 <td>'. CHtml::label($sql2[$j]['nombre'], 'nombreItem') .'</td>
-                <td>'. $form->radioButtonList($model,'NOTA', array('0'=>'1','0.25'=>'2','0.5'=>'3','0.75'=>'4','1'=>'5'), array('name'=>$sql2[$j]['item_id_item'],'id'=>'item['.$j.']','separator'=>' | ','onchange'=>'{
-                                                                                                                                                                                                               if(window.global==1){
-                                                                                                                                                                                                                    inicia('.json_encode($sql2).');
-                                                                                                                                                                                                                    window.global=0;
-                                                                                                                                                                                                               } 
-                                                                                                                                                                                                               window.arreglo['.$j.']=$(this).val();
-                                                                                                                                                                                                               updateTag('.$i.','.json_encode($sql2).');
-                                                                                                                                                                                                                    
-                                                                                                                                                                                                                
-                                                                                                                                                                                                                }')) .'</td>
-                    </tr>';
-                
+                <td>'. $form->radioButtonList($model,'NOTA', array('0'=>'1','0.25'=>'2','0.5'=>'3','0.75'=>'4','1'=>'5'), 
+                                                            array('name'=>'NOTA['.$j.'][NOTA]',
+                                                                  'separator'=>' | ',
+                                                                  'onchange'=>'{
+                                                                                if(window.global==1){
+                                                                                    inicia('.json_encode($sql2).');
+                                                                                    window.global=0;
+                                                                                }
+                                                                                window.arreglo['.$j.']=$(this).val();
+                                                                                updateTag('.$i.','.json_encode($sql2).','.json_encode($sql).');
+                                                                                }')) .
+                '</td>
+                </tr>';
+             $model->ITEM_ID_ITEM=$sql2[$j]['item_id_item'];
+             echo $form->hiddenField($model,'ITEM_ID_ITEM',array('name'=>'NOTA['.$j.'][ITEM_ID_ITEM]'));
+             $model->TRABAJO_ID_TRABAJO=1;
+             echo $form->hiddenField($model,'TRABAJO_ID_TRABAJO',array('name'=>'NOTA['.$j.'][TRABAJO_ID_TRABAJO]'));
             }
         }
-       }
-//        
+       }       
  }?>
     </table>
     
-
+    <div class="row buttons">
+        <?php echo CHtml::ajaxSubmitButton(Yii::t('nota','Evaluar'),CHtml::normalizeUrl(array('nota/addnewevaluacion','render'=>false)),array('success'=>'js: function(data) {
+                        
+                        $("#dialogEvaluacion").dialog("close");
+                    }'),array('id'=>'closeEvaluacionDialog'));?>
+    </div>
 <?php $this->endWidget(); ?>
  
 </div>

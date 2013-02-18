@@ -6,22 +6,23 @@ $cs->registerCssFile($baseUrl.'/css/jquery.css');
 $this->beginWidget('zii.widgets.jui.CJuiDialog',array(
                 'id'=>'dialogEvaluacion',
                 'options'=>array(
-                    
                     'autoOpen'=>true,
                     'modal'=>'true',
-                    'width'=>'auto',
+                    'width'=>'700',
                     'height'=>'auto',
+                    'resizable' => false,
+                    'draggable' => false,                    
                    
                 ),
                 ));
 
 
 //echo $this->renderPartial('_formDialog', array('model'=>$model)); 
-//echo $this->renderPartial('_formDialog', array('model'=>$model,
-//                                                'id_aseo'=>$id_aseo,
-//                                                'id_flota'=>$id_flota,
-//                                                'sql2'=>$sql2,
-//                                                'sql'=>$sql));
+echo $this->renderPartial('_formDialog', array('model'=>$model,
+                                                'id_aseo'=>$id_aseo,
+                                                'id_flota'=>$id_flota,
+                                                'sql2'=>$sql2,
+                                                'sql'=>$sql));
 
 ?>
 <?php $this->endWidget('zii.widgets.jui.CJuiDialog');?>

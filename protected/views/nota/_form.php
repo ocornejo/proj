@@ -15,11 +15,7 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'ID_NOTA'); ?>
-		<?php echo $form->textField($model,'ID_NOTA'); ?>
-		<?php echo $form->error($model,'ID_NOTA'); ?>
-	</div>
+	
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'NOTA'); ?>
