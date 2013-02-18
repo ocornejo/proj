@@ -179,15 +179,14 @@ class NotaController extends Controller
                         
             if(isset($_POST['NOTA']))
             {   
-                echo var_dump($_POST['NOTA']);
                 $flag = false;
                 $valid=true;
                 
                 foreach($_POST['NOTA'] as $item)
                 {
                     $model=new Nota();
-                    $model->attributes=$_POST['NOTA'];
-                    $valid = $item->validate() && $valid;
+                    $model->attributes=$item;
+                    $model->save();
                 }
                 if ($flag) $this->redirect(array('view'));
              }

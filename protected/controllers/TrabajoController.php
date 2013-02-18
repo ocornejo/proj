@@ -78,7 +78,8 @@ class TrabajoController extends Controller
                         if($valid){
                             if($modelT->save(false)){
                                 $model->TURNO_ID_TURNO=$modelT->ID_TURNO;
-                                if(isset($_FILES['Trabajo'])){
+                                if(CUploadedFile::getInstance($model,'imagen')!=null){
+                                    var_dump($_FILES['Trabajo']);
                                         $images_path = realpath(Yii::app()->basePath . '/../images');
                                         $path=$images_path . '/' .$model->AVION_MATRICULA."-".$model->FECHA."-".$model->ASEO_ID_ASEO.".JPG";
                                         
@@ -88,7 +89,7 @@ class TrabajoController extends Controller
                                             $model->imagen->saveAs($path);
                                             if($model->save()){
                                     
-                                                $this->redirect(array('view','id'=>$model->ID_TRABAJO));
+                                                //$this->redirect(array('view','id'=>$model->ID_TRABAJO));
 
                                             }
                                         }

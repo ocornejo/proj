@@ -8135,3 +8135,42 @@ Stack trace:
 REQUEST_URI=/proj/index.php?r=nota/view
 HTTP_REFERER=http://localhost/proj/index.php?r=trabajo/create
 ---
+2013/02/18 19:04:26 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 19:08:24 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 19:17:16 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 19:17:44 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 19:21:35 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 19:21:42 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 19:29:11 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 19:29:25 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 19:33:50 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 19:40:15 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 19:44:37 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 19:47:17 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)
+2013/02/18 19:49:08 [warning] [application] Failed to set unsafe attribute "imagen" of "Trabajo".
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (72)
+in C:\wamp\www\proj\index.php (13)

@@ -47,6 +47,7 @@ $form=$this->beginWidget('CActiveForm', array(
                                                                                 window.arreglo['.$j.']=$(this).val();
                                                                                 updateTag('.$i.','.json_encode($sql2).','.json_encode($sql).');
                                                                                 }')) .
+                      $form->error($model,'NOTA').
                 '</td>
                 </tr>';
              $model->ITEM_ID_ITEM=$sql2[$j]['item_id_item'];

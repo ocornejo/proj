@@ -16,7 +16,7 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
         
         $(document).ready(function(){
             $("#showDialogEvaluacion").hide();
-        })
+        });
         
         Object.size = function(obj) {
             var size = 0, key;
@@ -85,7 +85,7 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
 
     <p class="note">Campos con<span class="required">*</span> son requeridos.</p>
     <?php echo $form->errorSummary($model); ?>
-
+    <?php echo $form->errorSummary($modelT); ?>
     <table>
         <tr>
             <td>
@@ -117,7 +117,7 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
                     ),
                 ));
                 ?>
-                <?php echo $form->error($model, 'FECHA'); ?>
+                <?php echo $form->error($modelT, 'FECHA'); ?>
             </td>
             <td>
                 <?php echo $form->labelEx($modelT, 'TIPO_TURNO_ID_TIPO_TURNO'); ?>
@@ -194,17 +194,13 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
                         'dataType' => 'json',
                         'data' => array('id_aseo' => 'js:this.value'),
                         'success' => 'function(data) {
-                                                        
                                                         if(data=="1"){
-                                                           
                                                             $("#showDialogEvaluacion").show();
                                                         }
                                                         else{
-                                                            
                                                             $("#showDialogEvaluacion").hide();            
                                                         }
-
-                                                    }',
+                                                     }',
                 )));
                 ?>
                 <?php echo $form->error($model, 'ASEO_ID_ASEO'); ?>
