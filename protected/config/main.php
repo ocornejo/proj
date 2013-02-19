@@ -17,7 +17,7 @@ return array(
 	'preload'=>array('log'),
         // application theme
         'theme'=>'shadow_dancer',
-    
+        
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
@@ -64,6 +64,7 @@ return array(
 			'username' => 'root',
 			'password' => '',
 			'charset' => 'utf8',
+                        'enableParamLogging'=>true,
 		),
 		
 		'errorHandler'=>array(

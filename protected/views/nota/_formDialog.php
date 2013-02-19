@@ -10,7 +10,18 @@ $form=$this->beginWidget('CActiveForm', array(
 )); 
 
 
-?> 
+?>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            if(window.global==1){
+                                                                                    
+               window.global=0;                                                               
+            <?php print("inicia(".json_encode($sql2).",".json_encode($sql).");");?>
+              }
+            
+        });
+        </script>
 
     <table valign="top" style="font-size:large;"> 
         <tr>
@@ -36,23 +47,19 @@ $form=$this->beginWidget('CActiveForm', array(
             if($sql2[$j]['evaluacion_id_evaluacion']==$sql[$i]['id_evaluacion']){
                 echo '<tr>
                 <td>'. CHtml::label($sql2[$j]['nombre'], 'nombreItem') .'</td>
-                <td>'. $form->radioButtonList($model,'NOTA', array('0'=>'1','0.25'=>'2','0.5'=>'3','0.75'=>'4','1'=>'5'), 
+                <td>'; echo $form->radioButtonList($model,'NOTA', array(0=>'1',25=>'2',50=>'3',75=>'4',100=>'5'), 
                                                             array('name'=>'NOTA['.$j.'][NOTA]',
                                                                   'separator'=>' | ',
                                                                   'onchange'=>'{
-                                                                                if(window.global==1){
-                                                                                    inicia('.json_encode($sql2).');
-                                                                                    window.global=0;
-                                                                                }
+                                                                                
                                                                                 window.arreglo['.$j.']=$(this).val();
-                                                                                updateTag('.$i.','.json_encode($sql2).','.json_encode($sql).');
-                                                                                }')) .
-                      $form->error($model,'NOTA').
+                                                                                updateTag('.$i.');
+                                                                                }')).
                 '</td>
                 </tr>';
              $model->ITEM_ID_ITEM=$sql2[$j]['item_id_item'];
              echo $form->hiddenField($model,'ITEM_ID_ITEM',array('name'=>'NOTA['.$j.'][ITEM_ID_ITEM]'));
-             $model->TRABAJO_ID_TRABAJO=1;
+             $model->TRABAJO_ID_TRABAJO=$id_trabajo;
              echo $form->hiddenField($model,'TRABAJO_ID_TRABAJO',array('name'=>'NOTA['.$j.'][TRABAJO_ID_TRABAJO]'));
             }
         }
@@ -61,10 +68,35 @@ $form=$this->beginWidget('CActiveForm', array(
     </table>
     
     <div class="row buttons">
-        <?php echo CHtml::ajaxSubmitButton(Yii::t('nota','Evaluar'),CHtml::normalizeUrl(array('nota/addnewevaluacion','render'=>false)),array('success'=>'js: function(data) {
-                        
-                        $("#dialogEvaluacion").dialog("close");
-                    }'),array('id'=>'closeEvaluacionDialog'));?>
+        <?php echo CHtml::ajaxSubmitButton(Yii::t('nota','Evaluar'),
+                                            CHtml::normalizeUrl(array('nota/addnewevaluacion','render'=>false)),
+                                            array('beforeSend'=>'js:function(){
+//                                                    var temporal=false;
+//                                                    for(var k=0; k < window.arreglo.length;k++)
+//                                                        if(window.arreglo[k]==101)
+//                                                            temporal=true;
+//                                                    
+//                                                    if(temporal==true){
+//
+//                                                        input_box=confirm("Los itemes no evaluados seran calificados con nota maxima");
+//                                                        if (input_box==true)
+//                                                        { 
+//                                                            for(var k=0; k<window.arreglo.size;k++)
+//                                                                if(window.arreglo[k]==101)
+//                                                                    window.arreglo[k]=100; 
+//                                                            updateAll();
+//                                                        }
+//
+//                                                        else
+//                                                        {
+//                                                            return false;
+//                                                        }    
+//                                                    }
+
+                                                
+                                                }','success'=>'js: function(data) {
+                                                    $("#dialogEvaluacion").dialog("close");
+                                            }'),array('id'=>'closeEvaluacionDialog'));?>
     </div>
 <?php $this->endWidget(); ?>
  

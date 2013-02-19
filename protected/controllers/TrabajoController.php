@@ -56,20 +56,33 @@ class TrabajoController extends Controller
 		));
 	}
 
-	/**
+	
+        public function actionCreate(){
+            $model = new Trabajo('formSubmit');
+            $modelT = new Turno;           
+            $model->save(false);
+            $this->render('create',array(
+			'model'=>$model,'modelT'=>$modelT,
+            ));
+ 
+            
+        }
+
+        /**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+	public function actionGuardar()
 	{
-		$model=new Trabajo;
+		//$model= new Trabajo;
                 $modelT= new Turno;
-               
+                
 		// Uncomment the following line if AJAX validation is needed
 		//$this->performAjaxValidation($model);
                 if(isset($_POST['Trabajo'],$_POST['Turno']))
 		{
-			$model->attributes=$_POST['Trabajo'];
+                        $model=$this->loadModel(Yii::app()->getRequest()->getQuery('id')); 
+                        $model->attributes=$_POST['Trabajo'];
                         $modelT->attributes=$_POST['Turno'];
     
                         
@@ -79,7 +92,7 @@ class TrabajoController extends Controller
                             if($modelT->save(false)){
                                 $model->TURNO_ID_TURNO=$modelT->ID_TURNO;
                                 if(CUploadedFile::getInstance($model,'imagen')!=null){
-                                    var_dump($_FILES['Trabajo']);
+                                    
                                         $images_path = realpath(Yii::app()->basePath . '/../images');
                                         $path=$images_path . '/' .$model->AVION_MATRICULA."-".$model->FECHA."-".$model->ASEO_ID_ASEO.".JPG";
                                         
@@ -89,7 +102,7 @@ class TrabajoController extends Controller
                                             $model->imagen->saveAs($path);
                                             if($model->save()){
                                     
-                                                //$this->redirect(array('view','id'=>$model->ID_TRABAJO));
+                                                $this->redirect(array('view','id'=>$model->ID_TRABAJO));
 
                                             }
                                         }
@@ -113,34 +126,34 @@ class TrabajoController extends Controller
                    
     
 	}
-        
-
-	/**
-	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'view' page.
-	 * @param integer $id the ID of the model to be updated
-	 */
-	public function actionUpdate($id)
-	{
-		$model=new Trabajo;
-               
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Trabajo']))
-		{
-			$model->attributes=$_POST['Trabajo'];
-          
-
-			if($model->save()){
-                            $this->redirect(array('view','id'=>$model->ID_TRABAJO));
-                        }
-		}
-
-		$this->render('update',array(
-			'model'=>$model,
-		));
-	}
+//        
+//
+//	/**
+//	 * Updates a particular model.
+//	 * If update is successful, the browser will be redirected to the 'view' page.
+//	 * @param integer $id the ID of the model to be updated
+//	 */
+//	public function actionUpdate($id)
+//	{
+//		$model=new Trabajo;
+//               
+//		// Uncomment the following line if AJAX validation is needed
+//		// $this->performAjaxValidation($model);
+//
+//		if(isset($_POST['Trabajo']))
+//		{
+//			$model->attributes=$_POST['Trabajo'];
+//          
+//
+//			if($model->save()){
+//                            $this->redirect(array('view','id'=>$model->ID_TRABAJO));
+//                        }
+//		}
+//
+//		$this->render('update',array(
+//			'model'=>$model,
+//		));
+//	}
 
 	/**
 	 * Deletes a particular model.

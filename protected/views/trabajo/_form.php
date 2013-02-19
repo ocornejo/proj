@@ -13,6 +13,9 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
         window.notasFinales=new Array();
         window.temp = new Object();
         window.tamano=0;
+        window.var2=new Array();
+        window.var3 =new Array();
+        
         
         $(document).ready(function(){
             $("#showDialogEvaluacion").hide();
@@ -26,34 +29,41 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
             return size;
         };
 
-        function inicia(var1){
+        function inicia(variable2,variable3){
             var i;
-            for(i=0;i<var1.length;i++){
-                window.temp[var1[i]['evaluacion_id_evaluacion']]=0;
-                window.arreglo[i]=0;   
+            window.var2=variable3;
+            window.var3=variable2;
+            for(i=0;i<window.var3.length;i++){
+                window.temp[window.var3[i]['evaluacion_id_evaluacion']]=0;
+                console.log(window.var3[i]['evaluacion_id_evaluacion']);
+                window.arreglo[i]=101;   
             }
             for(var key in window.temp){
                 tamano=parseInt(key);
             }
+            
         }
-        function updateTag(var1,var2,var3){
+        function updateTag(var1){
             final=0;
             count=0;
             total=0;
             notaFinal=0;
             var1=var1+1;
             
-            for(var j=0;j<var2.length;j++){
-                if(var2[j]['evaluacion_id_evaluacion'] == var1){
+            for(var j=0;j<window.var3.length;j++){
+                if(window.var3[j]['evaluacion_id_evaluacion'] == var1){
                     count=count+1;
-                    total = total + parseFloat(window.arreglo[j]);
+                    if(parseInt(window.arreglo[j])==101)
+                        total = total + 0;
+                    else
+                        total = total + parseInt(window.arreglo[j]);
                     //console.log("total :"+total+" count: "+count+" parse: "+parseFloat(window.arreglo[j]));
                 }
                 
            }
            
-           final=Number(((total/count)*100).toFixed(0));
-           window.temp[var1]=(final*var3[var1-1]['ponderacion'])/100;
+           final=Number((total/count).toFixed(0));
+           window.temp[var1]=(final*window.var2[var1-1]['ponderacion'])/100;
            
            for(var i=1;i<=window.tamano;i++){
                 if(window.temp[i]!=null)
@@ -68,7 +78,14 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
            <?php print('$("#'.CHtml::activeId($model, 'CALIFICACION').'").val(notaFinal);');?>
            
 
-        } 
+        }
+        function updateAll(var2,var3){
+            for(var i=1;i<=window.tamano;i++){
+                if(window.temp[i]!=null)
+                    updateTag(i-1);
+           }
+            
+        }
         </script> 
 
 <div class="form">
@@ -76,6 +93,7 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
     <?php
     $form = $this->beginWidget('CActiveForm', array(
         'id' => 'trabajo-form',
+        'action' => Yii::app()->createUrl('trabajo/guardar',array('id'=>$model->ID_TRABAJO)),
         'enableAjaxValidation' => false,
         'htmlOptions' => array(
             'enctype' => 'multipart/form-data'
@@ -196,9 +214,13 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
                         'success' => 'function(data) {
                                                         if(data=="1"){
                                                             $("#showDialogEvaluacion").show();
+                                                            $("#'.CHtml::activeId($model, 'CALIFICACION').'").show();
+                                                            $("#CALIFICACION_LABEL").show();
                                                         }
                                                         else{
-                                                            $("#showDialogEvaluacion").hide();            
+                                                            $("#showDialogEvaluacion").hide();
+                                                            $("#'.CHtml::activeId($model, 'CALIFICACION').'").hide();
+                                                            $("#CALIFICACION_LABEL").hide();
                                                         }
                                                      }',
                 )));
@@ -297,16 +319,18 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
                     <?php echo $form->error($model, 'OT'); ?>
             </td>
              <td>
-                <?php echo $form->labelEx($model, 'CALIFICACION'); ?>
+                <?php echo $form->labelEx($model, 'CALIFICACION',array('id'=>'CALIFICACION_LABEL')); ?>
             </td>
             <td>
                 <?php echo $form->textField($model, 'CALIFICACION', array('style' => 'width:30px', 'maxlength' => 3, 'readonly' => 'true')); ?>
                 
-                <?php echo CHtml::ajaxLink(Yii::t('nota','Evaluar'),$this->createUrl('nota/addnewevaluacion'),
+                <?php echo CHtml::ajaxLink('<a href="http://www.pageresource.com"><img src="'.Yii::app()->theme->baseUrl.'/images/wdocument.png" /></a>',
+                        $this->createUrl('nota/addnewevaluacion'),
                         array(
                 'type'=>'POST',
                 'data'=>array('id_aseo'=> 'js:$("#' . CHtml::activeId($model, 'ASEO_ID_ASEO') . '").val()',
-                               'id_flota' => 'js:$("#flotaId").val()' ),
+                               'id_flota' => 'js:$("#flotaId").val()',
+                                'id_trabajo'=>$model->ID_TRABAJO),
                 'onclick'=>'$("#dialogEvaluacion").dialog("option", "position", "top").dialog("open"); return false;',
                 'update'=>'#dialogEvaluacion'
                 ),array('id'=>'showDialogEvaluacion','type'=>"hidden"));?>

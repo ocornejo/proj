@@ -59,14 +59,16 @@ class Trabajo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA, ASEO_ID_ASEO, TURNO_ID_TURNO,LUGAR_ID_LUGAR', 'required'),
-			array('OT, USUARIO_BP, PLANIFICADO, CALIFICACION, ESTADO_ID_ESTADO, LUGAR_ID_LUGAR, ASEO_ID_ASEO, TURNO_ID_TURNO', 'numerical', 'integerOnly'=>true),
+			array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA, ASEO_ID_ASEO, TURNO_ID_TURNO,LUGAR_ID_LUGAR', 'required','on'=>'guardar'),
+			//array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA, ASEO_ID_ASEO, TURNO_ID_TURNO,LUGAR_ID_LUGAR','allowEmpty'=>true, 'on'=>'formSubmit'),
+                        array('OT, USUARIO_BP, PLANIFICADO, CALIFICACION, ESTADO_ID_ESTADO, LUGAR_ID_LUGAR, ASEO_ID_ASEO, TURNO_ID_TURNO', 'numerical', 'integerOnly'=>true),
 			array('FECHA','date', 'format'=>'yyyy-MM-dd'),
                         array('HORA_INICIO', 'date', 'format'=>'HH:mm'),
                         array('HORA_TERMINO','date', 'format'=>'HH:mm'),
                         array('imagen', 'file', 'types'=>'jpg, gif, png','allowEmpty'=>true,'on'=>'update'),
                         array('AVION_MATRICULA', 'length', 'max'=>7),
 			array('COMENTARIO', 'length', 'max'=>255),
+                        
 			array('HORA_INICIO, HORA_TERMINO, FECHA', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.

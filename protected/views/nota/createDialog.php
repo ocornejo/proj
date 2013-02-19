@@ -22,7 +22,8 @@ echo $this->renderPartial('_formDialog', array('model'=>$model,
                                                 'id_aseo'=>$id_aseo,
                                                 'id_flota'=>$id_flota,
                                                 'sql2'=>$sql2,
-                                                'sql'=>$sql));
+                                                'sql'=>$sql,
+                                                'id_trabajo'=>$id_trabajo));
 
 ?>
 <?php $this->endWidget('zii.widgets.jui.CJuiDialog');?>
