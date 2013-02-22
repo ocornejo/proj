@@ -60,7 +60,7 @@ class Avion extends CActiveRecord
 		return array(
 			'oPERADORIDOPERADOR' => array(self::BELONGS_TO, 'Operador', 'OPERADOR_ID_OPERADOR'),
 			'fLOTAIDFLOTA' => array(self::BELONGS_TO, 'Flota', 'FLOTA_ID_FLOTA'),
-			'trabajos' => array(self::HAS_MANY, 'Trabajo', 'AVION_MATRICULA'),
+			'tRABAJO' => array(self::HAS_MANY, 'Trabajo', 'AVION_MATRICULA'),
 		);
 	}
 
@@ -71,8 +71,8 @@ class Avion extends CActiveRecord
 	{
 		return array(
 			'MATRICULA' => 'Matricula',
-			'FLOTA_ID_FLOTA' => 'Flota Id Flota',
-			'OPERADOR_ID_OPERADOR' => 'Operador Id Operador',
+			'FLOTA_ID_FLOTA' => 'ID Flota',
+			'OPERADOR_ID_OPERADOR' => 'ID Operador',
 		);
 	}
 
@@ -93,6 +93,30 @@ class Avion extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+                    'pagination'=>array('pageSize'=>100),
 		));
 	}
+        
+        public function suggestMatricula($keyword, $limit=20)
+	{
+		$criteria=array(
+			'select'=>'DISTINCT(MATRICULA) AS MATRICULA',
+			'condition'=>'MATRICULA LIKE :keyword',
+			'order'=>'MATRICULA',
+			'limit'=>$limit,
+			'params'=>array(
+				':keyword'=>"$keyword%"
+			)
+		);
+		$models=$this->findAll($criteria);
+		$suggest=array();
+		foreach($models as $model) {
+				$suggest[] = array(
+					'value'=>$model->MATRICULA,
+					'label'=>$model->MATRICULA,
+				);
+		}
+		return $suggest;
+	}
+        
 }

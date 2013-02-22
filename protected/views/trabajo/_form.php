@@ -104,6 +104,12 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
     <p class="note">Campos con<span class="required">*</span> son requeridos.</p>
     <?php echo $form->errorSummary($model); ?>
     <?php echo $form->errorSummary($modelT); ?>
+    
+    <div class="row">
+        <?php $model->USUARIO_BP = Yii::app()->user->getId(); ?>
+        <?php echo $form->hiddenField($model,'USUARIO_BP'); ?>
+    </div>
+    <div class="span-17">
     <table>
         <tr>
             <td>
@@ -142,7 +148,7 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
             </td>
             <td>
                 <?php
-                echo $form->dropDownList($modelT, 'TIPO_TURNO_ID_TIPO_TURNO', CHtml::listData(TipoTurno::model()->findAll(), 'ID_TIPO_TURNO', 'TIPO'), array('empty' => ' '));
+                echo $form->dropDownList($modelT, 'TIPO_TURNO_ID_TIPO_TURNO', CHtml::listData(TipoTurno::model()->findAll(), 'ID_TIPO_TURNO', 'TIPO'), array('empty' => 'Seleccione'));
                 echo $form->error($modelT, 'TIPO_TURNO_ID_TIPO_TURNO');
                 ?>
             </td>
@@ -178,7 +184,7 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
             </td>
             <td>
                 <?php
-                echo $form->dropDownList($model, 'AVION_MATRICULA', CHtml::listData(Avion::model()->findAll(), 'MATRICULA', 'MATRICULA'), array('empty' => ' ',
+                echo $form->dropDownList($model, 'AVION_MATRICULA', CHtml::listData(Avion::model()->findAll(), 'MATRICULA', 'MATRICULA'), array('empty' => 'Seleccione',
                     'ajax' => array(
                         'type' => 'POST',
                         'url' => CController::createUrl('Flota/GetFlotaByMat'),
@@ -197,15 +203,52 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
             <td>
                 <?php echo CHtml::textField('flotaId', '', array('style' => 'width:43px', 'readonly' => 'readonly')); ?>
             </td> 
-        </tr> 
-        <tr><td colspan="6"><hr></td></tr>
-        <tr>
+        </tr>
+    </table>
+    
+<!--        <tr><td colspan="6"><hr></td></tr>-->
+    <?php
+    $this->widget('ext.jqrelcopy.JQRelcopy',array(
+ 
+        //the id of the 'Copy' link in the view, see below.
+        'id' => 'copylink',
+
+         //add a icon image tag instead of the text
+         //leave empty to disable removing
+        'removeText'=> '<img src="'.$baseUrl.'/images/minusButton.png"><a>Borrar</a>',
+        //htmlOptions of the remove link
+        'removeHtmlOptions' => array('style'=>'color:red;'),
+
+        //options of the plugin, see http://www.andresvidal.com/labs/relcopy.html
+        'options' => array(
+
+              //A class to attach to each copy
+             'copyClass'=>'newcopy',
+             'slideUp'=>true,
+
+             // The number of allowed copies. Default: 0 is unlimited
+             'limit'=>5,
+
+             //Option to clear each copies text input fields or textarea
+             'clearInputs'=>true,
+
+             //A jQuery selector used to exclude an element and its children
+             'excludeSelector'=>'.skipcopy',
+
+             //Additional HTML to attach at the end of each copy.
+             //'append'=>CHtml::tag('span',array('class'=>'hint'),'You can remove this line'),
+          )
+       ));?>
+    
+    <table class="row copy"> 
+     <tr><td colspan="6">   <hr></td></tr>
+    <tr>
             <td>
                 <?php echo $form->labelEx($model, 'ASEO_ID_ASEO'); ?>
             </td>
             <td>
                 <?php
-                echo $form->dropDownList($model, 'ASEO_ID_ASEO', CHtml::listData(Aseo::model()->findAll(), 'ID_ASEO', 'TIPO_ASEO'), array('empty' => ' ',
+                echo $form->dropDownList($model, 'ASEO_ID_ASEO', CHtml::listData(Aseo::model()->findAll(), 'ID_ASEO', 'TIPO_ASEO'), array('empty' => 'Seleccione',
                     'ajax' => array(
                         'type' => 'POST',
                         'url' => CController::createUrl('Aseo/GetTipoByPond'),
@@ -239,7 +282,7 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
                 <?php echo $form->labelEx($model, 'LUGAR_ID_LUGAR'); ?>
             </td>
             <td>
-                <?php echo $form->dropDownList($model, 'LUGAR_ID_LUGAR', CHtml::listData(Lugar::model()->findAll(), 'ID_LUGAR', 'LUGAR'), array('empty' => ' ')); ?>
+                <?php echo $form->dropDownList($model, 'LUGAR_ID_LUGAR', CHtml::listData(Lugar::model()->findAll(), 'ID_LUGAR', 'LUGAR'), array('empty' => 'Seleccione')); ?>
                 <?php echo $form->error($model, 'LUGAR_ID_LUGAR'); ?>
             </td>
         </tr>
@@ -249,7 +292,7 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
                 <?php echo $form->labelEx($model, 'ESTADO_ID_ESTADO'); ?>
             </td>
             <td>
-                <?php echo $form->dropDownList($model, 'ESTADO_ID_ESTADO', CHtml::listData(Estado::model()->findAll(), 'ID_ESTADO', 'NOMBRE_ESTADO'), array('empty' => ' ')); ?>
+                <?php echo $form->dropDownList($model, 'ESTADO_ID_ESTADO', CHtml::listData(Estado::model()->findAll(), 'ID_ESTADO', 'NOMBRE_ESTADO'), array('empty' => 'Seleccione')); ?>
                 <?php echo $form->error($model, 'ESTADO_ID_ESTADO'); ?>
             </td>
             
@@ -321,10 +364,17 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
              <td>
                 <?php echo $form->labelEx($model, 'CALIFICACION',array('id'=>'CALIFICACION_LABEL')); ?>
             </td>
-            <td>
+            <td >
                 <?php echo $form->textField($model, 'CALIFICACION', array('style' => 'width:30px', 'maxlength' => 3, 'readonly' => 'true')); ?>
                 
-                <?php echo CHtml::ajaxLink('<a href="http://www.pageresource.com"><img src="'.Yii::app()->theme->baseUrl.'/images/wdocument.png" /></a>',
+                <?php 
+                $baseUrl = Yii::app()->theme->baseUrl;; 
+                $imageId = "img"; 
+                $normalImageSrc = "{$baseUrl}/images/write.png";
+                
+                $img = "<img style=\"vertical-align:-10px;\" id=\"{$imageId}\" class=\"showDialogEvaluacion\" src=\"{$normalImageSrc}\"/ >";
+                
+                echo CHtml::ajaxLink($img,
                         $this->createUrl('nota/addnewevaluacion'),
                         array(
                 'type'=>'POST',
@@ -333,7 +383,7 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
                                 'id_trabajo'=>$model->ID_TRABAJO),
                 'onclick'=>'$("#dialogEvaluacion").dialog("option", "position", "top").dialog("open"); return false;',
                 'update'=>'#dialogEvaluacion'
-                ),array('id'=>'showDialogEvaluacion','type'=>"hidden"));?>
+                ),array('id'=>'showDialogEvaluacion','type'=>'hidden'));?>
                 <div id="dialogEvaluacion"></div>
                 
             </td>
@@ -355,22 +405,22 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
             <?php echo $form->textArea($model, 'COMENTARIO', array('maxlength' => 255, 'rows' => 3, 'cols' => 50)); ?>
             <?php echo $form->error($model, 'COMENTARIO'); ?>
         </td>
+        
         </tr>
+        
+        
     </table>
+        <hr>
+    <a id="copylink" href="#" rel=".copy" ><img style="vertical-align:-10px;" src="<?php echo $baseUrl?>/images/addButton.png">Añadir</a>
     
-    <hr>
-
-
-    <div class="row">
-        <?php $model->USUARIO_BP = Yii::app()->user->getId(); ?>
-        <?php echo $form->hiddenField($model,'USUARIO_BP'); ?>
     </div>
-
-
-    <div class="row buttons">
-        <?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Modificar'); ?>
+    <br>
+    
+    <div class="row buttons" style="vertical-align:-10px;">
+        
+        <?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>
     </div>
-
+    
 
 
 <?php $this->endWidget(); ?>

@@ -108,4 +108,28 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+        
+        public function actionBajar()
+	{
+		$model=new Trabajo('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Trabajo']))
+			$model->attributes=$_GET['Trabajo'];
+
+		$this->render('bajardatos',array(
+			'model'=>$model,
+		));
+	}
+        
+        public function actionCriticos(){
+            
+                $model=new Avion('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Avion']))
+			$model->attributes=$_GET['Avion'];
+
+		$this->render('criticos',array(
+			'model'=>$model,
+            ));
+        }
 }

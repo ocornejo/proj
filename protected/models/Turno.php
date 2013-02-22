@@ -40,7 +40,7 @@ class Turno extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('TIPO_TURNO_ID_TIPO_TURNO', 'required'),
+			array('TIPO_TURNO_ID_TIPO_TURNO,FECHA', 'required'),
 			array('TIPO_TURNO_ID_TIPO_TURNO', 'numerical', 'integerOnly'=>true),
 			array('FECHA', 'safe'),
 			// The following rule is used by search().

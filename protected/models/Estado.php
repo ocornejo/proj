@@ -86,4 +86,12 @@ class Estado extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        
+        /**
+	 * @return array for dropdown (attr1 => attr2)
+	 */
+	public function getOptions()
+	{
+		return CHtml::listData($this->findAll(),'ID_ESTADO','NOMBRE_ESTADO');
+	}
 }

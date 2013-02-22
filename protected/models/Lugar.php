@@ -93,4 +93,11 @@ class Lugar extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        /**
+	 * @return array for dropdown (attr1 => attr2)
+	 */
+	public function getOptions()
+	{
+		return CHtml::listData($this->findAll(),'ID_LUGAR','LUGAR');
+	}
 }

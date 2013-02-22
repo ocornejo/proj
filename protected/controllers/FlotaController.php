@@ -180,15 +180,6 @@ class FlotaController extends Controller
                 $flotaid=$value;
                 
             $data = Flota::model()->findAll('id_flota=:id_flota',array(':id_flota'=> $flotaid));
-            //$data = CHtml::listData($data,'ID_FLOTA','NOMBRE_FLOTA');
-//            $dropDownFlota = ""; 
-//            foreach($data as $value=>$name)
-//                $dropDownFlota .= CHtml::tag('option', array('value'=>$value),CHtml::encode($name),true);
-// 
-            // return data (JSON formatted)
-//            echo CJSON::encode(array(
-//              'dropDownFlota'=>$dropDownFlota,
-//            ));
             echo CJSON::encode($data);
 
         }

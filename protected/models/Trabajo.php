@@ -96,7 +96,8 @@ class Trabajo extends CActiveRecord
 		return array(
 			'notas' => array(self::HAS_MANY, 'Nota', 'TRABAJO_ID_TRABAJO'),
 			'aSEOIDASEO' => array(self::BELONGS_TO, 'Aseo', 'ASEO_ID_ASEO'),
-			'aVIONMATRICULA' => array(self::BELONGS_TO, 'Avion', 'AVION_MATRICULA'),
+			'AVION' => array(self::BELONGS_TO, 'Avion', 'AVION_MATRICULA'),
+                        'amat' => array(self::HAS_ONE,'Avion','MATRICULA'),
 			'eSTADOIDESTADO' => array(self::BELONGS_TO, 'Estado', 'ESTADO_ID_ESTADO'),
 			'lUGARIDLUGAR' => array(self::BELONGS_TO, 'Lugar', 'LUGAR_ID_LUGAR'),
 			'tURNOIDTURNO' => array(self::BELONGS_TO, 'Turno', 'TURNO_ID_TURNO'),
@@ -110,10 +111,10 @@ class Trabajo extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'ID_TRABAJO' => 'Id Trabajo',
+			'ID_TRABAJO' => 'ID',
 			'OT' => 'OT',
 			'AVION_MATRICULA' => 'Matrícula',
-			'USUARIO_BP' => 'BP usuario',
+			'USUARIO_BP' => 'BP',
 			'PLANIFICADO' => 'Planificado',
 			'HORA_INICIO' => 'Hora inicio',
 			'HORA_TERMINO' => 'Hora término',
@@ -155,11 +156,15 @@ class Trabajo extends CActiveRecord
 		$criteria->compare('ASEO_ID_ASEO',$this->ASEO_ID_ASEO);
 		$criteria->compare('TURNO_ID_TURNO',$this->TURNO_ID_TURNO);
                 $criteria->compare('ARCHIVO', $this->ARCHIVO);
+                
+                //$criteria->with = array('avion');
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
+        
+        
         
 
 

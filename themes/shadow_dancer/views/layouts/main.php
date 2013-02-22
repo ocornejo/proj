@@ -66,8 +66,8 @@
 				array('label'=>'Inicio', 'url'=>array('/site/index')),
 				array('label'=>'Ingreso datos', 'url'=>array('/trabajo/create')),
                                 //array('label'=>'Ingreso datos', 'url'=>array('/site/page', 'view'=>'ingresodatos')),
-                                array('label'=>'Bajar datos', 'url'=>array('/site/page', 'view'=>'bajardatos')),
-                                array('label'=>'Críticos', 'url'=>array('/site/page', 'view'=>'criticos')),
+                                array('label'=>'Bajar datos', 'url'=>array('/site/bajar')),
+                                array('label'=>'Críticos', 'url'=>array('/site/criticos')),
                                 array('label'=>'Indicadores', 'url'=>array('/site/page', 'view'=>'indicadores'),'itemOptions'=>array('class'=>'icon_chart')),
 				array('label'=>'Opciones', 'url'=>array('/site/page', 'view'=>'opciones'))
 				//array('label'=>'Buttons & Icons', 'url'=>array('/site/page', 'view'=>'buttons_and_icons')),
@@ -84,8 +84,8 @@
 	<?php echo $content; ?>
 
 	<div id="footer">
-		Sistema de Aseo-Cabina <?php echo date('Y'); ?> by ocornejo<br/>
-		<?php echo Yii::powered(); ?>
+		Sistema de Aseo-Cabina <?php echo date('Y'); ?><br/>
+		<?php echo "Gerencia de Mejora Continua LAN" ?>
 	</div><!-- footer -->
 
 </div><!-- page -->

@@ -90,5 +90,16 @@ class Aseo extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        /**
+	 * @return array for dropdown (attr1 => attr2)
+	 */
+	public function getOptions()
+	{
+		return CHtml::listData($this->findAll(),'ID_ASEO','TIPO_ASEO');
+	}
+        
+        public function getSize(){
+            return count($this->findAll());
+        }
 
 }   

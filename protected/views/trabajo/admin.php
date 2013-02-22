@@ -51,7 +51,6 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'USUARIO_BP',
 		'PLANIFICADO',
 		'HORA_INICIO',
-		/*
 		'HORA_TERMINO',
 		'COMENTARIO',
 		'FECHA',
@@ -60,7 +59,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'LUGAR_ID_LUGAR',
 		'ASEO_ID_ASEO',
 		'TURNO_ID_TURNO',
-		*/
+		
 		array(
 			'class'=>'CButtonColumn',
 		),
