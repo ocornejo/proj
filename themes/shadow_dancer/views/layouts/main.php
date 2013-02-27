@@ -27,9 +27,19 @@
 <body>
 
 <div class="container" id="page">
-	<div id="topnav">
-		<div class="topnav_text"><a href='#'>Inicio</a> | <a href='#'>Mi cuenta</a> | <a href='#'>Cerrar sesión</a> </div>
+	 <?php if(Yii::app()->user->getId() ==NULL):?>
+        <div id="topnav">
+           
+            <div class="topnav_text"><a href='<?php echo Yii::app()->controller->createUrl('site/index'); ?>'>Inicio</a> | <a href='<?php echo Yii::app()->controller->createUrl('site/logout'); ?>'>Cerrar sesión</a> </div>
 	</div>
+        <?php endif;?>
+        <?php if(Yii::app()->user->getId() !=NULL):?>
+        <div id="topnav">
+           
+            <div class="topnav_text"><a href='<?php echo Yii::app()->controller->createUrl('site/index'); ?>'>Inicio</a> | <a href='#'>Mi cuenta: <?php echo Usuario::model()->FindByPk(Yii::app()->user->getId())->NOMBRE?></a> | <a href='<?php echo Yii::app()->controller->createUrl('site/logout'); ?>'>Cerrar sesión</a> </div>
+	</div>
+        <?php endif;?>
+        
 	<div id="header">
 		<div id="logo"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/logo.png"></img><?php //echo CHtml::encode(Yii::app()->name); ?></div>
 	</div><!-- header -->
@@ -50,7 +60,7 @@
                 array('label'=>'Gii Generated Module',
                   'items'=>array(
                     array('label'=>'Items', 'url'=>array('/theme/index')),
-                    array('label'=>'Create Item', 'url'=>array('/theme/create')),
+                    array('label'=>'Create Item', 'url'=>array('/theme/create')),   
 					array('label'=>'Manage Items', 'url'=>array('/theme/admin')),
                   ),
                 ),
@@ -61,18 +71,20 @@
     )); */?> --->
 	<div id="mainmenu">
     
-		<?php $this->widget('zii.widgets.CMenu',array(
+		<?php  //CHtml::image(Yii::app()->theme->baseUrl."/images/big_icons/icon-house.png","","",array("width"=>10,"heigth"=>10)).
+                    $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
-				array('label'=>'Inicio', 'url'=>array('/site/index')),
-				array('label'=>'Ingreso datos', 'url'=>array('/trabajo/create')),
+				array('label'=>CHtml::image(Yii::app()->theme->baseUrl."/images/big_icons/icon-house.png","",array("width"=>20,"heigth"=>20,'style' => 'vertical-align:10px;')). CHtml::label("  Inicio", "",array('style' => 'vertical-align:15px;')), 'url'=>array('/site/index')),
+				array('label'=>CHtml::image(Yii::app()->theme->baseUrl."/images/big_icons/icon-write.png","",array("width"=>20,"heigth"=>20,'style' => 'vertical-align:10px;')). CHtml::label("  Ingreso datos", "",array('style' => 'vertical-align:15px;')), 'url'=>array('/trabajo/create')),
                                 //array('label'=>'Ingreso datos', 'url'=>array('/site/page', 'view'=>'ingresodatos')),
-                                array('label'=>'Bajar datos', 'url'=>array('/site/bajar')),
-                                array('label'=>'Críticos', 'url'=>array('/site/criticos')),
-                                array('label'=>'Indicadores', 'url'=>array('/site/page', 'view'=>'indicadores'),'itemOptions'=>array('class'=>'icon_chart')),
-				array('label'=>'Opciones', 'url'=>array('/site/page', 'view'=>'opciones'))
+                                array('label'=>CHtml::image(Yii::app()->theme->baseUrl."/images/big_icons/icon-down.png","",array("width"=>20,"heigth"=>20,'style' => 'vertical-align:10px;')). CHtml::label("  Bajar datos", "",array('style' => 'vertical-align:15px;')), 'url'=>array('/site/bajar')),
+                                array('label'=>CHtml::image(Yii::app()->theme->baseUrl."/images/big_icons/icon-warning.png","",array("width"=>20,"heigth"=>20,'style' => 'vertical-align:10px;')). CHtml::label("  Críticos", "",array('style' => 'vertical-align:15px;')), 'url'=>array('/site/criticos')),
+                                array('label'=>CHtml::image(Yii::app()->theme->baseUrl."/images/big_icons/icon-chart2.png","",array("width"=>20,"heigth"=>20,'style' => 'vertical-align:10px;')). CHtml::label("  Indicadores", "",array('style' => 'vertical-align:15px;')), 'url'=>array('/site/page', 'view'=>'indicadores'),'itemOptions'=>array('class'=>'icon_chart')),
+				array('label'=>CHtml::image(Yii::app()->theme->baseUrl."/images/big_icons/icon-gears.png","",array("width"=>20,"heigth"=>20,'style' => 'vertical-align:10px;')). CHtml::label("  Opciones", "",array('style' => 'vertical-align:15px;')), 'url'=>array('/site/page', 'view'=>'opciones'))
 				//array('label'=>'Buttons & Icons', 'url'=>array('/site/page', 'view'=>'buttons_and_icons')),
 				//array('label'=>'Error Pages', 'url'=>array('/site/page', 'view'=>'Demo 404 page')),
 			),
+                    'encodeLabel'=>false,
 		)); ?>
 	</div> <!--mainmenu -->
 	<?php if(isset($this->breadcrumbs)):?>

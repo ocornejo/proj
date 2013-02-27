@@ -20,6 +20,14 @@ class SiteController extends Controller
 			),
 		);
 	}
+        
+        public function behaviors(){
+               return array(
+                   'toExcel'=>array(
+                       'class'=>'ext.eexcelview.EExcelBehavior',
+                   ),
+               );
+           }
 
 	/**
 	 * This is the default 'index' action that is invoked
@@ -111,7 +119,9 @@ class SiteController extends Controller
         
         public function actionBajar()
 	{
-		$model=new Trabajo('search');
+		Trabajo::model()->deleteAll("avion_matricula is NULL OR (ot IS NOT NULL AND avion_matricula IS NULL)");
+
+                $model=new Trabajo('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Trabajo']))
 			$model->attributes=$_GET['Trabajo'];
@@ -121,7 +131,25 @@ class SiteController extends Controller
 		));
 	}
         
+        public function actionDownloadExcel(){
+
+           $model=new Trabajo('search');
+
+            $this->toExcel('Trabajo',
+            array(
+                'OT','AVION_MATRICULA'               
+            ),
+            'Aseos', // file name
+            array(
+                'creator' => 'Gerencia Mejora Continua', // file info
+                ),
+            'Excel5' // file type
+            );
+         }
+        
         public function actionCriticos(){
+            
+         Trabajo::model()->deleteAll("avion_matricula is NULL OR (ot IS NOT NULL AND avion_matricula IS NULL)");
             
                 $model=new Avion('search');
 		$model->unsetAttributes();  // clear any default values

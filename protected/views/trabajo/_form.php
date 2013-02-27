@@ -19,8 +19,12 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
         
         $(document).ready(function(){
             $("#showDialogEvaluacion").hide();
+            window.varTempo=0;
         });
-        
+        function muestra(html){
+         $('#dialogEvaluacion').html(html).dialog('open');
+         return false;   
+        }
         Object.size = function(obj) {
             var size = 0, key;
             for (key in obj) {
@@ -41,6 +45,8 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
             for(var key in window.temp){
                 tamano=parseInt(key);
             }
+            
+             
             
         }
         function updateTag(var1){
@@ -93,17 +99,24 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
     <?php
     $form = $this->beginWidget('CActiveForm', array(
         'id' => 'trabajo-form',
-        'action' => Yii::app()->createUrl('trabajo/guardar',array('id'=>$model->ID_TRABAJO)),
-        'enableAjaxValidation' => false,
+        //'action' => Yii::app()->createUrl('trabajo/guardar',array('id'=>$model->ID_TRABAJO)),
+        'enableAjaxValidation' =>true,
         'htmlOptions' => array(
             'enctype' => 'multipart/form-data'
         )
     ));
+    $this->widget('application.extensions.ajaxvalidationmessages.EAjaxValidationMessages',
+                    array(
+                       'errorCssClass'=>'clsError',
+                       'errorMessageCssClass'=>'clsErrorMessage',
+                       'errorSummaryCssClass'=>'clsErrorSummary'));
+    
+
     ?>
 
     <p class="note">Campos con<span class="required">*</span> son requeridos.</p>
-    <?php echo $form->errorSummary($model); ?>
-    <?php echo $form->errorSummary($modelT); ?>
+    <?php echo $form->errorSummary(array($model,$modelT)); ?>
+    <?php //echo $form->errorSummary($modelT); ?>
     
     <div class="row">
         <?php $model->USUARIO_BP = Yii::app()->user->getId(); ?>
@@ -135,7 +148,6 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
                         'showAnim' => 'fold',
                     ),
                     'htmlOptions' => array(
-                        'class' => 'shadowdatepicker',
                         'style' => 'width:74px',
                         'readonly' => 'readonly',
                     ),
@@ -155,29 +167,7 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
 
         </tr>
         <tr>
-            <td>
-                <?php echo $form->labelEx($model, 'FECHA'); ?>
-            </td>
-            <td>
-                <?php
-                $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-                    'model' => $model,
-                    'attribute' => 'FECHA',
-                    'language' => 'es',
-                    // additional javascript options for the date picker plugin
-                    'options' => array(
-                        'dateFormat' => 'yy-mm-dd',
-                        'showAnim' => 'fold',
-                    ),
-                    'htmlOptions' => array(
-                        'class' => 'shadowdatepicker',
-                        'style' => 'width:74px',
-                        'readonly' => 'readonly',
-                    ),
-                ));
-                ?>
-                <?php echo $form->error($model, 'FECHA'); ?>
-            </td>
+            
 
             <td>
                 <?php echo $form->labelEx($model, 'AVION_MATRICULA'); ?>
@@ -248,7 +238,7 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
             </td>
             <td>
                 <?php
-                echo $form->dropDownList($model, 'ASEO_ID_ASEO', CHtml::listData(Aseo::model()->findAll(), 'ID_ASEO', 'TIPO_ASEO'), array('empty' => 'Seleccione',
+                echo $form->dropDownList($model, 'ASEO_ID_ASEO', CHtml::listData(Aseo::model()->findAll(), 'ID_ASEO', 'TIPO_ASEO'), array('empty' => 'Seleccione',//'disabled'=>'disabled',
                     'ajax' => array(
                         'type' => 'POST',
                         'url' => CController::createUrl('Aseo/GetTipoByPond'),
@@ -259,6 +249,7 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
                                                             $("#showDialogEvaluacion").show();
                                                             $("#'.CHtml::activeId($model, 'CALIFICACION').'").show();
                                                             $("#CALIFICACION_LABEL").show();
+                                                            
                                                         }
                                                         else{
                                                             $("#showDialogEvaluacion").hide();
@@ -282,7 +273,7 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
                 <?php echo $form->labelEx($model, 'LUGAR_ID_LUGAR'); ?>
             </td>
             <td>
-                <?php echo $form->dropDownList($model, 'LUGAR_ID_LUGAR', CHtml::listData(Lugar::model()->findAll(), 'ID_LUGAR', 'LUGAR'), array('empty' => 'Seleccione')); ?>
+                <?php echo $form->dropDownList($model, 'LUGAR_ID_LUGAR', CHtml::listData(Lugar::model()->findAll('filial_id_filial=:filial',array(':filial'=>  Usuario::model()->findByPk(Yii::app()->user->getId())->FILIAL_ID_FILIAL)), 'ID_LUGAR', 'LUGAR'), array('empty' => 'Seleccione')); ?>
                 <?php echo $form->error($model, 'LUGAR_ID_LUGAR'); ?>
             </td>
         </tr>
@@ -355,6 +346,28 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
 
         </tr>
         <tr>
+            <td>
+                <?php echo $form->labelEx($model, 'FECHA'); ?>
+            </td>
+            <td>
+                <?php
+                $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+                    'model' => $model,
+                    'attribute' => 'FECHA',
+                    'language' => 'es',
+                    // additional javascript options for the date picker plugin
+                    'options' => array(
+                        'dateFormat' => 'yy-mm-dd',
+                        'showAnim' => 'fold',
+                    ),
+                    'htmlOptions' => array(
+                        'style' => 'width:74px',
+                        'readonly' => 'readonly',
+                    ),
+                ));
+                ?>
+                <?php echo $form->error($model, 'FECHA'); ?>
+            </td>
              <td>
                 <?php echo $form->labelEx($model, 'OT'); ?>
             </td>
@@ -364,32 +377,58 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
              <td>
                 <?php echo $form->labelEx($model, 'CALIFICACION',array('id'=>'CALIFICACION_LABEL')); ?>
             </td>
+            
             <td >
                 <?php echo $form->textField($model, 'CALIFICACION', array('style' => 'width:30px', 'maxlength' => 3, 'readonly' => 'true')); ?>
                 
                 <?php 
-                $baseUrl = Yii::app()->theme->baseUrl;; 
+                $baseUrl = Yii::app()->theme->baseUrl; 
                 $imageId = "img"; 
                 $normalImageSrc = "{$baseUrl}/images/write.png";
                 
                 $img = "<img style=\"vertical-align:-10px;\" id=\"{$imageId}\" class=\"showDialogEvaluacion\" src=\"{$normalImageSrc}\"/ >";
                 
                 echo CHtml::ajaxLink($img,
-                        $this->createUrl('nota/addnewevaluacion'),
+                        $this->createUrl('trabajo/create'),
                         array(
                 'type'=>'POST',
-                'data'=>array('id_aseo'=> 'js:$("#' . CHtml::activeId($model, 'ASEO_ID_ASEO') . '").val()',
-                               'id_flota' => 'js:$("#flotaId").val()',
-                                'id_trabajo'=>$model->ID_TRABAJO),
-                'onclick'=>'$("#dialogEvaluacion").dialog("option", "position", "top").dialog("open"); return false;',
+                'data'=>'js:$("#trabajo-form").serialize()',
+                'success'=>"function(html) {
+                        $('#AjaxLoader').hide(); 
+                        if (html.indexOf('{')==0) {
+                           jQuery('#trabajo-form').ajaxvalidationmessages('show', html);            
+                        }
+                        else {
+                           
+                           jQuery('#trabajo-form').ajaxvalidationmessages('hide');
+
+                                $('#dialogEvaluacion').html(html).dialog('open');
+                                return false;
+
+                        
+                        muestra(html);
+                        }
+                     }",
+                     'error'=>"function(html) {
+                        jQuery('#trabajo-form').ajaxvalidationmessages('hide');
+                     }",
+                'afterValidate'=>'js:function(html){
+                    $("#AjaxLoader").show();
+
+                 }',
+                
                 'update'=>'#dialogEvaluacion'
                 ),array('id'=>'showDialogEvaluacion','type'=>'hidden'));?>
+                
                 <div id="dialogEvaluacion"></div>
                 
+                
             </td>
+            
 
 
         </tr>
+        <div id="AjaxLoader" style="display: none">Cargando evaluación<img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/spinner.gif"></div>
         <tr>
 
         <td colspan=6>
@@ -417,11 +456,8 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
     <br>
     
     <div class="row buttons" style="vertical-align:-10px;">
-        
-        <?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar'); ?>
+        <?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar' : 'Guardar2'); ?>
     </div>
-    
-
 
 <?php $this->endWidget(); ?>
 

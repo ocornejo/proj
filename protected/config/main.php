@@ -22,6 +22,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+                'application.controllers.*',
                 'ext.EDataTables.*',
 	),
        
@@ -37,8 +38,14 @@ return array(
 		
 	),
 
+        'language'=>'es',
+
+   
 	// application components
 	'components'=>array(
+                'coreMessages'=>array(
+                    'basePath'=>null,
+                ),
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,

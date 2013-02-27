@@ -59,13 +59,18 @@ class Trabajo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA, ASEO_ID_ASEO, TURNO_ID_TURNO,LUGAR_ID_LUGAR', 'required','on'=>'guardar'),
-			//array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA, ASEO_ID_ASEO, TURNO_ID_TURNO,LUGAR_ID_LUGAR','allowEmpty'=>true, 'on'=>'formSubmit'),
+                        array('ASEO_ID_ASEO,ESTADO_ID_ESTADO', 'required','on'=>'inicio'),
+			array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA, ASEO_ID_ASEO,LUGAR_ID_LUGAR,PLANIFICADO,OT', 'required','on'=>'ok'),
+			array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA, ASEO_ID_ASEO,PLANIFICADO', 'required','on'=>'laneco'),
+                        array('USUARIO_BP, ESTADO_ID_ESTADO,OT', 'required','on'=>'nula'),
+                        array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA, ASEO_ID_ASEO,PLANIFICADO,LUGAR_ID_LUGAR', 'required','on'=>'bano'),
+                        array('AVION_MATRICULA,USUARIO_BP,ESTADO_ID_ESTADO','required','on'=>'pendiente'),
+                        //array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA, ASEO_ID_ASEO, TURNO_ID_TURNO,LUGAR_ID_LUGAR','allowEmpty'=>true, 'on'=>'formSubmit'),
                         array('OT, USUARIO_BP, PLANIFICADO, CALIFICACION, ESTADO_ID_ESTADO, LUGAR_ID_LUGAR, ASEO_ID_ASEO, TURNO_ID_TURNO', 'numerical', 'integerOnly'=>true),
 			array('FECHA','date', 'format'=>'yyyy-MM-dd'),
                         array('HORA_INICIO', 'date', 'format'=>'HH:mm'),
                         array('HORA_TERMINO','date', 'format'=>'HH:mm'),
-                        array('imagen', 'file', 'types'=>'jpg, gif, png','allowEmpty'=>true,'on'=>'update'),
+                        array('imagen', 'file', 'types'=>'jpg, gif, png','allowEmpty'=>true,'on'=>'update,create,ok,laneco,bano,pendiente'),
                         array('AVION_MATRICULA', 'length', 'max'=>7),
 			array('COMENTARIO', 'length', 'max'=>255),
                         
@@ -155,7 +160,7 @@ class Trabajo extends CActiveRecord
 		$criteria->compare('LUGAR_ID_LUGAR',$this->LUGAR_ID_LUGAR);
 		$criteria->compare('ASEO_ID_ASEO',$this->ASEO_ID_ASEO);
 		$criteria->compare('TURNO_ID_TURNO',$this->TURNO_ID_TURNO);
-                $criteria->compare('ARCHIVO', $this->ARCHIVO);
+        //        $criteria->compare('ARCHIVO', $this->ARCHIVO);
                 
                 //$criteria->with = array('avion');
 

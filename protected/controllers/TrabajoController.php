@@ -57,75 +57,167 @@ class TrabajoController extends Controller
 	}
 
 	
-        public function actionCreate(){
-            $model = new Trabajo('formSubmit');
-            $modelT = new Turno;           
-            $model->save(false);
-            $this->render('create',array(
-			'model'=>$model,'modelT'=>$modelT,
-            ));
- 
-            
-        }
+//        public function actionCreate(){
+//            $model = new Trabajo('inicio');
+//            $modelT = new Turno;           
+//            $model->save(false);
+//            $this->render('create',array(
+//			'model'=>$model,'modelT'=>$modelT,
+//            ));
+// 
+//            
+//        }
 
         /**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionGuardar()
+	public function actionCreate()
 	{
-		//$model= new Trabajo;
+		$model= new Trabajo('inicio');
                 $modelT= new Turno;
                 
 		// Uncomment the following line if AJAX validation is needed
-		//$this->performAjaxValidation($model);
+		$this->performAjaxValidation(array($model,$modelT));
+                
                 if(isset($_POST['Trabajo'],$_POST['Turno']))
 		{
-                        $model=$this->loadModel(Yii::app()->getRequest()->getQuery('id')); 
+                        
+                        //$model=$this->loadModel(Yii::app()->getRequest()->getQuery('id')); 
                         $model->attributes=$_POST['Trabajo'];
                         $modelT->attributes=$_POST['Turno'];
-    
                         
-                        $valid=$modelT->validate();
-                        
-                        if($valid){
-                            if($modelT->save(false)){
-                                $model->TURNO_ID_TURNO=$modelT->ID_TURNO;
-                                if(CUploadedFile::getInstance($model,'imagen')!=null){
-                                    
-                                        $images_path = realpath(Yii::app()->basePath . '/../images');
-                                        $path=$images_path . '/' .$model->AVION_MATRICULA."-".$model->FECHA."-".$model->ASEO_ID_ASEO.".JPG";
-                                        
-                                        $model->imagen=CUploadedFile::getInstance($model,'imagen');
-                                        if($model->imagen!==null){
-                                            $model->ARCHIVO=$path;
-                                            $model->imagen->saveAs($path);
-                                            if($model->save()){
-                                    
-                                                $this->redirect(array('view','id'=>$model->ID_TRABAJO));
-
-                                            }
-                                        }
-                                }
-                                else{
-                                    if($model->save()){
-
-                                        $this->redirect(array('view','id'=>$model->ID_TRABAJO));
-
-                                    }
-                                }
-                                
+                      
+                        if($model->ASEO_ID_ASEO===8)
+                            $model->scenario='bano';
+                        else{
+                            switch ($model->ESTADO_ID_ESTADO) {
+                                case 1:
+                                    $model->scenario='ok';
+                                    break;
+                                case 2:
+                                    $model->scenario='pendiente';
+                                    break;
+                                case 3:
+                                case 4:
+                                case 5:
+                                    $model->scenario='laneco';
+                                    break;
+                                case 9:
+                                    $model->scenario='nula';
+                                    break;
                             }
                         }
-		}
                 
-		$this->render('create',array(
-			'model'=>$model,
-                        'modelT'=>$modelT,
-		));
+                
+                if($model->validate() && $modelT->validate()){
+                    
+                        $var=Turno::model()->findAll(array('order'=>'ID_TURNO DESC', 'limit'=>'1'));
+                        if(count($var)>0)
+                            $idTurno = (int) $var[0]['ID_TURNO']+1; 
+                        else {
+                            $idTurno=1;
+                        }
+                        
+                        $modelT->ID_TURNO=$idTurno;
+                        $model->TURNO_ID_TURNO=$idTurno;
+                        
+                    if(CUploadedFile::getInstance($model,'imagen')!=null){
+                                    $images_path = realpath(Yii::app()->basePath . '/../images');
+                                    $path=$images_path . '/' .$model->AVION_MATRICULA."-".$model->FECHA."-".$model->ASEO_ID_ASEO.".JPG";
+                                    $model->imagen=CUploadedFile::getInstance($model,'imagen');
+                                    $model->ARCHIVO=$path;
+                                    $model->imagen->saveAs($path);
+                                    
+                                    $modelT->save(false);
+                                    $model->save(false);
+                                     
+                     if($model->ASEO_ID_ASEO==5 || $model->ASEO_ID_ASEO==7){       
+                        $nota = new Nota;
+                        $id_flota = Flota::model()->findByAttributes(array('NOMBRE_FLOTA' => $_POST['flotaId']))->ID_FLOTA;
+                        $id_aseo = $model->ASEO_ID_ASEO;
+
+                        $sql = Yii::app()->db->createCommand('SELECT evaluacion.id_evaluacion, evaluacion.nombre, ponderacion.ponderacion
+                                                                                FROM evaluacion
+                                                                                INNER JOIN ponderacion ON (ponderacion.evaluacion_id_evaluacion = evaluacion.id_evaluacion
+                                                                                AND ponderacion.aseo_id_aseo=:id_aseo
+                                                                                AND ponderacion.flota_id_flota =:id_flota )')->bindValues(array(':id_aseo' => $id_aseo,
+                                                                                ':id_flota' => $id_flota))->queryAll();
+
+
+                        $sql2 = Yii::app()->db->createCommand('SELECT item_se_evalua.item_id_item,item.evaluacion_id_evaluacion, item.nombre
+                                                                                FROM item_se_evalua
+                                                                                INNER JOIN item ON ( item_se_evalua.item_id_item = item.id_item
+                                                                                AND item_se_evalua.flota_id_flota =:id_flota
+                                                                                AND item_se_evalua.aseo_id_aseo =:id_aseo )')->bindValues(array(':id_aseo' => $id_aseo,
+                                                                                ':id_flota' => $id_flota))->queryAll();
+
+                        $this->renderPartial('createDialog', array('model' => $nota,
+                            'id_aseo' => $id_aseo,
+                            'id_trabajo' => $model->ID_TRABAJO,
+                            'id_flota' => $id_flota,
+                            'sql' => $sql,
+                     'sql2' => $sql2 ), false, true);
+                        
+                     }
+
+                    }
+                    else{
+                                    
+                          $modelT->save(false);
+                          $model->save(false);
+                                    
+                            if($model->ASEO_ID_ASEO==5 || $model->ASEO_ID_ASEO==7){       
+                                                   $nota = new Nota;
+                                                   $id_flota = Flota::model()->findByAttributes(array('NOMBRE_FLOTA' => $_POST['flotaId']))->ID_FLOTA;
+                                                   $id_aseo = $model->ASEO_ID_ASEO;
+
+                                                   $sql = Yii::app()->db->createCommand('SELECT evaluacion.id_evaluacion, evaluacion.nombre, ponderacion.ponderacion
+                                                                                                           FROM evaluacion
+                                                                                                           INNER JOIN ponderacion ON (ponderacion.evaluacion_id_evaluacion = evaluacion.id_evaluacion
+                                                                                                           AND ponderacion.aseo_id_aseo=:id_aseo
+                                                                                                           AND ponderacion.flota_id_flota =:id_flota )')->bindValues(array(':id_aseo' => $id_aseo,
+                                                                                                           ':id_flota' => $id_flota))->queryAll();
+
+
+                                                   $sql2 = Yii::app()->db->createCommand('SELECT item_se_evalua.item_id_item,item.evaluacion_id_evaluacion, item.nombre
+                                                                                                           FROM item_se_evalua
+                                                                                                           INNER JOIN item ON ( item_se_evalua.item_id_item = item.id_item
+                                                                                                           AND item_se_evalua.flota_id_flota =:id_flota
+                                                                                                           AND item_se_evalua.aseo_id_aseo =:id_aseo )')->bindValues(array(':id_aseo' => $id_aseo,
+                                                                                                           ':id_flota' => $id_flota))->queryAll();
+
+                                                   $this->renderPartial('createDialog', array('model' => $nota,
+                                                       'id_aseo' => $id_aseo,
+                                                       'id_trabajo' => $model->ID_TRABAJO,
+                                                       'id_flota' => $id_flota,
+                                                       'sql' => $sql,
+                                                'sql2' => $sql2 ), false, true);
+
+                                                }
+                    }
+                                    
+                            
+                            }
+                 else{
+                                $error = CActiveForm::validate(array($model,$modelT));
+                                if($error!='[]')
+                                    echo $error;
+                                Yii::app()->end();
+                }
+		}
+                if(!Yii::app()->request->isAjaxRequest){
+                    $this->render('create',array(
+                            'model'=>$model,
+                            'modelT'=>$modelT,
+                    ));
+
+                }
                    
     
 	}
+        
+        
 //        
 //
 //	/**
@@ -219,11 +311,11 @@ class TrabajoController extends Controller
 	 * Performs the AJAX validation.
 	 * @param Trabajo $model the model to be validated
 	 */
-	protected function performAjaxValidation($model)
+	protected function performAjaxValidation($models)
 	{
 		if(isset($_POST['ajax']) && $_POST['ajax']==='trabajo-form')
 		{
-			echo CActiveForm::validate($model);
+			echo CActiveForm::validate($models);
 			Yii::app()->end();
 		}
 	}
