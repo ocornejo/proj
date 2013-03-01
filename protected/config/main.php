@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'Sistema Aseo-Cabina',
+	'name'=>'Aseos Cabina - En desarrollo',
         'defaultController'=>'site/login',
         
         'behaviors'=>array(

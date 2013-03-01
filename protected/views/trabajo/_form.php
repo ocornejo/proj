@@ -19,12 +19,9 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
         
         $(document).ready(function(){
             $("#showDialogEvaluacion").hide();
-            window.varTempo=0;
         });
-        function muestra(html){
-         $('#dialogEvaluacion').html(html).dialog('open');
-         return false;   
-        }
+
+
         Object.size = function(obj) {
             var size = 0, key;
             for (key in obj) {
@@ -45,9 +42,7 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
             for(var key in window.temp){
                 tamano=parseInt(key);
             }
-            
-             
-            
+
         }
         function updateTag(var1){
             final=0;
@@ -116,7 +111,6 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
 
     <p class="note">Campos con<span class="required">*</span> son requeridos.</p>
     <?php echo $form->errorSummary(array($model,$modelT)); ?>
-    <?php //echo $form->errorSummary($modelT); ?>
     
     <div class="row">
         <?php $model->USUARIO_BP = Yii::app()->user->getId(); ?>
@@ -393,30 +387,22 @@ $cs->registerCssFile($baseUrl . '/css/jquery.css');
                         array(
                 'type'=>'POST',
                 'data'=>'js:$("#trabajo-form").serialize()',
-                'success'=>"function(html) {
-                        $('#AjaxLoader').hide(); 
+                'success'=>"function(html,textStatus,jqXHR) {
+
                         if (html.indexOf('{')==0) {
                            jQuery('#trabajo-form').ajaxvalidationmessages('show', html);            
                         }
-                        else {
-                           
+                        else {                   
                            jQuery('#trabajo-form').ajaxvalidationmessages('hide');
-
-                                $('#dialogEvaluacion').html(html).dialog('open');
-                                return false;
-
-                        
-                        muestra(html);
-                        }
+                           $('#dialogEvaluacion').html(html).dialog('open');
+                           return false;
+                         }
                      }",
                      'error'=>"function(html) {
+                        
                         jQuery('#trabajo-form').ajaxvalidationmessages('hide');
+                        
                      }",
-                'afterValidate'=>'js:function(html){
-                    $("#AjaxLoader").show();
-
-                 }',
-                
                 'update'=>'#dialogEvaluacion'
                 ),array('id'=>'showDialogEvaluacion','type'=>'hidden'));?>
                 

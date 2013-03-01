@@ -185,14 +185,21 @@ class NotaController extends Controller
                 {
                     $model=new Nota;
                     $model->attributes=$item;
-                    $model->save();
+                     if($model->validate()){
+                        $model->save(false);
+                     }
+                     else
+                     {
+                         $error = CActiveForm::validate($model);
+                                if($error!='[]')
+                                    echo $error;
+                                Yii::app()->end();
+                     }
                 }
 
                
                 //$this->redirect(array('view'));
              }
-            
-            
 
             if ($flag)
             {            

@@ -4,14 +4,8 @@
 $baseUrl = Yii::app()->theme->baseUrl; 
 $cs = Yii::app()->getClientScript();
 $cs->registerCssFile($baseUrl.'/css/jquery.css');
-$form=$this->beginWidget('CActiveForm', array(
-    'id'=>'nota-form',
-    'enableAjaxValidation'=>true,
-)); 
-
-
 ?>
-<div class="form" id="evaluacionDialogForm">
+
     <script type="text/javascript">
 
         $(document).ready(function(){
@@ -20,9 +14,22 @@ $form=$this->beginWidget('CActiveForm', array(
                window.global=0;                                                               
             <?php print("inicia(".json_encode($sql2).",".json_encode($sql).");");?>
               }
-            
         });
-        </script>
+    </script>
+<div class="form" id="evaluacionDialogForm">
+    <?php
+    $form=$this->beginWidget('CActiveForm', array(
+    'id'=>'nota-form',
+    'enableAjaxValidation'=>true,
+)); 
+    $this->widget('application.extensions.ajaxvalidationmessages.EAjaxValidationMessages',
+                    array(
+                       'errorCssClass'=>'clsError',
+                       'errorMessageCssClass'=>'clsErrorMessage',
+                       'errorSummaryCssClass'=>'clsErrorSummary'));?>
+    
+    <h1 class="note">Campos con<span class="required">*</span> son requeridos.</h1>
+    <?php echo $form->errorSummary($model); ?>
 
     <table valign="top" style="font-size:large;"> 
         <tr>
@@ -55,29 +62,45 @@ $form=$this->beginWidget('CActiveForm', array(
                                                                                 
                                                                                 window.arreglo['.$j.']=$(this).val();
                                                                                 updateTag('.$i.');
-                                                                                }')).
+                                                                                }')).$form->error($model, 'NOTA',array('name'=>'NOTA['.$j.'][NOTA]')).
                 '</td>
                 </tr>';
              $model->ITEM_ID_ITEM=$sql2[$j]['item_id_item'];
              echo $form->hiddenField($model,'ITEM_ID_ITEM',array('name'=>'NOTA['.$j.'][ITEM_ID_ITEM]'));
+             
              $model->TRABAJO_ID_TRABAJO=$id_trabajo;
              echo $form->hiddenField($model,'TRABAJO_ID_TRABAJO',array('name'=>'NOTA['.$j.'][TRABAJO_ID_TRABAJO]'));
+             echo '<tr><td></td><td id="AjaxLoader'.$j.'" style="display: none; color:red">Rellenar</td></tr>';
+             
             }
         }
        }       
  }?>
     </table>
-    <div id="AjaxLoader2" style="display: none">Guardando evaluación<img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/spinner.gif"></div>
+    
     <div colspan="2" class="row buttons">
         <?php echo CHtml::ajaxSubmitButton(Yii::t('nota','Evaluar'),
                                             CHtml::normalizeUrl(array('nota/addnewevaluacion','render'=>false)),
-                                            array('beforeSend'=>'js:function(){
-                                                   $("#AjaxLoader2").show();
-                                                }','success'=>'js: function(data) {
-                                                    $("#dialogEvaluacion").dialog("close");
-                                                    $("#AjaxLoader").hide();
-                                                    $("#showDialogEvaluacion").hide();
-                                            }'),array('id'=>'closeEvaluacionDialog'));?>
+                                            array("success"=>"function(html,textStatus,jqXHR) {
+
+                                                    if (html.indexOf('{')==0) {
+                                                       jQuery('#nota-form').ajaxvalidationmessages('show', html);
+                                                       $('#AjaxLoader2').show();  
+                                                    }
+                                                    else {                   
+                                                       jQuery('#nota-form').ajaxvalidationmessages('hide');
+                                                        $('#dialogEvaluacion').dialog('close');
+                                                        $('#showDialogEvaluacion').hide();
+                                                        }
+                                                    }",
+                                                'error'=>"function(html) {
+                        
+                                                    jQuery('#nota-form').ajaxvalidationmessages('hide');
+                        
+                                                }",'beforeSend'=>'js:function(){
+                                                     
+                                                   //$("#AjaxLoader2").show();
+                                                }'),array('id'=>'closeEvaluacionDialog'));?>
          
     </div>
        

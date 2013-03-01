@@ -41,7 +41,7 @@ class Nota extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ITEM_ID_ITEM, TRABAJO_ID_TRABAJO', 'required'),
+			array('ITEM_ID_ITEM, TRABAJO_ID_TRABAJO,NOTA', 'required'),
 			array('ITEM_ID_ITEM, TRABAJO_ID_TRABAJO,NOTA', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
