@@ -10,7 +10,7 @@ div.centre
 div.boxes
 { 
 width:170px;
-height:170px;
+height:175px;
 background-color: #F9F9F9;
 border:1px solid grey;
 float: left;
@@ -26,10 +26,10 @@ margin:15px;
 div.boxes label{
  
  width:170px;
- height: 120px;
+ height: 125px;
  float: start;
  display: block;
- font-size: 90px;
+ font-size: 80px;
  margin: 0 auto;
  box-shadow: 5px -25px 50px -20px #E0E0E0 inset;
 
@@ -46,13 +46,14 @@ div.boxes p{
 
 <?php $this->pageTitle=Yii::app()->name; ?>
 
-<h1><?php echo CHtml::encode(Yii::app()->name); ?></h1>
+
+<div class="flash-error"><b>AVISO:</b> Página web en construcción.</div>
 
 
 <div class="centre">
 <div class="boxes">
     <p>Planificados</p>
-    <label>8</label>
+    <label>10</label>
 </div>
 <div class="boxes">
     <p>Pendientes</p>
@@ -60,7 +61,7 @@ div.boxes p{
 </div>
 <div class="boxes">
     <p>Desasignados</p>
-    <label>10</label>
+    <label>1</label>
 </div>
     </div>
 <?php

@@ -14,7 +14,7 @@
 
     ?>
 <div class="span-23">
-    <h1>Planificados para hoy <?php echo date('d-m-Y'); ?></h1>
+    <p style="font-size: medium; padding-top: 15px;">Carta Gantt (<?php echo date('d-m-Y'); ?>)</p>
     
     <?php if(count($variable)>0):?>
         <div>
