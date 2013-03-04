@@ -4,8 +4,14 @@ body
 	padding: 0;
 	color: #555;
 	font: normal 10pt Arial,Helvetica,sans-serif;
-	background: #EFEFEF;
-}
+	background-attachment:initial;
+        background-clip:initial;
+        background-color: transparent;
+        background-image:url(../images/sky-bg.jpg);
+        background-origin:initial;
+        background-position:0 0;
+        background-repeat: repeat repeat;
+      }
 
 #page
 {
@@ -18,7 +24,7 @@ body
 {
 	margin: 0;
 	padding: 5px;
-	background-color:#000000;
+	background-color:#002955;
 	color:#FFFF;
 	text-align:right;
 }
@@ -36,7 +42,13 @@ body
 	margin: 0;
 	padding: 0;
 	border-top: 1px solid #CCCCCC;
-	background-color:#333333;
+	background-color:#002955;
+         background-attachment:initial;
+  background-clip:initial;
+
+  background-image:url(../images/787.png);
+  background-origin:initial;
+  background-position:0 0;
 }
 
 #content
@@ -54,7 +66,7 @@ body
 	padding: 10px;
 	font-size: 0.8em;
 	text-align: center;
-	background-color:#333333;
+	background-color:#002955;
 	color: #FFFFFF!important;
 }
 #footer a{ color: #FFFFFF!important;}
@@ -67,7 +79,7 @@ body
 #mainmenu
 {
 	/*background:white url(bg.gif) repeat-x left top;background-image:url(http://inventory.simpson.com/dashboard-download/images/el_bg.png);*/
-	background-color:#333333;
+	background-color:#002955;
 	height: 42px;
 	
   
@@ -86,7 +98,7 @@ body
 	display: inline;
   background-attachment:initial;
   background-clip:initial;
-  background-color:#222222;
+  background-color:#002955;
   background-image:url(../images/el_bg.png);
   background-origin:initial;
   background-position:0 0;
@@ -95,13 +107,13 @@ body
   border-bottom-style:none;
   border-bottom-width:initial;
   border-image:initial;
-  border-left-color:#222222;
+  border-left-color:#002955;
   border-left-style:solid;
   border-left-width:1px;
-  border-right-color:#222222;
+  border-right-color:#002955;
   border-right-style:solid;
   border-right-width:1px;
-  border-top-color:#222222;
+  border-top-color:#002955;
   border-top-style:solid;
   border-top-width:1px;
   float:left;
@@ -127,13 +139,13 @@ body
 
 #mainmenu ul li.active a
 {
-  color:#333333!important;
+  color:#002955!important;
 }
 
 #mainmenu ul li a
 {
 	color:#ffffff;
-	background-color:transparent;
+	background-color:002955;
 	font-size:12px;
 	font-weight:bold;
 	text-decoration:none;
@@ -149,7 +161,7 @@ body
 }
 .infoBar {
   border: solid 1px #CCCCCC;
-  background-color:#F9F9F9;
+  background-color:#002955;
   margin-bottom:10px;
   padding:10px;
   width:690px;

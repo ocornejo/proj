@@ -8,19 +8,27 @@
     $cs->registerScriptFile($baseUrl . '/protected/extensions/gantt/js/bootstrap-tooltip.js');
     $cs->registerScriptFile($baseUrl . '/protected/extensions/gantt/js/bootstrap-popover.js');
     $cs->registerScriptFile($baseUrl . '/protected/extensions/gantt/js/prettify.js');
-    
+    $from= date('Y-m-d');
+    $to= date('Y-m-d', strtotime($from . ' + 1 day'));
+    $variable= $model->findAll(array('condition'=>'PLANIFICADO=1 AND FECHA BETWEEN :from_date AND :to_date','order'=>'FECHA','params'=>array(':from_date'=>$from,':to_date'=>$to)));
 
     ?>
 <div class="span-23">
     <h1>Planificados para hoy <?php echo date('d-m-Y'); ?></h1>
-<div class="gantt"></div>
+    
+    <?php if(count($variable)>0):?>
+        <div>
+           <div class="gantt"></div>   
+	</div>
+    <?php endif;?>
+        
+    <?php if(count($variable)==0):?>
+        <div class="flash-notice"><b>Aviso:</b> No hay aseos planificados para hoy.</div>
+    <?php endif;?>
+
 </div>
 
-    <?php
-    $from= date('Y-m-d');
-    $to= date('Y-m-d', strtotime($from . ' + 1 day'));
-    $variable= $model->findAll(array('condition'=>'PLANIFICADO=1 AND FECHA BETWEEN :from_date AND :to_date','order'=>'FECHA','params'=>array(':from_date'=>$from,':to_date'=>$to)));
-    ?>
+
     
         <script type="text/javascript">
 
