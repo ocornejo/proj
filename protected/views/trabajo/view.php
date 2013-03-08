@@ -35,6 +35,8 @@ $this->menu=array(
 		'LUGAR_ID_LUGAR',
 		'ASEO_ID_ASEO',
 		'TURNO_ID_TURNO',
-                'ARCHIVO',
+                'ARCHIVO1',
+                'ARCHIVO2',
+                'ARCHIVO3',
 	),
 )); ?>

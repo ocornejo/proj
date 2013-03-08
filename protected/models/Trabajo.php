@@ -59,12 +59,12 @@ class Trabajo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-                        array('ASEO_ID_ASEO,ESTADO_ID_ESTADO', 'required','on'=>'inicio'),
+                        array('ESTADO_ID_ESTADO', 'required','on'=>'inicio'),
 			array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA, ASEO_ID_ASEO,LUGAR_ID_LUGAR,PLANIFICADO,OT', 'required','on'=>'ok'),
 			array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA, ASEO_ID_ASEO,PLANIFICADO', 'required','on'=>'laneco'),
                         array('USUARIO_BP, ESTADO_ID_ESTADO,OT', 'required','on'=>'nula'),
                         array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA, ASEO_ID_ASEO,PLANIFICADO,LUGAR_ID_LUGAR', 'required','on'=>'bano'),
-                        array('AVION_MATRICULA,USUARIO_BP,ESTADO_ID_ESTADO','required','on'=>'pendiente'),
+                        array('AVION_MATRICULA,USUARIO_BP,ESTADO_ID_ESTADO,ASEO_ID_ASEO','required','on'=>'pendiente'),
                         //array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA, ASEO_ID_ASEO, TURNO_ID_TURNO,LUGAR_ID_LUGAR','allowEmpty'=>true, 'on'=>'formSubmit'),
                         array('OT, USUARIO_BP, PLANIFICADO, CALIFICACION, ESTADO_ID_ESTADO, LUGAR_ID_LUGAR, ASEO_ID_ASEO, TURNO_ID_TURNO', 'numerical', 'integerOnly'=>true),
 			array('FECHA','date', 'format'=>'yyyy-MM-dd'),
@@ -77,7 +77,7 @@ class Trabajo extends CActiveRecord
 			array('HORA_INICIO, HORA_TERMINO, FECHA', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('ID_TRABAJO, OT, AVION_MATRICULA, USUARIO_BP, PLANIFICADO, HORA_INICIO, HORA_TERMINO, COMENTARIO, FECHA, CALIFICACION, ESTADO_ID_ESTADO, LUGAR_ID_LUGAR, ASEO_ID_ASEO, TURNO_ID_TURNO,ARCHIVO', 'safe', 'on'=>'search'),
+			array('ID_TRABAJO, OT, AVION_MATRICULA, USUARIO_BP, PLANIFICADO, HORA_INICIO, HORA_TERMINO, COMENTARIO, FECHA, CALIFICACION, ESTADO_ID_ESTADO, LUGAR_ID_LUGAR, ASEO_ID_ASEO, TURNO_ID_TURNO,ARCHIVO1,ARCHIVO2,ARCHIVO3', 'safe', 'on'=>'search'),
 		);
 	}
         
@@ -130,8 +130,10 @@ class Trabajo extends CActiveRecord
 			'LUGAR_ID_LUGAR' => 'Lugar',
 			'ASEO_ID_ASEO' => 'Aseo',
 			'TURNO_ID_TURNO' => 'Turno',
-                        'ARCHIVO'=> 'Archivo',
-                        'imagen'=>'Foto',
+                        'ARCHIVO1'=> 'Archivo1',
+                        'ARCHIVO2'=> 'Archivo2',
+                        'ARCHIVO3'=> 'Archivo3',
+                        'imagen'=>'Fotos',
 		);
 	}
 

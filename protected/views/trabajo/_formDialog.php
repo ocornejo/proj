@@ -1,5 +1,3 @@
-
- 
 <?php 
 $baseUrl = Yii::app()->theme->baseUrl; 
 $cs = Yii::app()->getClientScript();
@@ -9,10 +7,9 @@ $cs->registerCssFile($baseUrl.'/css/jquery.css');
     <script type="text/javascript">
 
         $(document).ready(function(){
-            if(window.global==1){
-                                                                                    
+            if(window.global==1){                                                                 
                window.global=0;                                                               
-            <?php print("inicia(".json_encode($sql2).",".json_encode($sql).");");?>
+               <?php print("inicia(".json_encode($sql2).",".json_encode($sql).");");?>
               }
         });
     </script>
@@ -39,7 +36,7 @@ $cs->registerCssFile($baseUrl.'/css/jquery.css');
             <td><?php echo CHtml::activeLabel(Flota::model(), 'NOMBRE_FLOTA'); ?></td>
             <td> <?php echo Chtml::textField('nombreFlota', Flota::model()->findByPk($id_flota)->NOMBRE_FLOTA, array('style' => 'width:40px', 'readonly' => 'readonly')); ?></td>    
             <td><?php echo CHtml::label('Nota Final', 'notaFinal'); ?></td>
-            <td> <?php echo Chtml::textField('NotaFinal',0, array('style' => 'width:40px', 'readonly' => 'readonly')); ?></td>
+            <td> <?php echo Chtml::textField('NotaFinal','0%', array('style' => 'width:40px', 'readonly' => 'readonly')); ?></td>
         </tr>
     </table>
     <table valign="top" style="font-size:large;">
@@ -48,7 +45,7 @@ $cs->registerCssFile($baseUrl.'/css/jquery.css');
      if((int)$sql[$i]['ponderacion']!=0){
         echo '<tr><td><br></td></tr> 
               <tr>
-                    <td><h1>'.CHtml::label($sql[$i]['nombre'].'  '.$sql[$i]['ponderacion'].'%', 'nombre', array('id'=>'nombre['.$i.']')).'</h1></td>
+                    <td><h1>'.CHtml::label($sql[$i]['nombre'].'  ('.$sql[$i]['ponderacion'].'%)', 'nombre', array('id'=>'nombre['.$i.']')).'</h1></td>
                     <td><h1>'.CHtml::label('0%', 'ponderacion',array('id'=>'notaPond['.$i.']')).'</h1></td>
                 </tr>';
         for ($j = $i; $j < count($sql2); $j++) {
@@ -59,7 +56,6 @@ $cs->registerCssFile($baseUrl.'/css/jquery.css');
                                                             array('name'=>'NOTA['.$j.'][NOTA]',
                                                                   'separator'=>' | ',
                                                                   'onchange'=>'{
-                                                                                
                                                                                 window.arreglo['.$j.']=$(this).val();
                                                                                 updateTag('.$i.');
                                                                                 }')).$form->error($model, 'NOTA',array('name'=>'NOTA['.$j.'][NOTA]')).
@@ -70,25 +66,33 @@ $cs->registerCssFile($baseUrl.'/css/jquery.css');
              
              $model->TRABAJO_ID_TRABAJO=$id_trabajo;
              echo $form->hiddenField($model,'TRABAJO_ID_TRABAJO',array('name'=>'NOTA['.$j.'][TRABAJO_ID_TRABAJO]'));
-             echo '<tr><td></td><td id="AjaxLoader'.$j.'" style="display: none; color:red">Rellenar</td></tr>';
+             echo '<tr><td></td><td id="AjaxLoader'.$j.'" style="display: none; color:red; font-size: small;">Rellenar</td></tr>';
              
             }
         }
        }       
  }?>
     </table>
-    
+    <div id="ErrorEval" style="display: none; color: red;">Faltaron ítems por evaluar, por favor complete los datos faltantes</div>
+    <div id="AjaxLoaderS" style="display: none">Guardando evaluación<img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/spinner.gif"></div>
+    <div id="AjaxLoaderE" style="display: none">Cancelando evaluación<img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/spinner.gif"></div>
+
     <div colspan="2" class="row buttons">
         <?php echo CHtml::ajaxSubmitButton(Yii::t('nota','Evaluar'),
                                             CHtml::normalizeUrl(array('nota/addnewevaluacion','render'=>false)),
                                             array("success"=>"function(html,textStatus,jqXHR) {
-
+                                                $('#AjaxLoaderS').hide();
                                                     if (html.indexOf('{')==0) {
-                                                       jQuery('#nota-form').ajaxvalidationmessages('show', html);
-                                                       $('#AjaxLoader2').show();  
+                                                       $('#ErrorEval').show();
+                                                        for(var i=0;i<window.arreglo.length;i++){
+                                                            if(window.arreglo[i]==101)
+                                                                $('#AjaxLoader'+i).show();
+                                                            else
+                                                                $('#AjaxLoader'+i).hide();  
+                                                        }   
                                                     }
-                                                    else {                   
-                                                       jQuery('#nota-form').ajaxvalidationmessages('hide');
+                                                    else {
+                                                        
                                                         $('#dialogEvaluacion').dialog('close');
                                                         $('#showDialogEvaluacion').hide();
                                                         }
@@ -98,9 +102,22 @@ $cs->registerCssFile($baseUrl.'/css/jquery.css');
                                                     jQuery('#nota-form').ajaxvalidationmessages('hide');
                         
                                                 }",'beforeSend'=>'js:function(){
-                                                     
-                                                   //$("#AjaxLoader2").show();
+                                                   $("#AjaxLoaderS").show();
                                                 }'),array('id'=>'closeEvaluacionDialog'));?>
+        
+        <?php echo CHtml::ajaxSubmitButton(Yii::t('','Cancelar'),
+                                            CHtml::normalizeUrl(array('trabajo/Delete','id'=>$id_trabajo,'render'=>false)),
+                                            array("success"=>"function(html,textStatus,jqXHR) {
+                                                                $('#SubButton').show();
+                                                                //$('#HideSubButton').hide();
+                                                                $('#dialogEvaluacion').dialog('close');
+                                                                $('#showDialogEvaluacion').hide();
+                                                                
+                                                            }",
+                                                'beforeSend'=>'js:function(){
+                                                   $("#AjaxLoaderE").show();
+                                                }'),array('id'=>'cancelEvaluacionDialog'));?>
+        
          
     </div>
        

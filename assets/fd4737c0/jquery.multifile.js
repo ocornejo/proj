@@ -225,11 +225,11 @@
           //};
           
           // Disallow duplicates
-										for(var f in MultiFile.slaves)//{
-           if(MultiFile.slaves[f] && MultiFile.slaves[f]!=this)//{
-  										//console.log(MultiFile.slaves[f],MultiFile.slaves[f].value);
-            if(MultiFile.slaves[f].value==v)//{
-             ERROR = MultiFile.STRING.duplicate.replace('$file', v.match(/[^\/\\]+$/gi));
+										// for(var f in MultiFile.slaves)//{
+           // if(MultiFile.slaves[f] && MultiFile.slaves[f]!=this)//{
+  										// //console.log(MultiFile.slaves[f],MultiFile.slaves[f].value);
+            // if(MultiFile.slaves[f].value==v)//{
+             // ERROR = MultiFile.STRING.duplicate.replace('$file', v.match(/[^\/\\]+$/gi));
             //};
            //};
           //};
@@ -478,7 +478,7 @@
 			denied:'You cannot select a $ext file.\nTry again...',
 			file:'$file',
 			selected:'File selected: $file',
-			duplicate:'This file has already been selected:\n$file'
+			//duplicate:'This file has already been selected:\n$file'
 		},
 		
 		// name of methods that should be automcatically intercepted so the plugin can disable

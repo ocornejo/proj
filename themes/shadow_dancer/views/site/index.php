@@ -5,7 +5,7 @@ div.centre
   display: boxes;
   margin-left: auto;
   margin-right: auto;
-
+  
 }
 div.boxes
 { 
@@ -44,29 +44,47 @@ div.boxes p{
 }
 </style>
 
-<?php $this->pageTitle=Yii::app()->name; ?>
+
+<?php $this->pageTitle=Yii::app()->name;
+      $today= date('Y-m-d');
+      $from= date('Y-m-d', strtotime($today . ' - 1 day'));
+      $to= date('Y-m-d', strtotime($from . ' + 1 day'));
+      $variable= $model->findAll(array('condition'=>'PLANIFICADO=1 AND FECHA BETWEEN :from_date AND :to_date','order'=>'FECHA','params'=>array(':from_date'=>$from,':to_date'=>$to)));
+      $pendientes= $model->findAll(array('condition'=>'ESTADO_ID_ESTADO=2 AND FECHA BETWEEN :from_date AND :to_date','order'=>'FECHA','params'=>array(':from_date'=>$from,':to_date'=>$to)));
+?>
 
 
 <div class="flash-error"><b>AVISO:</b> Página web en construcción.</div>
+<div class="flash-notice"><b>RECOMENDACIÓN:</b> Para un mejor funcionamiento, usar Google Chrome o Mozilla Firefox.</div>
 
+<p style="font-size: medium;">Trabajos del día</p>
 
 <div class="centre">
 <div class="boxes">
     <p>Planificados</p>
-    <label>10</label>
+    <label><?php echo count($variable);?></label>
 </div>
 <div class="boxes">
     <p>Pendientes</p>
-    <label>9</label>
+    <label><?php echo count($pendientes);?></label>
 </div>
 <div class="boxes">
     <p>Desasignados</p>
     <label>1</label>
 </div>
-    </div>
+</div>
+
+<div class="hr" style="margin-top: 280px;"><hr /></div>
+
 <?php
-echo $this->renderPartial('gantt',array('model'=>$model),false,true);
-?>
+echo $this->renderPartial('gantt',array(
+                                        'model'=>$model,
+                                        'variable'=>$variable,
+                                        'from'=>$from,
+                                        'to'=>$to,
+                                        false,true));
+
+    ?>
 
   
     

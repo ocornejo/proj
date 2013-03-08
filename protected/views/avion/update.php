@@ -2,11 +2,11 @@
 /* @var $this AvionController */
 /* @var $model Avion */
 
-$this->breadcrumbs=array(
-	'Avions'=>array('index'),
-	$model->MATRICULA=>array('view','id'=>$model->MATRICULA),
-	'Update',
-);
+//$this->breadcrumbs=array(
+//	'Avions'=>array('index'),
+//	$model->MATRICULA=>array('view','id'=>$model->MATRICULA),
+//	'Update',
+//);
 
 $this->menu=array(
 	array('label'=>'List Avion', 'url'=>array('index')),
