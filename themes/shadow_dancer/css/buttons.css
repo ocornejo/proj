@@ -81,8 +81,8 @@
 .btn-maroon:hover { background-color: #530000; }
 
 .btn-yellow,
-.btn-yellow:visited { background-color: #FFCC00; border-color: #D9AD01; }
-.btn-yellow:hover { background-color: #D9AD01; }
+.btn-yellow:visited { background-color: #cfd4f5; border-color: #D9AD01; }
+.btn-yellow:hover { background-color: #a4aef5; }
 
 .btn-teal,
 .btn-teal:visited { background-color: #39A7B6; border-color: #2E8794; }
@@ -187,5 +187,5 @@
 	
 	
 /* Transparent Button Styles */
-.btn-transparent, .btn-transparent:hover { background-image: url(../images/bg-lite.png); background-color: transparent; filter: none; border-color: transparent\0/; border-color: rgba(0,0,0,.4) !important; margin: 0 1em 0 0; }
+.btn-transparent, .btn-transparent:hover { background-image: url(../images/bg-lite.png); background-color: transparent; filter: none; border-color: transparent\0/;;;;;;; border-color: rgba(0,0,0,.4) !important; margin: 0 1em 0 0; }
 *+html .btn-transparent { border: none; }

@@ -38,7 +38,7 @@
                                               values: [{
                                                       from: "/Date('.$finalInicio.')/",
                                                       to: "/Date('.$finalFinal.')/",
-                                                      label: "'.Aseo::model()->findByPk($value->ASEO_ID_ASEO)->TIPO_ASEO.'", 
+                                                      label: "'.Aseo::model()->findByPk($value->ASEO_ID_ASEO)->TIPO_ASEO.'-'.Estado::model()->findByPk($value->ESTADO_ID_ESTADO)->NOMBRE_ESTADO.'", 
                                                       customClass: "ganttGreen"
                                               }]
                                 },');
@@ -51,7 +51,7 @@
                                               values: [{
                                                       from: "/Date('.$finalInicio.')/",
                                                       to: "/Date('.($finalFinal+83400000).')/",
-                                                      label: "'.Aseo::model()->findByPk($value->ASEO_ID_ASEO)->TIPO_ASEO.'-Aseo sin hora'.'", 
+                                                      label: "'.Aseo::model()->findByPk($value->ASEO_ID_ASEO)->TIPO_ASEO.'-Aseo sin hora-'.Estado::model()->findByPk($value->ESTADO_ID_ESTADO)->NOMBRE_ESTADO.'", 
                                                       customClass: "ganttOrange"
                                               }]
                                 },');

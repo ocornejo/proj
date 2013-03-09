@@ -79,10 +79,10 @@ $this->widget('zii.widgets.grid.CGridView', array(
                                                 return $value;
                                             }
                                             else
-                                                $value="-";
+                                                $value="";
                                         }
                                         else
-                                            $value="-";
+                                            $value="";
                                         
                                         return $value; 
                                      },

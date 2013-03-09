@@ -298,6 +298,19 @@ class TrabajoController extends Controller {
             }
 
             if ($model->validate() && $modelT->validate() && isset($_POST['buttonSubmit'])) {
+                
+                if($model->ESTADO_ID_ESTADO!=2 && $model->ESTADO_ID_ESTADO!=9 && Trabajo::model()->exists("ASEO_ID_ASEO=".$model->ASEO_ID_ASEO." AND AVION_MATRICULA='".$model->AVION_MATRICULA."'")){
+                                           
+                    $result=Trabajo::model()->findAllByAttributes(array("ASEO_ID_ASEO"=>$model->ASEO_ID_ASEO,"AVION_MATRICULA"=>$model->AVION_MATRICULA),array('order'=>'FECHA DESC','limit'=>1));
+                    $date= new DateTime($result[0]['FECHA']);
+                    $dateNow =new DateTime();
+                    $interval= $date->diff($dateNow)->d;
+                    $model->ULTIMO_ASEO=$interval;
+                    var_dump($date->format('Y-m-d H:i:s').":".$dateNow->format('Y-m-d H:i:s').":".$interval);
+                }
+                else{
+                     $model->ULTIMO_ASEO=0;
+                }
 
                 if (!is_dir(Yii::getPathOfAlias('webroot') . '/images/')) {
                     mkdir(Yii::getPathOfAlias('webroot') . '/images/');
@@ -452,5 +465,30 @@ class TrabajoController extends Controller {
             Yii::app()->end();
         }
     }
+    public function actionsearchOT()
+        {   
+//            $dataTemp = Avion::model()->findAll('matricula=:matricula', array(':matricula'=> $_POST['matricula']));
+//            $dataTemp = CHtml::listData($dataTemp,'FLOTA_ID_FLOTA','MATRICULA');
+//            
+//            foreach($dataTemp as $value=>$name)
+//                $flotaid=$value;
+//                
+//            $data = Flota::model()->findAll('id_flota=:id_flota',array(':id_flota'=> $flotaid));
+//            echo CJSON::encode($data);
+            
+//            $dataTemp= Trabajo::model()->findAll('OT=:ot',array(':matricula'=>$_POST['ot']));
+                $regForm = $_POST["Trabajo"];
+                $ot = $regForm["OT"];
+                //echo $ot;
+                if($ot!='')
+                    $dataTemp= Trabajo::model()->findAll('OT=:ot',array(':ot'=>$ot));
+                else
+                    $dataTemp=NULL;
+                if(count($dataTemp)>0){
+                    echo CJSON::encode('SI');
+                }
+                else
+                    echo CJSON::encode('NO');
+        }
 
 }

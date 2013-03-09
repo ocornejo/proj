@@ -97,7 +97,9 @@
 
 	<div id="footer">
 		Sistema de Aseo-Cabina <?php echo date('Y'); ?><br/>
-		<?php echo "Gerencia de Mejora Continua LAN" ?>
+		<?php echo "Gerencia Mejora Continua, Ingeniería y Mantenimiento" ?><br/>
+                <a href="mailto:correo.contacto@lan.com?Subject=Sistema%20Aseo-Cabina">correo.contacto@lan.com</a>
+                
 	</div><!-- footer -->
 
 </div><!-- page -->

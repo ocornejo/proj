@@ -51,7 +51,8 @@ div.boxes p{
       $to= date('Y-m-d', strtotime($from . ' + 1 day'));
       $variable= $model->findAll(array('condition'=>'PLANIFICADO=1 AND FECHA BETWEEN :from_date AND :to_date','order'=>'FECHA','params'=>array(':from_date'=>$from,':to_date'=>$to)));
       $pendientes= $model->findAll(array('condition'=>'ESTADO_ID_ESTADO=2 AND FECHA BETWEEN :from_date AND :to_date','order'=>'FECHA','params'=>array(':from_date'=>$from,':to_date'=>$to)));
-?>
+      $desasignados= $model->findAll(array('condition'=>'ESTADO_ID_ESTADO>=3 AND ESTADO_ID_ESTADO<=8 AND FECHA BETWEEN :from_date AND :to_date','order'=>'FECHA','params'=>array(':from_date'=>$from,':to_date'=>$to)));
+      ?>
 
 
 <div class="flash-error"><b>AVISO:</b> Página web en construcción.</div>
@@ -70,7 +71,7 @@ div.boxes p{
 </div>
 <div class="boxes">
     <p>Desasignados</p>
-    <label>1</label>
+    <label><?php echo count($desasignados);?></label>
 </div>
 </div>
 
@@ -82,9 +83,7 @@ echo $this->renderPartial('gantt',array(
                                         'variable'=>$variable,
                                         'from'=>$from,
                                         'to'=>$to,
-                                        false,true));
-
-    ?>
+                                        false,true));?>
 
   
     

@@ -7,6 +7,8 @@ $cs = Yii::app()->getClientScript();
 $cs->registerCssFile($baseUrl . '/css/jquery.css');
 ?>
 
+
+
 <script type="text/javascript">
     window.arreglo = new Array();
     window.global = 1;
@@ -217,8 +219,8 @@ echo $form->error($model, 'AVION_MATRICULA');
             </tr>
         </table>
 
-<?php
-$this->widget('ext.jqrelcopy.JQRelcopy', array(
+
+<?php $this->widget('ext.jqrelcopy.JQRelcopy', array(
     //the id of the 'Copy' link in the view, see below.
     'id' => 'copylink',
     //add a icon image tag instead of the text
@@ -226,7 +228,6 @@ $this->widget('ext.jqrelcopy.JQRelcopy', array(
     'removeText' => '<img src="' . $baseUrl . '/images/minusButton.png"><a>Borrar</a>',
     //htmlOptions of the remove link
     'removeHtmlOptions' => array('style' => 'color:red;'),
-    //options of the plugin, see http://www.andresvidal.com/labs/relcopy.html
     'options' => array(
         //A class to attach to each copy
         'copyClass' => 'newcopy',
@@ -237,8 +238,6 @@ $this->widget('ext.jqrelcopy.JQRelcopy', array(
         'clearInputs' => true,
         //A jQuery selector used to exclude an element and its children
         'excludeSelector' => '.skipcopy',
-    //Additional HTML to attach at the end of each copy.
-    //'append'=>CHtml::tag('span',array('class'=>'hint'),'You can remove this line'),
     )
 ));
 ?>
@@ -387,7 +386,22 @@ $this->widget('zii.widgets.jui.CJuiDatePicker', array(
                 <td>
                     <?php echo $form->labelEx($model, 'OT'); ?>
                 </td>
-                <td>   <?php echo $form->textField($model, 'OT', array('style' => 'width:50px', 'maxlength' => 6)); ?>
+                <td>   <?php echo $form->textField($model, 'OT', array('style' => 'width:50px', 'maxlength' => 6,'onBlur'=>CHtml::ajax(array(
+                                                                                                                            'url'=>Yii::app()->createUrl('trabajo/searchOT'),
+                                                                                                                            'type'=>'post',                                                        
+                                                                                                                            //'dataType'=>'json',
+                                                                                                                            //'data'=>array('title' => 'js:this.value'),
+                                                                                                                            'update'=>'#hola',        
+                                                                                                                            'success'=>'function(data){
+                                                                                                                                        if(data[1]=="N");
+                                                                                                                                            //alert(data[1]);
+                                                                                                                                        else{
+                                                                                                                                            alert("OT ingresada ya existe");
+                                                                                                                                             $("#' . CHtml::activeId($model, 'OT') . '").val("");}}',
+                                                                                                                            'error' => "function(data, status){ alert(status); }",
+                                                                                                                        )))); ?>
+                    <div id="hola"></div>
+                   
                     <?php echo $form->error($model, 'OT'); ?>
                 </td>
                 <td>
@@ -483,14 +497,21 @@ echo CHtml::ajaxLink($img, $this->createUrl('trabajo/save'), array(
     <br>
 
     <div class="SubmitButton" id="SubButton" style="vertical-align:-10px;">
-<?php echo CHtml::submitButton('Guardar', array('name' => 'buttonSubmit')); ?>
+<?php echo CHtml::submitButton('Guardar', array('name' => 'buttonSubmit','style'=>'background: url(/proj/themes/shadow_dancer/images/small_icons/disk.png) no-repeat 6px 5px; padding-left: 24px; vertical-align: bottom;')); ?>
 
     </div>
     <div class="HideSubmitButton" id="HideSubButton" style="display: none; vertical-align:-10px;">
-<?php echo CHtml::submitButton('Te lo guardo', array('name' => 'update')); ?>
+<?php echo CHtml::submitButton('Te lo guardo', array('name' => 'update','style'=>'background: url(/proj/themes/shadow_dancer/images/small_icons/disk.png) no-repeat 6px 5px; padding-left: 24px; vertical-align: bottom;')); ?>
 
     </div>
 
 <?php $this->endWidget(); ?>
 
 </div>
+
+<style>
+    .saveButton{
+       
+    }
+</style>
+    
