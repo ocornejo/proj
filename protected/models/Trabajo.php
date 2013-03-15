@@ -133,7 +133,7 @@ class Trabajo extends CActiveRecord
                         'ARCHIVO1'=> 'Archivo1',
                         'ARCHIVO2'=> 'Archivo2',
                         'ARCHIVO3'=> 'Archivo3',
-                        'imagen'=>'Fotos',
+                        'imagen'=>'Fotos (3 máx)',
 		);
 	}
 

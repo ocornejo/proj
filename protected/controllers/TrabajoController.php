@@ -465,18 +465,8 @@ class TrabajoController extends Controller {
             Yii::app()->end();
         }
     }
-    public function actionsearchOT()
+    public function actionSearchOT()
         {   
-//            $dataTemp = Avion::model()->findAll('matricula=:matricula', array(':matricula'=> $_POST['matricula']));
-//            $dataTemp = CHtml::listData($dataTemp,'FLOTA_ID_FLOTA','MATRICULA');
-//            
-//            foreach($dataTemp as $value=>$name)
-//                $flotaid=$value;
-//                
-//            $data = Flota::model()->findAll('id_flota=:id_flota',array(':id_flota'=> $flotaid));
-//            echo CJSON::encode($data);
-            
-//            $dataTemp= Trabajo::model()->findAll('OT=:ot',array(':matricula'=>$_POST['ot']));
                 $regForm = $_POST["Trabajo"];
                 $ot = $regForm["OT"];
                 //echo $ot;

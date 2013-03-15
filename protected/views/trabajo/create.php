@@ -10,6 +10,4 @@ $this->breadcrumbs=array(
 
 ?>
 
-<h1>Ingresar nuevo aseo</h1>
-
 <?php echo $this->renderPartial('_form', array('model'=>$model,'modelT'=>$modelT)); ?>

@@ -34,7 +34,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-div.form
+/*div.form
 {
 }
 div.form .field_name_help {font-size: 90%; color: #777; }
@@ -60,9 +60,9 @@ div.form select
 	
 	-moz-transition: border .2s linear, box-shadow .2s linear;
 	-webkit-transition: border .2s linear, -webkit-box-shadow .2s linear;
-}
+}*/
 
-input:focus 
+/*input:focus 
 , textarea:focus
 , select:focus
 {
@@ -71,26 +71,51 @@ input:focus
     -moz-box-shadow: 0 0 3px #80bfff, 0 1px 2px rgba(0, 0, 0, .15) inset;
     -webkit-box-shadow: 0 0 3px #80bfff, 0 1px 2px rgba(0, 0, 0, .15) inset;
     box-shadow: 0 0 3px #80bfff, 0 1px 2px rgba(0, 0, 0, .15) inset;
-}
+}*/
 
 div.form fieldset
 {
-	border: 1px solid #DDD;
+	clear: both;
+	margin: 1em 0 0 0;
 	padding: 10px;
-	margin: 0 0 10px 0;
-    -moz-border-radius:7px;
+	overflow: auto;
+        background-color: #f8f6ff;
+        border: 1px solid #554b87;
+        margin-bottom: 18px;
+}
+div.form legend
+{
+	color: #554b87;
+        font-weight: bold;
+
+}
+div.form fieldset.coments{
+    vertical-align:-10px;
 }
 
+div.form p
+{
+	font-weight: bold;
+        margin-top: 20px;
+}
+
+/*
 div.form label
 {
 	font-weight: bold;
 	font-size: 0.9em;
 	display: block;
-}
+}*/
 
 div.form .row
 {
-	margin: 5px 0;
+        display: inline-block;
+        
+}
+div.form .MultiFile-wrap
+{
+        display: inline-block;
+        
 }
 
 div.form .hint
@@ -167,24 +192,24 @@ div.form .errorSummary ul
 	padding: 0 0 0 20px;
 }
 
-div.wide.form .field_name_help
+/*div.wide.form .field_name_help
 {
 	float: left;
 	position: relative;
 	text-align: right;
 	margin-left: 110px;
-}
+}*/
 
-div.wide.form label
+/*div.wide.form label
 {
 	float: left;
 	margin-right: 10px;
 	position: relative;
 	text-align: right;
 	width: 100px;
-}
+}*/
 
-div.wide.form .row
+/*div.wide.form .row
 {
 	clear: left;
 }
@@ -193,6 +218,6 @@ div.wide.form .buttons, div.wide.form .hint, div.wide.form .errorMessage
 {
 	clear: left;
 	padding-left: 110px;
-}
+}*/
 
-input[type=radio] + label, input[type=checkbox] + label { display:inline !important; }
+/*input[type=radio] + label, input[type=checkbox] + label { display:inline !important; }*/

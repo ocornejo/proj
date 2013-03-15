@@ -8,9 +8,10 @@
     $cs->registerScriptFile($baseUrl . '/protected/extensions/gantt/js/bootstrap-tooltip.js');
     $cs->registerScriptFile($baseUrl . '/protected/extensions/gantt/js/bootstrap-popover.js');
     $cs->registerScriptFile($baseUrl . '/protected/extensions/gantt/js/prettify.js');
- 
-    ?>
 
+    
+    ?>
+    
 
                <script type="text/javascript">
 
@@ -28,8 +29,13 @@
                                     
                                     $horaInicio = date('Y-m-d H:i:s',  strtotime($value->FECHA.' '.$value->HORA_INICIO));
                                     $finalInicio= strtotime($horaInicio)*1000;
+                                    
                                     $horaFinal = date('Y-m-d H:i:s',  strtotime($value->FECHA.' '.$value->HORA_TERMINO));
-                                    $finalFinal = strtotime($horaFinal)*1000;
+                                    $finalFinal= strtotime($horaFinal)*1000;
+                                    if($finalFinal < $finalInicio ){
+                                        $finalFinal = strtotime($horaFinal.'+ 1 day')*1000;                                        
+                                    }
+
                                      if($value->HORA_INICIO!=NULL){
                                      print('         
                                       {
@@ -49,8 +55,8 @@
                                               name: "'.$value->AVION_MATRICULA.'",
                                               desc: "'.Flota::model()->findByPk(Avion::model()->findByPk($value->AVION_MATRICULA)->FLOTA_ID_FLOTA)->NOMBRE_FLOTA.'",
                                               values: [{
-                                                      from: "/Date('.$finalInicio.')/",
-                                                      to: "/Date('.($finalFinal+83400000).')/",
+                                                      from: "/Date('.($finalInicio).')/",
+                                                      to: "/Date('.($finalFinal+80000000).')/",
                                                       label: "'.Aseo::model()->findByPk($value->ASEO_ID_ASEO)->TIPO_ASEO.'-Aseo sin hora-'.Estado::model()->findByPk($value->ESTADO_ID_ESTADO)->NOMBRE_ESTADO.'", 
                                                       customClass: "ganttOrange"
                                               }]
@@ -84,7 +90,7 @@
 				content: "Base de Mantto.",
 				trigger: "hover"
 			});
-
+                        console.log(source);
 			prettyPrint();
 
 		});
