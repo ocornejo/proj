@@ -12,17 +12,12 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'ID_TIPO_TURNO'); ?>
-		<?php echo $form->textField($model,'ID_TIPO_TURNO'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'TIPO'); ?>
 		<?php echo $form->textField($model,'TIPO',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+		<?php echo CHtml::submitButton('Buscar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

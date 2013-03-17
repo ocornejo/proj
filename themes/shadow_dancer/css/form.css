@@ -85,8 +85,8 @@ div.form fieldset
 }
 div.form legend
 {
-	color: #554b87;
-        font-weight: bold;
+    color: #002955;
+    font-weight: bold;
 
 }
 div.form fieldset.coments{
@@ -110,6 +110,7 @@ div.form label
 div.form .row
 {
         display: inline-block;
+        margin-right: 15px;
         
 }
 div.form .MultiFile-wrap

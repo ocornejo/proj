@@ -12,11 +12,6 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'ID_LUGAR'); ?>
-		<?php echo $form->textField($model,'ID_LUGAR'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'LUGAR'); ?>
 		<?php echo $form->textField($model,'LUGAR',array('size'=>45,'maxlength'=>45)); ?>
 	</div>
@@ -27,7 +22,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+		<?php echo CHtml::submitButton('Buscar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

@@ -8,20 +8,19 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Aseo', 'url'=>array('index')),
-	array('label'=>'Create Aseo', 'url'=>array('create')),
-	array('label'=>'Update Aseo', 'url'=>array('update', 'id'=>$model->ID_ASEO)),
-	array('label'=>'Delete Aseo', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->ID_ASEO),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Aseo', 'url'=>array('admin')),
+	array('label'=>'Listar tipos de aseos', 'url'=>array('index')),
+	array('label'=>'Crear tipo de aseo', 'url'=>array('create')),
+	array('label'=>'Actualizar tipo de aseo', 'url'=>array('update', 'id'=>$model->ID_ASEO)),
+	array('label'=>'Eliminar tipo de aseo', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->ID_ASEO),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar tipos de aseo', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Aseo #<?php echo $model->ID_ASEO; ?></h1>
+<h1>Vista tipo de aseo <?php echo $model->TIPO_ASEO; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'ID_ASEO',
 		'TIPO_ASEO',
 	),
 )); ?>

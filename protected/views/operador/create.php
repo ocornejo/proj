@@ -3,16 +3,16 @@
 /* @var $model Operador */
 
 $this->breadcrumbs=array(
-	'Operadors'=>array('index'),
+	'Operadores'=>array('index'),
 	'Create',
 );
 
 $this->menu=array(
-	array('label'=>'List Operador', 'url'=>array('index')),
-	array('label'=>'Manage Operador', 'url'=>array('admin')),
+	array('label'=>'Listar operadores', 'url'=>array('index')),
+	array('label'=>'Administrar operadores', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Operador</h1>
+<h1>Crear operadores</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

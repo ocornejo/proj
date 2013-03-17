@@ -5,12 +5,8 @@
 
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('ID_OPERADOR')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->ID_OPERADOR), array('view', 'id'=>$data->ID_OPERADOR)); ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('NOMBRE_OPERADOR')); ?>:</b>
-	<?php echo CHtml::encode($data->NOMBRE_OPERADOR); ?>
+	<?php echo CHtml::link(CHtml::encode($data->NOMBRE_OPERADOR), array('view', 'id'=>$data->ID_OPERADOR)); ?>
 	<br />
 
 

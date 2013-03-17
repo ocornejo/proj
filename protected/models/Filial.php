@@ -67,8 +67,8 @@ class Filial extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'ID_FILIAL' => 'Id Filial',
-			'NOMBRE_FILIAL' => 'Nombre Filial',
+			'ID_FILIAL' => 'ID Filial',
+			'NOMBRE_FILIAL' => 'Nombre filial',
 			'PAIS' => 'Pais',
 		);
 	}
@@ -91,5 +91,9 @@ class Filial extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+        public function getOptions()
+	{
+		return CHtml::listData($this->findAll(),'ID_FILIAL','NOMBRE_FILIAL');
 	}
 }

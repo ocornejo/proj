@@ -7,12 +7,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create TipoTurno', 'url'=>array('create')),
-	array('label'=>'Manage TipoTurno', 'url'=>array('admin')),
+	array('label'=>'Crear tipos de turno', 'url'=>array('create')),
+	array('label'=>'Administrar tipos de turno', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Tipo Turnos</h1>
+<h1>Tipo turnos</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

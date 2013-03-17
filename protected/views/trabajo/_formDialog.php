@@ -31,12 +31,12 @@ $cs->registerCssFile($baseUrl.'/css/jquery.css');
     <table valign="top" style="font-size:large;"> 
         <tr>
             <td> <?php echo CHtml::activeLabel(Trabajo::model(), 'ASEO_ID_ASEO'); ?></td>
-            <td><?php echo Chtml::textField('tipoAseo', Aseo::model()->FindByPk($id_aseo)->TIPO_ASEO, array('style' => 'width:60px', 'readonly' => 'readonly')); ?></td>
+            <td><?php echo Chtml::textField('tipoAseo', Aseo::model()->FindByPk($id_aseo)->TIPO_ASEO, array('style' => 'width:80px', 'readonly' => 'readonly')); ?></td>
 
             <td><?php echo CHtml::activeLabel(Flota::model(), 'NOMBRE_FLOTA'); ?></td>
-            <td> <?php echo Chtml::textField('nombreFlota', Flota::model()->findByPk($id_flota)->NOMBRE_FLOTA, array('style' => 'width:40px', 'readonly' => 'readonly')); ?></td>    
+            <td> <?php echo Chtml::textField('nombreFlota', Flota::model()->findByPk($id_flota)->NOMBRE_FLOTA, array('style' => 'width:50px', 'readonly' => 'readonly')); ?></td>    
             <td><?php echo CHtml::label('Nota Final', 'notaFinal'); ?></td>
-            <td> <?php echo Chtml::textField('NotaFinal','0%', array('style' => 'width:40px', 'readonly' => 'readonly')); ?></td>
+            <td> <?php echo Chtml::textField('NotaFinal','0%', array('style' => 'width:50px', 'readonly' => 'readonly')); ?></td>
         </tr>
     </table>
     <table valign="top" style="font-size:large;">
@@ -84,12 +84,7 @@ $cs->registerCssFile($baseUrl.'/css/jquery.css');
                                                 $('#AjaxLoaderS').hide();
                                                     if (html.indexOf('{')==0) {
                                                        $('#ErrorEval').show();
-                                                        for(var i=0;i<window.arreglo.length;i++){
-                                                            if(window.arreglo[i]==101)
-                                                                $('#AjaxLoader'+i).show();
-                                                            else
-                                                                $('#AjaxLoader'+i).hide();  
-                                                        }   
+                                                          
                                                     }
                                                     else {
                                                         
@@ -103,13 +98,19 @@ $cs->registerCssFile($baseUrl.'/css/jquery.css');
                         
                                                 }",'beforeSend'=>'js:function(){
                                                    $("#AjaxLoaderS").show();
+                                                   for(var i=0;i<window.arreglo.length;i++){
+                                                            if(window.arreglo[i]==101)
+                                                                $("#AjaxLoader"+i).show();
+                                                            else
+                                                                $("#AjaxLoader"+i).hide();  
+                                                        } 
                                                 }'),array('id'=>'closeEvaluacionDialog'));?>
         
         <?php echo CHtml::ajaxSubmitButton(Yii::t('','Cancelar'),
                                             CHtml::normalizeUrl(array('trabajo/Delete','id'=>$id_trabajo,'render'=>false)),
                                             array("success"=>"function(html,textStatus,jqXHR) {
                                                                 $('#SubButton').show();
-                                                                //$('#HideSubButton').hide();
+                                                                $('#HideSubButton').hide();
                                                                 $('#dialogEvaluacion').dialog('close');
                                                                 $('#showDialogEvaluacion').hide();
                                                                 

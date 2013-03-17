@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Estado', 'url'=>array('index')),
-	array('label'=>'Manage Estado', 'url'=>array('admin')),
+	array('label'=>'Listar estados de aseo', 'url'=>array('index')),
+	array('label'=>'Administrar estados de aseo', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Estado</h1>
+<h1>Crear estados de aseo</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

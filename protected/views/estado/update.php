@@ -9,13 +9,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Estado', 'url'=>array('index')),
-	array('label'=>'Create Estado', 'url'=>array('create')),
-	array('label'=>'View Estado', 'url'=>array('view', 'id'=>$model->ID_ESTADO)),
-	array('label'=>'Manage Estado', 'url'=>array('admin')),
+	array('label'=>'Listar estados de aseo', 'url'=>array('index')),
+	array('label'=>'Crear estados de aseo', 'url'=>array('create')),
+	array('label'=>'Ver estados de aseo', 'url'=>array('view', 'id'=>$model->ID_ESTADO)),
+	array('label'=>'Administrar estados de aseo', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Estado <?php echo $model->ID_ESTADO; ?></h1>
+<h1>Actualizar estado <?php echo $model->NOMBRE_ESTADO; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -7,12 +7,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Filial', 'url'=>array('create')),
-	array('label'=>'Manage Filial', 'url'=>array('admin')),
+	array('label'=>'Crear filiales', 'url'=>array('create')),
+	array('label'=>'Administrar filiales', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Filials</h1>
+<h1>Filiales</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Flota', 'url'=>array('create')),
-	array('label'=>'Manage Flota', 'url'=>array('admin')),
+	array('label'=>'Crear flota', 'url'=>array('create')),
+	array('label'=>'Administrar flotas', 'url'=>array('admin')),
 );
 ?>
 

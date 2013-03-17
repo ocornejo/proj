@@ -11,7 +11,7 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son necesarios.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -23,12 +23,12 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'FILIAL_ID_FILIAL'); ?>
-		<?php echo $form->textField($model,'FILIAL_ID_FILIAL'); ?>
+		<?php echo $form->dropDownList($model, 'FILIAL_ID_FILIAL', CHtml::listData(Filial::model()->findAll(), 'ID_FILIAL', 'NOMBRE_FILIAL'), array('empty' => 'Seleccione')); ?>
 		<?php echo $form->error($model,'FILIAL_ID_FILIAL'); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

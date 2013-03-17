@@ -3,16 +3,16 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Lugars',
+	'Lugares',
 );
 
 $this->menu=array(
-	array('label'=>'Create Lugar', 'url'=>array('create')),
-	array('label'=>'Manage Lugar', 'url'=>array('admin')),
+	array('label'=>'Crear lugar', 'url'=>array('create')),
+	array('label'=>'Administrar lugares', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Lugars</h1>
+<h1>Lugares</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

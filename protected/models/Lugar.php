@@ -68,9 +68,9 @@ class Lugar extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'ID_LUGAR' => 'Id Lugar',
+			'ID_LUGAR' => 'ID Lugar',
 			'LUGAR' => 'Lugar',
-			'FILIAL_ID_FILIAL' => 'Filial Id Filial',
+			'FILIAL_ID_FILIAL' => 'Filial',
 		);
 	}
 

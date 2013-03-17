@@ -8,8 +8,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Avion', 'url'=>array('index')),
-	array('label'=>'Create Avion', 'url'=>array('create')),
+	array('label'=>'Listar aviones', 'url'=>array('index')),
+	array('label'=>'Crear aviones', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,14 +26,13 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Avions</h1>
+<h1>Administrar aviones</h1>
 
 <p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
+Opcionalmente usted puede entrar un operador de comparación (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
+o <b>=</b>)</p>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
+<?php echo CHtml::link('Búsqueda avanzada','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
@@ -46,8 +45,20 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'filter'=>$model,
 	'columns'=>array(
 		'MATRICULA',
-		'FLOTA_ID_FLOTA',
-		'OPERADOR_ID_OPERADOR',
+                 array(
+                            'name'=> 'FLOTA_ID_FLOTA',
+                            'header'=>'Flota',
+                            'value'=>'$data->fLOTAIDFLOTA->NOMBRE_FLOTA', // this will access the current group's 1st member and give out the firstname of that member
+                            'filter'=>Flota::model()->options,
+                            'htmlOptions'=>array('style' => 'text-align: center;'),
+                        ),
+                array(
+                            'name'=> 'OPERADOR_ID_OPERADOR',
+                            'header'=>'Operador',
+                            'value'=>'$data->oPERADORIDOPERADOR->NOMBRE_OPERADOR', // this will access the current group's 1st member and give out the firstname of that member
+                            'filter'=>Operador::model()->options,
+                            'htmlOptions'=>array('style' => 'text-align: center;'),
+                        ),
 		array(
 			'class'=>'CButtonColumn',
 		),

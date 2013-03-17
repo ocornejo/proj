@@ -86,4 +86,8 @@ class Operador extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        public function getOptions()
+	{
+		return CHtml::listData($this->findAll(),'ID_OPERADOR','NOMBRE_OPERADOR');
+	}
 }

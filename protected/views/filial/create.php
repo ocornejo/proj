@@ -3,16 +3,16 @@
 /* @var $model Filial */
 
 $this->breadcrumbs=array(
-	'Filials'=>array('index'),
+	'Filiales'=>array('index'),
 	'Create',
 );
 
 $this->menu=array(
-	array('label'=>'List Filial', 'url'=>array('index')),
-	array('label'=>'Manage Filial', 'url'=>array('admin')),
+	array('label'=>'Listar filiales', 'url'=>array('index')),
+	array('label'=>'Administrar filiales', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Filial</h1>
+<h1>Crear filial</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

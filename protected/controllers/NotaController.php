@@ -197,8 +197,6 @@ class NotaController extends Controller
                      }
                 }
 
-               
-                //$this->redirect(array('view'));
              }
 
             if ($flag)

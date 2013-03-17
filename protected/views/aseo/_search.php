@@ -11,10 +11,6 @@
 	'method'=>'get',
 )); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'ID_ASEO'); ?>
-		<?php echo $form->textField($model,'ID_ASEO'); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'TIPO_ASEO'); ?>

@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Flota', 'url'=>array('index')),
-	array('label'=>'Manage Flota', 'url'=>array('admin')),
+	array('label'=>'Listar flotas', 'url'=>array('index')),
+	array('label'=>'Administrar flotas', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Flota</h1>
+<h1>Crear flota</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

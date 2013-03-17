@@ -7,12 +7,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Avion', 'url'=>array('create')),
-	array('label'=>'Manage Avion', 'url'=>array('admin')),
+	array('label'=>'Crear avión', 'url'=>array('create')),
+	array('label'=>'Administrar aviones', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Avions</h1>
+<h1>Aviones</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

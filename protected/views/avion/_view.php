@@ -10,11 +10,11 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('FLOTA_ID_FLOTA')); ?>:</b>
-	<?php echo CHtml::encode($data->FLOTA_ID_FLOTA); ?>
+	<?php echo CHtml::encode($data->fLOTAIDFLOTA->NOMBRE_FLOTA); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('OPERADOR_ID_OPERADOR')); ?>:</b>
-	<?php echo CHtml::encode($data->OPERADOR_ID_OPERADOR); ?>
+	<?php echo CHtml::encode($data->oPERADORIDOPERADOR->NOMBRE_OPERADOR); ?>
 	<br />
 
 

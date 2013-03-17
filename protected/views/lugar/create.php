@@ -3,16 +3,16 @@
 /* @var $model Lugar */
 
 $this->breadcrumbs=array(
-	'Lugars'=>array('index'),
-	'Create',
+	'Lugares'=>array('index'),
+	'Crear',
 );
 
 $this->menu=array(
-	array('label'=>'List Lugar', 'url'=>array('index')),
-	array('label'=>'Manage Lugar', 'url'=>array('admin')),
+	array('label'=>'Listar lugares', 'url'=>array('index')),
+	array('label'=>'Administrar lugares', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Lugar</h1>
+<h1>Crear lugar</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

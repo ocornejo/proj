@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Estado', 'url'=>array('create')),
-	array('label'=>'Manage Estado', 'url'=>array('admin')),
+	array('label'=>'Crear estados de aseo', 'url'=>array('create')),
+	array('label'=>'Administrar estados de aseo', 'url'=>array('admin')),
 );
 ?>
 

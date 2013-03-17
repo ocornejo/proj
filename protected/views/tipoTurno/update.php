@@ -9,13 +9,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List TipoTurno', 'url'=>array('index')),
-	array('label'=>'Create TipoTurno', 'url'=>array('create')),
-	array('label'=>'View TipoTurno', 'url'=>array('view', 'id'=>$model->ID_TIPO_TURNO)),
-	array('label'=>'Manage TipoTurno', 'url'=>array('admin')),
+	array('label'=>'Listar tipos de turno', 'url'=>array('index')),
+	array('label'=>'Crear tipos de turno', 'url'=>array('create')),
+	array('label'=>'Ver tipo de turno', 'url'=>array('view', 'id'=>$model->ID_TIPO_TURNO)),
+	array('label'=>'Administrar tipos de turno', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update TipoTurno <?php echo $model->ID_TIPO_TURNO; ?></h1>
+<h1>Actualizar tipo de turno <?php echo $model->TIPO; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

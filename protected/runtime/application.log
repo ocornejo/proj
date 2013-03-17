@@ -3429,3 +3429,618 @@ Stack trace:
 REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
 in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
 in C:\wamp\www\proj\index.php (13)
+2013/03/15 19:16:26 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/15 19:17:22 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/15 19:17:29 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/15 19:18:31 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/15 19:20:38 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/15 19:20:58 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/15 19:21:08 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/15 19:21:41 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/15 19:21:54 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/15 19:23:01 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/15 19:24:30 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/15 19:31:14 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/15 19:34:35 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`bd_aseo`.`nota`, CONSTRAINT `fk_Nota_Trabajo1` FOREIGN KEY (`TRABAJO_ID_TRABAJO`) REFERENCES `trabajo` (`ID_TRABAJO`) ON DELETE NO ACTION ON UPDATE NO ACTION). La sentencia SQL ejecutada fue: DELETE FROM `trabajo` WHERE `trabajo`.`ID_TRABAJO`=23.
+in C:\wamp\www\proj\protected\controllers\TrabajoController.php (412)
+in C:\wamp\www\proj\index.php (13)
+2013/03/15 19:34:35 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`bd_aseo`.`nota`, CONSTRAINT `fk_Nota_Trabajo1` FOREIGN KEY (`TRABAJO_ID_TRABAJO`) REFERENCES `trabajo` (`ID_TRABAJO`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `trabajo` WHERE `trabajo`.`ID_TRABAJO`=23' in C:\Yii\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\Yii\framework\db\ar\CActiveRecord.php(1745): CDbCommand->execute()
+#1 C:\Yii\framework\db\ar\CActiveRecord.php(1168): CActiveRecord->deleteByPk('23')
+#2 C:\wamp\www\proj\protected\controllers\TrabajoController.php(412): CActiveRecord->delete()
+#3 [internal function]: TrabajoController->actionDelete('23')
+#4 C:\Yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TrabajoController), Array)
+#5 C:\Yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TrabajoController), Object(ReflectionMethod), Array)
+#6 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\Yii\framework\web\CController.php(1116): CFilterChain->run()
+#9 C:\Yii\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#10 C:\Yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\Yii\framework\web\CWebApplication.php(282): CController->run('Delete')
+#14 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('trabajo/Delete')
+#15 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#16 C:\wamp\www\proj\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/Delete&id=23&render=
+HTTP_REFERER=http://localhost/proj/index.php?r=trabajo/create
+---
+2013/03/15 19:41:23 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/15 19:42:29 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/15 19:44:26 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/15 19:45:40 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/16 01:47:18 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/16 01:48:11 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/16 02:08:55 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\Yii\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\Yii\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\Yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('avion/admin')
+#9 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\wamp\www\proj\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/proj/index.php?r=avion/admin
+HTTP_REFERER=http://localhost/proj/index.php?r=avion/index
+---
+2013/03/16 02:20:34 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/16 02:31:30 [error] [exception.CException] exception 'CException' with message 'El alias "application.extensions.mbmenu.MbMenu" es inválido. Asegúrese de que apunta a un archivo PHP y el archivo tiene permisos de lectura.' in C:\Yii\framework\YiiBase.php:316
+Stack trace:
+#0 C:\Yii\framework\web\CWidgetFactory.php(146): YiiBase::import('application.ext...', true)
+#1 C:\Yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(AvionController), 'application.ext...', Array)
+#2 C:\Yii\framework\web\CBaseController.php(172): CBaseController->createWidget('application.ext...', Array)
+#3 C:\wamp\www\proj\themes\shadow_dancer\views\layouts\main.php(71): CBaseController->widget('application.ext...', Array)
+#4 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#5 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#6 C:\Yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#7 C:\Yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div class="con...')
+#8 C:\Yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div class="con...')
+#9 C:\Yii\framework\web\CBaseController.php(206): COutputProcessor->run()
+#10 C:\Yii\framework\web\CBaseController.php(300): CBaseController->endWidget('CContentDecorat...')
+#11 C:\wamp\www\proj\themes\shadow_dancer\views\layouts\column2.php(28): CBaseController->endContent()
+#12 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#13 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#14 C:\Yii\framework\web\CController.php(784): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#15 C:\wamp\www\proj\protected\controllers\AvionController.php(128): CController->render('index', Array)
+#16 C:\Yii\framework\web\actions\CInlineAction.php(49): AvionController->actionIndex()
+#17 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#20 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\Yii\framework\web\CWebApplication.php(282): CController->run('index')
+#22 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('avion/index')
+#23 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#24 C:\wamp\www\proj\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/proj/index.php?r=avion/index
+HTTP_REFERER=http://localhost/proj/index.php?r=avion/update&id=BAF
+---
+2013/03/16 02:39:57 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/16 02:40:44 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/16 02:41:40 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/16 02:42:32 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/16 02:45:10 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/16 02:45:38 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/16 02:47:20 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/16 02:50:36 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/16 02:54:12 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/16 02:55:10 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/16 02:55:26 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/16 03:12:13 [error] [exception.CException] exception 'CException' with message 'Propiedad "Operador"."options" no se encuentra definida.' in C:\Yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Yii\framework\db\ar\CActiveRecord.php(143): CComponent->__get('options')
+#1 C:\wamp\www\proj\protected\views\avion\admin.php(60): CActiveRecord->__get('options')
+#2 C:\Yii\framework\web\CBaseController.php(126): require('C:\wamp\www\pro...')
+#3 C:\Yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\wamp\www\pro...', Array, true)
+#4 C:\Yii\framework\web\CController.php(869): CBaseController->renderFile('C:\wamp\www\pro...', Array, true)
+#5 C:\Yii\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#6 C:\wamp\www\proj\protected\controllers\AvionController.php(143): CController->render('admin', Array)
+#7 C:\Yii\framework\web\actions\CInlineAction.php(49): AvionController->actionAdmin()
+#8 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#13 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('avion/admin')
+#14 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\wamp\www\proj\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/proj/index.php?r=avion/admin
+HTTP_REFERER=http://localhost/proj/index.php?r=avion/index
+---
+2013/03/16 03:37:05 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\Yii\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\Yii\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\Yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('estado/admin')
+#9 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\wamp\www\proj\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/proj/index.php?r=estado/admin
+HTTP_REFERER=http://localhost/proj/index.php?r=estado/create
+---
+2013/03/16 03:43:06 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\Yii\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\Yii\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\Yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('operador/admin')
+#9 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\wamp\www\proj\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/proj/index.php?r=operador/admin
+HTTP_REFERER=http://localhost/proj/index.php?r=operador/index
+---
+2013/03/16 15:38:24 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\Yii\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\Yii\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\Yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('filial/admin')
+#9 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\wamp\www\proj\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/proj/index.php?r=filial/admin
+HTTP_REFERER=http://localhost/proj/index.php?r=filial/create
+---
+2013/03/16 15:42:35 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\Yii\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\Yii\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\Yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('usuario/admin')
+#9 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\wamp\www\proj\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/proj/index.php?r=usuario/admin
+HTTP_REFERER=http://localhost/proj/index.php?r=usuario/create
+---
+2013/03/16 15:55:33 [error] [php] Undefined variable: data (C:\wamp\www\proj\protected\views\usuario\view.php:31)
+Stack trace:
+#0 C:\Yii\framework\web\CController.php(869): UsuarioController->renderFile()
+#1 C:\Yii\framework\web\CController.php(782): UsuarioController->renderPartial()
+#2 C:\wamp\www\proj\protected\controllers\UsuarioController.php(56): UsuarioController->render()
+#3 unknown(0): UsuarioController->actionView()
+#4 C:\Yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\Yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\Yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Yii\framework\web\filters\CFilterChain.php(133): UsuarioController->runAction()
+#8 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\Yii\framework\web\CController.php(265): UsuarioController->runActionWithFilters()
+#10 C:\Yii\framework\web\CWebApplication.php(282): UsuarioController->run()
+#11 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#13 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=usuario/view&id=3283613
+in C:\wamp\www\proj\protected\views\usuario\view.php (31)
+in C:\wamp\www\proj\protected\controllers\UsuarioController.php (56)
+in C:\wamp\www\proj\index.php (13)
+2013/03/16 16:01:42 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\Yii\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\Yii\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\Yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tipoTurno/admin')
+#9 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\wamp\www\proj\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/proj/index.php?r=tipoTurno/admin
+HTTP_REFERER=http://localhost/proj/index.php?r=tipoTurno/index
+---
+2013/03/16 16:01:54 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\Yii\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\Yii\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\Yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\Yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\Yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\Yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Yii\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('tipoTurno/admin')
+#9 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\wamp\www\proj\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/proj/index.php?r=tipoTurno/admin
+HTTP_REFERER=http://localhost/proj/index.php?r=tipoTurno/index
+---
+2013/03/16 16:02:46 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/03/17 02:22:02 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\Yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\Yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#3 C:\Yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\Yii\framework\web\CWebApplication.php(282): CController->run('view')
+#5 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController('avion/view')
+#6 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#7 C:\wamp\www\proj\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/proj/index.php?r=avion/view
+---
+2013/03/17 02:31:48 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)

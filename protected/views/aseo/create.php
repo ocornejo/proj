@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Aseo', 'url'=>array('index')),
-	array('label'=>'Manage Aseo', 'url'=>array('admin')),
+	array('label'=>'Listar aseos', 'url'=>array('index')),
+	array('label'=>'Administrar aseos', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Aseo</h1>
+<h1>Crear tipo de aseo</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

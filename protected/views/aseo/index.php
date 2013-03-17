@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Aseo', 'url'=>array('create')),
-	array('label'=>'Manage Aseo', 'url'=>array('admin')),
+	array('label'=>'Crear tipo de aseo', 'url'=>array('create')),
+	array('label'=>'Administrar aseos', 'url'=>array('admin')),
 );
 ?>
 

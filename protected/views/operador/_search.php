@@ -12,17 +12,12 @@
 )); ?>
 
 	<div class="row">
-		<?php echo $form->label($model,'ID_OPERADOR'); ?>
-		<?php echo $form->textField($model,'ID_OPERADOR'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'NOMBRE_OPERADOR'); ?>
 		<?php echo $form->textField($model,'NOMBRE_OPERADOR',array('size'=>20,'maxlength'=>20)); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+		<?php echo CHtml::submitButton('Buscar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
