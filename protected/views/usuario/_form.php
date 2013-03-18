@@ -41,7 +41,8 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'FILIAL_ID_FILIAL'); ?>
-		<?php echo $form->textField($model,'FILIAL_ID_FILIAL'); ?>
+		<?php echo $form->dropDownList($model, 'FILIAL_ID_FILIAL', CHtml::listData(Filial::model()->findAll(), 'ID_FILIAL', 'NOMBRE_FILIAL'), array('empty' => 'Seleccione')); ?>
+                <?php //echo $form->textField($model,'FILIAL_ID_FILIAL'); ?>
 		<?php echo $form->error($model,'FILIAL_ID_FILIAL'); ?>
 	</div>
 

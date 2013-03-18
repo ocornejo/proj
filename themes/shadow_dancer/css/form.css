@@ -107,7 +107,7 @@ div.form label
 	display: block;
 }*/
 
-div.form .row
+div.form .raw
 {
         display: inline-block;
         margin-right: 15px;

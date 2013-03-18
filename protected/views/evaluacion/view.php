@@ -8,20 +8,19 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Evaluacion', 'url'=>array('index')),
-	array('label'=>'Create Evaluacion', 'url'=>array('create')),
-	array('label'=>'Update Evaluacion', 'url'=>array('update', 'id'=>$model->ID_EVALUACION)),
-	array('label'=>'Delete Evaluacion', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->ID_EVALUACION),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Evaluacion', 'url'=>array('admin')),
+	array('label'=>'Listar evaluaciones', 'url'=>array('index')),
+	array('label'=>'Crear evaluación', 'url'=>array('create')),
+	array('label'=>'Actualizar evaluación', 'url'=>array('update', 'id'=>$model->ID_EVALUACION)),
+	array('label'=>'Eliminar evaluación', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->ID_EVALUACION),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar evaluación', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Evaluacion #<?php echo $model->ID_EVALUACION; ?></h1>
+<h1>Vista evaluación <?php echo $model->NOMBRE; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'ID_EVALUACION',
 		'NOMBRE',
 	),
 )); ?>

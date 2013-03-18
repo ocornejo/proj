@@ -41,7 +41,7 @@ class Item extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ID_ITEM, EVALUACION_ID_EVALUACION', 'required'),
+			array('ID_ITEM,NOMBRE ,EVALUACION_ID_EVALUACION', 'required'),
 			array('ID_ITEM, EVALUACION_ID_EVALUACION', 'numerical', 'integerOnly'=>true),
 			array('NOMBRE', 'length', 'max'=>45),
 			// The following rule is used by search().
@@ -70,9 +70,9 @@ class Item extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'ID_ITEM' => 'Id Item',
+			'ID_ITEM' => 'ID Item',
 			'NOMBRE' => 'Nombre',
-			'EVALUACION_ID_EVALUACION' => 'Evaluacion Id Evaluacion',
+			'EVALUACION_ID_EVALUACION' => 'Evaluacion',
 		);
 	}
 

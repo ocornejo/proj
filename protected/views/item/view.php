@@ -8,21 +8,25 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Item', 'url'=>array('index')),
-	array('label'=>'Create Item', 'url'=>array('create')),
-	array('label'=>'Update Item', 'url'=>array('update', 'id'=>$model->ID_ITEM)),
-	array('label'=>'Delete Item', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->ID_ITEM),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Item', 'url'=>array('admin')),
+	array('label'=>'Listar items', 'url'=>array('index')),
+	array('label'=>'Crear items', 'url'=>array('create')),
+	array('label'=>'Actualizar items', 'url'=>array('update', 'id'=>$model->ID_ITEM)),
+	array('label'=>'Borrar items', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->ID_ITEM),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar items', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Item #<?php echo $model->ID_ITEM; ?></h1>
+<h1>Vista item <?php echo $model->NOMBRE; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'ID_ITEM',
 		'NOMBRE',
-		'EVALUACION_ID_EVALUACION',
+                array(
+                            'name'=> 'EVALUACION_ID_EVALUACION',
+                            'header'=>'Evaluacion',
+                            'value'=>$model->eVALUACIONIDEVALUACION->NOMBRE, // this will access the current group's 1st member and give out the firstname of that member
+                            'htmlOptions'=>array('style' => 'text-align: center;'),
+                        ),
 	),
 )); ?>

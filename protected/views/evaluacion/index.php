@@ -3,16 +3,16 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Evaluacions',
+	'Evaluaciones',
 );
 
 $this->menu=array(
-	array('label'=>'Create Evaluacion', 'url'=>array('create')),
-	array('label'=>'Manage Evaluacion', 'url'=>array('admin')),
+	array('label'=>'Crear evaluación', 'url'=>array('create')),
+	array('label'=>'Administrar evaluaciones', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Evaluacions</h1>
+<h1>Evaluaciones</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

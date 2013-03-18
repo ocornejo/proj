@@ -39,7 +39,7 @@ class Evaluacion extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ID_EVALUACION', 'required'),
+			array('NOMBRE', 'required'),
 			array('ID_EVALUACION', 'numerical', 'integerOnly'=>true),
 			array('NOMBRE', 'length', 'max'=>45),
 			// The following rule is used by search().
@@ -67,7 +67,7 @@ class Evaluacion extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'ID_EVALUACION' => 'Id Evaluacion',
+			'ID_EVALUACION' => 'ID Evaluación',
 			'NOMBRE' => 'Nombre',
 		);
 	}
@@ -89,5 +89,9 @@ class Evaluacion extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+        public function getOptions()
+	{
+		return CHtml::listData($this->findAll(),'ID_EVALUACION','NOMBRE');
 	}
 }

@@ -16,12 +16,6 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'ID_ITEM'); ?>
-		<?php echo $form->textField($model,'ID_ITEM'); ?>
-		<?php echo $form->error($model,'ID_ITEM'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'NOMBRE'); ?>
 		<?php echo $form->textField($model,'NOMBRE',array('size'=>45,'maxlength'=>45)); ?>
 		<?php echo $form->error($model,'NOMBRE'); ?>
@@ -29,12 +23,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'EVALUACION_ID_EVALUACION'); ?>
-		<?php echo $form->textField($model,'EVALUACION_ID_EVALUACION'); ?>
+                <?php echo $form->dropDownList($model, 'EVALUACION_ID_EVALUACION', CHtml::listData(Evaluacion::model()->findAll(), 'ID_EVALUACION', 'NOMBRE'), array('empty' => 'Seleccione')); ?>
+		<?php //echo $form->textField($model,'EVALUACION_ID_EVALUACION'); ?>
 		<?php echo $form->error($model,'EVALUACION_ID_EVALUACION'); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

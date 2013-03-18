@@ -9,13 +9,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Evaluacion', 'url'=>array('index')),
-	array('label'=>'Create Evaluacion', 'url'=>array('create')),
-	array('label'=>'View Evaluacion', 'url'=>array('view', 'id'=>$model->ID_EVALUACION)),
-	array('label'=>'Manage Evaluacion', 'url'=>array('admin')),
+	array('label'=>'Listar evaluación', 'url'=>array('index')),
+	array('label'=>'Crear evaluación', 'url'=>array('create')),
+	array('label'=>'Ver evaluación', 'url'=>array('view', 'id'=>$model->ID_EVALUACION)),
+	array('label'=>'Administrar evaluación', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Evaluacion <?php echo $model->ID_EVALUACION; ?></h1>
+<h1>Actualizar evaluación <?php echo $model->NOMBRE; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

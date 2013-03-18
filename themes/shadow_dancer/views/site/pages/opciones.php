@@ -21,6 +21,8 @@ $this->breadcrumbs=array(
 <?php echo CHtml::link('Administrar filiales',array('filial/index')); ?><br>
 <?php echo CHtml::link('Administrar usuarios',array('usuario/index')); ?><br>
 <?php echo CHtml::link('Administrar tipos de turno',array('tipoTurno/index')); ?><br>
+<?php echo CHtml::link('Administrar evaluaciones',array('evaluacion/index')); ?><br>
+<?php echo CHtml::link('Administrar ítems',array('item/index')); ?><br>
 Administrar Items a evaluar
 Administrar ponderaciones
 

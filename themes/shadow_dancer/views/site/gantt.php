@@ -19,49 +19,35 @@
 
 			"use strict";
                        
-			$(".gantt").gantt({
-                            
+			$(".gantt").gantt({                            
 				source: [
-                                    
-                          <?php
-                          $aviso=false;
-                          foreach($variable as $value){
-                                    
-                                    $horaInicio = date('Y-m-d H:i:s',  strtotime($value->FECHA.' '.$value->HORA_INICIO));
+                            <?php foreach($variable as $value){
+                                    $hinicio_array= explode(':', $value->HORA_INICIO);
+                                    $hinicio = $hinicio_array[0].':00:00';
+                                    $htermino_array= explode(':', $value->HORA_TERMINO);
+                                    $htermino = $htermino_array[0].':00:00';
+                                    $horaInicio = date('Y-m-d H:i:s',  strtotime($value->FECHA.' '.$hinicio));
                                     $finalInicio= strtotime($horaInicio)*1000;
-                                    
-                                    $horaFinal = date('Y-m-d H:i:s',  strtotime($value->FECHA.' '.$value->HORA_TERMINO));
+                                    $horaFinal = date('Y-m-d H:i:s',  strtotime($value->FECHA.' '.$htermino));
                                     $finalFinal= strtotime($horaFinal)*1000;
-                                    if($finalFinal < $finalInicio ){
-                                        $finalFinal = strtotime($horaFinal.'+ 1 day')*1000;                                        
+                                    if($finalFinal < $finalInicio || $finalFinal==$finalInicio){
+                                        
+                                        $finalFinal = strtotime($horaFinal.'+ 22 hour')*1000;                                        
                                     }
-
-                                     if($value->HORA_INICIO!=NULL){
+                                    
+                           
                                      print('         
-                                      {
-                                              name: "'.$value->AVION_MATRICULA.'",
+                                      {       name: "'.$value->AVION_MATRICULA.'",
                                               desc: "'.Flota::model()->findByPk(Avion::model()->findByPk($value->AVION_MATRICULA)->FLOTA_ID_FLOTA)->NOMBRE_FLOTA.'",
                                               values: [{
-                                                      from: "/Date('.$finalInicio.')/",
                                                       to: "/Date('.$finalFinal.')/",
+                                                      from: "/Date('.$finalInicio.')/",
                                                       label: "'.Aseo::model()->findByPk($value->ASEO_ID_ASEO)->TIPO_ASEO.'-'.Estado::model()->findByPk($value->ESTADO_ID_ESTADO)->NOMBRE_ESTADO.'", 
                                                       customClass: "ganttGreen"
-                                              }]
+                                              }],
                                 },');
-                                     }
-                                     else{
-                                     print('         
-                                      {
-                                              name: "'.$value->AVION_MATRICULA.'",
-                                              desc: "'.Flota::model()->findByPk(Avion::model()->findByPk($value->AVION_MATRICULA)->FLOTA_ID_FLOTA)->NOMBRE_FLOTA.'",
-                                              values: [{
-                                                      from: "/Date('.($finalInicio).')/",
-                                                      to: "/Date('.($finalFinal+80000000).')/",
-                                                      label: "'.Aseo::model()->findByPk($value->ASEO_ID_ASEO)->TIPO_ASEO.'-Aseo sin hora-'.Estado::model()->findByPk($value->ESTADO_ID_ESTADO)->NOMBRE_ESTADO.'", 
-                                                      customClass: "ganttOrange"
-                                              }]
-                                },');
-                                     }
+                                    
+                                  
                           }
                           ?>
                             
@@ -70,7 +56,7 @@
 				scale:"hours",
 				maxScale: "days",
 				minScale: "hours",
-				itemsPerPage: 8,
+				itemsPerPage: 10,
 				onItemClick: function(data){
 					alert("Aseo cabina");
 				},
@@ -90,7 +76,7 @@
 				content: "Base de Mantto.",
 				trigger: "hover"
 			});
-                        console.log(source);
+                     
 			prettyPrint();
 
 		});
@@ -112,11 +98,6 @@
     <?php endif;?>
 
 </div>
-        
-    <?php if($aviso==true):?>
-        
-            <div class="flash-notice"><b>Aviso:</b> Hay aseos planificados sin hora de inicio y término.</div>   
-	
-          <?php endif;?>
+
 
 

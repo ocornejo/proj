@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Item', 'url'=>array('index')),
-	array('label'=>'Manage Item', 'url'=>array('admin')),
+	array('label'=>'Listar items', 'url'=>array('index')),
+	array('label'=>'Administrar items', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Item</h1>
+<h1>Crear item</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

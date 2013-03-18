@@ -11,10 +11,6 @@
 	'method'=>'get',
 )); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'ID_EVALUACION'); ?>
-		<?php echo $form->textField($model,'ID_EVALUACION'); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'NOMBRE'); ?>
@@ -22,7 +18,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+		<?php echo CHtml::submitButton('Buscar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

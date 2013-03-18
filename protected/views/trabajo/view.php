@@ -8,15 +8,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Trabajo', 'url'=>array('index')),
-	array('label'=>'Create Trabajo', 'url'=>array('create')),
-	array('label'=>'Update Trabajo', 'url'=>array('update', 'id'=>$model->ID_TRABAJO)),
-	array('label'=>'Delete Trabajo', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->ID_TRABAJO),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Trabajo', 'url'=>array('admin')),
+	array('label'=>'Listar aseos', 'url'=>array('index')),
+	array('label'=>'Crear aseo', 'url'=>array('create')),
+	array('label'=>'Actualizar aseo', 'url'=>array('update', 'id'=>$model->ID_TRABAJO)),
+	array('label'=>'Borrar aseo', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->ID_TRABAJO),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar aseos', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Trabajo #<?php echo $model->ID_TRABAJO; ?></h1>
+<h1>Vista Aseo #<?php echo $model->ID_TRABAJO; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

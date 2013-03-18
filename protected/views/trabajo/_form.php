@@ -143,13 +143,13 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
     <legend>Información personal</legend>
         <?php $model->USUARIO_BP = Yii::app()->user->getId(); ?>
         <?php echo $form->hiddenField($model, 'USUARIO_BP'); ?>
-    <div class="row">
+    <div class="raw">
         <?php Usuario::model()->NOMBRE = Usuario::model()->FindByPk(Yii::app()->user->getId())->NOMBRE; ?>
         <?php echo $form->labelEx(Usuario::model(), 'NOMBRE'); ?>
         <?php echo $form->textField(Usuario::model(), 'NOMBRE', array('style' => 'width:100px', 'maxlength' => 30, 'readonly' => true)); ?>
     </div>
     
-    <div class="row">
+    <div class="raw">
         <?php echo $form->labelEx($modelT, 'FECHA'); ?>
             <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
                             'model' => $modelT,
@@ -170,7 +170,7 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
             <?php echo $form->error($modelT, 'FECHA'); ?>
     </div>
   
-    <div class="row">
+    <div class="raw">
       <?php echo $form->labelEx($modelT, 'TIPO_TURNO_ID_TIPO_TURNO'); ?>
       <?php echo $form->dropDownList($modelT, 'TIPO_TURNO_ID_TIPO_TURNO', CHtml::listData(TipoTurno::model()->findAll(), 'ID_TIPO_TURNO', 'TIPO'), array('empty' => 'Seleccione'));?>
       <?php echo $form->error($modelT, 'TIPO_TURNO_ID_TIPO_TURNO');?>
@@ -183,7 +183,7 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
     
     <legend>Información del avión</legend>          
     
-    <div class="row">
+    <div class="raw">
         <?php echo $form->labelEx($model, 'AVION_MATRICULA'); ?>
         <?php echo $form->dropDownList($model, 'AVION_MATRICULA', CHtml::listData(Avion::model()->findAll(), 'MATRICULA', 'MATRICULA'), array('empty' => 'Seleccione',
                     'ajax' => array(
@@ -198,7 +198,7 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
         <?php echo $form->error($model, 'AVION_MATRICULA'); ?>
     </div>
     
-    <div class="row">
+    <div class="raw">
         <?php echo CHtml::label('Flota:', ''); ?>
         <?php echo CHtml::textField('flotaId', '', array('style' => 'width:43px', 'readonly' => 'readonly')); ?>
     </div>
@@ -208,7 +208,7 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
     <p>ASEO #1</p>
   <fieldset>
       <legend>Información del Aseo</legend>
-      <div class="row">
+      <div class="raw">
           <?php echo $form->labelEx($model, 'ASEO_ID_ASEO'); ?>
               
         <?php
@@ -236,13 +236,13 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
                     <?php echo $form->error($model, 'ASEO_ID_ASEO'); ?>
       </div>
       
-      <div class="row">
+      <div class="raw">
           <?php echo $form->labelEx($model, 'LUGAR_ID_LUGAR'); ?>
           <?php echo $form->dropDownList($model, 'LUGAR_ID_LUGAR', CHtml::listData(Lugar::model()->findAll('filial_id_filial=:filial', array(':filial' => Usuario::model()->findByPk(Yii::app()->user->getId())->FILIAL_ID_FILIAL)), 'ID_LUGAR', 'LUGAR'), array('empty' => 'Seleccione')); ?>
           <?php echo $form->error($model, 'LUGAR_ID_LUGAR'); ?>
       </div>
       
-      <div class="row">
+      <div class="raw">
           <?php echo $form->labelEx($model, 'PLANIFICADO'); ?>
           <?php echo $form->radioButtonList($model, 'PLANIFICADO', array(1 => 'Si', 0 => 'No'), array('separator' => ' ')); ?>
           <?php echo $form->error($model, 'PLANIFICADO'); ?>
@@ -251,7 +251,7 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
     
     <fieldset>
         <legend>Información cronológica</legend>
-        <div class="row">
+        <div class="raw">
             <?php echo $form->labelEx($model, 'HORA_INICIO'); ?>
             <?php $this->widget('application.extensions.jui_timepicker.JTimePicker', array(
                            'model' => $model,
@@ -273,7 +273,7 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
                        )); ?>
             <?php echo $form->error($model, 'HORA_INICIO'); ?>
         </div>
-        <div class="row">
+        <div class="raw">
             <?php echo $form->labelEx($model, 'HORA_TERMINO'); ?>
             <?php $this->widget('application.extensions.jui_timepicker.JTimePicker', array(
                         'model' => $model,
@@ -295,7 +295,7 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
                     )); ?>
            <?php echo $form->error($model, 'HORA_TERMINO'); ?>
         </div>
-        <div class="row">
+        <div class="raw">
             <?php echo $form->labelEx($model, 'FECHA'); ?>
             <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
                 'model' => $model,
@@ -317,13 +317,13 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
     
     <fieldset>
         <legend>Información de la evaluación</legend>
-        <div class="row">
+        <div class="raw">
             <?php echo $form->labelEx($model, 'ESTADO_ID_ESTADO'); ?>
             <?php echo $form->dropDownList($model, 'ESTADO_ID_ESTADO', CHtml::listData(Estado::model()->findAll(), 'ID_ESTADO', 'NOMBRE_ESTADO'), array('empty' => 'Seleccione')); ?>
             <?php echo $form->error($model, 'ESTADO_ID_ESTADO'); ?>
         </div>
         
-        <div class="row">
+        <div class="raw">
             <?php echo $form->labelEx($model, 'OT'); ?>
             <?php echo $form->textField($model, 'OT', array('style' => 'width:50px', 'maxlength' => 6,'onBlur'=>CHtml::ajax(array(
                                                                                            'url'=>Yii::app()->createUrl('trabajo/SearchOT'),
@@ -342,7 +342,7 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
             <?php echo $form->error($model, 'OT'); ?>
         </div>
         
-        <div class="row">
+        <div class="raw">
             <?php echo $form->labelEx($model, 'CALIFICACION', array('id' => 'CALIFICACION_LABEL')); ?>
             <?php echo $form->textField($model, 'CALIFICACION', array('style' => 'width:30px', 'maxlength' => 3, 'readonly' => 'true')); ?>
             <?php $baseUrl = Yii::app()->theme->baseUrl;
@@ -386,13 +386,13 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
     
     <fieldset class="coments">
         <legend>Comentarios y fotos</legend>
-        <div class="row">
+        <div class="raw">
             <?php echo $form->labelEx($model, 'COMENTARIO',array('style'=>"vertical-align:26px;")); ?>
             <?php echo $form->textArea($model, 'COMENTARIO', array('maxlength' => 255, 'rows' => 3, 'cols' => 70)); ?>
             <?php echo $form->error($model, 'COMENTARIO'); ?>
         </div>
         
-        <div class="row">
+        <div class="raw">
            <?php echo $form->labelEx($model, 'imagen',array('style'=>"vertical-align:top;")); ?>
            <?php $this->widget('CMultiFileUpload', array(
                                     'name' => 'imagen',

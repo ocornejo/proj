@@ -9,13 +9,13 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Item', 'url'=>array('index')),
-	array('label'=>'Create Item', 'url'=>array('create')),
-	array('label'=>'View Item', 'url'=>array('view', 'id'=>$model->ID_ITEM)),
-	array('label'=>'Manage Item', 'url'=>array('admin')),
+	array('label'=>'Listar items', 'url'=>array('index')),
+	array('label'=>'Crear item', 'url'=>array('create')),
+	array('label'=>'Vista item', 'url'=>array('view', 'id'=>$model->ID_ITEM)),
+	array('label'=>'Administrar items', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Item <?php echo $model->ID_ITEM; ?></h1>
+<h1>Actualizar item <?php echo $model->NOMBRE; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
