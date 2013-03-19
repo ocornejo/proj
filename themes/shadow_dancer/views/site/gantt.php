@@ -22,21 +22,28 @@
 			$(".gantt").gantt({                            
 				source: [
                             <?php foreach($variable as $value){
-                                    $hinicio_array= explode(':', $value->HORA_INICIO);
-                                    $hinicio = $hinicio_array[0].':00:00';
-                                    $htermino_array= explode(':', $value->HORA_TERMINO);
-                                    $htermino = $htermino_array[0].':00:00';
-                                    $horaInicio = date('Y-m-d H:i:s',  strtotime($value->FECHA.' '.$hinicio));
-                                    $finalInicio= strtotime($horaInicio)*1000;
-                                    $horaFinal = date('Y-m-d H:i:s',  strtotime($value->FECHA.' '.$htermino));
-                                    $finalFinal= strtotime($horaFinal)*1000;
+                                    if($value->HORA_INICIO!=NULL && $value->HORA_TERMINO!=NULL){
+                                        $hinicio_array= explode(':', $value->HORA_INICIO);
+                                        $hinicio = $hinicio_array[0].':00:00';
+                                        $htermino_array= explode(':', $value->HORA_TERMINO);
+                                        $htermino = $htermino_array[0].':00:00';
+                                        $horaInicio = date('Y-m-d H:i:s',  strtotime($value->FECHA.' '.$hinicio));
+                                        $finalInicio= strtotime($horaInicio)*1000;
+                                        $horaFinal = date('Y-m-d H:i:s',  strtotime($value->FECHA.' '.$htermino));
+                                        $finalFinal= strtotime($horaFinal)*1000;
+                                    }
+                                    else{
+                                        $horaInicio = date('Y-m-d',  strtotime($value->FECHA));
+                                        $finalInicio= strtotime($horaInicio)*1000;
+                                        $horaFinal = date('Y-m-d',  strtotime($value->FECHA));
+                                        $finalFinal= strtotime($horaFinal)*1000;
+                                    }
                                     if($finalFinal < $finalInicio || $finalFinal==$finalInicio){
-                                        
                                         $finalFinal = strtotime($horaFinal.'+ 22 hour')*1000;                                        
                                     }
                                     
-                           
-                                     print('         
+                                    if($value->HORA_INICIO!=NULL && $value->HORA_TERMINO!=NULL){
+                                        print('         
                                       {       name: "'.$value->AVION_MATRICULA.'",
                                               desc: "'.Flota::model()->findByPk(Avion::model()->findByPk($value->AVION_MATRICULA)->FLOTA_ID_FLOTA)->NOMBRE_FLOTA.'",
                                               values: [{
@@ -45,7 +52,21 @@
                                                       label: "'.Aseo::model()->findByPk($value->ASEO_ID_ASEO)->TIPO_ASEO.'-'.Estado::model()->findByPk($value->ESTADO_ID_ESTADO)->NOMBRE_ESTADO.'", 
                                                       customClass: "ganttGreen"
                                               }],
-                                },');
+                                    },');
+                                    }
+                                    else{
+                                          print('         
+                                      {       name: "'.$value->AVION_MATRICULA.'",
+                                              desc: "'.Flota::model()->findByPk(Avion::model()->findByPk($value->AVION_MATRICULA)->FLOTA_ID_FLOTA)->NOMBRE_FLOTA.'",
+                                              values: [{
+                                                      to: "/Date('.$finalFinal.')/",
+                                                      from: "/Date('.$finalInicio.')/",
+                                                      label: "'.Aseo::model()->findByPk($value->ASEO_ID_ASEO)->TIPO_ASEO.'-'.Estado::model()->findByPk($value->ESTADO_ID_ESTADO)->NOMBRE_ESTADO.'-Aseo sin hora", 
+                                                      customClass: "ganttOrange"
+                                              }],
+                                    },');
+                                    }
+                                     
                                     
                                   
                           }
