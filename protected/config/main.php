@@ -8,7 +8,7 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Aseos Cabina',
-        'defaultController'=>'site/login',
+        'defaultController'=>'site/index',
         
         'behaviors'=>array(
              'class'=>'application.components.ApplicationBehavior',
