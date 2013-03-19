@@ -17,6 +17,7 @@ return array(
 	'preload'=>array('log'),
         // application theme
         'theme'=>'shadow_dancer',
+
         
 	// autoloading model and component classes
 	'import'=>array(
@@ -43,6 +44,7 @@ return array(
    
 	// application components
 	'components'=>array(
+
                 'coreMessages'=>array(
                     'basePath'=>null,
                 ),

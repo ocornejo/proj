@@ -205,6 +205,7 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
 
   </fieldset>
     <hr>
+    <div class="flash-success">El aseo ha sido guardado con éxito.</div>
     <p>ASEO #1</p>
   <fieldset>
       <legend>Información del Aseo</legend>

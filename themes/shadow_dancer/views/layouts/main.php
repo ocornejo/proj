@@ -81,16 +81,15 @@
                                 array('label'=>CHtml::image(Yii::app()->theme->baseUrl."/images/big_icons/icon-warning.png","",array("width"=>20,"heigth"=>20,'style' => 'vertical-align:10px;')). CHtml::label("  Críticos", "",array('style' => 'vertical-align:15px;')), 'url'=>array('/site/criticos')),
                                 array('label'=>CHtml::image(Yii::app()->theme->baseUrl."/images/big_icons/icon-chart2.png","",array("width"=>20,"heigth"=>20,'style' => 'vertical-align:10px;')). CHtml::label("  Indicadores", "",array('style' => 'vertical-align:15px;')), 'url'=>array('/site/page', 'view'=>'indicadores'),'itemOptions'=>array('class'=>'icon_chart')),
 				array('label'=>CHtml::image(Yii::app()->theme->baseUrl."/images/big_icons/icon-gears.png","",array("width"=>20,"heigth"=>20,'style' => 'vertical-align:10px;')). CHtml::label("  Opciones", "",array('style' => 'vertical-align:15px;')), 'url'=>array('/site/page', 'view'=>'opciones'))
-				//array('label'=>'Buttons & Icons', 'url'=>array('/site/page', 'view'=>'buttons_and_icons')),
-				//array('label'=>'Error Pages', 'url'=>array('/site/page', 'view'=>'Demo 404 page')),
-			),
+				),
                     'encodeLabel'=>false,
 		)); ?>
 	</div> <!--mainmenu -->
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
+                'homeLink'=>CHtml::link('Inicio', array('/site/index')),
+                'links'=>$this->breadcrumbs,
+            )); ?><!-- breadcrumbs -->
 	<?php endif?>
 
 	<?php echo $content; ?>
