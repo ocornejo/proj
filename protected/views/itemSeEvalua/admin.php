@@ -1,15 +1,15 @@
 <?php
-/* @var $this UsuarioController */
-/* @var $model Usuario */
+/* @var $this ItemSeEvaluaController */
+/* @var $model ItemSeEvalua */
 
 $this->breadcrumbs=array(
-	'Usuarios'=>array('index'),
-	'Manage',
+	'Item Se Evaluas'=>array('index'),
+	'Administrar',
 );
 
 $this->menu=array(
-	array('label'=>'List Usuario', 'url'=>array('index')),
-	array('label'=>'Create Usuario', 'url'=>array('create')),
+	array('label'=>'Listar Items a evaluar', 'url'=>array('index')),
+	array('label'=>'Crear Item a evaluar', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -18,7 +18,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$('#usuario-grid').yiiGridView('update', {
+	$('#item-se-evalua-grid').yiiGridView('update', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -26,14 +26,14 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Usuarios</h1>
+<h1>Administrar item a evaluar</h1>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
 or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
 </p>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
+<?php echo CHtml::link('Búsqueda avanzada','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
@@ -41,15 +41,31 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 </div><!-- search-form -->
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'usuario-grid',
+	'id'=>'item-se-evalua-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'BP',
-		'NOMBRE',
-		'NIVEL_USUARIO',
-		'PASSWORD',
-		'FILIAL_ID_FILIAL',
+		array(
+                            'name'=> 'FLOTA_ID_FLOTA',
+                            'header'=>'Flota',
+                            'value'=>'$data->fLOTAIDFLOTA->NOMBRE_FLOTA', // this will access the current group's 1st member and give out the firstname of that member
+                            'filter'=>Flota::model()->options,
+                            'htmlOptions'=>array('style' => 'text-align: center;'),
+                        ),
+                 array(
+                            'name'=> 'ASEO_ID_ASEO',
+                            'header'=>'Aseo',
+                            'value'=>'$data->aSEOIDASEO->TIPO_ASEO', // this will access the current group's 1st member and give out the firstname of that member
+                            'filter'=>Aseo::model()->options,
+                            'htmlOptions'=>array('style' => 'text-align: center;'),
+                        ), 
+            array(
+                            'name'=> 'ITEM_ID_ITEM',
+                            'header'=>'Item',
+                            'value'=>'$data->iTEMIDITEM->NOMBRE', // this will access the current group's 1st member and give out the firstname of that member
+                            'filter'=>Item::model()->options,
+                            'htmlOptions'=>array('style' => 'text-align: center;'),
+                        ), 
 		array(
 			'class'=>'CButtonColumn',
 		),

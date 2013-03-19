@@ -4,6 +4,7 @@
  * This is the model class for table "ponderacion".
  *
  * The followings are the available columns in table 'ponderacion':
+ * @property integer $ID_PONDERACION
  * @property integer $PONDERACION
  * @property integer $ASEO_ID_ASEO
  * @property integer $FLOTA_ID_FLOTA
@@ -42,11 +43,11 @@ class Ponderacion extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ASEO_ID_ASEO, FLOTA_ID_FLOTA, EVALUACION_ID_EVALUACION', 'required'),
+			array('PONDERACION, ASEO_ID_ASEO, FLOTA_ID_FLOTA, EVALUACION_ID_EVALUACION', 'required'),
 			array('PONDERACION, ASEO_ID_ASEO, FLOTA_ID_FLOTA, EVALUACION_ID_EVALUACION', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('PONDERACION, ASEO_ID_ASEO, FLOTA_ID_FLOTA, EVALUACION_ID_EVALUACION', 'safe', 'on'=>'search'),
+			array('ID_PONDERACION, PONDERACION, ASEO_ID_ASEO, FLOTA_ID_FLOTA, EVALUACION_ID_EVALUACION', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -70,10 +71,11 @@ class Ponderacion extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			'ID_PONDERACION' => 'ID Ponderacion',
 			'PONDERACION' => 'Ponderacion',
-			'ASEO_ID_ASEO' => 'Aseo Id Aseo',
-			'FLOTA_ID_FLOTA' => 'Flota Id Flota',
-			'EVALUACION_ID_EVALUACION' => 'Evaluacion Id Evaluacion',
+			'ASEO_ID_ASEO' => 'Aseo',
+			'FLOTA_ID_FLOTA' => 'Flota',
+			'EVALUACION_ID_EVALUACION' => 'Evaluacion',
 		);
 	}
 
@@ -88,6 +90,7 @@ class Ponderacion extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$criteria->compare('ID_PONDERACION',$this->ID_PONDERACION);
 		$criteria->compare('PONDERACION',$this->PONDERACION);
 		$criteria->compare('ASEO_ID_ASEO',$this->ASEO_ID_ASEO);
 		$criteria->compare('FLOTA_ID_FLOTA',$this->FLOTA_ID_FLOTA);

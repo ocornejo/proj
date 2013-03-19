@@ -3,27 +3,36 @@
 /* @var $model CRITICOS */
 
 $this->breadcrumbs=array(
-	'Criticoses'=>array('index'),
+	'Críticos'=>array('index'),
 	$model->ID_CRITICOS,
 );
 
 $this->menu=array(
-	array('label'=>'List CRITICOS', 'url'=>array('index')),
-	array('label'=>'Create CRITICOS', 'url'=>array('create')),
-	array('label'=>'Update CRITICOS', 'url'=>array('update', 'id'=>$model->ID_CRITICOS)),
-	array('label'=>'Delete CRITICOS', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->ID_CRITICOS),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage CRITICOS', 'url'=>array('admin')),
+	array('label'=>'Listar críticos', 'url'=>array('index')),
+	array('label'=>'Crear crítico', 'url'=>array('create')),
+	array('label'=>'Actualizar crítico', 'url'=>array('update', 'id'=>$model->ID_CRITICOS)),
+	array('label'=>'Borrar crítico', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->ID_CRITICOS),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar crítico', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View CRITICOS #<?php echo $model->ID_CRITICOS; ?></h1>
+<h1>Vista crítico #<?php echo $model->ID_CRITICOS; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'ID_CRITICOS',
-		'FLOTA_ID_FLOTA',
-		'ASEO_ID_ASEO',
+		array(
+                            'name'=> 'FLOTA_ID_FLOTA',
+                            'header'=>'Flota',
+                            'value'=>$model->fLOTAIDFLOTA->NOMBRE_FLOTA, // this will access the current group's 1st member and give out the firstname of that member
+                            'htmlOptions'=>array('style' => 'text-align: center;'),
+                        ),
+                 array(
+                            'name'=> 'ASEO_ID_ASEO',
+                            'header'=>'Aseo',
+                            'value'=>$model->aSEOIDASEO->TIPO_ASEO, // this will access the current group's 1st member and give out the firstname of that member
+                            'htmlOptions'=>array('style' => 'text-align: center;'),
+                        ),
 		'LIMITE1',
 		'LIMITE2',
 		'LIMITE3',

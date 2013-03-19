@@ -10,11 +10,11 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('FLOTA_ID_FLOTA')); ?>:</b>
-	<?php echo CHtml::encode($data->FLOTA_ID_FLOTA); ?>
+	<?php echo CHtml::encode($data->fLOTAIDFLOTA->NOMBRE_FLOTA); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('ASEO_ID_ASEO')); ?>:</b>
-	<?php echo CHtml::encode($data->ASEO_ID_ASEO); ?>
+	<?php echo CHtml::encode($data->aSEOIDASEO->TIPO_ASEO); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('LIMITE1')); ?>:</b>

@@ -1,21 +1,21 @@
 <?php
-/* @var $this UsuarioController */
-/* @var $model Usuario */
+/* @var $this ItemSeEvaluaController */
+/* @var $model ItemSeEvalua */
 
 $this->breadcrumbs=array(
-	'Usuarios'=>array('index'),
-	$model->BP=>array('view','id'=>$model->BP),
-	'Update',
+	'Item Se Evalua'=>array('index'),
+	$model->ID_ISE=>array('view','id'=>$model->ID_ISE),
+	'Actualizar',
 );
 
 $this->menu=array(
-	array('label'=>'List Usuario', 'url'=>array('index')),
-	array('label'=>'Create Usuario', 'url'=>array('create')),
-	array('label'=>'View Usuario', 'url'=>array('view', 'id'=>$model->BP)),
-	array('label'=>'Manage Usuario', 'url'=>array('admin')),
+	array('label'=>'Listar Items a evaluar', 'url'=>array('index')),
+	array('label'=>'Crear Item a evaluar', 'url'=>array('create')),
+	array('label'=>'Ver item a evaluar', 'url'=>array('view', 'id'=>$model->ID_ISE)),
+	array('label'=>'Administrar item a evaluar', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update Usuario <?php echo $model->BP; ?></h1>
+<h1>Actualizar item a evaluar #<?php echo $model->ID_ISE; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

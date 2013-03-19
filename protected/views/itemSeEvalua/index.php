@@ -1,18 +1,18 @@
 <?php
-/* @var $this UsuarioController */
+/* @var $this ItemSeEvaluaController */
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Usuarios',
+	'Item se evalua',
 );
 
 $this->menu=array(
-	array('label'=>'Create Usuario', 'url'=>array('create')),
-	array('label'=>'Manage Usuario', 'url'=>array('admin')),
+	array('label'=>'Crear Item a evaluar', 'url'=>array('create')),
+	array('label'=>'Administrar item a evaluar', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Usuarios</h1>
+<h1>Item se evalua</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

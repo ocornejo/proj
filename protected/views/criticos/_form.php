@@ -11,25 +11,22 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son necesarios.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'ID_CRITICOS'); ?>
-		<?php echo $form->textField($model,'ID_CRITICOS'); ?>
-		<?php echo $form->error($model,'ID_CRITICOS'); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'FLOTA_ID_FLOTA'); ?>
-		<?php echo $form->textField($model,'FLOTA_ID_FLOTA'); ?>
+		 <?php echo $form->dropDownList($model, 'FLOTA_ID_FLOTA', CHtml::listData(Flota::model()->findAll(), 'ID_FLOTA', 'NOMBRE_FLOTA'), array('empty' => 'Seleccione')); ?>
+		
 		<?php echo $form->error($model,'FLOTA_ID_FLOTA'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'ASEO_ID_ASEO'); ?>
-		<?php echo $form->textField($model,'ASEO_ID_ASEO'); ?>
+		<?php echo $form->dropDownList($model, 'ASEO_ID_ASEO', CHtml::listData(Aseo::model()->findAll(), 'ID_ASEO', 'TIPO_ASEO'), array('empty' => 'Seleccione')); ?>
+                
 		<?php echo $form->error($model,'ASEO_ID_ASEO'); ?>
 	</div>
 
@@ -52,7 +49,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

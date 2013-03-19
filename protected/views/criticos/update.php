@@ -3,19 +3,19 @@
 /* @var $model CRITICOS */
 
 $this->breadcrumbs=array(
-	'Criticoses'=>array('index'),
+	'Críticos'=>array('index'),
 	$model->ID_CRITICOS=>array('view','id'=>$model->ID_CRITICOS),
-	'Update',
+	'Actualizar',
 );
 
 $this->menu=array(
-	array('label'=>'List CRITICOS', 'url'=>array('index')),
-	array('label'=>'Create CRITICOS', 'url'=>array('create')),
-	array('label'=>'View CRITICOS', 'url'=>array('view', 'id'=>$model->ID_CRITICOS)),
-	array('label'=>'Manage CRITICOS', 'url'=>array('admin')),
+	array('label'=>'Listar críticos', 'url'=>array('index')),
+	array('label'=>'Crear crítico', 'url'=>array('create')),
+	array('label'=>'Vista crítico', 'url'=>array('view', 'id'=>$model->ID_CRITICOS)),
+	array('label'=>'Administrar crítico', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Update CRITICOS <?php echo $model->ID_CRITICOS; ?></h1>
+<h1>Actualizar crítico <?php echo $model->ID_CRITICOS; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

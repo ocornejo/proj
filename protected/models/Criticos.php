@@ -70,9 +70,9 @@ class Criticos extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'ID_CRITICOS' => 'Id Criticos',
-			'FLOTA_ID_FLOTA' => 'Flota Id Flota',
-			'ASEO_ID_ASEO' => 'Aseo Id Aseo',
+			'ID_CRITICOS' => 'ID Crítico',
+			'FLOTA_ID_FLOTA' => 'Flota',
+			'ASEO_ID_ASEO' => 'Aseo',
 			'LIMITE1' => 'Limite1',
 			'LIMITE2' => 'Limite2',
 			'LIMITE3' => 'Limite3',

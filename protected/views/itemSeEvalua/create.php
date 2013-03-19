@@ -1,18 +1,18 @@
 <?php
-/* @var $this UsuarioController */
-/* @var $model Usuario */
+/* @var $this ItemSeEvaluaController */
+/* @var $model ItemSeEvalua */
 
 $this->breadcrumbs=array(
-	'Usuarios'=>array('index'),
-	'Create',
+	'Item se evalua'=>array('index'),
+	'Crear',
 );
 
 $this->menu=array(
-	array('label'=>'List Usuario', 'url'=>array('index')),
-	array('label'=>'Manage Usuario', 'url'=>array('admin')),
+	array('label'=>'Listar Items a evaluar', 'url'=>array('index')),
+	array('label'=>'Administrar item a evaluar', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Usuario</h1>
+<h1>Crear Item a evaluar</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

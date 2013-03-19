@@ -1,15 +1,15 @@
 <?php
-/* @var $this CRITICOSController */
-/* @var $model CRITICOS */
+/* @var $this PonderacionController */
+/* @var $model Ponderacion */
 
 $this->breadcrumbs=array(
-	'Críticos'=>array('index'),
-	'Administrar',
+	'Ponderacions'=>array('index'),
+	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'Listar críticos', 'url'=>array('index')),
-	array('label'=>'Crear crítico', 'url'=>array('create')),
+	array('label'=>'Listar ponderaciones', 'url'=>array('index')),
+	array('label'=>'Crear ponderación', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -18,7 +18,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$('#criticos-grid').yiiGridView('update', {
+	$('#ponderacion-grid').yiiGridView('update', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Administrar crítico</h1>
+<h1>Administrar ponderación</h1>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -41,10 +41,11 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 </div><!-- search-form -->
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'criticos-grid',
+	'id'=>'ponderacion-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
+		'PONDERACION',
 		array(
                             'name'=> 'FLOTA_ID_FLOTA',
                             'header'=>'Flota',
@@ -59,9 +60,14 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
                             'filter'=>Aseo::model()->options,
                             'htmlOptions'=>array('style' => 'text-align: center;'),
                         ),
-		'LIMITE1',
-		'LIMITE2',
-		'LIMITE3',
+                 array(
+                            'name'=> 'EVALUACION_ID_EVALUACION',
+                            'header'=>'Evaluacion',
+                            'value'=>'$data->eVALUACIONIDEVALUACION->NOMBRE', // this will access the current group's 1st member and give out the firstname of that member
+                            'filter'=> Evaluacion::model()->options,
+                            'htmlOptions'=>array('style' => 'text-align: center;'),
+                        ),       
+		
 		array(
 			'class'=>'CButtonColumn',
 		),

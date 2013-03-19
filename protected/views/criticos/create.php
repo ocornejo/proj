@@ -3,16 +3,16 @@
 /* @var $model CRITICOS */
 
 $this->breadcrumbs=array(
-	'Criticoses'=>array('index'),
+	'Críticos'=>array('index'),
 	'Create',
 );
 
 $this->menu=array(
-	array('label'=>'List CRITICOS', 'url'=>array('index')),
-	array('label'=>'Manage CRITICOS', 'url'=>array('admin')),
+	array('label'=>'Listar críticos', 'url'=>array('index')),
+	array('label'=>'Administrar crítico', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create CRITICOS</h1>
+<h1>Crear crítico</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

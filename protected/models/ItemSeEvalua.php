@@ -4,6 +4,7 @@
  * This is the model class for table "item_se_evalua".
  *
  * The followings are the available columns in table 'item_se_evalua':
+ * @property integer $ID_ISE
  * @property integer $FLOTA_ID_FLOTA
  * @property integer $ASEO_ID_ASEO
  * @property integer $ITEM_ID_ITEM
@@ -45,7 +46,7 @@ class ItemSeEvalua extends CActiveRecord
 			array('FLOTA_ID_FLOTA, ASEO_ID_ASEO, ITEM_ID_ITEM', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('FLOTA_ID_FLOTA, ASEO_ID_ASEO, ITEM_ID_ITEM', 'safe', 'on'=>'search'),
+			array('ID_ISE, FLOTA_ID_FLOTA, ASEO_ID_ASEO, ITEM_ID_ITEM', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -69,9 +70,10 @@ class ItemSeEvalua extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'FLOTA_ID_FLOTA' => 'Flota Id Flota',
-			'ASEO_ID_ASEO' => 'Aseo Id Aseo',
-			'ITEM_ID_ITEM' => 'Item Id Item',
+			'ID_ISE' => 'ID Item a evaluar',
+			'FLOTA_ID_FLOTA' => 'Flota',
+			'ASEO_ID_ASEO' => 'Aseo',
+			'ITEM_ID_ITEM' => 'Item',
 		);
 	}
 
@@ -86,6 +88,7 @@ class ItemSeEvalua extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$criteria->compare('ID_ISE',$this->ID_ISE);
 		$criteria->compare('FLOTA_ID_FLOTA',$this->FLOTA_ID_FLOTA);
 		$criteria->compare('ASEO_ID_ASEO',$this->ASEO_ID_ASEO);
 		$criteria->compare('ITEM_ID_ITEM',$this->ITEM_ID_ITEM);

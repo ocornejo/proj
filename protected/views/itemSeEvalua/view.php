@@ -1,30 +1,45 @@
 <?php
-/* @var $this UsuarioController */
-/* @var $model Usuario */
+/* @var $this ItemSeEvaluaController */
+/* @var $model ItemSeEvalua */
 
 $this->breadcrumbs=array(
-	'Usuarios'=>array('index'),
-	$model->BP,
+	'Item Se Evalua'=>array('index'),
+	$model->ID_ISE,
 );
 
 $this->menu=array(
-	array('label'=>'List Usuario', 'url'=>array('index')),
-	array('label'=>'Create Usuario', 'url'=>array('create')),
-	array('label'=>'Update Usuario', 'url'=>array('update', 'id'=>$model->BP)),
-	array('label'=>'Delete Usuario', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->BP),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Usuario', 'url'=>array('admin')),
+	array('label'=>'Listar Items a evaluar', 'url'=>array('index')),
+	array('label'=>'Crear Item a evaluar', 'url'=>array('create')),
+	array('label'=>'Actualizar item a evaluar', 'url'=>array('update', 'id'=>$model->ID_ISE)),
+	array('label'=>'Borrar item a evaluar', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->ID_ISE),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Administrar item a evaluar', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Usuario #<?php echo $model->BP; ?></h1>
+<h1>Vista item a evaluar #<?php echo $model->ID_ISE; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'BP',
-		'NOMBRE',
-		'NIVEL_USUARIO',
-		'PASSWORD',
-		'FILIAL_ID_FILIAL',
+                array(
+                            'name'=> 'FLOTA_ID_FLOTA',
+                            'header'=>'Flota',
+                            'value'=>$model->fLOTAIDFLOTA->NOMBRE_FLOTA, // this will access the current group's 1st member and give out the firstname of that member
+                            'htmlOptions'=>array('style' => 'text-align: center;'),
+                        ),
+                 array(
+                            'name'=> 'ASEO_ID_ASEO',
+                            'header'=>'Aseo',
+                            'value'=>$model->aSEOIDASEO->TIPO_ASEO, // this will access the current group's 1st member and give out the firstname of that member
+                            'htmlOptions'=>array('style' => 'text-align: center;'),
+                        ), 
+            array(
+                            'name'=> 'ITEM_ID_ITEM',
+                            'header'=>'Item',
+                            'value'=>$model->iTEMIDITEM->NOMBRE, // this will access the current group's 1st member and give out the firstname of that member
+                            'htmlOptions'=>array('style' => 'text-align: center;'),
+                        ),        
+		
 	),
 )); ?>
+

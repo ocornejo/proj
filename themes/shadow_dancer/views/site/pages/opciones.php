@@ -23,6 +23,9 @@ $this->breadcrumbs=array(
 <?php echo CHtml::link('Administrar tipos de turno',array('tipoTurno/index')); ?><br>
 <?php echo CHtml::link('Administrar evaluaciones',array('evaluacion/index')); ?><br>
 <?php echo CHtml::link('Administrar ítems',array('item/index')); ?><br>
-Administrar Items a evaluar
-Administrar ponderaciones
+<?php echo CHtml::link('Administrar Items a evaluar',array('itemSeEvalua/index')); ?><br>
+<?php echo CHtml::link('Administrar ponderaciones',array('ponderacion/index')); ?><br>
+<?php echo CHtml::link('Administrar críticos',array('criticos/index')); ?><br>
+
+
 
