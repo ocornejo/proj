@@ -162,13 +162,12 @@ class Trabajo extends CActiveRecord
 		$criteria->compare('LUGAR_ID_LUGAR',$this->LUGAR_ID_LUGAR);
 		$criteria->compare('ASEO_ID_ASEO',$this->ASEO_ID_ASEO);
 		$criteria->compare('TURNO_ID_TURNO',$this->TURNO_ID_TURNO);
-        //        $criteria->compare('ARCHIVO', $this->ARCHIVO);
-                
-                //$criteria->with = array('avion');
-
-		return new CActiveDataProvider($this, array(
+        	
+               $data= new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+                $_SESSION['Lectivo-excel']=$data;
+               return $data;
 	}
         
         

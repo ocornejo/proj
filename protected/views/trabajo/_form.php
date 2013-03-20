@@ -184,8 +184,11 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
     <legend>Información del avión</legend>          
     
     <div class="raw">
-        <?php echo $form->labelEx($model, 'AVION_MATRICULA'); ?>
-        <?php echo $form->dropDownList($model, 'AVION_MATRICULA', CHtml::listData(Avion::model()->findAll(), 'MATRICULA', 'MATRICULA'), array('empty' => 'Seleccione',
+        <?php echo $form->labelEx($model, 'AVION_MATRICULA'); 
+        $posts=Avion::model()->findAll(); 
+        echo $form->dropDownList($model, 'AVION_MATRICULA', CHtml::listData($posts, 'MATRICULA', 'MATRICULA',function($posts2) {
+                                                return CHtml::encode($posts2->fLOTAIDFLOTA->NOMBRE_FLOTA);
+                                        }), array('empty' => 'Seleccione',
                     'ajax' => array(
                     'type' => 'POST',
                     'url' => CController::createUrl('Flota/GetFlotaByMat'),

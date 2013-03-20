@@ -7,32 +7,53 @@ $this->pageTitle=Yii::app()->name . ' - Bajar datos';
 $this->breadcrumbs=array(
 	'Bajar datos',
 );
-?>
+Yii::app()->clientScript->registerScript('search', "
+$('.search-button').click(function(){
+	$('.search-form').toggle();
+	return false;
+});
+$('.search-form form').submit(function(){
+	$('#trabajo-grid').yiiGridView('update', {
+		data: $(this).serialize()
+	});
+	return false;
+});
+");?>
 
 <h1>Bajar datos</h1>
 
-<div class="form">
-    
-<?php 
 
 
-$this->widget('zii.widgets.grid.CGridView', array(
+<?php echo CHtml::link('Filtros','#',array('class'=>'search-button')); ?>
+<div class="search-form">
+<?php $this->renderPartial('_search',array(
+	'model'=>$model,
+)); ?>
+</div><!-- search-form -->
+
+
+<?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'trabajo-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
+	
 	'columns'=>array(
 		'OT',
-		'AVION_MATRICULA',
-		'USUARIO_BP',
+                array(
+                    'name'=>'AVION_MATRICULA',
+                     'value'=> '$data->AVION->MATRICULA',
+                    
+                    'filter'=> Avion::model()->options,
+                ),
+		
+                array(
+                        'name'=>'USUARIO_BP',
+                        'value'=> '$data->uSUARIOBP->NOMBRE',
+                        'filter'=>  Usuario::model()->options
+                ),
                  array(
                         'name'=>'ESTADO_ID_ESTADO',
-                        'value'=> function($data){
-                            if($data->ESTADO_ID_ESTADO==NULL)
-                                return "";
-                            else
-                                return Estado::model()->findByPk($data->ESTADO_ID_ESTADO)->NOMBRE_ESTADO;
-                         },
-                 'filter'=>  Estado::model()->options),
+                        'value'=> '$data->eSTADOIDESTADO->NOMBRE_ESTADO',
+                        'filter'=>  Estado::model()->options),
    
                 array(
                     'name'=>'LUGAR_ID_LUGAR',
@@ -41,7 +62,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                             if($data->LUGAR_ID_LUGAR==NULL)
                                 return "";
                             else
-                                return Lugar::model()->findByPk($data->LUGAR_ID_LUGAR)->LUGAR;
+                                return $data->lUGARIDLUGAR->LUGAR;
                          },
                    
                     'filter'=>  Lugar::model()->options,
@@ -52,29 +73,36 @@ $this->widget('zii.widgets.grid.CGridView', array(
                             if($data->ASEO_ID_ASEO==NULL)
                                 return "";
                             else
-                                return Aseo::model()->findByPk($data->ASEO_ID_ASEO)->TIPO_ASEO;
+                                return $data->aSEOIDASEO->TIPO_ASEO;
                          },
                     
                     'filter'=> Aseo::model()->options,
                 ),
                 array(
                     'name'=>'PLANIFICADO',
+                    'filter'=>array(1=>"Si",0=>"No"),
                     'value'=>function($data){
-                             if($data->PLANIFICADO==1)
-                                 return "Si";
-                             else {
-                                 return "No";
-                             }
-                    },
-                ),
+                             if($data->PLANIFICADO==NULL)
+                                 return "";
+                             else
+                                 return @$data->PLANIFICADO ? "Si" : "No";
+                    }),
 		'HORA_INICIO',
 		'HORA_TERMINO',
 		'FECHA',
 		'CALIFICACION',
-		'TURNO_ID_TURNO',
+		array(
+                    'name'=>'TURNO_ID_TURNO',
+                    'filter'=>Turno::model()->options,
+                    'value'=>'$data->tURNOIDTURNO->FECHA." ".$data->tURNOIDTURNO->tIPOTURNOIDTIPOTURNO->TIPO',
+                    ),
 		
 	),
 ));
+
+          
+                    
+                    
         $baseUrl = Yii::app()->theme->baseUrl; 
         $normalImageSrc = "{$baseUrl}/images/excel.png";
         $image = CHtml::image($normalImageSrc,"",array('style' => 'vertical-align:10px;')).'Descargar';
@@ -84,5 +112,4 @@ $this->widget('zii.widgets.grid.CGridView', array(
         
                     
 ?>
-    
-</div>
+

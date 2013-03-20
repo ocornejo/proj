@@ -100,4 +100,8 @@ class Usuario extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        public function getOptions()
+	{
+		return CHtml::listData($this->findAll(),'BP','NOMBRE');
+	}
 }

@@ -93,4 +93,12 @@ class Turno extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+         public function getOptions()
+	{       
+                $posts= $this->findAll();
+		return CHtml::listData($posts,'ID_TURNO','FECHA',function($post) {
+                                                return CHtml::encode($post->tIPOTURNOIDTIPOTURNO->TIPO);
+                                        });
+                
+	}
 }

@@ -119,4 +119,9 @@ class Avion extends CActiveRecord
 		return $suggest;
 	}
         
+        public function getOptions()
+	{
+		return CHtml::listData($this->findAll(),'MATRICULA','MATRICULA');
+	}
+        
 }
