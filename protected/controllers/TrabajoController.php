@@ -157,8 +157,7 @@ class TrabajoController extends Controller {
 
             if(Trabajo::model()->exists(array('condition'=>'AVION_MATRICULA=:amat AND ASEO_ID_ASEO=:aseoid','params'=>array(':amat'=>$_POST['Trabajo']['AVION_MATRICULA'],':aseoid'=>$_POST['Trabajo']['ASEO_ID_ASEO']))))
                  $returnId=Trabajo::model()->findAll(array('condition'=>'AVION_MATRICULA=:amat AND ASEO_ID_ASEO=:aseoid','order'=> 'ID_TRABAJO DESC','limit'=>1,'params'=>array(':amat'=>$_POST['Trabajo']['AVION_MATRICULA'],':aseoid'=>$_POST['Trabajo']['ASEO_ID_ASEO'])));
-//            $returnId=Trabajo::model()->findAll(array('condition'=>'AVION_MATRICULA=:amat AND ASEO_ID_ASEO=:aseoid','order' => 'ID_TRABAJO DESC','limit'=>1,'params'=>array(':amat'=>$_POST['Trabajo']['AVION_MATRICULA'],':aseoid'=>$_POST['Trabajo']['ASEO_ID_ASEO'])));
-//            var_dump($returnId[0]->ID_TRABAJO); 
+
             $model=$this->loadModel($returnId[0]->ID_TRABAJO);
             $modelT= new Turno;
             // Uncomment the following line if AJAX validation is needed
@@ -201,14 +200,9 @@ class TrabajoController extends Controller {
                         // the default implementation makes it under 777 permission, which you could possibly change recursively before deployment, but here's less of a headache in case you don't
                     }
 
-                    $var = Turno::model()->findAll(array('order' => 'ID_TURNO DESC', 'limit' => '1'));
-                    if (count($var) > 0)
-                        $idTurno = (int) $var[0]['ID_TURNO'] + 1;
-                    else {
-                        $idTurno = 1;
-                    }
-                    $modelT->ID_TURNO = $idTurno;
-                    $model->TURNO_ID_TURNO = $idTurno;
+                    $var = Turno::model()->findAll(array('condition'=>'FECHA=:date AND TIPO_TURNO_ID_TIPO_TURNO=:tt','order' => 'FECHA ASC', 'limit' => '1','params'=>array(':date'=>$modelT->FECHA,':tt'=>$modelT->TIPO_TURNO_ID_TIPO_TURNO)));
+
+                   $model->TURNO_ID_TURNO = $var[0]['ID_TURNO'];
 
                     $images = CUploadedFile::getInstancesByName('imagen');
 
@@ -238,7 +232,7 @@ class TrabajoController extends Controller {
                             $i++;
                         }
 
-                        $modelT->save(false);
+                        //$modelT->save(false);
                         $model->save(false);
                         $this->render('view', array(
                          'model' => $this->loadModel($model->ID_TRABAJO),
@@ -247,7 +241,7 @@ class TrabajoController extends Controller {
 
                     } else {
 
-                        $modelT->save(false);
+                        //$modelT->save(false);
                         $model->save(false);
                         $this->render('view', array(
                          'model' => $this->loadModel($model->ID_TRABAJO),
@@ -266,9 +260,7 @@ class TrabajoController extends Controller {
         
 
         if (isset($_POST['Trabajo'], $_POST['Turno'])) {
-//            $returnId=Trabajo::model()->findAll(array('condition'=>'AVION_MATRICULA=:amat AND ASEO_ID_ASEO=:aseoid','order' => 'ID_TRABAJO DESC','limit'=>1,'params'=>array(':amat'=>$_POST['Trabajo']['AVION_MATRICULA'],':aseoid'=>$_POST['Trabajo']['ASEO_ID_ASEO'])));
-//            var_dump($returnId[0]->ID_TRABAJO);                       
-            //$model=$this->loadModel(Yii::app()->getRequest()->getQuery('id')); 
+
             $model->attributes = $_POST['Trabajo'];
             $modelT->attributes = $_POST['Turno'];
 
@@ -319,14 +311,9 @@ class TrabajoController extends Controller {
                 }
                 
 
-                $var = Turno::model()->findAll(array('order' => 'ID_TURNO DESC', 'limit' => '1'));
-                if (count($var) > 0)
-                    $idTurno = (int) $var[0]['ID_TURNO'] + 1;
-                else {
-                    $idTurno = 1;
-                }
-                $modelT->ID_TURNO = $idTurno;
-                $model->TURNO_ID_TURNO = $idTurno;
+                    $var = Turno::model()->findAll(array('condition'=>'FECHA=:date AND TIPO_TURNO_ID_TIPO_TURNO=:tt','order' => 'FECHA ASC', 'limit' => '1','params'=>array(':date'=>$modelT->FECHA,':tt'=>$modelT->TIPO_TURNO_ID_TIPO_TURNO)));
+
+                   $model->TURNO_ID_TURNO = $var[0]['ID_TURNO'];
 
                 $images = CUploadedFile::getInstancesByName('imagen');
                 
@@ -356,7 +343,7 @@ class TrabajoController extends Controller {
                         $i++;
                     }
 
-                    $modelT->save(false);
+                    //$modelT->save(false);
                     $model->save(false);
                      $this->render('view', array(
                          'model' => $this->loadModel($model->ID_TRABAJO),
@@ -365,7 +352,7 @@ class TrabajoController extends Controller {
                     
                 } else {
 
-                    $modelT->save(false);
+                    //$modelT->save(false);
                     $model->save(false);
                      $this->render('view', array(
                          'model' => $this->loadModel($model->ID_TRABAJO),

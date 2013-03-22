@@ -147,7 +147,7 @@ class Trabajo extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-
+                
 		$criteria->compare('ID_TRABAJO',$this->ID_TRABAJO);
 		$criteria->compare('OT',$this->OT);
 		$criteria->compare('AVION_MATRICULA',$this->AVION_MATRICULA,true);
@@ -162,6 +162,8 @@ class Trabajo extends CActiveRecord
 		$criteria->compare('LUGAR_ID_LUGAR',$this->LUGAR_ID_LUGAR);
 		$criteria->compare('ASEO_ID_ASEO',$this->ASEO_ID_ASEO);
 		$criteria->compare('TURNO_ID_TURNO',$this->TURNO_ID_TURNO);
+                
+                //$criteria->compare('tURNOIDTURNO.ID_TURNO', $this->TURNO_ID_TURNO);
         	
                $data= new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

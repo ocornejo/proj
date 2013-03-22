@@ -18,14 +18,58 @@
 		<?php echo $form->dropDownList($model, 'USUARIO_BP', CHtml::listData(Usuario::model()->findAll(), 'BP', 'NOMBRE'), array('empty' => 'Seleccione'));?>
 	</div>
         <div class="raw">
-		<?php  echo $form->label($model,'TURNO_ID_TURNO'); 
-                $posts= Turno::model()->findAll();
-		echo $form->dropDownList($model, 'TURNO_ID_TURNO',CHtml::listData($posts,'ID_TURNO','FECHA',function($post) {
-                                                return CHtml::encode($post->tIPOTURNOIDTIPOTURNO->TIPO);
-                                        }), array('empty' => 'Seleccione')); ?>
-           
-           
+		<?php echo $form->label($model,'Fecha '); 
+////                $posts= Turno::model()->findAll();
+////		echo $form->dropDownList($model, 'TURNO_ID_TURNO',CHtml::listData($posts,'ID_TURNO',function($posts) {
+////                                                return CHtml::encode($posts->fLOTAIDFLOTA->NOMBRE_FLOTA);
+////                                        },'FECHA'), array('empty' => 'Seleccione')); 
+                $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+                            'model' => Turno::model(),
+                            'attribute' => 'FECHA',
+                            'name' => 'FECHATE', // This is how it works for me.
+                            'language' => 'es',
+                            // additional javascript options for the date picker plugin
+                            'options' => array(
+                                'dateFormat' => 'yy-mm-dd',
+                                'showAnim' => 'drop',
+                            ),
+                            'htmlOptions' => array(
+                                'style' => 'width:74px',
+                                'ajax' => array(
+                    'type' => 'POST',
+                    'url' => CController::createUrl('Turno/GetTurnoByTipoTurno'),
+                    'dataType' => 'json',
+                    'data' => array('fecha' => 'js:this.value','tipo_turno_id_tipo_turno'=>'js:$("#'.CHtml::activeId(Turno::model(), 'TIPO_TURNO_ID_TIPO_TURNO').'").val()'),
+                    'success' => 'function(data) {
+                                                    console.log(data);
+                                                    $("#'.CHtml::activeId($model, 'TURNO_ID_TURNO').'").val(data);
+                                                  }',
+                    ),'onBlur'=>'if(this.value=="") $("#'.CHtml::activeId($model, 'TURNO_ID_TURNO').'").val("");',
+                            ),
+                        ));
+                echo $form->textField($model,'TURNO_ID_TURNO',array('style'=>'display:none;'));
+                ?>
 	</div>
+             
+
+
+
+        <div class="raw">
+            <?php echo $form->label($model,'TURNO_ID_TURNO'); ?>
+            <?php echo $form->dropDownList(Turno::model(), 'TIPO_TURNO_ID_TIPO_TURNO',CHtml::listData(TipoTurno::model()->findAll(),'ID_TIPO_TURNO','TIPO'),array('empty' => 'Seleccione',
+                'ajax' => array(
+                    'type' => 'POST',
+                    'url' => CController::createUrl('Turno/GetTurnoByTipoTurno'),
+                    'dataType' => 'json',
+                    'data' => array('tipo_turno_id_tipo_turno' => 'js:this.value','fecha'=>'js:$("#FECHATE").val()'),
+                    'success' => 'function(data) {
+                                                    console.log(data);
+                                                    $("#'.CHtml::activeId($model, 'TURNO_ID_TURNO').'").val(data);
+                                                  }',
+                    )));
+               ?>
+
+        </div>
         
         
         </fieldset>
@@ -55,7 +99,7 @@
             <div class="raw">
                     <?php echo $form->label($model,'PLANIFICADO'); ?>
                     <?php echo $form->radioButtonList($model, 'PLANIFICADO', array(1 => 'Si', 0 => 'No'), array('separator' => ' ')); ?>
-                    <?php //echo $form->checkBoxList($model, 'PLANIFICADO', array(1 => 'Si', 0 => 'No'));?>
+                    
             </div>
         </fieldset>
     

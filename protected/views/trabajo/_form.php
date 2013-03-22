@@ -151,7 +151,7 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
     
     <div class="raw">
         <?php echo $form->labelEx($modelT, 'FECHA'); ?>
-            <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+            <?php  $this->widget('zii.widgets.jui.CJuiDatePicker', array(
                             'model' => $modelT,
                             'attribute' => 'FECHA',
                             'name' => $modelT->FECHA, // This is how it works for me.
@@ -167,7 +167,11 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
                                 'readonly' => 'readonly',
                             ),
                         )); ?>
-            <?php echo $form->error($modelT, 'FECHA'); ?>
+<!--        <?php $posts2=$modelT->findAll(array('order'=>'FECHA ASC')); 
+                      echo $form->dropDownList($modelT, 'FECHA', CHtml::listData($posts2, 'ID_TURNO', 'FECHA',function($posts2) {
+                                                return CHtml::encode($posts2->tIPOTURNOIDTIPOTURNO->TIPO);
+                                        }), array('empty' => 'Seleccione'));?> -->
+            <?php  echo $form->error($modelT, 'FECHA'); ?>
     </div>
   
     <div class="raw">
@@ -186,8 +190,8 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
     <div class="raw">
         <?php echo $form->labelEx($model, 'AVION_MATRICULA'); 
         $posts=Avion::model()->findAll(); 
-        echo $form->dropDownList($model, 'AVION_MATRICULA', CHtml::listData($posts, 'MATRICULA', 'MATRICULA',function($posts2) {
-                                                return CHtml::encode($posts2->fLOTAIDFLOTA->NOMBRE_FLOTA);
+        echo $form->dropDownList($model, 'AVION_MATRICULA', CHtml::listData($posts, 'MATRICULA', 'MATRICULA',function($posts) {
+                                                return CHtml::encode($posts->fLOTAIDFLOTA->NOMBRE_FLOTA);
                                         }), array('empty' => 'Seleccione',
                     'ajax' => array(
                     'type' => 'POST',

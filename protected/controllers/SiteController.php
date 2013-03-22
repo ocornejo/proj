@@ -42,6 +42,19 @@ class SiteController extends Controller
 				$this->render('error', $error);
 		}
 	}
+        
+        public function actionCriticos(){
+            
+           
+                $model=new Avion('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Avion']))
+			$model->attributes=$_GET['Avion'];
+
+		$this->render('criticos',array(
+			'model'=>$model,
+            ));
+        }
 
 	/**
 	 * Displays the contact page
@@ -140,19 +153,8 @@ class SiteController extends Controller
         public function actionDownloadExcel(){
             
                 $d = $_SESSION['Lectivo-excel'];
-
-//            $data = array();
-//
-//            $data[]=array_keys($d->data[0]->attributes);//headers: cols name
-//
-//            foreach ($d->data as $item) {
-//                $data[] = $item->attributes;
-//            }
              $i = 0;
         
-        //fix column header. 
-        //Could have used something like this - $data[]=array_keys($issueDataProvider->data[0]->attributes);. 
-        //But that would return all attributes which i do not want
         $data[$i]['OT'] = 'OT';
         $data[$i]['AVION_MATRICULA'] = 'Matricula';
         $data[$i]['USUARIO_BP'] = 'BP';
@@ -171,26 +173,34 @@ class SiteController extends Controller
         foreach($d->data as $issue)
         {
             $data[$i]['OT'] = $issue['OT'];
-//            $data[$i]['MATRICULA'] = $issue['MATRICULA'];
-//            $data[$i]['BP'] =$issue['BP'];
-////            $data[$i]['status'] = $issue->getStatusText();
-////            $data[$i]['priority'] = $issue['priority'];
-////            $data[$i]['assigned_to'] = $issue->assigned_to->username;
-//            $data[$i]['ESTADO_ID_ESTADO'] = $issue['BP'];
-//            $data[$i]['LUGAR_ID_LUGAR'] = $issue['BP'];
-//            $data[$i]['ASEO_ID_ASEO'] = $issue['BP'];
-//            $data[$i]['PLANIFICADO'] = $issue['BP'];
-//            $data[$i]['HORA_INICIO'] = $issue['BP'];
-//            $data[$i]['HORA_TERMINO'] = $issue['BP'];
-//            $data[$i]['FECHA'] =$issue['BP'];
-//            $data[$i]['CALIFICACION'] = $issue['BP'];
+            $data[$i]['AVION_MATRICULA'] = $issue['AVION_MATRICULA'];
+            $data[$i]['USUARIO_BP'] =$issue->uSUARIOBP->NOMBRE;
+            $data[$i]['ESTADO_ID_ESTADO'] = $issue->eSTADOIDESTADO->NOMBRE_ESTADO;
+            if($issue['LUGAR_ID_LUGAR']!=NULL) 
+                $data[$i]['LUGAR_ID_LUGAR']=$issue->lUGARIDLUGAR->LUGAR; 
+            else 
+                $data[$i]['LUGAR_ID_LUGAR']="";
+            if($issue['ASEO_ID_ASEO']!=NULL) 
+                $data[$i]['ASEO_ID_ASEO']=$issue->aSEOIDASEO->TIPO_ASEO;
+            else 
+                $data[$i]['ASEO_ID_ASEO']="";
+             if($issue['PLANIFICADO']!=NULL) 
+                $data[$i]['PLANIFICADO']="Si";
+            else 
+                $data[$i]['PLANIFICADO']="No";
+            $data[$i]['HORA_INICIO'] = $issue['HORA_INICIO'];
+            $data[$i]['HORA_TERMINO'] = $issue['HORA_TERMINO'];
+            $data[$i]['FECHA'] =$issue['FECHA'];
+            $data[$i]['CALIFICACION'] = $issue['CALIFICACION'];
             $i++;
         }
 
             Yii::import('application.extensions.phpexcel.JPhpExcel');
             $xls = new JPhpExcel('UTF-8', false, 'test');
             $xls->addArray($data);
-            $xls->generateXML('exportedData'); //export into a .xls file
+            $fecha = new DateTime();
+           
+            $xls->generateXML('Resumen_Aseo-Cabina_'.$fecha->format('d-m-Y_H:i')); //export into a .xls file
         }
             
         public function actionIndex(){

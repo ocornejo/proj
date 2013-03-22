@@ -14,7 +14,7 @@ class TurnoController extends Controller
 	public function filters()
 	{
 		return array(
-			'accessControl', // perform access control for CRUD operations
+			//'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
 	}
@@ -170,4 +170,14 @@ class TurnoController extends Controller
 			Yii::app()->end();
 		}
 	}
+        public function actionGetTurnoByTipoTurno(){
+            $dataTemp = Turno::model()->findAll('TIPO_TURNO_ID_TIPO_TURNO=:tt AND FECHA=:date', array(':tt'=> $_POST['tipo_turno_id_tipo_turno'],':date'=>$_POST['fecha']));
+            //$dataTemp = CHtml::listData($dataTemp,'ID_TURNO','ID_TURNO');
+            $data = $dataTemp[0]['ID_TURNO'];
+            foreach($dataTemp as $value=>$name)
+                $turnoid=$value;
+                
+            //$data = Flota::model()->findAll('id_flota=:id_flota',array(':id_flota'=> $turnoid));
+            echo CJSON::encode($data);   
+        }
 }

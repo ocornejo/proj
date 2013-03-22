@@ -48,7 +48,7 @@ div.boxes p{
 <?php $this->pageTitle=Yii::app()->name;
       $today= date('Y-m-d');
       $from= date('Y-m-d', strtotime($today . ' - 1 day'));
-      $to= date('Y-m-d', strtotime($from . ' + 1 day'));
+      $to= date('Y-m-d', strtotime($from . ' + 2 day'));
       $variable= $model->findAll(array('condition'=>'PLANIFICADO=1 AND FECHA BETWEEN :from_date AND :to_date','order'=>'FECHA','params'=>array(':from_date'=>$from,':to_date'=>$to)));
       $pendientes= $model->findAll(array('condition'=>'ESTADO_ID_ESTADO=2 AND FECHA BETWEEN :from_date AND :to_date','order'=>'FECHA','params'=>array(':from_date'=>$from,':to_date'=>$to)));
       $desasignados= $model->findAll(array('condition'=>'ESTADO_ID_ESTADO>=3 AND ESTADO_ID_ESTADO<=8 AND FECHA BETWEEN :from_date AND :to_date','order'=>'FECHA','params'=>array(':from_date'=>$from,':to_date'=>$to)));

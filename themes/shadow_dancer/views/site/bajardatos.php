@@ -91,10 +91,15 @@ $('.search-form form').submit(function(){
 		'HORA_TERMINO',
 		'FECHA',
 		'CALIFICACION',
-		array(
+//		array(
+//                    'name'=>'TURNO_ID_TURNO',
+//                    'filter'=>Turno::model()->options,
+//                    'value'=>'$data->tURNOIDTURNO->FECHA." ".$data->tURNOIDTURNO->tIPOTURNOIDTIPOTURNO->TIPO',
+//                    ),
+                     array(
                     'name'=>'TURNO_ID_TURNO',
-                    'filter'=>Turno::model()->options,
-                    'value'=>'$data->tURNOIDTURNO->FECHA." ".$data->tURNOIDTURNO->tIPOTURNOIDTIPOTURNO->TIPO',
+                    //'filter'=>  Turno::model()->options,
+                    'value'=>'$data->TURNO_ID_TURNO',
                     ),
 		
 	),
@@ -105,7 +110,7 @@ $('.search-form form').submit(function(){
                     
         $baseUrl = Yii::app()->theme->baseUrl; 
         $normalImageSrc = "{$baseUrl}/images/excel.png";
-        $image = CHtml::image($normalImageSrc,"",array('style' => 'vertical-align:10px;')).'Descargar';
+        $image = CHtml::image($normalImageSrc,"",array('style' => 'vertical-align:10px;')).'Descargar datos filtrados';
         //"",array("width"=>20,"heigth"=>20,'style' => 'vertical-align:10px;')
 
         echo CHtml::link($image, array('site/DownloadExcel'));            
