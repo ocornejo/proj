@@ -15,6 +15,7 @@
  */
 class Avion extends CActiveRecord
 {
+        public $alfombra;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -46,7 +47,7 @@ class Avion extends CActiveRecord
 			array('MATRICULA', 'length', 'max'=>5),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('MATRICULA, FLOTA_ID_FLOTA, OPERADOR_ID_OPERADOR', 'safe', 'on'=>'search'),
+			array('MATRICULA, FLOTA_ID_FLOTA, OPERADOR_ID_OPERADOR,alfombra', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -73,6 +74,7 @@ class Avion extends CActiveRecord
 			'MATRICULA' => 'Matricula',
 			'FLOTA_ID_FLOTA' => 'ID Flota',
 			'OPERADOR_ID_OPERADOR' => 'ID Operador',
+                        'alfombra'=>'Alfombra',
 		);
 	}
 
@@ -96,6 +98,49 @@ class Avion extends CActiveRecord
                     'pagination'=>array('pageSize'=>100),
 		));
 	}
+        public function searchAvion()
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('MATRICULA',$this->MATRICULA,true);
+		$criteria->compare('FLOTA_ID_FLOTA',$this->FLOTA_ID_FLOTA);
+		$criteria->compare('OPERADOR_ID_OPERADOR',$this->OPERADOR_ID_OPERADOR);
+                $criteria->compare('alfombra',$this->getAlfombra($this->MATRICULA));
+                $sort = new CSort();
+                $sort->attributes = array(
+                    'alfombra'=>array(
+                        'asc'=>'(SELECT DATEDIFF(NOW(), FECHA) as dd FROM TRABAJO WHERE ASEO_ID_ASEO = (SELECT ID_ASEO FROM ASEO WHERE TIPO_ASEO = "Alfombra") AND FECHA IN (SELECT MAX(FECHA) AS FECHA FROM TRABAJO GROUP BY AVION_MATRICULA) AND AVION_MATRICULA="'.$this->MATRICULA.'") ASC',
+                        'desc'=>'(SELECT DATEDIFF(NOW(), FECHA) as dd FROM TRABAJO WHERE ASEO_ID_ASEO = (SELECT ID_ASEO FROM ASEO WHERE TIPO_ASEO = "Alfombra") AND FECHA IN (SELECT MAX(FECHA) AS FECHA FROM TRABAJO GROUP BY AVION_MATRICULA) AND AVION_MATRICULA="'.$this->MATRICULA.'") DESC',
+                      
+                        ),
+                    '*', // this adds all of the other columns as sortable
+                );
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+                        'pagination'=>array('pageSize'=>100),
+                        'sort'=>$sort,
+		));
+	}
+        public function getAlfombra($mat){
+            
+            $sql='SELECT DATEDIFF(NOW(), FECHA) as dd FROM TRABAJO WHERE ASEO_ID_ASEO = (SELECT ID_ASEO FROM ASEO WHERE TIPO_ASEO =  "Alfombra" ) and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA) and AVION_MATRICULA="'.$mat.'";';
+            
+            if(isset($mat)){
+                $list= Yii::app()->db->createCommand($sql)->queryAll();
+                if(count($list)>0)
+                    return (int) $list[0]['dd'];
+                else
+                    return 0;
+            }
+            else{
+                $list= "";
+                return $list;
+            }
+        }
         
         public function suggestMatricula($keyword, $limit=20)
 	{

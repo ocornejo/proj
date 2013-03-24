@@ -37,6 +37,9 @@ class Trabajo extends CActiveRecord
 	 * @return Trabajo the static model class
 	 */
 	public $imagen;
+        public $date_first;
+        public $date_last;
+        public $flota;
         
         public static function model($className=__CLASS__)
 	{
@@ -77,7 +80,7 @@ class Trabajo extends CActiveRecord
 			array('HORA_INICIO, HORA_TERMINO, FECHA', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('ID_TRABAJO, OT, AVION_MATRICULA, USUARIO_BP, PLANIFICADO, HORA_INICIO, HORA_TERMINO, COMENTARIO, FECHA, CALIFICACION, ESTADO_ID_ESTADO, LUGAR_ID_LUGAR, ASEO_ID_ASEO, TURNO_ID_TURNO,ARCHIVO1,ARCHIVO2,ARCHIVO3', 'safe', 'on'=>'search'),
+			array('ID_TRABAJO, OT, AVION_MATRICULA, USUARIO_BP, PLANIFICADO, HORA_INICIO, HORA_TERMINO, COMENTARIO, FECHA, CALIFICACION, ESTADO_ID_ESTADO, LUGAR_ID_LUGAR, ASEO_ID_ASEO, TURNO_ID_TURNO,date_first,date_last,flota', 'safe', 'on'=>'search'),
 		);
 	}
         
@@ -134,6 +137,7 @@ class Trabajo extends CActiveRecord
                         'ARCHIVO2'=> 'Archivo2',
                         'ARCHIVO3'=> 'Archivo3',
                         'imagen'=>'Fotos (3 máx)',
+                        'flota'=>'Flota',
 		);
 	}
 
@@ -147,8 +151,15 @@ class Trabajo extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
+                $criteria->with =array('AVION');
                 
-		$criteria->compare('ID_TRABAJO',$this->ID_TRABAJO);
+		if((isset($this->date_first) && trim($this->date_first) != "") && (isset($this->date_last) && trim($this->date_last) != ""))
+                        $criteria->addBetweenCondition('FECHA', ''.$this->date_first.'', ''.$this->date_last.'');
+                if(isset($this->flota)&& trim($this->flota) != ""){
+                    $criteria->addCondition('AVION.FLOTA_ID_FLOTA='.$this->flota);
+                }
+
+                $criteria->compare('ID_TRABAJO',$this->ID_TRABAJO);
 		$criteria->compare('OT',$this->OT);
 		$criteria->compare('AVION_MATRICULA',$this->AVION_MATRICULA,true);
 		$criteria->compare('USUARIO_BP',$this->USUARIO_BP);

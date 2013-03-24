@@ -23,9 +23,9 @@ $('.search-form form').submit(function(){
 <h1>Bajar datos</h1>
 
 
+<?php echo CHtml::submitButton('Filtros', array('class'=>'search-button','style'=>'background: url(/proj/themes/shadow_dancer/images/small_icons/search-icon.png) no-repeat 6px 1px; padding-left: 24px; vertical-align: bottom;')); ?>
 
-<?php echo CHtml::link('Filtros','#',array('class'=>'search-button')); ?>
-<div class="search-form">
+<div class="search-form" style="display: none;">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
@@ -91,15 +91,15 @@ $('.search-form form').submit(function(){
 		'HORA_TERMINO',
 		'FECHA',
 		'CALIFICACION',
-//		array(
-//                    'name'=>'TURNO_ID_TURNO',
-//                    'filter'=>Turno::model()->options,
-//                    'value'=>'$data->tURNOIDTURNO->FECHA." ".$data->tURNOIDTURNO->tIPOTURNOIDTIPOTURNO->TIPO',
-//                    ),
                      array(
                     'name'=>'TURNO_ID_TURNO',
                     //'filter'=>  Turno::model()->options,
-                    'value'=>'$data->TURNO_ID_TURNO',
+                    'value'=>function($data){
+                             if($data->TURNO_ID_TURNO==NULL)
+                                 return "";
+                             else
+                                 return @$data->tURNOIDTURNO->FECHA.' '.$data->tURNOIDTURNO->tIPOTURNOIDTIPOTURNO->TIPO;
+                    },
                     ),
 		
 	),

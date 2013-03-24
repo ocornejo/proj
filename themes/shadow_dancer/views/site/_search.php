@@ -19,10 +19,6 @@
 	</div>
         <div class="raw">
 		<?php echo $form->label($model,'Fecha '); 
-////                $posts= Turno::model()->findAll();
-////		echo $form->dropDownList($model, 'TURNO_ID_TURNO',CHtml::listData($posts,'ID_TURNO',function($posts) {
-////                                                return CHtml::encode($posts->fLOTAIDFLOTA->NOMBRE_FLOTA);
-////                                        },'FECHA'), array('empty' => 'Seleccione')); 
                 $this->widget('zii.widgets.jui.CJuiDatePicker', array(
                             'model' => Turno::model(),
                             'attribute' => 'FECHA',
@@ -50,8 +46,7 @@
                 echo $form->textField($model,'TURNO_ID_TURNO',array('style'=>'display:none;'));
                 ?>
 	</div>
-             
-
+         
 
 
         <div class="raw">
@@ -83,6 +78,10 @@
                                                 return CHtml::encode($posts2->fLOTAIDFLOTA->NOMBRE_FLOTA);
                                         }), array('empty' => 'Seleccione'));?>
             </div>
+        <div class="raw">
+            <?php echo $form->label($model,'flota'); ?>
+            <?php echo $form->dropDownList($model, 'flota', CHtml::listData(Flota::model()->findAll(), 'ID_FLOTA', 'NOMBRE_FLOTA'), array('empty' => 'Seleccione')); ?>
+        </div>
         </fieldset>
         
         <fieldset>
@@ -150,7 +149,7 @@
 	</div>
 
 	<div class="raw">
-		<?php echo $form->label($model,'FECHA'); ?>
+		<?php echo $form->label($model,'Buscar por fecha única:'); ?>
 		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
                 'model' => $model,
                 'attribute' => 'FECHA',
@@ -166,6 +165,43 @@
                 ),
             )); ?>
 	</div>
+        <br>
+         <div class="raw"> 
+        <?php echo $form->label($model,'Búsqueda por rango: Fecha inicial');?>
+        <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+                                    //'model'=>$model,
+                                    'name' => 'Trabajo[date_first]',
+                                    'language' => 'es',
+                                     'value' => $model->date_first,
+                                    // additional javascript options for the date picker plugin
+                                    'options'=>array(
+                                        'dateFormat' => 'yy-mm-dd',
+                                        'showAnim' => 'drop',
+                                    ),
+                                    'htmlOptions'=>array(
+                                        'style'=>'width:74px',
+                                    ),
+// DONT FORGET TO ADD TRUE this will create the datepicker return as string
+                                ));?>
+             </div>
+         <div class="raw"> 
+             <?php echo $form->label($model,'Fecha término');?>
+             <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+                                    //'model'=>$model,
+                                    'name' => 'Trabajo[date_last]',
+                                    'language' => 'es',
+                                     'value' => $model->date_last,
+                                    // additional javascript options for the date picker plugin
+                                    'options'=>array(
+                                        'dateFormat' => 'yy-mm-dd',
+                                        'showAnim' => 'drop',
+                                    ),
+                                    'htmlOptions'=>array(
+                                        'style'=>'width:74px',
+                                    ),
+// DONT FORGET TO ADD TRUE this will create the datepicker return as string
+                                ));?>
+        </div> 
     </fieldset>
         
     <fieldset>

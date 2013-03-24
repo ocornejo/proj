@@ -16,18 +16,17 @@ $this->breadcrumbs=array(
 <div class="form">
     <div class="span-20">
 <?php 
-    $color="red";
+   
 
  
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'avion-grid',
-	'dataProvider'=>$model->search(),
+	'dataProvider'=>$model->searchAvion(),
 	'filter'=>$model,
 	'columns'=> array(
                         array(
                             'name'=>'MATRICULA',
                             'type'=>'raw',
-                            'value'=>'$data->MATRICULA',
                             'filter'=>$this->widget('zii.widgets.jui.CJuiAutoComplete', array(
                                 'model'=>$model,
                                 'attribute'=>'MATRICULA',
@@ -52,6 +51,15 @@ $this->widget('zii.widgets.grid.CGridView', array(
                             'filter'=>Flota::model()->options,
                             'htmlOptions'=>array('style' => 'text-align: center;'),
                         ),
+            
+                        array(
+                            'name'=>'alfombra',
+                            'header'=>'Alfombra',
+                            'sortable'=>TRUE,
+                            'type'=>'raw',
+                            'value'=>'Avion::model()->getAlfombra($data->MATRICULA)'
+                        ),
+
                         array(
                             'name'=>'ASEO.TIPO_ASEO',
                             'header'=>Aseo::model()->findByPk(2)->TIPO_ASEO,
@@ -94,7 +102,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
                             'header'=>Aseo::model()->findByPk(4)->TIPO_ASEO,
                             'value'=>function($data){
                                         if(Trabajo::model()->exists("ASEO_ID_ASEO=4 AND AVION_MATRICULA='".$data->MATRICULA."'")){
-                                            //$result=Trabajo::model()->findAllByAttributes(array("ASEO_ID_ASEO"=>2,"AVION_MATRICULA"=>"BAL"),array('order'=>'FECHA DESC','limit'=>1));
                                             $result=Trabajo::model()->findAllByAttributes(array("ASEO_ID_ASEO"=>4,"AVION_MATRICULA"=>$data->MATRICULA),array('order'=>'FECHA DESC','limit'=>1));
                                             
                                             $date= new DateTime($result[0]['FECHA']);
