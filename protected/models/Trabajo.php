@@ -151,13 +151,13 @@ class Trabajo extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-                $criteria->with =array('AVION');
+        $criteria->with =array('AVION');
                 
 		if((isset($this->date_first) && trim($this->date_first) != "") && (isset($this->date_last) && trim($this->date_last) != ""))
-                        $criteria->addBetweenCondition('FECHA', ''.$this->date_first.'', ''.$this->date_last.'');
-                if(isset($this->flota)&& trim($this->flota) != ""){
-                    $criteria->addCondition('AVION.FLOTA_ID_FLOTA='.$this->flota);
-                }
+            $criteria->addBetweenCondition('FECHA', ''.$this->date_first.'', ''.$this->date_last.'');
+        if(isset($this->flota)&& trim($this->flota) != ""){
+            $criteria->addCondition('AVION.FLOTA_ID_FLOTA='.$this->flota);
+        }
 
                 $criteria->compare('ID_TRABAJO',$this->ID_TRABAJO);
 		$criteria->compare('OT',$this->OT);
@@ -174,7 +174,6 @@ class Trabajo extends CActiveRecord
 		$criteria->compare('ASEO_ID_ASEO',$this->ASEO_ID_ASEO);
 		$criteria->compare('TURNO_ID_TURNO',$this->TURNO_ID_TURNO);
                 
-                //$criteria->compare('tURNOIDTURNO.ID_TURNO', $this->TURNO_ID_TURNO);
         	
                $data= new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

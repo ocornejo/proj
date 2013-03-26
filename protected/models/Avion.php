@@ -11,11 +11,16 @@
  * The followings are the available model relations:
  * @property Operador $oPERADORIDOPERADOR
  * @property Flota $fLOTAIDFLOTA
+ * @property Trabajo $aLFOMBRARELA
  * @property Trabajo[] $trabajos
  */
 class Avion extends CActiveRecord
 {
-        public $alfombra;
+        public $alfombra_count;
+        public $fuselaje_count;
+        public $profundo_count;
+        public $tapiz_count;
+        public $banos_count;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -47,7 +52,7 @@ class Avion extends CActiveRecord
 			array('MATRICULA', 'length', 'max'=>5),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('MATRICULA, FLOTA_ID_FLOTA, OPERADOR_ID_OPERADOR,alfombra', 'safe', 'on'=>'search'),
+			array('MATRICULA, FLOTA_ID_FLOTA, OPERADOR_ID_OPERADOR,alfombra_count,fuselaje_count,profundo_count,tapiz_count,banos_count', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -62,7 +67,7 @@ class Avion extends CActiveRecord
 			'oPERADORIDOPERADOR' => array(self::BELONGS_TO, 'Operador', 'OPERADOR_ID_OPERADOR'),
 			'fLOTAIDFLOTA' => array(self::BELONGS_TO, 'Flota', 'FLOTA_ID_FLOTA'),
 			'tRABAJO' => array(self::HAS_MANY, 'Trabajo', 'AVION_MATRICULA'),
-		);
+                );
 	}
 
 	/**
@@ -74,7 +79,11 @@ class Avion extends CActiveRecord
 			'MATRICULA' => 'Matricula',
 			'FLOTA_ID_FLOTA' => 'ID Flota',
 			'OPERADOR_ID_OPERADOR' => 'ID Operador',
-                        'alfombra'=>'Alfombra',
+                        'alfombra_count'=>'Alfombra',
+                    'fuselaje_count'=>'Fuselaje',
+                    'profundo_count'=>'Profundo',
+                    'banos_count'=>'Baños',
+                    'tapiz_count'=>'Tapiz',
 		);
 	}
 
@@ -104,43 +113,65 @@ class Avion extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-
-		$criteria->compare('MATRICULA',$this->MATRICULA,true);
+                $alfombra_table= Trabajo::model()->tableName();
+                $alfombra_sql= '(select (DATEDIFF(NOW(),FECHA)) from '.$alfombra_table.' where '.$alfombra_table.'.AVION_MATRICULA = t.MATRICULA and '.$alfombra_table.'.ASEO_ID_ASEO=2 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA))';
+                $fuselaje_sql= '(select (DATEDIFF(NOW(),FECHA)) from '.$alfombra_table.' where '.$alfombra_table.'.AVION_MATRICULA = t.MATRICULA and '.$alfombra_table.'.ASEO_ID_ASEO=4 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA))';
+                $tapiz_sql= '(select (DATEDIFF(NOW(),FECHA)) from '.$alfombra_table.' where '.$alfombra_table.'.AVION_MATRICULA = t.MATRICULA and '.$alfombra_table.'.ASEO_ID_ASEO=6 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA))';
+                $profundo_sql= '(select (DATEDIFF(NOW(),FECHA)) from '.$alfombra_table.' where '.$alfombra_table.'.AVION_MATRICULA = t.MATRICULA and '.$alfombra_table.'.ASEO_ID_ASEO=5 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA))';
+                $banos_sql= '(select (DATEDIFF(NOW(),FECHA)) from '.$alfombra_table.' where '.$alfombra_table.'.AVION_MATRICULA = t.MATRICULA and '.$alfombra_table.'.ASEO_ID_ASEO=8 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA))';
+                
+                
+		$criteria->select = array(
+                    '*',
+                    $alfombra_sql . " as alfombra_count",
+                    $fuselaje_sql . " as fuselaje_count",
+                    $tapiz_sql . " as tapiz_count",
+                    $profundo_sql . " as profundo_count",
+                    $banos_sql . " as banos_count",
+                );
+                $criteria->compare($alfombra_sql, $this->alfombra_count);
+                $criteria->compare($fuselaje_sql, $this->fuselaje_count);
+                $criteria->compare($tapiz_sql, $this->tapiz_count);
+                $criteria->compare($profundo_sql, $this->profundo_count);
+                $criteria->compare($banos_sql, $this->banos_count);
+                $criteria->compare('MATRICULA',$this->MATRICULA,true);
 		$criteria->compare('FLOTA_ID_FLOTA',$this->FLOTA_ID_FLOTA);
 		$criteria->compare('OPERADOR_ID_OPERADOR',$this->OPERADOR_ID_OPERADOR);
-                $criteria->compare('alfombra',$this->getAlfombra($this->MATRICULA));
-                $sort = new CSort();
-                $sort->attributes = array(
-                    'alfombra'=>array(
-                        'asc'=>'(SELECT DATEDIFF(NOW(), FECHA) as dd FROM TRABAJO WHERE ASEO_ID_ASEO = (SELECT ID_ASEO FROM ASEO WHERE TIPO_ASEO = "Alfombra") AND FECHA IN (SELECT MAX(FECHA) AS FECHA FROM TRABAJO GROUP BY AVION_MATRICULA) AND AVION_MATRICULA="'.$this->MATRICULA.'") ASC',
-                        'desc'=>'(SELECT DATEDIFF(NOW(), FECHA) as dd FROM TRABAJO WHERE ASEO_ID_ASEO = (SELECT ID_ASEO FROM ASEO WHERE TIPO_ASEO = "Alfombra") AND FECHA IN (SELECT MAX(FECHA) AS FECHA FROM TRABAJO GROUP BY AVION_MATRICULA) AND AVION_MATRICULA="'.$this->MATRICULA.'") DESC',
-                      
-                        ),
-                    '*', // this adds all of the other columns as sortable
-                );
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
                         'pagination'=>array('pageSize'=>100),
-                        'sort'=>$sort,
+                        'sort' => array(
+                                    'defaultOrder' => 't.MATRICULA',
+                                    'attributes' => array(
+
+                                        // order by
+                                        'alfombra_count' => array(
+                                            'asc' => 'alfombra_count ASC',
+                                            'desc' => 'alfombra_count DESC',
+                                        ),
+                                        'banos_count' => array(
+                                            'asc' => 'banos_count ASC',
+                                            'desc' => 'banos_count DESC',
+                                        ),
+                                        'tapiz_count' => array(
+                                            'asc' => 'tapiz_count ASC',
+                                            'desc' => 'tapiz_count DESC',
+                                        ),
+                                        'fuselaje_count' => array(
+                                            'asc' => 'fuselaje_count ASC',
+                                            'desc' => 'fuselaje_count DESC',
+                                        ),
+                                        'profundo_count' => array(
+                                            'asc' => 'profundo_count ASC',
+                                            'desc' => 'profundo_count DESC',
+                                        ),
+                                        '*',
+                                    ),
+                        ),
 		));
 	}
-        public function getAlfombra($mat){
-            
-            $sql='SELECT DATEDIFF(NOW(), FECHA) as dd FROM TRABAJO WHERE ASEO_ID_ASEO = (SELECT ID_ASEO FROM ASEO WHERE TIPO_ASEO =  "Alfombra" ) and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA) and AVION_MATRICULA="'.$mat.'";';
-            
-            if(isset($mat)){
-                $list= Yii::app()->db->createCommand($sql)->queryAll();
-                if(count($list)>0)
-                    return (int) $list[0]['dd'];
-                else
-                    return 0;
-            }
-            else{
-                $list= "";
-                return $list;
-            }
-        }
+
         
         public function suggestMatricula($keyword, $limit=20)
 	{
