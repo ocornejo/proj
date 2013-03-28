@@ -132,28 +132,11 @@ class SiteController extends Controller
 		));
 	}
        
-       
-         
-         public function actionDownloadExcelKi(){
-
-           $model=new Trabajo('search');
-
-            $this->toExcel('Trabajo',
-            array(
-                'OT','AVION_MATRICULA'               
-            ),
-            'Aseos', // file name
-            array(
-                'creator' => 'Gerencia Mejora Continua', // file info
-                ),
-            'Excel5' // file type
-            );
-         }
-        
+ 
         public function actionDownloadExcel(){
             
-                $d = $_SESSION['Lectivo-excel'];
-             $i = 0;
+          $d = $_SESSION['Lectivo-excel'];
+           $i = 0;
         
         $data[$i]['OT'] = 'OT';
         $data[$i]['AVION_MATRICULA'] = 'Matricula';
@@ -199,8 +182,28 @@ class SiteController extends Controller
             $xls = new JPhpExcel('UTF-8', false, 'test');
             $xls->addArray($data);
             $fecha = new DateTime();
-           
+            
+//            $tmp=array_search('uri', @array_flip(stream_get_meta_data($GLOBALS[mt_rand()]=tmpfile()))); 
+//            file_put_contents($tmp, $xls->generateXML('Resumen_Aseo-Cabina_'.$fecha->format('d-m-Y_H:i'))); 
+//            echo file_get_contents($tmp); 
+//             var_dump($tmp);
             $xls->generateXML('Resumen_Aseo-Cabina_'.$fecha->format('d-m-Y_H:i')); //export into a .xls file
+            
+           
+//             Yii::import('ext.yii-mail.YiiMailMessage');
+//            $message = new YiiMailMessage;
+//            $message->setBody('Message content here with HTML', 'text/html');
+//            $message->subject = 'Aseos';
+//            $message->addTo('niccolo.paganini15@gmail.com');
+//            $message->from = Yii::app()->params['adminEmail'];
+//            $filename='hola.xls';
+//            //$viewPath = Yii::getPathOfAlias(Yii::app()->mail->viewPath.'.attachmentToTechnician');
+//            //$body = "hola";
+//
+
+//            $message->attach(Swift_Attachment::fromPath($tmp), $filename, "xls");
+
+//            Yii::app()->mail->send($message);
         }
             
         public function actionIndex(){

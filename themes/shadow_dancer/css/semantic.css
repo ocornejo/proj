@@ -1,7 +1,8 @@
 form.semantic fieldset
 {
 	clear: both;
-	margin: 1em 0 0 0;
+	 margin-left: auto;
+         margin-right: auto;
 	padding: 10px;
 	overflow: auto;
 	background-color: #f8f8f8;
@@ -18,7 +19,8 @@ form.semantic legend
 form.semantic div
 {
 	clear: both;
-	margin: 0;
+	 margin-left: auto;
+  margin-right: auto;
 	padding: 0.5em 0 0 0;
 	overflow: auto;
         float: left;
@@ -28,7 +30,8 @@ form.semantic div
 
 form.semantic row
 {
-	margin: 0px 0;
+	 margin-left: auto;
+  margin-right: auto;
         float: left;
         display:inline-block;
 

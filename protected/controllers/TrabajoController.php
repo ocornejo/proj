@@ -152,6 +152,7 @@ class TrabajoController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
+             
         
         if(isset($_POST['update'],$_POST['Trabajo'], $_POST['Turno'])){
 
@@ -202,7 +203,7 @@ class TrabajoController extends Controller {
 
                     $var = Turno::model()->findAll(array('condition'=>'FECHA=:date AND TIPO_TURNO_ID_TIPO_TURNO=:tt','order' => 'FECHA ASC', 'limit' => '1','params'=>array(':date'=>$modelT->FECHA,':tt'=>$modelT->TIPO_TURNO_ID_TIPO_TURNO)));
 
-                   $model->TURNO_ID_TURNO = $var[0]['ID_TURNO'];
+                    $model->TURNO_ID_TURNO = $var[0]['ID_TURNO'];
 
                     $images = CUploadedFile::getInstancesByName('imagen');
 
@@ -374,19 +375,21 @@ class TrabajoController extends Controller {
     public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-
+                $modelT= $this->loadModelT($model->TURNO_ID_TURNO);
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Trabajo']))
-		{
-			$model->attributes=$_POST['Trabajo'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->ID_TRABAJO));
+		if (isset($_POST['Trabajo'], $_POST['Turno'])) {
+		
+//			$model->attributes=$_POST['Trabajo'];
+//			if($model->save())
+//				$this->redirect(array('view','id'=>$model->ID_TRABAJO));
+                    $this->actionSave();
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
+                        'modelT'=>$modelT,
 		));
 	}
 
@@ -440,6 +443,12 @@ class TrabajoController extends Controller {
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
         return $model;
+    }
+     public function loadModelT($id) {
+        $modelT = Turno::model()->findByPk($id);
+        if ($modelT === null)
+            throw new CHttpException(404, 'The requested page does not exist.');
+        return $modelT;
     }
 
     /**

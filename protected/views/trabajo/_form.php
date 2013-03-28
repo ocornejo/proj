@@ -33,8 +33,8 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
             month = '0' + month
         }
         currentTime = month + '/' + day + '/' + year;
-        <?php print('$("#' . CHtml::activeId($modelT, 'FECHA') . '").val(year+ "-" + month+ "-" + day);'); ?>
-        <?php print('$("#' . CHtml::activeId($model, 'FECHA') . '").val(year+ "-" + month+ "-" + day);'); ?>
+        <?php  print('$("#' . CHtml::activeId($modelT, 'FECHA') . '").val(year+ "-" + month+ "-" + day);'); ?>
+        <?php  print('$("#' . CHtml::activeId($model, 'FECHA') . '").val(year+ "-" + month+ "-" + day);'); ?>
         //console.log($("#<?php echo CHtml::activeId($model, 'AVION_MATRICULA'); ?> option:selected").text());
         $.post(
                 '<?php echo $this->createUrl("Flota/GetFlotaByMat"); ?>',
@@ -420,15 +420,15 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
   </div>  -->
     
       <div class="SubmitButton" id="SubButton" style="vertical-align:-10px;">
-        <?php echo CHtml::submitButton('Guardar', array('name' => 'buttonSubmit','style'=>'background: url(/proj/themes/shadow_dancer/images/small_icons/disk.png) no-repeat 6px 1px; padding-left: 24px; vertical-align: bottom;')); ?>
+        <?php echo CHtml::submitButton('Guardar', array('name' => 'buttonSubmit','style'=>'width: 95px; height: 35px; background: url(/proj/themes/shadow_dancer/images/small_icons/disk.png) no-repeat 15px 7px; padding-left: 24px; vertical-align: bottom;')); ?>
       </div>
 
     <div class="HideSubmitButton" id="HideSubButton" style="display: none; vertical-align:-10px;">
-        <?php echo CHtml::submitButton('Guardash', array('name' => 'update','style'=>'background: url(/proj/themes/shadow_dancer/images/small_icons/disk.png) no-repeat 6px 1px; padding-left: 24px; vertical-align: bottom;')); ?>
+        <?php echo CHtml::submitButton('Guardash', array('name' => 'update','style'=>'width: 95px; height: 35px;background: url(/proj/themes/shadow_dancer/images/small_icons/disk.png) no-repeat 15px 7px; padding-left: 24px; vertical-align: bottom;')); ?>
     </div>
     
     <div>
-        <?php echo CHtml::resetButton('Resetear', array('name' => 'update','style'=>'background: url(/proj/themes/shadow_dancer/images/small_icons/arrow_refresh.png) no-repeat 6px 1px; padding-left: 24px; vertical-align: bottom;')); ?>
+        <?php echo CHtml::resetButton('Resetear', array('name' => 'update','style'=>'width: 95px; height: 35px;background: url(/proj/themes/shadow_dancer/images/small_icons/arrow_refresh.png) no-repeat 12px 7px; padding-left: 24px; vertical-align: bottom;')); ?>
     </div>
 <?php $this->endWidget(); ?>
  

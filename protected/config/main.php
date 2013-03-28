@@ -44,7 +44,21 @@ return array(
    
 	// application components
 	'components'=>array(
-
+               
+          'mail' => array(
+            'class' => 'ext.yii-mail.YiiMail',
+             'transportType'=>'smtp',
+             'transportOptions'=>array(
+               'host'=>'smtp.gmail.com',
+               'username'=>'o.cornejo.o@gmail.com',//contohna nama_email@yahoo.co.id
+               'password'=>'scharrer15',
+               'port'=>'465',
+               'encryption'=>'tls',
+             ),
+            'viewPath' => 'application.views.mail',
+            'logging' => true,
+            'dryRun' => false
+        ),
                 'coreMessages'=>array(
                     'basePath'=>null,
                 ),
@@ -102,6 +116,6 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'oscar.cornejo@lan.com',
+		'adminEmail'=>'o.cornejo.o@gmail.com',
 	),
 );
