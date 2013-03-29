@@ -56,12 +56,10 @@ class TrabajoController extends Controller {
     public function actionSave() {
 
 
-
         if (isset($_POST['Trabajo'], $_POST['Turno'])) {
             $model = new Trabajo('inicio');
             $modelT = new Turno;
             $this->performAjaxValidation(array($model, $modelT));
-            //$model=$this->loadModel(Yii::app()->getRequest()->getQuery('id')); 
             $model->attributes = $_POST['Trabajo'];
             $modelT->attributes = $_POST['Turno'];
 
@@ -93,18 +91,10 @@ class TrabajoController extends Controller {
 
             if ($model->validate() && $modelT->validate()) {
 
-                $var = Turno::model()->findAll(array('order' => 'ID_TURNO DESC', 'limit' => '1'));
-                if (count($var) > 0)
-                    $idTurno = (int) $var[0]['ID_TURNO'] + 1;
-                else {
-                    $idTurno = 1;
-                }
-                $modelT->ID_TURNO = $idTurno;
-                $model->TURNO_ID_TURNO = $idTurno;
-
+                $var = Turno::model()->findAll(array('condition'=>'FECHA=:date AND TIPO_TURNO_ID_TIPO_TURNO=:tt','order' => 'FECHA ASC', 'limit' => '1','params'=>array(':date'=>$modelT->FECHA,':tt'=>$modelT->TIPO_TURNO_ID_TIPO_TURNO)));
+                $model->TURNO_ID_TURNO = $var[0]['ID_TURNO'];
 
                 if ($model->ASEO_ID_ASEO == 5 || $model->ASEO_ID_ASEO == 7) {
-                    $modelT->save(false);
                     $model->save(false);
                     
                     $nota = new Nota;
@@ -116,7 +106,7 @@ class TrabajoController extends Controller {
                                                                                 INNER JOIN ponderacion ON (ponderacion.evaluacion_id_evaluacion = evaluacion.id_evaluacion
                                                                                 AND ponderacion.aseo_id_aseo=:id_aseo
                                                                                 AND ponderacion.flota_id_flota =:id_flota )')->bindValues(array(':id_aseo' => $id_aseo,
-                                ':id_flota' => $id_flota))->queryAll();
+                                                                                ':id_flota' => $id_flota))->queryAll();
 
 
                     $sql2 = Yii::app()->db->createCommand('SELECT item_se_evalua.item_id_item,item.evaluacion_id_evaluacion, item.nombre
@@ -134,7 +124,6 @@ class TrabajoController extends Controller {
                         'sql2' => $sql2), false, true);
                    
                 } else {
-                    $modelT->save(false);
                     $model->save(false);
                     
                 }
@@ -214,16 +203,17 @@ class TrabajoController extends Controller {
                         $i = 1;
                         foreach ($images as $image => $pic) {
                             $path = $images_path . '/' . $model->AVION_MATRICULA . "-" . $model->FECHA . "-" . $model->ASEO_ID_ASEO . "-Foto" . $i . ".JPG";
+                            $real_p= Yii::app()->baseUrl.'/images'. '/' . $model->AVION_MATRICULA . "-" . $model->FECHA . "-" . $model->ASEO_ID_ASEO . "-Foto" . $i . ".JPG";
                             if ($pic->saveAs($path)) {
                                 switch ($i) {
                                     case 1:
-                                        $model->ARCHIVO1 = $path;
+                                        $model->ARCHIVO1 = $real_p;
                                         break;
                                     case 2:
-                                        $model->ARCHIVO2 = $path;
+                                        $model->ARCHIVO2 = $real_p;
                                         break;
                                     case 3:
-                                        $model->ARCHIVO3 = $path;
+                                        $model->ARCHIVO3 = $real_p;
                                         break;
                                 }
                             } else {
@@ -325,17 +315,18 @@ class TrabajoController extends Controller {
                     $i = 1;
                     foreach ($images as $image => $pic) {
                         $path = $images_path . '/' . $model->AVION_MATRICULA . "-" . $model->FECHA . "-" . $model->ASEO_ID_ASEO . "-Foto" . $i . ".JPG";
-                        if ($pic->saveAs($path)) {
-                            switch ($i) {
-                                case 1:
-                                    $model->ARCHIVO1 = $path;
-                                    break;
-                                case 2:
-                                    $model->ARCHIVO2 = $path;
-                                    break;
-                                case 3:
-                                    $model->ARCHIVO3 = $path;
-                                    break;
+                        $real_p= Yii::app()->baseUrl.'/images'. '/' . $model->AVION_MATRICULA . "-" . $model->FECHA . "-" . $model->ASEO_ID_ASEO . "-Foto" . $i . ".JPG";
+                            if ($pic->saveAs($path)) {
+                                switch ($i) {
+                                    case 1:
+                                        $model->ARCHIVO1 = $real_p;
+                                        break;
+                                    case 2:
+                                        $model->ARCHIVO2 = $real_p;
+                                        break;
+                                    case 3:
+                                        $model->ARCHIVO3 = $real_p;
+                                        break;
                             }
                         } else {
                             
@@ -343,8 +334,6 @@ class TrabajoController extends Controller {
                         // handle the errors here, if you want
                         $i++;
                     }
-
-                    //$modelT->save(false);
                     $model->save(false);
                      $this->render('view', array(
                          'model' => $this->loadModel($model->ID_TRABAJO),
@@ -353,7 +342,6 @@ class TrabajoController extends Controller {
                     
                 } else {
 
-                    //$modelT->save(false);
                     $model->save(false);
                      $this->render('view', array(
                          'model' => $this->loadModel($model->ID_TRABAJO),

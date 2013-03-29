@@ -3,9 +3,9 @@
 /* @var $model Trabajo */
 
 $this->breadcrumbs=array(
-	'Trabajos'=>array('index'),
+	'Trabajo'=>array('index'),
 	$model->ID_TRABAJO=>array('view','id'=>$model->ID_TRABAJO),
-	'Update',
+	'Actualizar',
 );
 
 //$this->menu=array(
@@ -15,9 +15,6 @@ $this->breadcrumbs=array(
 //	array('label'=>'Manage Trabajo', 'url'=>array('admin')),
 //);
 ?>
-
-<h1>Update Trabajo <?php echo $model->ID_TRABAJO; ?></h1>
-
 <?php  echo $this->renderPartial('_form', array('model'=>$model,
                                                 'modelT'=>$modelT
         )); ?>

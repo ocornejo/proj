@@ -16,7 +16,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Vista Aseo #<?php echo $model->ID_TRABAJO; ?></h1>
+<h1>Información aseo número <?php echo $model->ID_TRABAJO; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -25,18 +25,62 @@ $this->menu=array(
 		'OT',
 		'AVION_MATRICULA',
 		'USUARIO_BP',
-		'PLANIFICADO',
+		 array(
+                    'name'=>'PLANIFICADO',
+                    'value'=> $model->PLANIFICADO ? ($model->PLANIFICADO ? "Si" : "No") : NULL,
+                     ),
+//                array(
+//                            'name'=> 'FILIAL_ID_FILIAL',
+//                            'header'=>'Filial',
+//                            'value'=>$model->fILIALIDFILIAL->NOMBRE_FILIAL, // this will access the current group's 1st member and give out the firstname of that member
+//                            'htmlOptions'=>array('style' => 'text-align: center;'),
+//                        ),
 		'HORA_INICIO',
 		'HORA_TERMINO',
 		'COMENTARIO',
 		'FECHA',
 		'CALIFICACION',
-		'ESTADO_ID_ESTADO',
-		'LUGAR_ID_LUGAR',
-		'ASEO_ID_ASEO',
-		'TURNO_ID_TURNO',
-                'ARCHIVO1',
-                'ARCHIVO2',
-                'ARCHIVO3',
+                array(
+                            'name'=> 'ESTADO_ID_ESTADO',
+                            'header'=>'Estado',
+                            'value'=>$model->eSTADOIDESTADO->NOMBRE_ESTADO, // this will access the current group's 1st member and give out the firstname of that member
+                            'htmlOptions'=>array('style' => 'text-align: center;'),
+                        ),
+                array(
+                            'name'=> 'LUGAR_ID_LUGAR',
+                            'header'=>'Lugar',
+                            'value'=>$model->LUGAR_ID_LUGAR ? $model->lUGARIDLUGAR->LUGAR : NULL, // this will access the current group's 1st member and give out the firstname of that member
+                            'htmlOptions'=>array('style' => 'text-align: center;'),
+                        ),
+                array(
+                            'name'=> 'ASEO_ID_ASEO',
+                            'header'=>'Aseo',
+                            'value'=>$model->ASEO_ID_ASEO ? $model->aSEOIDASEO->TIPO_ASEO : NULL, // this will access the current group's 1st member and give out the firstname of that member
+                            'htmlOptions'=>array('style' => 'text-align: center;'),
+                        ),
+                array(
+                            'name'=> 'TURNO_ID_TURNO',
+                            'header'=>'Turno',
+                            'value'=>$model->tURNOIDTURNO->FECHA." ".$model->tURNOIDTURNO->tIPOTURNOIDTIPOTURNO->TIPO, // this will access the current group's 1st member and give out the firstname of that member
+                            'htmlOptions'=>array('style' => 'text-align: center;'),
+                        ),
+                array( 
+
+                'label'=>'Foto 1',
+                'type'=>'raw',
+                'value'=>$model->ARCHIVO1 ? html_entity_decode(CHtml::image($model->ARCHIVO1,'alt',array('width'=>541))) : NULL,
+                ),
+                array( 
+
+                'label'=>'Foto 2',
+                'type'=>'raw',
+                'value'=>$model->ARCHIVO2 ? html_entity_decode(CHtml::image($model->ARCHIVO2,'alt',array('width'=>541))) : NULL,
+                ), 
+                array( 
+
+                'label'=>'Foto 3',
+                'type'=>'raw',
+                'value'=>$model->ARCHIVO3 ? html_entity_decode(CHtml::image($model->ARCHIVO3,'alt',array('width'=>541))) : NULL,
+                ),
 	),
 )); ?>

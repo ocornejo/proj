@@ -113,7 +113,7 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
 
     }
 </script>
-
+<div class="span-special">
 <div class="form semantic">
 
     <?php
@@ -434,3 +434,4 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
  
 
 </div>
+    </div>
