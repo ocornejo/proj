@@ -104,10 +104,7 @@ $('.search-form form').submit(function(){
 		
 	),
 ));
-
-          
-                    
-                    
+   
         $baseUrl = Yii::app()->theme->baseUrl; 
         $normalImageSrc = "{$baseUrl}/images/excel.png";
         $image = CHtml::image($normalImageSrc,"",array('style' => 'vertical-align:10px;')).'Descargar datos filtrados';

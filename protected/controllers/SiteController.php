@@ -106,6 +106,7 @@ class SiteController extends Controller
                         }
 				//$this->redirect(Yii::app()->user->returnUrl);
                 }
+                $this->layout=false;
 		// display the login form
 		$this->render('login',array('model'=>$model));
 	}
@@ -124,8 +125,11 @@ class SiteController extends Controller
 
                 $model=new Trabajo('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Trabajo']))
+		if(isset($_GET['Trabajo'])){
+                    
 			$model->attributes=$_GET['Trabajo'];
+                        
+                }
 
 		$this->render('bajardatos',array(
 			'model'=>$model,

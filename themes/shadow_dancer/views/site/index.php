@@ -45,6 +45,8 @@ div.boxes p{
 </style>
 
 
+
+
 <?php $this->pageTitle=Yii::app()->name;
       $today= date('Y-m-d');
       $from= date('Y-m-d', strtotime($today . ' - 1 day'));
@@ -61,18 +63,26 @@ div.boxes p{
 <p style="font-size: medium;">Trabajos del día</p>
 
 <div class="centre">
+<a href="index.php?r=trabajo/adminPlan">
 <div class="boxes">
+    
     <p>Planificados</p>
     <label><?php echo count($variable);?></label>
-</div>
+   
+</div> 
+</a>
+<a href="index.php?r=trabajo/adminPend">
 <div class="boxes">
     <p>Pendientes</p>
     <label><?php echo count($pendientes);?></label>
 </div>
+</a>    
+<a href="index.php?r=trabajo/adminDesa">
 <div class="boxes">
     <p>Desasignados</p>
     <label><?php echo count($desasignados);?></label>
 </div>
+</a> 
 </div>
 
 <div class="hr" style="margin-top: 280px;"><hr /></div>

@@ -7,12 +7,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Trabajo', 'url'=>array('create')),
-	array('label'=>'Manage Trabajo', 'url'=>array('admin')),
+	array('label'=>'Ingresar nuevo trabajo', 'url'=>array('create')),
+	array('label'=>'Administrar trabajos', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Trabajos</h1>
+<h1>Aseos realizados</h1>
 
 
 <?php $this->widget('zii.widgets.CListView', array(

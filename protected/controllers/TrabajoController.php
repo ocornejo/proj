@@ -418,6 +418,51 @@ class TrabajoController extends Controller {
             'model' => $model,
         ));
     }
+    public function actionAdminPlan() {
+        $model = new Trabajo('search');
+        $model->unsetAttributes();  // clear any default values
+        if (isset($_GET['Trabajo']))
+            $model->attributes = $_GET['Trabajo'];
+        $today= date('Y-m-d');
+        $from= date('Y-m-d', strtotime($today . ' - 1 day'));
+        $to= date('Y-m-d', strtotime($from . ' + 2 day'));
+        $model->date_first=$from;
+        $model->date_last=$to;
+        $model->PLANIFICADO=1;
+        $this->render('admin', array(
+            'model' => $model,
+        ));
+    }
+    public function actionAdminPend() {
+        $model = new Trabajo('search');
+        $model->unsetAttributes();  // clear any default values
+        if (isset($_GET['Trabajo']))
+            $model->attributes = $_GET['Trabajo'];
+        $today= date('Y-m-d');
+        $from= date('Y-m-d', strtotime($today . ' - 1 day'));
+        $to= date('Y-m-d', strtotime($from . ' + 2 day'));
+        $model->date_first=$from;
+        $model->date_last=$to;
+        $model->ESTADO_ID_ESTADO=2;
+        $this->render('admin', array(
+            'model' => $model,
+        ));
+    }
+    public function actionAdminDesa() {
+        $model = new Trabajo('search');
+        $model->unsetAttributes();  // clear any default values
+        if (isset($_GET['Trabajo']))
+            $model->attributes = $_GET['Trabajo'];
+        $today= date('Y-m-d');
+        $from= date('Y-m-d', strtotime($today . ' - 1 day'));
+        $to= date('Y-m-d', strtotime($from . ' + 2 day'));
+        $model->date_first=$from;
+        $model->date_last=$to;
+        $model->ESTADO_ID_ESTADO=array(3,4,5,6,7,8);
+        $this->render('admin', array(
+            'model' => $model,
+        ));
+    }
 
     /**
      * Returns the data model based on the primary key given in the GET variable.
