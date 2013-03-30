@@ -2,6 +2,7 @@
 /* @var $this TrabajoController */
 /* @var $model Trabajo */
 
+$this->pageTitle=Yii::app()->name . ' - Ingresar aseo';
 $this->breadcrumbs=array(
 	'Trabajos'=>array('index'),
         'Ingresar',

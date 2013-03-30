@@ -90,6 +90,28 @@ class TrabajoController extends Controller {
 
 
             if ($model->validate() && $modelT->validate()) {
+                
+            if($model->ESTADO_ID_ESTADO!=2 && $model->ESTADO_ID_ESTADO!=9){
+                    if(Trabajo::model()->exists("ASEO_ID_ASEO=".$model->ASEO_ID_ASEO." AND AVION_MATRICULA='".$model->AVION_MATRICULA."'")){
+                                           
+                    $result=Trabajo::model()->findAllByAttributes(array("ASEO_ID_ASEO"=>$model->ASEO_ID_ASEO,"AVION_MATRICULA"=>$model->AVION_MATRICULA),array('order'=>'FECHA DESC','limit'=>1));
+                    $date= new DateTime($result[0]['FECHA']);
+                    $dateNow =new DateTime($model->FECHA);
+                    $interval= $date->diff($dateNow)->d;
+                    $model->ULTIMO_ASEO=$interval;
+                    //var_dump($date->format('Y-m-d H:i:s').":".$dateNow->format('Y-m-d H:i:s').":".$interval);
+                    }
+                    else{
+                       $date= new DateTime($model->FECHA);
+                        $dateNow =new DateTime();
+                        $interval= $date->diff($dateNow)->d;
+                        $model->ULTIMO_ASEO=$interval; 
+                    }
+
+                }
+                else{
+                     $model->ULTIMO_ASEO=0;
+                }
 
                 $var = Turno::model()->findAll(array('condition'=>'FECHA=:date AND TIPO_TURNO_ID_TIPO_TURNO=:tt','order' => 'FECHA ASC', 'limit' => '1','params'=>array(':date'=>$modelT->FECHA,':tt'=>$modelT->TIPO_TURNO_ID_TIPO_TURNO)));
                 $model->TURNO_ID_TURNO = $var[0]['ID_TURNO'];
@@ -183,6 +205,28 @@ class TrabajoController extends Controller {
                 }
 
                 if ($model->validate() && $modelT->validate()) {
+                    
+                    if($model->ESTADO_ID_ESTADO!=2 && $model->ESTADO_ID_ESTADO!=9){
+                    if(Trabajo::model()->exists("ASEO_ID_ASEO=".$model->ASEO_ID_ASEO." AND AVION_MATRICULA='".$model->AVION_MATRICULA."'")){
+                                           
+                    $result=Trabajo::model()->findAllByAttributes(array("ASEO_ID_ASEO"=>$model->ASEO_ID_ASEO,"AVION_MATRICULA"=>$model->AVION_MATRICULA),array('order'=>'FECHA DESC','limit'=>1));
+                    $date= new DateTime($result[0]['FECHA']);
+                    $dateNow =new DateTime($model->FECHA);
+                    $interval= $date->diff($dateNow)->d;
+                    $model->ULTIMO_ASEO=$interval;
+                    //var_dump($date->format('Y-m-d H:i:s').":".$dateNow->format('Y-m-d H:i:s').":".$interval);
+                    }
+                    else{
+                       $date= new DateTime($model->FECHA);
+                        $dateNow =new DateTime();
+                        $interval= $date->diff($dateNow)->d;
+                        $model->ULTIMO_ASEO=$interval; 
+                    }
+
+                }
+                else{
+                     $model->ULTIMO_ASEO=0;
+                }
 
                     if (!is_dir(Yii::getPathOfAlias('webroot') . '/images/')) {
                         mkdir(Yii::getPathOfAlias('webroot') . '/images/');
@@ -282,14 +326,23 @@ class TrabajoController extends Controller {
 
             if ($model->validate() && $modelT->validate() && isset($_POST['buttonSubmit'])) {
                 
-                if($model->ESTADO_ID_ESTADO!=2 && $model->ESTADO_ID_ESTADO!=9 && Trabajo::model()->exists("ASEO_ID_ASEO=".$model->ASEO_ID_ASEO." AND AVION_MATRICULA='".$model->AVION_MATRICULA."'")){
+                if($model->ESTADO_ID_ESTADO!=2 && $model->ESTADO_ID_ESTADO!=9){
+                    if(Trabajo::model()->exists("ASEO_ID_ASEO=".$model->ASEO_ID_ASEO." AND AVION_MATRICULA='".$model->AVION_MATRICULA."'")){
                                            
                     $result=Trabajo::model()->findAllByAttributes(array("ASEO_ID_ASEO"=>$model->ASEO_ID_ASEO,"AVION_MATRICULA"=>$model->AVION_MATRICULA),array('order'=>'FECHA DESC','limit'=>1));
                     $date= new DateTime($result[0]['FECHA']);
-                    $dateNow =new DateTime();
+                    $dateNow =new DateTime($model->FECHA);
                     $interval= $date->diff($dateNow)->d;
                     $model->ULTIMO_ASEO=$interval;
-                    var_dump($date->format('Y-m-d H:i:s').":".$dateNow->format('Y-m-d H:i:s').":".$interval);
+                    //var_dump($date->format('Y-m-d H:i:s').":".$dateNow->format('Y-m-d H:i:s').":".$interval);
+                    }
+                    else{
+                       $date= new DateTime($model->FECHA);
+                        $dateNow =new DateTime();
+                        $interval= $date->diff($dateNow)->d;
+                        $model->ULTIMO_ASEO=$interval; 
+                    }
+
                 }
                 else{
                      $model->ULTIMO_ASEO=0;

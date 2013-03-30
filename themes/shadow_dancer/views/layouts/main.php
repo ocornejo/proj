@@ -79,7 +79,7 @@
                                 //array('label'=>'Ingreso datos', 'url'=>array('/site/page', 'view'=>'ingresodatos')),
                                 array('label'=>CHtml::image(Yii::app()->theme->baseUrl."/images/big_icons/icon-down.png","",array("width"=>20,"heigth"=>20,'style' => 'vertical-align:10px;')). CHtml::label("  Bajar datos", "",array('style' => 'vertical-align:15px;')), 'url'=>array('/site/bajar')),
                                 array('label'=>CHtml::image(Yii::app()->theme->baseUrl."/images/big_icons/icon-warning.png","",array("width"=>20,"heigth"=>20,'style' => 'vertical-align:10px;')). CHtml::label("  Críticos", "",array('style' => 'vertical-align:15px;')), 'url'=>array('/site/criticos')),
-                                array('label'=>CHtml::image(Yii::app()->theme->baseUrl."/images/big_icons/icon-chart2.png","",array("width"=>20,"heigth"=>20,'style' => 'vertical-align:10px;')). CHtml::label("  Indicadores", "",array('style' => 'vertical-align:15px;')), 'url'=>array('/site/page', 'view'=>'indicadores'),'itemOptions'=>array('class'=>'icon_chart')),
+                                array('label'=>CHtml::image(Yii::app()->theme->baseUrl."/images/big_icons/icon-chart2.png","",array("width"=>20,"heigth"=>20,'style' => 'vertical-align:10px;')). CHtml::label("  Enviar reportes", "",array('style' => 'vertical-align:15px;')), 'url'=>array('/site/reporte'),'itemOptions'=>array('class'=>'icon_chart')),
 				array('label'=>CHtml::image(Yii::app()->theme->baseUrl."/images/big_icons/icon-gears.png","",array("width"=>20,"heigth"=>20,'style' => 'vertical-align:10px;')). CHtml::label("  Opciones", "",array('style' => 'vertical-align:15px;')), 'url'=>array('/site/page', 'view'=>'opciones'))
 				),
                     'encodeLabel'=>false,

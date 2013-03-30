@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">
+<Worksheet ss:Name="test">
+<Table>
+<Row>
+<Cell><Data ss:Type="String">OT</Data></Cell>
+<Cell><Data ss:Type="String">Matricula</Data></Cell>
+<Cell><Data ss:Type="String">BP</Data></Cell>
+<Cell><Data ss:Type="String">Estado</Data></Cell>
+<Cell><Data ss:Type="String">Lugar</Data></Cell>
+<Cell><Data ss:Type="String">Aseo</Data></Cell>
+<Cell><Data ss:Type="String">Planificado</Data></Cell>
+<Cell><Data ss:Type="String">Hora inicio</Data></Cell>
+<Cell><Data ss:Type="String">Hora termino</Data></Cell>
+<Cell><Data ss:Type="String">Fecha</Data></Cell>
+<Cell><Data ss:Type="String">D&iacute;as sin aseo</Data></Cell>
+<Cell><Data ss:Type="String">Calificacion</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">BFA</Data></Cell>
+<Cell><Data ss:Type="String">Oscar Cornejo</Data></Cell>
+<Cell><Data ss:Type="String">Ecoblanc-Falta Producto</Data></Cell>
+<Cell><Data ss:Type="String">Losa</Data></Cell>
+<Cell><Data ss:Type="String">Ba&ntilde;os</Data></Cell>
+<Cell><Data ss:Type="String">Si</Data></Cell>
+<Cell><Data ss:Type="String">14:34:00</Data></Cell>
+<Cell><Data ss:Type="String">13:43:00</Data></Cell>
+<Cell><Data ss:Type="String">2013-03-29</Data></Cell>
+<Cell><Data ss:Type="String">0</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">213213</Data></Cell>
+<Cell><Data ss:Type="String">BCF</Data></Cell>
+<Cell><Data ss:Type="String">Oscar Cornejo</Data></Cell>
+<Cell><Data ss:Type="String">Nula</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">Ba&ntilde;os</Data></Cell>
+<Cell><Data ss:Type="String">No</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">2013-03-29</Data></Cell>
+<Cell><Data ss:Type="String">0</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">BAF</Data></Cell>
+<Cell><Data ss:Type="String">Oscar Cornejo</Data></Cell>
+<Cell><Data ss:Type="String">Ecoblanc-Otro</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">Profundo</Data></Cell>
+<Cell><Data ss:Type="String">Si</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">2013-03-29</Data></Cell>
+<Cell><Data ss:Type="String">0</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">BAR</Data></Cell>
+<Cell><Data ss:Type="String">Oscar Cornejo</Data></Cell>
+<Cell><Data ss:Type="String">LAN-Llega Tarde</Data></Cell>
+<Cell><Data ss:Type="String">Losa</Data></Cell>
+<Cell><Data ss:Type="String">Alfombra</Data></Cell>
+<Cell><Data ss:Type="String">Si</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">2013-03-29</Data></Cell>
+<Cell><Data ss:Type="String">0</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">BAK</Data></Cell>
+<Cell><Data ss:Type="String">Oscar Cornejo</Data></Cell>
+<Cell><Data ss:Type="String">Ecoblanc-Falta Producto</Data></Cell>
+<Cell><Data ss:Type="String">Base</Data></Cell>
+<Cell><Data ss:Type="String">Alas</Data></Cell>
+<Cell><Data ss:Type="String">Si</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">2013-03-05</Data></Cell>
+<Cell><Data ss:Type="String">0</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">BAM</Data></Cell>
+<Cell><Data ss:Type="String">Oscar Cornejo</Data></Cell>
+<Cell><Data ss:Type="String">Ecoblanc-Falta Producto</Data></Cell>
+<Cell><Data ss:Type="String">Base</Data></Cell>
+<Cell><Data ss:Type="String">Alas</Data></Cell>
+<Cell><Data ss:Type="String">Si</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">2013-03-01</Data></Cell>
+<Cell><Data ss:Type="String">29</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">BAM</Data></Cell>
+<Cell><Data ss:Type="String">Oscar Cornejo</Data></Cell>
+<Cell><Data ss:Type="String">Ecoblanc-Falta HH</Data></Cell>
+<Cell><Data ss:Type="String">Base</Data></Cell>
+<Cell><Data ss:Type="String">Alas</Data></Cell>
+<Cell><Data ss:Type="String">Si</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">2013-03-22</Data></Cell>
+<Cell><Data ss:Type="String">29</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">BAU</Data></Cell>
+<Cell><Data ss:Type="String">Oscar Cornejo</Data></Cell>
+<Cell><Data ss:Type="String">Ecoblanc-Falta HH</Data></Cell>
+<Cell><Data ss:Type="String">Base</Data></Cell>
+<Cell><Data ss:Type="String">Alas</Data></Cell>
+<Cell><Data ss:Type="String">Si</Data></Cell>
+<Cell><Data ss:Type="String">14:54:00</Data></Cell>
+<Cell><Data ss:Type="String">13:55:00</Data></Cell>
+<Cell><Data ss:Type="String">2013-03-15</Data></Cell>
+<Cell><Data ss:Type="String">15</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">BAU</Data></Cell>
+<Cell><Data ss:Type="String">Oscar Cornejo</Data></Cell>
+<Cell><Data ss:Type="String">Ecoblanc-Falta HH</Data></Cell>
+<Cell><Data ss:Type="String">Base</Data></Cell>
+<Cell><Data ss:Type="String">Alas</Data></Cell>
+<Cell><Data ss:Type="String">Si</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">2013-03-21</Data></Cell>
+<Cell><Data ss:Type="String">6</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+</Row>
+</Table>
+</Worksheet>
+</Workbook>

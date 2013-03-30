@@ -18,7 +18,7 @@
 		<?php echo $form->dropDownList($model, 'USUARIO_BP', CHtml::listData(Usuario::model()->findAll(), 'BP', 'NOMBRE'), array('empty' => 'Seleccione'));?>
 	</div>
         <div class="raw">
-		<?php echo $form->label($model,'Fecha '); 
+		<?php echo $form->label($model,'Fecha turno: '); 
                 $this->widget('zii.widgets.jui.CJuiDatePicker', array(
                             'model' => Turno::model(),
                             'attribute' => 'FECHA',
@@ -50,7 +50,7 @@
 
 
         <div class="raw">
-            <?php echo $form->label($model,'TURNO_ID_TURNO'); ?>
+            <?php echo $form->label($model,'Tipo turno: '); ?>
             <?php echo $form->dropDownList(Turno::model(), 'TIPO_TURNO_ID_TIPO_TURNO',CHtml::listData(TipoTurno::model()->findAll(),'ID_TIPO_TURNO','TIPO'),array('empty' => 'Seleccione',
                 'ajax' => array(
                     'type' => 'POST',
@@ -164,6 +164,10 @@
                     
                 ),
             )); ?>
+	</div>
+        <div class="raw">
+		<?php echo $form->label($model,'ULTIMO_ASEO'); ?>
+		<?php echo $form->textField($model,'ULTIMO_ASEO',array('style' => 'width:30px', 'maxlength' => 3)); ?>
 	</div>
         <br>
          <div class="raw"> 

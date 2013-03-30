@@ -14,11 +14,14 @@
  * @property string $COMENTARIO
  * @property string $FECHA
  * @property integer $CALIFICACION
+ * @property integer $ULTIMO_ASEO
  * @property integer $ESTADO_ID_ESTADO
  * @property integer $LUGAR_ID_LUGAR
  * @property integer $ASEO_ID_ASEO
  * @property integer $TURNO_ID_TURNO
- * @property string $ARCHIVO
+ * @property string $ARCHIVO1
+ * @property string $ARCHIVO2
+ * @property string $ARCHIVO3
  *
  * The followings are the available model relations:
  * @property Nota[] $notas
@@ -80,7 +83,7 @@ class Trabajo extends CActiveRecord
 			array('HORA_INICIO, HORA_TERMINO, FECHA', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('ID_TRABAJO, OT, AVION_MATRICULA, USUARIO_BP, PLANIFICADO, HORA_INICIO, HORA_TERMINO, COMENTARIO, FECHA, CALIFICACION, ESTADO_ID_ESTADO, LUGAR_ID_LUGAR, ASEO_ID_ASEO, TURNO_ID_TURNO,date_first,date_last,flota', 'safe', 'on'=>'search'),
+			array('ID_TRABAJO, OT, AVION_MATRICULA, USUARIO_BP, PLANIFICADO, HORA_INICIO, HORA_TERMINO, COMENTARIO, FECHA, ULTIMO_ASEO, CALIFICACION, ESTADO_ID_ESTADO, LUGAR_ID_LUGAR, ASEO_ID_ASEO, TURNO_ID_TURNO,date_first,date_last,flota', 'safe', 'on'=>'search'),
 		);
 	}
         
@@ -129,6 +132,7 @@ class Trabajo extends CActiveRecord
 			'COMENTARIO' => 'Comentario',
 			'FECHA' => 'Fecha',
 			'CALIFICACION' => 'Calificación',
+                        'ULTIMO_ASEO' => 'Días sin aseo',
 			'ESTADO_ID_ESTADO' => 'Estado',
 			'LUGAR_ID_LUGAR' => 'Lugar',
 			'ASEO_ID_ASEO' => 'Aseo',
@@ -167,6 +171,7 @@ class Trabajo extends CActiveRecord
 		$criteria->compare('HORA_INICIO',$this->HORA_INICIO,true);
 		$criteria->compare('HORA_TERMINO',$this->HORA_TERMINO,true);
 		$criteria->compare('COMENTARIO',$this->COMENTARIO,true);
+                $criteria->compare('ULTIMO_ASEO',$this->ULTIMO_ASEO,true);
 		$criteria->compare('FECHA',$this->FECHA,true);
 		$criteria->compare('CALIFICACION',$this->CALIFICACION);
 		$criteria->compare('ESTADO_ID_ESTADO',$this->ESTADO_ID_ESTADO);

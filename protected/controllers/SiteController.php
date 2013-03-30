@@ -135,9 +135,28 @@ class SiteController extends Controller
 			'model'=>$model,
 		));
 	}
-       
- 
-        public function actionDownloadExcel(){
+        
+        public function actionReporte()
+	{
+                $files = glob(getcwd().'\\temp\\*'); // get all file names
+                    foreach($files as $file){ // iterate files
+                      if(is_file($file))
+                        unlink($file); // delete file
+                }
+
+                $model=new Trabajo('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Trabajo'])){
+                    
+			$model->attributes=$_GET['Trabajo'];
+                        
+                }
+
+		$this->render('reporte',array(
+			'model'=>$model,
+		));
+	}
+       public function actionDownloadExcel(){
             
           $d = $_SESSION['Lectivo-excel'];
            $i = 0;
@@ -152,6 +171,7 @@ class SiteController extends Controller
         $data[$i]['HORA_INICIO'] = 'Hora inicio';
         $data[$i]['HORA_TERMINO'] = 'Hora termino';
         $data[$i]['FECHA'] = 'Fecha';
+        $data[$i]['ULTIMO_ASEO'] = 'Días sin aseo';
         $data[$i]['CALIFICACION'] = 'Calificacion';
         
         $i++;
@@ -178,6 +198,7 @@ class SiteController extends Controller
             $data[$i]['HORA_INICIO'] = $issue['HORA_INICIO'];
             $data[$i]['HORA_TERMINO'] = $issue['HORA_TERMINO'];
             $data[$i]['FECHA'] =$issue['FECHA'];
+            $data[$i]['ULTIMO_ASEO']=$issue['ULTIMO_ASEO'];
             $data[$i]['CALIFICACION'] = $issue['CALIFICACION'];
             $i++;
         }
@@ -186,28 +207,84 @@ class SiteController extends Controller
             $xls = new JPhpExcel('UTF-8', false, 'test');
             $xls->addArray($data);
             $fecha = new DateTime();
-            
-//            $tmp=array_search('uri', @array_flip(stream_get_meta_data($GLOBALS[mt_rand()]=tmpfile()))); 
-//            file_put_contents($tmp, $xls->generateXML('Resumen_Aseo-Cabina_'.$fecha->format('d-m-Y_H:i'))); 
-//            echo file_get_contents($tmp); 
-//             var_dump($tmp);
             $xls->generateXML('Resumen_Aseo-Cabina_'.$fecha->format('d-m-Y_H:i')); //export into a .xls file
+        }
+ 
+        public function actionSendExcel(){
             
+          $d = $_SESSION['Lectivo-excel'];
+           $i = 0;
+        
+        $data[$i]['OT'] = 'OT';
+        $data[$i]['AVION_MATRICULA'] = 'Matricula';
+        $data[$i]['USUARIO_BP'] = 'BP';
+        $data[$i]['ESTADO_ID_ESTADO'] = 'Estado';
+        $data[$i]['LUGAR_ID_LUGAR'] = 'Lugar';
+        $data[$i]['ASEO_ID_ASEO'] = 'Aseo';
+        $data[$i]['PLANIFICADO'] = 'Planificado';
+        $data[$i]['HORA_INICIO'] = 'Hora inicio';
+        $data[$i]['HORA_TERMINO'] = 'Hora termino';
+        $data[$i]['FECHA'] = 'Fecha';
+        $data[$i]['ULTIMO_ASEO'] = 'Días sin aseo';
+        $data[$i]['CALIFICACION'] = 'Calificacion';
+        
+        $i++;
+        
+        //populate data array with the required data elements
+        foreach($d->data as $issue)
+        {
+            $data[$i]['OT'] = $issue['OT'];
+            $data[$i]['AVION_MATRICULA'] = $issue['AVION_MATRICULA'];
+            $data[$i]['USUARIO_BP'] =$issue->uSUARIOBP->NOMBRE;
+            $data[$i]['ESTADO_ID_ESTADO'] = $issue->eSTADOIDESTADO->NOMBRE_ESTADO;
+            if($issue['LUGAR_ID_LUGAR']!=NULL) 
+                $data[$i]['LUGAR_ID_LUGAR']=$issue->lUGARIDLUGAR->LUGAR; 
+            else 
+                $data[$i]['LUGAR_ID_LUGAR']="";
+            if($issue['ASEO_ID_ASEO']!=NULL) 
+                $data[$i]['ASEO_ID_ASEO']=$issue->aSEOIDASEO->TIPO_ASEO;
+            else 
+                $data[$i]['ASEO_ID_ASEO']="";
+             if($issue['PLANIFICADO']!=NULL) 
+                $data[$i]['PLANIFICADO']="Si";
+            else 
+                $data[$i]['PLANIFICADO']="No";
+            $data[$i]['HORA_INICIO'] = $issue['HORA_INICIO'];
+            $data[$i]['HORA_TERMINO'] = $issue['HORA_TERMINO'];
+            $data[$i]['FECHA'] =$issue['FECHA'];
+            $data[$i]['ULTIMO_ASEO']=$issue['ULTIMO_ASEO'];
+            $data[$i]['CALIFICACION'] = $issue['CALIFICACION'];
+            $i++;
+        }
+
+            Yii::import('application.extensions.phpexcel.JPhpExcel');
+            $xls = new JPhpExcel('UTF-8', false, 'test');
+            $xls->addArray($data);
+            $fecha = new DateTime();
            
-//             Yii::import('ext.yii-mail.YiiMailMessage');
-//            $message = new YiiMailMessage;
-//            $message->setBody('Message content here with HTML', 'text/html');
-//            $message->subject = 'Aseos';
-//            $message->addTo('niccolo.paganini15@gmail.com');
-//            $message->from = Yii::app()->params['adminEmail'];
-//            $filename='hola.xls';
-//            //$viewPath = Yii::getPathOfAlias(Yii::app()->mail->viewPath.'.attachmentToTechnician');
-//            //$body = "hola";
-//
+            $out = '';
+            ob_start();
+            $xls->generateXML('Resumen_Aseo-Cabina_'.$fecha->format('d-m-Y')); //export into a .xls file
+            $out .= ob_get_contents();
+            ob_end_flush();
 
-//            $message->attach(Swift_Attachment::fromPath($tmp), $filename, "xls");
-
-//            Yii::app()->mail->send($message);
+             Yii::import('ext.yii-mail.YiiMailMessage');
+            $message = new YiiMailMessage;
+            $message->setBody('Se adjunto informe de turno', 'text/html');
+            $message->subject = 'Informe de Turno Aseos: '.$fecha->format('d-m-Y');
+            $message->addTo('niccolo.paganini15@gmail.com');
+            $message->from = Yii::app()->params['adminEmail'];
+            $filename='Resumen_Aseo-Cabina_'.$fecha->format('d-m-Y');
+                        // check that something was actually written to the buffer
+            if (strlen($out) > 0) {
+             $file = 'temp/Resumen_Aseo-Cabina_'.$fecha->format('d-m-Y'). '.xls';
+             touch($file); 
+             $fh = fopen($file, 'w');
+             fwrite($fh, $out);
+             fclose($fh);
+            }
+            $message->attach(Swift_Attachment::fromPath($file), $filename, "xls");
+            Yii::app()->mail->send($message);           
         }
             
         public function actionIndex(){

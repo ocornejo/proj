@@ -1,11 +1,7 @@
-<?php
-
-$baseUrl = Yii::app()->theme->baseUrl; 
-$cs = Yii::app()->getClientScript();
-$cs->registerCssFile($baseUrl.'/css/jquery.css');
-$this->pageTitle=Yii::app()->name . ' - Bajar datos';
+<?php  
+$this->pageTitle=Yii::app()->name . ' - Envío de reportes';
 $this->breadcrumbs=array(
-	'Bajar datos',
+	'Envío de reportes',
 );
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -20,17 +16,20 @@ $('.search-form form').submit(function(){
 });
 ");?>
 
-<h1>Bajar datos</h1>
+<h1>Envío de reportes</h1>
 
+<div class="flash-notice">
+Para enviar un informe, seleccione la fecha de turno y el tipo de turno
+para filtrar los aseos realizados y haga clic en Enviar informe.
+</div>
 
 <?php echo CHtml::submitButton('Filtros', array('class'=>'search-button','style'=>'background: url(/proj/themes/shadow_dancer/images/small_icons/search-icon.png) no-repeat 6px 1px; padding-left: 24px; vertical-align: bottom;')); ?>
 
-<div class="search-form" style="display: none;">
+<div class="search-form">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
-</div><!-- search-form -->
-
+</div>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'trabajo-grid',
@@ -105,14 +104,9 @@ $('.search-form form').submit(function(){
 		
 	),
 ));
-   
-        $baseUrl = Yii::app()->theme->baseUrl; 
-        $normalImageSrc = "{$baseUrl}/images/excel.png";
-        $image = CHtml::image($normalImageSrc,"",array('style' => 'vertical-align:10px;')).'Descargar datos filtrados';
-        //"",array("width"=>20,"heigth"=>20,'style' => 'vertical-align:10px;')
-
-        echo CHtml::link($image, array('site/DownloadExcel'));            
-        
                     
-?>
+        $baseUrl = Yii::app()->theme->baseUrl; 
+        $normalImageSrc = "{$baseUrl}/images/mail.png";
+        $image = CHtml::image($normalImageSrc,"",array('style' => 'vertical-align:10px;')).'Enviar informe';
+        echo CHtml::link($image, array('site/SendExcel'));   ?>
 
