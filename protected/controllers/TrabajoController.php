@@ -178,6 +178,11 @@ class TrabajoController extends Controller {
                 //$model=$this->loadModel(Yii::app()->getRequest()->getQuery('id')); 
                 $model->attributes = $_POST['Trabajo'];
                 $modelT->attributes = $_POST['Turno'];
+                
+//                $hinicio_array= explode(':', $model->HORA_INICIO);
+//                $model->HORA_INICIO = $hinicio_array[0].':'.$hinicio_array[1];
+//                $htermino_array= explode(':', $model->HORA_TERMINO);
+//                $model->HORA_TERMINO = $htermino_array[0].':'.$htermino_array[1];
 
 
                 if ($model->ASEO_ID_ASEO === 8)
@@ -266,20 +271,21 @@ class TrabajoController extends Controller {
                             // handle the errors here, if you want
                             $i++;
                         }
-
-                        //$modelT->save(false);
                         $model->save(false);
-                        $this->render('view', array(
-                         'model' => $this->loadModel($model->ID_TRABAJO),
-                        ));
+                        $this->render('create', array(
+                         'model' => new Trabajo('inicio'),
+                         'modelT'=> new Turno,
+                         'success'=> true,
+                    ));
                         exit;
 
                     } else {
 
-                        //$modelT->save(false);
                         $model->save(false);
-                        $this->render('view', array(
-                         'model' => $this->loadModel($model->ID_TRABAJO),
+                        $this->render('create', array(
+                         'model' => new Trabajo('inicio'),
+                         'modelT'=> new Turno,
+                         'success'=> true,
                     ));
                         exit;
                     }
@@ -298,6 +304,11 @@ class TrabajoController extends Controller {
 
             $model->attributes = $_POST['Trabajo'];
             $modelT->attributes = $_POST['Turno'];
+            
+//            $hinicio_array= explode(':', $model->HORA_INICIO);
+//            $model->HORA_INICIO = $hinicio_array[0].':'.$hinicio_array[1];
+//            $htermino_array= explode(':', $model->HORA_TERMINO);
+//            $model->HORA_TERMINO = $htermino_array[0].':'.$htermino_array[1];
 
 
             if ($model->ASEO_ID_ASEO === 8)
@@ -388,16 +399,20 @@ class TrabajoController extends Controller {
                         $i++;
                     }
                     $model->save(false);
-                     $this->render('view', array(
-                         'model' => $this->loadModel($model->ID_TRABAJO),
+                    $this->render('create', array(
+                         'model' => new Trabajo('inicio'),
+                         'modelT'=> new Turno,
+                         'success'=> true,
                     ));
                         exit;
                     
                 } else {
 
                     $model->save(false);
-                     $this->render('view', array(
-                         'model' => $this->loadModel($model->ID_TRABAJO),
+                     $this->render('create', array(
+                         'model' => new Trabajo('inicio'),
+                         'modelT'=> new Turno,
+                         'success'=> true,
                     ));
                         exit;
                 }
@@ -409,6 +424,7 @@ class TrabajoController extends Controller {
             $this->render('create', array(
                 'model' => $model,
                 'modelT' => $modelT,
+                'success' =>false,
             ));
         }
     }
@@ -419,18 +435,137 @@ class TrabajoController extends Controller {
                 $modelT= $this->loadModelT($model->TURNO_ID_TURNO);
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
+                
+                $hinicio_array= explode(':', $model->HORA_INICIO);
+            $model->HORA_INICIO = $hinicio_array[0].':'.$hinicio_array[1];
+            $htermino_array= explode(':', $model->HORA_TERMINO);
+            $model->HORA_TERMINO = $htermino_array[0].':'.$htermino_array[1];
 
 		if (isset($_POST['Trabajo'], $_POST['Turno'])) {
-		
-//			$model->attributes=$_POST['Trabajo'];
-//			if($model->save())
-//				$this->redirect(array('view','id'=>$model->ID_TRABAJO));
-                    $this->actionSave();
+	
+
+            $model->attributes = $_POST['Trabajo'];
+            $modelT->attributes = $_POST['Turno'];
+            
+//            $hinicio_array= explode(':', $model->HORA_INICIO);
+//            $model->HORA_INICIO = $hinicio_array[0].':'.$hinicio_array[1];
+//            $htermino_array= explode(':', $model->HORA_TERMINO);
+//            $model->HORA_TERMINO = $htermino_array[0].':'.$htermino_array[1];
+
+
+            if ($model->ASEO_ID_ASEO === 8)
+                $model->scenario = 'bano';
+            else {
+                switch ($model->ESTADO_ID_ESTADO) {
+                    case 1:
+                        $model->scenario = 'ok';
+                        break;
+                    case 2:
+                        $model->scenario = 'pendiente';
+                        break;
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                        $model->scenario = 'laneco';
+                        break;
+                    case 9:
+                        $model->scenario = 'nula';
+                        break;
+                }
+            }
+
+            if ($model->validate() && $modelT->validate() && isset($_POST['buttonSubmit'])) {
+                
+                if($model->ESTADO_ID_ESTADO!=2 && $model->ESTADO_ID_ESTADO!=9){
+                    if(Trabajo::model()->exists("ASEO_ID_ASEO=".$model->ASEO_ID_ASEO." AND AVION_MATRICULA='".$model->AVION_MATRICULA."'")){
+                                           
+                    $result=Trabajo::model()->findAllByAttributes(array("ASEO_ID_ASEO"=>$model->ASEO_ID_ASEO,"AVION_MATRICULA"=>$model->AVION_MATRICULA),array('order'=>'FECHA DESC','limit'=>1));
+                    $date= new DateTime($result[0]['FECHA']);
+                    $dateNow =new DateTime($model->FECHA);
+                    $interval= $date->diff($dateNow)->d;
+                    $model->ULTIMO_ASEO=$interval;
+                    //var_dump($date->format('Y-m-d H:i:s').":".$dateNow->format('Y-m-d H:i:s').":".$interval);
+                    }
+                    else{
+                       $date= new DateTime($model->FECHA);
+                        $dateNow =new DateTime();
+                        $interval= $date->diff($dateNow)->d;
+                        $model->ULTIMO_ASEO=$interval; 
+                    }
+
+                }
+                else{
+                     $model->ULTIMO_ASEO=0;
+                }
+
+                if (!is_dir(Yii::getPathOfAlias('webroot') . '/images/')) {
+                    mkdir(Yii::getPathOfAlias('webroot') . '/images/');
+                    chmod(Yii::getPathOfAlias('webroot') . '/images/', 0755);
+                    // the default implementation makes it under 777 permission, which you could possibly change recursively before deployment, but here's less of a headache in case you don't
+                }
+                
+
+                    $var = Turno::model()->findAll(array('condition'=>'FECHA=:date AND TIPO_TURNO_ID_TIPO_TURNO=:tt','order' => 'FECHA ASC', 'limit' => '1','params'=>array(':date'=>$modelT->FECHA,':tt'=>$modelT->TIPO_TURNO_ID_TIPO_TURNO)));
+
+                   $model->TURNO_ID_TURNO = $var[0]['ID_TURNO'];
+
+                $images = CUploadedFile::getInstancesByName('imagen');
+                
+                if (isset($images) && count($images) > 0) {
+
+                    $images_path = realpath(Yii::app()->basePath . '/../images');
+
+                    $i = 1;
+                    foreach ($images as $image => $pic) {
+                        $path = $images_path . '/' . $model->AVION_MATRICULA . "-" . $model->FECHA . "-" . $model->ASEO_ID_ASEO . "-Foto" . $i . ".JPG";
+                        $real_p= Yii::app()->baseUrl.'/images'. '/' . $model->AVION_MATRICULA . "-" . $model->FECHA . "-" . $model->ASEO_ID_ASEO . "-Foto" . $i . ".JPG";
+                            if ($pic->saveAs($path)) {
+                                switch ($i) {
+                                    case 1:
+                                        $model->ARCHIVO1 = $real_p;
+                                        break;
+                                    case 2:
+                                        $model->ARCHIVO2 = $real_p;
+                                        break;
+                                    case 3:
+                                        $model->ARCHIVO3 = $real_p;
+                                        break;
+                            }
+                        } else {
+                            
+                        }
+                        // handle the errors here, if you want
+                        $i++;
+                    }
+                    $model->save(false);
+                    $this->render('create', array(
+                         'model' => new Trabajo('inicio'),
+                         'modelT'=> new Turno,
+                         'success'=> true,
+                    ));
+                        exit;
+                    
+                } else {
+
+                    $model->save(false);
+                     $this->render('create', array(
+                         'model' => new Trabajo('inicio'),
+                         'modelT'=> new Turno,
+                         'success'=> true,
+                    ));
+                        exit;
+                }
+            }
+        
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
                         'modelT'=>$modelT,
+                        'success'=>false,
 		));
 	}
 
