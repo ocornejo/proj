@@ -70,7 +70,7 @@ class Trabajo extends CActiveRecord
 			array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA, ASEO_ID_ASEO,PLANIFICADO', 'required','on'=>'laneco'),
                         array('USUARIO_BP, ESTADO_ID_ESTADO,OT', 'required','on'=>'nula'),
                         array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA, ASEO_ID_ASEO,PLANIFICADO,LUGAR_ID_LUGAR', 'required','on'=>'bano'),
-                        array('AVION_MATRICULA,USUARIO_BP,ESTADO_ID_ESTADO,ASEO_ID_ASEO','required','on'=>'pendiente'),
+                        array('AVION_MATRICULA,USUARIO_BP,ESTADO_ID_ESTADO,ASEO_ID_ASEO,PLANIFICADO','required','on'=>'pendiente'),
                         //array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA, ASEO_ID_ASEO, TURNO_ID_TURNO,LUGAR_ID_LUGAR','allowEmpty'=>true, 'on'=>'formSubmit'),
                         array('OT, USUARIO_BP, PLANIFICADO, CALIFICACION, ESTADO_ID_ESTADO, LUGAR_ID_LUGAR, ASEO_ID_ASEO, TURNO_ID_TURNO', 'numerical', 'integerOnly'=>true),
 			array('FECHA','date', 'format'=>'yyyy-MM-dd'),

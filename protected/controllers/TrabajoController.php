@@ -436,11 +436,14 @@ class TrabajoController extends Controller {
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
                 
+            if($model->HORA_INICIO!=NULL){
                 $hinicio_array= explode(':', $model->HORA_INICIO);
-            $model->HORA_INICIO = $hinicio_array[0].':'.$hinicio_array[1];
-            $htermino_array= explode(':', $model->HORA_TERMINO);
-            $model->HORA_TERMINO = $htermino_array[0].':'.$htermino_array[1];
-
+                $model->HORA_INICIO = $hinicio_array[0].':'.$hinicio_array[1];
+            }
+            if($model->HORA_TERMINO!=NULL){
+                $htermino_array= explode(':', $model->HORA_TERMINO);
+                $model->HORA_TERMINO = $htermino_array[0].':'.$htermino_array[1];
+            }
 		if (isset($_POST['Trabajo'], $_POST['Turno'])) {
 	
 

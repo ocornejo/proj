@@ -158,6 +158,7 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
                             // additional javascript options for the date picker plugin
                             'options' => array(
                                 'dateFormat' => 'yy-mm-dd',
+                                
                                 'showAnim' => 'drop',
                             ),
                             'htmlOptions' => array(
