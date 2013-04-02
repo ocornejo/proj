@@ -2340,3 +2340,51 @@ Stack trace:
 REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
 in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
 in C:\wamp\www\proj\index.php (13)
+2013/04/02 01:31:38 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/04/02 01:32:03 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/04/02 01:32:19 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
+2013/04/02 01:32:59 [error] [php] Undefined variable: flotaid (C:\wamp\www\proj\protected\controllers\FlotaController.php:182)
+Stack trace:
+#0 C:\Yii\framework\web\filters\CFilterChain.php(133): FlotaController->runAction()
+#1 C:\Yii\framework\web\CController.php(291): CFilterChain->run()
+#2 C:\Yii\framework\web\CController.php(265): FlotaController->runActionWithFilters()
+#3 C:\Yii\framework\web\CWebApplication.php(282): FlotaController->run()
+#4 C:\Yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#6 C:\wamp\www\proj\index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in C:\wamp\www\proj\protected\controllers\FlotaController.php (182)
+in C:\wamp\www\proj\index.php (13)
