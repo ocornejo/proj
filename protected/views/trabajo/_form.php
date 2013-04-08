@@ -206,7 +206,7 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
     
     <div class="raw">
         <?php echo CHtml::label('Flota:', ''); ?>
-        <?php echo CHtml::textField('flotaId', '', array('style' => 'width:43px', 'readonly' => 'readonly')); ?>
+        <?php echo CHtml::textField('flotaId', '', array('style' => 'width:53px', 'readonly' => 'readonly')); ?>
     </div>
 
   </fieldset>

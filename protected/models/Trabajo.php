@@ -77,7 +77,7 @@ class Trabajo extends CActiveRecord
                         array('HORA_INICIO', 'date', 'format'=>'HH:mm'),
                         array('HORA_TERMINO','date', 'format'=>'HH:mm'),
                         array('imagen', 'file', 'types'=>'jpg, gif, png','allowEmpty'=>true,'on'=>'update,create,ok,laneco,bano,pendiente'),
-                        array('AVION_MATRICULA', 'length', 'max'=>7),
+                        array('AVION_MATRICULA', 'length', 'max'=>12),
 			array('COMENTARIO', 'length', 'max'=>255),
                         
 			array('HORA_INICIO, HORA_TERMINO, FECHA', 'safe'),
