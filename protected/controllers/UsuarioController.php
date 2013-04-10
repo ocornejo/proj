@@ -68,7 +68,8 @@ class UsuarioController extends Controller
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Usuario']))
-		{
+		{       
+                        $model->newPassword = $_POST['Usuario']['newPassword'];
 			$model->attributes=$_POST['Usuario'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->BP));
@@ -92,7 +93,8 @@ class UsuarioController extends Controller
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Usuario']))
-		{
+		{       
+                        $model->newPassword = $_POST['Usuario']['newPassword'];
 			$model->attributes=$_POST['Usuario'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->BP));

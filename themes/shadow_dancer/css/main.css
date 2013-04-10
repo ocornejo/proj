@@ -4,13 +4,14 @@ body
 	padding: 0;
 	color: #555;
 	font: normal 10pt Arial,Helvetica,sans-serif;
-	background-attachment:initial;
+        background-color:#002955;
+/*	background-attachment:initial;
         background-clip:initial;
         background-color: transparent;
         background-image:url(../images/sky-bg.jpg);
         background-origin:initial;
         background-position:0 0;
-        background-repeat: repeat repeat;
+        background-repeat: repeat repeat;*/
       }
 
 #page

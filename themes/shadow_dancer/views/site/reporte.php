@@ -26,7 +26,7 @@ para filtrar los aseos realizados y haga clic en Enviar informe.
 <?php echo CHtml::submitButton('Filtros', array('class'=>'search-button','style'=>'background: url(/proj/themes/shadow_dancer/images/small_icons/search-icon.png) no-repeat 6px 1px; padding-left: 24px; vertical-align: bottom;')); ?>
 
 <div class="search-form">
-<?php $this->renderPartial('_search',array(
+<?php $this->renderPartial('_search_1',array(
 	'model'=>$model,
 )); ?>
 </div>

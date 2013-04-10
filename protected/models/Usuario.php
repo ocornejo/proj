@@ -9,13 +9,15 @@
  * @property integer $NIVEL_USUARIO
  * @property string $PASSWORD
  * @property integer $FILIAL_ID_FILIAL
+ * @property string $newPassword
  *
  * The followings are the available model relations:
  * @property Trabajo[] $trabajos
  * @property Filial $fILIALIDFILIAL
  */
 class Usuario extends CActiveRecord
-{
+{       
+        public $newPassword;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -42,10 +44,13 @@ class Usuario extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('BP, FILIAL_ID_FILIAL', 'required'),
+			array('BP, FILIAL_ID_FILIAL,NIVEL_USUARIO', 'required'),
 			array('BP, NIVEL_USUARIO, FILIAL_ID_FILIAL', 'numerical', 'integerOnly'=>true),
 			array('NOMBRE', 'length', 'max'=>25),
 			array('PASSWORD', 'length', 'max'=>40),
+                        array('newPassword','length','allowEmpty'=>false,'on'=>'insert'),
+			array('newPassword','length','allowEmpty'=>true,'on'=>'update'),
+
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('BP, NOMBRE, NIVEL_USUARIO, PASSWORD, FILIAL_ID_FILIAL', 'safe', 'on'=>'search'),
@@ -75,6 +80,7 @@ class Usuario extends CActiveRecord
 			'NOMBRE' => 'Nombre',
 			'NIVEL_USUARIO' => 'Nivel de usuario',
 			'PASSWORD' => 'Password',
+                        'newPassword'=> 'Password',
 			'FILIAL_ID_FILIAL' => 'Filial',
 		);
 	}
@@ -103,5 +109,10 @@ class Usuario extends CActiveRecord
         public function getOptions()
 	{
 		return CHtml::listData($this->findAll(),'BP','NOMBRE');
+	}
+        public function beforeSave() {
+		if (!empty($this->newPassword))
+			$this->PASSWORD = md5($this->newPassword);
+		return true;
 	}
 }

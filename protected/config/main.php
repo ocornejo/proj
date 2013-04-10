@@ -86,7 +86,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=bd_aseo',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => '12345678',
 			'charset' => 'utf8',
                         'enableParamLogging'=>true,
 		),

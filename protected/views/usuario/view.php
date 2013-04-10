@@ -16,7 +16,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Vista Usuario BP: <?php echo $model->BP; ?></h1>
+<h1>Usuario BP: <?php echo $model->BP; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

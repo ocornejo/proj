@@ -15,36 +15,41 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
+	 <fieldset>
+        <legend>Información personal</legend>
+        <div class="raw">
 		<?php echo $form->labelEx($model,'BP'); ?>
-		<?php echo $form->textField($model,'BP'); ?>
+		<?php echo $form->textField($model,'BP',array('size'=>10,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'BP'); ?>
-	</div>
+        </div>
+        
 
-	<div class="row">
+	<div class="raw">
 		<?php echo $form->labelEx($model,'NOMBRE'); ?>
-		<?php echo $form->textField($model,'NOMBRE',array('size'=>25,'maxlength'=>25)); ?>
+		<?php echo $form->textField($model,'NOMBRE'); ?>
 		<?php echo $form->error($model,'NOMBRE'); ?>
 	</div>
 
-	<div class="row">
+	<div class="raw">
+		<?php echo $form->labelEx($model,'newPassword'); ?>
+		<?php echo $form->passwordField($model,'newPassword',array('size'=>25,'maxlength'=>40)); ?>
+		<?php echo $form->error($model,'newPassword'); ?>
+	</div>
+        <br>
+	<div class="raw">
 		<?php echo $form->labelEx($model,'NIVEL_USUARIO'); ?>
-		<?php echo $form->textField($model,'NIVEL_USUARIO'); ?>
+                <?php echo $form->dropDownList($model, 'NIVEL_USUARIO',array(1=>'Administrador',2=>'Lectura y escritura',3=>'Lectura')); ?>
 		<?php echo $form->error($model,'NIVEL_USUARIO'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'PASSWORD'); ?>
-		<?php echo $form->passwordField($model,'PASSWORD',array('size'=>40,'maxlength'=>40)); ?>
-		<?php echo $form->error($model,'PASSWORD'); ?>
-	</div>
 
-	<div class="row">
+	<div class="raw">
 		<?php echo $form->labelEx($model,'FILIAL_ID_FILIAL'); ?>
 		<?php echo $form->dropDownList($model, 'FILIAL_ID_FILIAL', CHtml::listData(Filial::model()->findAll(), 'ID_FILIAL', 'NOMBRE_FILIAL'), array('empty' => 'Seleccione')); ?>
-                <?php //echo $form->textField($model,'FILIAL_ID_FILIAL'); ?>
 		<?php echo $form->error($model,'FILIAL_ID_FILIAL'); ?>
 	</div>
+        
+         </fieldset>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?>

@@ -36,7 +36,7 @@
         <?php if(Yii::app()->user->getId() !=NULL):?>
         <div id="topnav">
            
-            <div class="topnav_text"><a href='<?php echo Yii::app()->controller->createUrl('site/index'); ?>'>Inicio</a> | <a href='#'>Mi cuenta: <?php echo Usuario::model()->FindByPk(Yii::app()->user->getId())->NOMBRE?></a> | <a href='<?php echo Yii::app()->controller->createUrl('site/logout'); ?>'>Cerrar sesión</a> </div>
+            <div class="topnav_text"><a href='<?php echo Yii::app()->controller->createUrl('site/index'); ?>'>Inicio</a> | <a href="<?php echo Yii::app()->controller->createUrl('usuario/view',array('id'=>Yii::app()->user->getId()));?>">Mi cuenta: <?php echo Usuario::model()->FindByPk(Yii::app()->user->getId())->NOMBRE; ?></a> | <a href='<?php echo Yii::app()->controller->createUrl('site/logout'); ?>'>Cerrar sesión</a> </div>
 	</div>
         <?php endif;?>
         
