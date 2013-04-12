@@ -51,7 +51,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                             'value'=>'$data->fLOTAIDFLOTA->NOMBRE_FLOTA', // this will access the current group's 1st member and give out the firstname of that member
                             'filter'=>Flota::model()->options,
                             'htmlOptions'=>array('style' => 'text-align: center;'),
-                        ),
+                             ),
                         array(
                             'name'=>'alfombra_count',
                             'value'=>function($data){
@@ -70,7 +70,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                                                     $value= CHtml::link($data->alfombra_count,array("trabajo/index"),array("style"=>"color: green;font-weight:bold;font-size:medium;"));
                                                 return $value;
                                             }
-                                        $value="";
+                                        $value="No corresponde";
                                         return $value; 
                                      },
                             'type'=>'raw',
@@ -94,7 +94,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                                                     $value= CHtml::link($data->fuselaje_count,array("trabajo/index"),array("style"=>"color: green;font-weight:bold;font-size:medium;"));
                                                 return $value;
                                             }
-                                        $value="";
+                                        $value="No corresponde";
                                         return $value; 
                                      },
                             'type'=>'raw',
@@ -118,7 +118,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                                                     $value= CHtml::link($data->profundo_count,array("trabajo/index"),array("style"=>"color: green;font-weight:bold;font-size:medium;"));
                                                 return $value;
                                             }
-                                         $value="";           
+                                         $value="No corresponde";           
                                         return $value; 
                                      },
                             'type'=>'raw',
@@ -142,7 +142,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                                                     $value= CHtml::link($data->tapiz_count,array("trabajo/index"),array("style"=>"color: green;font-weight:bold;font-size:medium;"));
                                                 return $value;
                                             }
-                                        $value="";        
+                                        $value="No corresponde";        
                                         return $value; 
                                      },
                             'type'=>'raw',
@@ -166,7 +166,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                                                     $value= CHtml::link($data->banos_count,array("trabajo/index"),array("style"=>"color: green;font-weight:bold;font-size:medium;"));
                                                 return $value;
                                             }
-                                        $value="";
+                                        $value="No corresponde";
                                         return $value; 
                                      },
                             'type'=>'raw',

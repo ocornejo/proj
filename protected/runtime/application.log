@@ -2471,3 +2471,240 @@ REQUEST_URI=/proj/index.php?r=usuario/view&id=739
 in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/themes/shadow_dancer/views/layouts/main.php (39)
 in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/themes/shadow_dancer/views/layouts/column2.php (28)
 in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/UsuarioController.php (56)
+2013/04/10 12:21:23 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:182)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (182)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/10 12:22:04 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bd_aseo`.`trabajo`, CONSTRAINT `fk_Trabajo_Avion1` FOREIGN KEY (`AVION_MATRICULA`) REFERENCES `avion` (`MATRICULA`) ON DELETE NO ACTION ON UPDATE NO ACTION). La sentencia SQL ejecutada fue: INSERT INTO `trabajo` (`USUARIO_BP`, `AVION_MATRICULA`, `ASEO_ID_ASEO`, `LUGAR_ID_LUGAR`, `PLANIFICADO`, `HORA_INICIO`, `HORA_TERMINO`, `FECHA`, `ESTADO_ID_ESTADO`, `OT`, `CALIFICACION`, `COMENTARIO`, `ULTIMO_ASEO`, `TURNO_ID_TURNO`, `ARCHIVO1`, `ARCHIVO2`, `ARCHIVO3`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16). Bound with :yp0=3754750, :yp1='CNY ex B', :yp2=8, :yp3=1, :yp4=1, :yp5=NULL, :yp6=NULL, :yp7='2013-04-02', :yp8=4, :yp9=NULL, :yp10=NULL, :yp11=NULL, :yp12=8, :yp13=406, :yp14=NULL, :yp15=NULL, :yp16=NULL.
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/TrabajoController.php (411)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/10 12:22:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bd_aseo`.`trabajo`, CONSTRAINT `fk_Trabajo_Avion1` FOREIGN KEY (`AVION_MATRICULA`) REFERENCES `avion` (`MATRICULA`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `trabajo` (`USUARIO_BP`, `AVION_MATRICULA`, `ASEO_ID_ASEO`, `LUGAR_ID_LUGAR`, `PLANIFICADO`, `HORA_INICIO`, `HORA_TERMINO`, `FECHA`, `ESTADO_ID_ESTADO`, `OT`, `CALIFICACION`, `COMENTARIO`, `ULTIMO_ASEO`, `TURNO_ID_TURNO`, `ARCHIVO1`, `ARCHIVO2`, `ARCHIVO3`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16). Bound with :yp0=3754750, :yp1='CNY ex B', :yp2=8, :yp3=1, :yp4=1, :yp5=NULL, :yp6=NULL, :yp7='2013-04-02', :yp8=4, :yp9=NULL, :yp10=NULL, :yp11=NULL, :yp12=8, :yp13=406, :yp14=NULL, :yp15=NULL, :yp16=NULL' in /Applications/mampstack-5.4.13-2/Yii/framework/db/CDbCommand.php:357
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/db/ar/CActiveRecord.php(1023): CDbCommand->execute()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/db/ar/CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/TrabajoController.php(411): CActiveRecord->save(false)
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/actions/CInlineAction.php(49): TrabajoController->actionCreate()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('create')
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#10 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#11 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+HTTP_REFERER=http://localhost:8080/proj/index.php?r=trabajo/create
+---
+2013/04/10 12:23:38 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:182)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (182)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/10 12:24:15 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:182)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (182)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/10 12:25:19 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:182)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (182)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/10 12:25:53 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bd_aseo`.`trabajo`, CONSTRAINT `fk_Trabajo_Avion1` FOREIGN KEY (`AVION_MATRICULA`) REFERENCES `avion` (`MATRICULA`) ON DELETE NO ACTION ON UPDATE NO ACTION). La sentencia SQL ejecutada fue: INSERT INTO `trabajo` (`USUARIO_BP`, `AVION_MATRICULA`, `ASEO_ID_ASEO`, `LUGAR_ID_LUGAR`, `PLANIFICADO`, `HORA_INICIO`, `HORA_TERMINO`, `FECHA`, `ESTADO_ID_ESTADO`, `OT`, `CALIFICACION`, `COMENTARIO`, `ULTIMO_ASEO`, `TURNO_ID_TURNO`, `ARCHIVO1`, `ARCHIVO2`, `ARCHIVO3`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16). Bound with :yp0=3754750, :yp1='CNY ex B', :yp2=4, :yp3=1, :yp4=1, :yp5=NULL, :yp6=NULL, :yp7='2013-04-02', :yp8=3, :yp9=NULL, :yp10=NULL, :yp11=NULL, :yp12=8, :yp13=406, :yp14=NULL, :yp15=NULL, :yp16=NULL.
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/TrabajoController.php (411)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/10 12:25:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`bd_aseo`.`trabajo`, CONSTRAINT `fk_Trabajo_Avion1` FOREIGN KEY (`AVION_MATRICULA`) REFERENCES `avion` (`MATRICULA`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `trabajo` (`USUARIO_BP`, `AVION_MATRICULA`, `ASEO_ID_ASEO`, `LUGAR_ID_LUGAR`, `PLANIFICADO`, `HORA_INICIO`, `HORA_TERMINO`, `FECHA`, `ESTADO_ID_ESTADO`, `OT`, `CALIFICACION`, `COMENTARIO`, `ULTIMO_ASEO`, `TURNO_ID_TURNO`, `ARCHIVO1`, `ARCHIVO2`, `ARCHIVO3`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16). Bound with :yp0=3754750, :yp1='CNY ex B', :yp2=4, :yp3=1, :yp4=1, :yp5=NULL, :yp6=NULL, :yp7='2013-04-02', :yp8=3, :yp9=NULL, :yp10=NULL, :yp11=NULL, :yp12=8, :yp13=406, :yp14=NULL, :yp15=NULL, :yp16=NULL' in /Applications/mampstack-5.4.13-2/Yii/framework/db/CDbCommand.php:357
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/db/ar/CActiveRecord.php(1023): CDbCommand->execute()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/db/ar/CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/TrabajoController.php(411): CActiveRecord->save(false)
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/actions/CInlineAction.php(49): TrabajoController->actionCreate()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('create')
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('trabajo/create')
+#10 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#11 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/create
+HTTP_REFERER=http://localhost:8080/proj/index.php?r=trabajo/create
+---
+2013/04/10 12:26:33 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:182)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (182)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/11 21:23:04 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[21000]: Cardinality violation: 1242 Subquery returns more than 1 row. La sentencia SQL ejecutada fue: SELECT *, (select (DATEDIFF(NOW(),FECHA)) from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=2 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA)) as alfombra_count, (select (DATEDIFF(NOW(),FECHA)) from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=4 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA)) as fuselaje_count, (select (DATEDIFF(NOW(),FECHA)) from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=6 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA)) as tapiz_count, (select (DATEDIFF(NOW(),FECHA)) from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=5 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA)) as profundo_count, (select (DATEDIFF(NOW(),FECHA)) from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=8 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA)) as banos_count FROM `avion` `t` ORDER BY t.MATRICULA LIMIT 100.
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/themes/shadow_dancer/views/site/criticos.php (193)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/SiteController.php (56)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/11 21:23:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[21000]: Cardinality violation: 1242 Subquery returns more than 1 row. The SQL statement executed was: SELECT *, (select (DATEDIFF(NOW(),FECHA)) from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=2 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA)) as alfombra_count, (select (DATEDIFF(NOW(),FECHA)) from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=4 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA)) as fuselaje_count, (select (DATEDIFF(NOW(),FECHA)) from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=6 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA)) as tapiz_count, (select (DATEDIFF(NOW(),FECHA)) from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=5 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA)) as profundo_count, (select (DATEDIFF(NOW(),FECHA)) from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=8 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA)) as banos_count FROM `avion` `t` ORDER BY t.MATRICULA LIMIT 100' in /Applications/mampstack-5.4.13-2/Yii/framework/db/CDbCommand.php:541
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/db/CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/db/ar/CActiveRecord.php(1297): CDbCommand->queryAll()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/db/ar/CActiveRecord.php(1416): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CActiveDataProvider.php(150): CActiveRecord->findAll(Object(CDbCriteria))
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CDataProvider.php(168): CActiveDataProvider->fetchData()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/zii/widgets/CBaseListView.php(107): CDataProvider->getData()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/zii/widgets/grid/CGridView.php(314): CBaseListView->init()
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CBaseController.php(147): CGridView->init()
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#9 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/themes/shadow_dancer/views/site/criticos.php(193): CBaseController->widget('zii.widgets.gri...', Array)
+#10 /Applications/mampstack-5.4.13-2/Yii/framework/web/CBaseController.php(126): require('/Applications/m...')
+#11 /Applications/mampstack-5.4.13-2/Yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Applications/m...', Array, true)
+#12 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(869): CBaseController->renderFile('/Applications/m...', Array, true)
+#13 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(782): CController->renderPartial('criticos', Array, true)
+#14 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/SiteController.php(56): CController->render('criticos', Array)
+#15 /Applications/mampstack-5.4.13-2/Yii/framework/web/actions/CInlineAction.php(49): SiteController->actionCriticos()
+#16 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#18 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('criticos')
+#20 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/criticos')
+#21 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#22 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/proj/index.php?r=site/criticos
+HTTP_REFERER=http://127.0.0.1:8080/proj/index.php?r=site/bajar
+---
+2013/04/11 21:30:19 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:182)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (182)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/11 21:31:02 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:182)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (182)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/11 21:35:15 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:182)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (182)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/11 21:35:17 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tap limit 1) as tapiz_count, (select (DATEDIFF(NOW(),FECHA)) as prof from trabaj' at line 1. La sentencia SQL ejecutada fue: SELECT *, (select (DATEDIFF(NOW(),FECHA)) as alf from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=2 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA) order by alf asc limit 1) as alfombra_count, (select (DATEDIFF(NOW(),FECHA)) as fus from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=4 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA) order by fus asc limit 1) as fuselaje_count, (select (DATEDIFF(NOW(),FECHA)) as tap from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=6 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA) order by alf tap limit 1) as tapiz_count, (select (DATEDIFF(NOW(),FECHA)) as prof from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=5 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA) order by prof asclimit 1) as profundo_count, (select (DATEDIFF(NOW(),FECHA)) as ban from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=8 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA) order by ban limit 1) as banos_count FROM `avion` `t` ORDER BY t.MATRICULA LIMIT 100.
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/themes/shadow_dancer/views/site/criticos.php (193)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/SiteController.php (56)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/11 21:35:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tap limit 1) as tapiz_count, (select (DATEDIFF(NOW(),FECHA)) as prof from trabaj' at line 1. The SQL statement executed was: SELECT *, (select (DATEDIFF(NOW(),FECHA)) as alf from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=2 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA) order by alf asc limit 1) as alfombra_count, (select (DATEDIFF(NOW(),FECHA)) as fus from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=4 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA) order by fus asc limit 1) as fuselaje_count, (select (DATEDIFF(NOW(),FECHA)) as tap from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=6 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA) order by alf tap limit 1) as tapiz_count, (select (DATEDIFF(NOW(),FECHA)) as prof from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=5 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA) order by prof asclimit 1) as profundo_count, (select (DATEDIFF(NOW(),FECHA)) as ban from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=8 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA) order by ban limit 1) as banos_count FROM `avion` `t` ORDER BY t.MATRICULA LIMIT 100' in /Applications/mampstack-5.4.13-2/Yii/framework/db/CDbCommand.php:541
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/db/CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/db/ar/CActiveRecord.php(1297): CDbCommand->queryAll()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/db/ar/CActiveRecord.php(1416): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CActiveDataProvider.php(150): CActiveRecord->findAll(Object(CDbCriteria))
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CDataProvider.php(168): CActiveDataProvider->fetchData()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/zii/widgets/CBaseListView.php(107): CDataProvider->getData()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/zii/widgets/grid/CGridView.php(314): CBaseListView->init()
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CBaseController.php(147): CGridView->init()
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#9 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/themes/shadow_dancer/views/site/criticos.php(193): CBaseController->widget('zii.widgets.gri...', Array)
+#10 /Applications/mampstack-5.4.13-2/Yii/framework/web/CBaseController.php(126): require('/Applications/m...')
+#11 /Applications/mampstack-5.4.13-2/Yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Applications/m...', Array, true)
+#12 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(869): CBaseController->renderFile('/Applications/m...', Array, true)
+#13 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(782): CController->renderPartial('criticos', Array, true)
+#14 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/SiteController.php(56): CController->render('criticos', Array)
+#15 /Applications/mampstack-5.4.13-2/Yii/framework/web/actions/CInlineAction.php(49): SiteController->actionCriticos()
+#16 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#18 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('criticos')
+#20 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/criticos')
+#21 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#22 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/proj/index.php?r=site/criticos
+HTTP_REFERER=http://127.0.0.1:8080/proj/index.php?r=trabajo/create
+---
+2013/04/11 21:35:45 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'asclimit 1) as profundo_count, (select (DATEDIFF(NOW(),FECHA)) as ban from traba' at line 1. La sentencia SQL ejecutada fue: SELECT *, (select (DATEDIFF(NOW(),FECHA)) as alf from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=2 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA) order by alf asc limit 1) as alfombra_count, (select (DATEDIFF(NOW(),FECHA)) as fus from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=4 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA) order by fus asc limit 1) as fuselaje_count, (select (DATEDIFF(NOW(),FECHA)) as tap from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=6 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA) order by  tap limit 1) as tapiz_count, (select (DATEDIFF(NOW(),FECHA)) as prof from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=5 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA) order by prof asclimit 1) as profundo_count, (select (DATEDIFF(NOW(),FECHA)) as ban from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=8 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA) order by ban limit 1) as banos_count FROM `avion` `t` ORDER BY t.MATRICULA LIMIT 100.
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/themes/shadow_dancer/views/site/criticos.php (193)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/SiteController.php (56)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/11 21:35:45 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'asclimit 1) as profundo_count, (select (DATEDIFF(NOW(),FECHA)) as ban from traba' at line 1. The SQL statement executed was: SELECT *, (select (DATEDIFF(NOW(),FECHA)) as alf from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=2 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA) order by alf asc limit 1) as alfombra_count, (select (DATEDIFF(NOW(),FECHA)) as fus from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=4 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA) order by fus asc limit 1) as fuselaje_count, (select (DATEDIFF(NOW(),FECHA)) as tap from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=6 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA) order by  tap limit 1) as tapiz_count, (select (DATEDIFF(NOW(),FECHA)) as prof from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=5 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA) order by prof asclimit 1) as profundo_count, (select (DATEDIFF(NOW(),FECHA)) as ban from trabajo where trabajo.AVION_MATRICULA = t.MATRICULA and trabajo.ASEO_ID_ASEO=8 and FECHA in (select max(FECHA) as FECHA from TRABAJO group by AVION_MATRICULA) order by ban limit 1) as banos_count FROM `avion` `t` ORDER BY t.MATRICULA LIMIT 100' in /Applications/mampstack-5.4.13-2/Yii/framework/db/CDbCommand.php:541
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/db/CDbCommand.php(395): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/db/ar/CActiveRecord.php(1297): CDbCommand->queryAll()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/db/ar/CActiveRecord.php(1416): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CActiveDataProvider.php(150): CActiveRecord->findAll(Object(CDbCriteria))
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CDataProvider.php(168): CActiveDataProvider->fetchData()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/zii/widgets/CBaseListView.php(107): CDataProvider->getData()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/zii/widgets/grid/CGridView.php(314): CBaseListView->init()
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CBaseController.php(147): CGridView->init()
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#9 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/themes/shadow_dancer/views/site/criticos.php(193): CBaseController->widget('zii.widgets.gri...', Array)
+#10 /Applications/mampstack-5.4.13-2/Yii/framework/web/CBaseController.php(126): require('/Applications/m...')
+#11 /Applications/mampstack-5.4.13-2/Yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Applications/m...', Array, true)
+#12 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(869): CBaseController->renderFile('/Applications/m...', Array, true)
+#13 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(782): CController->renderPartial('criticos', Array, true)
+#14 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/SiteController.php(56): CController->render('criticos', Array)
+#15 /Applications/mampstack-5.4.13-2/Yii/framework/web/actions/CInlineAction.php(49): SiteController->actionCriticos()
+#16 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#18 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('criticos')
+#20 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/criticos')
+#21 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#22 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/proj/index.php?r=site/criticos
+HTTP_REFERER=http://127.0.0.1:8080/proj/index.php?r=trabajo/create
+---
