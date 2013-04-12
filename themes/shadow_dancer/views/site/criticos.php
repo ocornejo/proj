@@ -63,14 +63,14 @@ $this->widget('zii.widgets.grid.CGridView', array(
                                                 
                                                 
                                                 if($data->alfombra_count>$lim3)
-                                                    $value= CHtml::link($data->alfombra_count,array("trabajo/index"),array("style"=>"color: red;font-weight:bold;font-size:medium;"));
+                                                    $value= CHtml::link($data->alfombra_count,array("site/bajar",'avion'=>$data->MATRICULA,'aseo'=>2),array("style"=>"color: red;font-weight:bold;font-size:medium;"));
                                                 elseif($data->alfombra_count>$lim2)
-                                                    $value= CHtml::link($data->alfombra_count,array("trabajo/index"),array("style"=>"color: orange;font-weight:bold;font-size:medium; "));
+                                                    $value= CHtml::link($data->alfombra_count,array("site/bajar",'avion'=>$data->MATRICULA,'aseo'=>2),array("style"=>"color: orange;font-weight:bold;font-size:medium; "));
                                                 else
-                                                    $value= CHtml::link($data->alfombra_count,array("trabajo/index"),array("style"=>"color: green;font-weight:bold;font-size:medium;"));
+                                                    $value= CHtml::link($data->alfombra_count,array("site/bajar",'avion'=>$data->MATRICULA,'aseo'=>2),array("style"=>"color: green;font-weight:bold;font-size:medium;"));
                                                 return $value;
                                             }
-                                        $value="No corresponde";
+                                        $value="N/A";
                                         return $value; 
                                      },
                             'type'=>'raw',
@@ -87,14 +87,14 @@ $this->widget('zii.widgets.grid.CGridView', array(
                                                 
                                                 
                                                 if($data->fuselaje_count>$lim3)
-                                                    $value= CHtml::link($data->fuselaje_count,array("trabajo/index"),array("style"=>"color: red;font-weight:bold;font-size:medium;"));
+                                                    $value= CHtml::link($data->fuselaje_count,array("site/bajar",'avion'=>$data->MATRICULA,'aseo'=>4),array("style"=>"color: red;font-weight:bold;font-size:medium;"));
                                                 elseif($data->fuselaje_count>$lim2)
-                                                    $value= CHtml::link($data->fuselaje_count,array("trabajo/index"),array("style"=>"color: orange;font-weight:bold;font-size:medium; "));
+                                                    $value= CHtml::link($data->fuselaje_count,array("site/bajar",'avion'=>$data->MATRICULA,'aseo'=>4),array("style"=>"color: orange;font-weight:bold;font-size:medium; "));
                                                 else
-                                                    $value= CHtml::link($data->fuselaje_count,array("trabajo/index"),array("style"=>"color: green;font-weight:bold;font-size:medium;"));
+                                                    $value= CHtml::link($data->fuselaje_count,array("site/bajar",'avion'=>$data->MATRICULA,'aseo'=>4),array("style"=>"color: green;font-weight:bold;font-size:medium;"));
                                                 return $value;
                                             }
-                                        $value="No corresponde";
+                                        $value="N/A";
                                         return $value; 
                                      },
                             'type'=>'raw',
@@ -111,14 +111,14 @@ $this->widget('zii.widgets.grid.CGridView', array(
                                                 
                                                 
                                                 if($data->profundo_count>$lim3)
-                                                    $value= CHtml::link($data->profundo_count,array("trabajo/index"),array("style"=>"color: red;font-weight:bold;font-size:medium;"));
+                                                    $value= CHtml::link($data->profundo_count,array("site/bajar",'avion'=>$data->MATRICULA,'aseo'=>5),array("style"=>"color: red;font-weight:bold;font-size:medium;"));
                                                 elseif($data->profundo_count>$lim2)
-                                                    $value= CHtml::link($data->profundo_count,array("trabajo/index"),array("style"=>"color: orange;font-weight:bold;font-size:medium; "));
+                                                    $value= CHtml::link($data->profundo_count,array("site/bajar",'avion'=>$data->MATRICULA,'aseo'=>5),array("style"=>"color: orange;font-weight:bold;font-size:medium; "));
                                                 else
-                                                    $value= CHtml::link($data->profundo_count,array("trabajo/index"),array("style"=>"color: green;font-weight:bold;font-size:medium;"));
+                                                    $value= CHtml::link($data->profundo_count,array("site/bajar",'avion'=>$data->MATRICULA,'aseo'=>5),array("style"=>"color: green;font-weight:bold;font-size:medium;"));
                                                 return $value;
                                             }
-                                         $value="No corresponde";           
+                                         $value="N/A";           
                                         return $value; 
                                      },
                             'type'=>'raw',
@@ -135,14 +135,14 @@ $this->widget('zii.widgets.grid.CGridView', array(
                                                 
                                                 
                                                 if($data->tapiz_count>$lim3)
-                                                    $value= CHtml::link($data->tapiz_count,array("trabajo/index"),array("style"=>"color: red;font-weight:bold;font-size:medium;"));
+                                                    $value= CHtml::link($data->tapiz_count,array("site/bajar",'avion'=>$data->MATRICULA,'aseo'=>6),array("style"=>"color: red;font-weight:bold;font-size:medium;"));
                                                 elseif($data->tapiz_count>$lim2)
-                                                    $value= CHtml::link($data->tapiz_count,array("trabajo/index"),array("style"=>"color: orange;font-weight:bold;font-size:medium; "));
+                                                    $value= CHtml::link($data->tapiz_count,array("site/bajar",'avion'=>$data->MATRICULA,'aseo'=>6),array("style"=>"color: orange;font-weight:bold;font-size:medium; "));
                                                 else
-                                                    $value= CHtml::link($data->tapiz_count,array("trabajo/index"),array("style"=>"color: green;font-weight:bold;font-size:medium;"));
+                                                    $value= CHtml::link($data->tapiz_count,array("site/bajar",'avion'=>$data->MATRICULA,'aseo'=>6),array("style"=>"color: green;font-weight:bold;font-size:medium;"));
                                                 return $value;
                                             }
-                                        $value="No corresponde";        
+                                        $value="N/A";        
                                         return $value; 
                                      },
                             'type'=>'raw',
@@ -159,14 +159,14 @@ $this->widget('zii.widgets.grid.CGridView', array(
                                                 
                                                 
                                                 if($data->banos_count>$lim3)
-                                                    $value= CHtml::link($data->banos_count,array("trabajo/index"),array("style"=>"color: red;font-weight:bold;font-size:medium;"));
+                                                    $value= CHtml::link($data->banos_count,array("site/bajar",'avion'=>$data->MATRICULA,'aseo'=>8),array("style"=>"color: red;font-weight:bold;font-size:medium;"));
                                                 elseif($data->banos_count>$lim2)
-                                                    $value= CHtml::link($data->banos_count,array("trabajo/index"),array("style"=>"color: orange;font-weight:bold;font-size:medium; "));
+                                                    $value= CHtml::link($data->banos_count,array("site/bajar",'avion'=>$data->MATRICULA,'aseo'=>8),array("style"=>"color: orange;font-weight:bold;font-size:medium; "));
                                                 else
-                                                    $value= CHtml::link($data->banos_count,array("trabajo/index"),array("style"=>"color: green;font-weight:bold;font-size:medium;"));
+                                                    $value= CHtml::link($data->banos_count,array("site/bajar",'avion'=>$data->MATRICULA,'aseo'=>8),array("style"=>"color: green;font-weight:bold;font-size:medium;"));
                                                 return $value;
                                             }
-                                        $value="No corresponde";
+                                        $value="N/A";
                                         return $value; 
                                      },
                             'type'=>'raw',

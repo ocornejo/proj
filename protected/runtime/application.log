@@ -2708,3 +2708,14 @@ Stack trace:
 REQUEST_URI=/proj/index.php?r=site/criticos
 HTTP_REFERER=http://127.0.0.1:8080/proj/index.php?r=trabajo/create
 ---
+2013/04/12 06:19:06 [error] [php] Undefined index: avion (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/SiteController.php:128)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(286): SiteController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#5 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=site/bajar
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/SiteController.php (128)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)

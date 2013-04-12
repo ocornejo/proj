@@ -125,11 +125,13 @@ class SiteController extends Controller
 
                 $model=new Trabajo('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Trabajo'])){
-                    
-			$model->attributes=$_GET['Trabajo'];
-                        
-                }
+                if(isset($_GET['avion']))
+                    $model->AVION_MATRICULA=$_GET['avion'];
+                if(isset($_GET['aseo']))
+                    $model->ASEO_ID_ASEO=$_GET['aseo'];
+		if(isset($_GET['Trabajo']))
+                    $model->attributes=$_GET['Trabajo'];
+
 
 		$this->render('bajardatos',array(
 			'model'=>$model,
