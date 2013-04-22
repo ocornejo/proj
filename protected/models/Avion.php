@@ -104,7 +104,7 @@ class Avion extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
-                    'pagination'=>array('pageSize'=>100),
+                    'pagination'=>array('pageSize'=>132),
 		));
 	}
         public function searchAvion()
@@ -140,7 +140,7 @@ class Avion extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
-                        'pagination'=>array('pageSize'=>100),
+                        'pagination'=>array('pageSize'=>132),
                         'sort' => array(
                                     'defaultOrder' => 't.MATRICULA',
                                     'attributes' => array(

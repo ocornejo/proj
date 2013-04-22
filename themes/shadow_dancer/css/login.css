@@ -107,13 +107,7 @@ table {
  */
 body {
   font: 13px/20px 'Lucida Grande', Tahoma, Verdana, sans-serif;
-  background-attachment:initial;
-        background-clip:initial;
-        background-color: transparent;
-        background-image:url(/proj/themes/shadow_dancer/images/sky-bg.jpg);
-        background-origin:initial;
-        background-position:0 0;
-        background-repeat: repeat repeat;
+  background-color:#002955;
 }
 
 .container {

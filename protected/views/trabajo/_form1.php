@@ -42,10 +42,16 @@ document.getElementById("success").style.display=" none";
         ?>
                     <?php echo $form->error($model, 'ASEO_ID_ASEO'); ?>
       </div>
-      
+     
+     
       <div class="raw">
           <?php echo $form->labelEx($model, 'LUGAR_ID_LUGAR'); ?>
-          <?php echo $form->dropDownList($model, 'LUGAR_ID_LUGAR', CHtml::listData(Lugar::model()->findAll('filial_id_filial=:filial', array(':filial' => Usuario::model()->findByPk(Yii::app()->user->getId())->FILIAL_ID_FILIAL)), 'ID_LUGAR', 'LUGAR'), array('empty' => 'Seleccione')); ?>
+          <?php 
+          //$pot=Lugar::model()->findAll('filial_id_filial=:filial', array(':filial' => Usuario::model()->findByPk(Yii::app()->user->getId())->FILIAL_ID_FILIAL)); 
+          $pot=Lugar::model()->findAll();
+          echo $form->dropDownList($model, 'LUGAR_ID_LUGAR', CHtml::listData($pot, 'ID_LUGAR', 'LUGAR',function($pot) {
+                                                                    return CHtml::encode($pot->fILIALIDFILIAL->NOMBRE_FILIAL);
+                                                                    }), array('empty' => 'Seleccione')); ?>
           <?php echo $form->error($model, 'LUGAR_ID_LUGAR'); ?>
       </div>
       
@@ -151,7 +157,7 @@ document.getElementById("success").style.display=" none";
         
         <div class="raw">
             <?php echo $form->labelEx($model, 'CALIFICACION', array('id' => 'CALIFICACION_LABEL')); ?>
-            <?php echo $form->textField($model, 'CALIFICACION', array('style' => 'width:30px', 'maxlength' => 3, 'readonly' => 'true')); ?>
+            <?php echo $form->textField($model, 'CALIFICACION', array('style' => 'width:30px', 'maxlength' => 3)); ?>
             <?php $baseUrl = Yii::app()->theme->baseUrl;
             $imageId = "img";
             $normalImageSrc = "{$baseUrl}/images/write.png";

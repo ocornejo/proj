@@ -188,7 +188,7 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
     
     <div class="raw">
         <?php echo $form->labelEx($model, 'AVION_MATRICULA'); 
-        $posts=Avion::model()->findAll(); 
+        $posts=Avion::model()->findAll(array('order' => 'FLOTA_ID_FLOTA ASC')); 
         echo $form->dropDownList($model, 'AVION_MATRICULA', CHtml::listData($posts, 'MATRICULA', 'MATRICULA',function($posts) {
                                                 return CHtml::encode($posts->fLOTAIDFLOTA->NOMBRE_FLOTA);
                                         }), array('empty' => 'Seleccione',
