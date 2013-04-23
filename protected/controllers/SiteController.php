@@ -137,6 +137,19 @@ class SiteController extends Controller
 			'model'=>$model,
 		));
 	}
+        public function actionBajarEvaluaciones()
+	{
+
+                $model=new Item('search');
+		$model->unsetAttributes();  // clear any default values
+                if(isset($_GET['id_trabajo']))
+                    $model->id_trabajo = $_GET['id_trabajo'];
+		if(isset($_GET['Item']))
+                    $model->attributes=$_GET['Item'];
+		$this->render('bajarevaluaciones',array(
+			'model'=>$model,
+		));
+	}
         
         public function actionReporte()
 	{

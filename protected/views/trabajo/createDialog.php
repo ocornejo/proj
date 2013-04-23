@@ -13,7 +13,7 @@ $this->beginWidget('zii.widgets.jui.CJuiDialog',array(
                     'resizable' => false,
                     'draggable' => false,
                     'closeOnEscape'=>false,
-                    'open'=> 'js:function(event, ui) { $(".ui-dialog-titlebar-close").hide(); }',
+                   // 'open'=> 'js:function(event, ui) { $(".ui-dialog-titlebar-close").hide(); }',
                 ),
                 ));
 

@@ -11,10 +11,12 @@ $this->breadcrumbs=array(
 
 
 ?>
-
+<style>
+    .CGridViewContainer { width: 960px; overflow: auto; }
+</style>
 <h1>Críticos</h1>
 
-<div class="form">
+<div class="CGridViewContainer">
     <div class="span-20">
 <?php 
    

@@ -174,12 +174,24 @@ class NotaController extends Controller
         public function actionAddnewevaluacion() {
             
             $flag=true;
-            
-                      
-            if(isset($_POST['NOTA']))
+
+                 
+
+  
+            if(isset($_POST['NOTA']) )
             {   
+                
                 $flag = false;
-               
+                 foreach($_POST['NOTA'] as $verif)
+                {
+                    if($verif['NOTA']==""){
+                         $error = CActiveForm::validate(Nota::model());
+                         if($error!='[]')
+                            echo $error;
+                         Yii::app()->end();
+                    
+                    }
+                }
                 
                 foreach($_POST['NOTA'] as $item)
                 {

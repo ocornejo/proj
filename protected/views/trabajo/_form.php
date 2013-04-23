@@ -9,16 +9,7 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
 ?>
 
 <script type="text/javascript">
-    window.arreglo = new Array();
-    window.global = 1;
-    window.notasFinales = new Array();
-    window.temp = new Object();
-    window.tamano = 0;
-    window.var2 = new Array();
-    window.var3 = new Array();
-
-
-
+    
 
     $(document).ready(function() {
         $("#showDialogEvaluacion").hide();
@@ -45,30 +36,6 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
         , "json");
     });
 
-
-
-    Object.size = function(obj) {
-        var size = 0, key;
-        for (key in obj) {
-            if (obj.hasOwnProperty(key))
-                size++;
-        }
-        return size;
-    };
-
-    function inicia(variable2, variable3) {
-        var i;
-        window.var2 = variable3;
-        window.var3 = variable2;
-        for (i = 0; i < window.var3.length; i++) {
-            window.temp[window.var3[i]['evaluacion_id_evaluacion']] = 0;
-            window.arreglo[i] = 101;
-        }
-        for (var key in window.temp) {
-            tamano = parseInt(key);
-        }
-
-    }
     function updateTag(var1) {
         final = 0;
         count = 0;
@@ -95,7 +62,6 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
             if (window.temp[i] != null)
                 notaFinal = Number((notaFinal + window.temp[i]).toFixed(0));
         }
-        //console.log("temp: "+window.temp[var1]+" notaFinal: "+notaFinal);
         var1 = var1 - 1;
         variable1 = "notaPond[" + var1 + "]";
 
@@ -105,13 +71,7 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
 
 
     }
-    function updateAll(var2, var3) {
-        for (var i = 1; i <= window.tamano; i++) {
-            if (window.temp[i] != null)
-                updateTag(i - 1);
-        }
 
-    }
 </script>
 <div class="span-special">
 <div class="form semantic">

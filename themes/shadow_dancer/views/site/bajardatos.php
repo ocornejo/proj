@@ -31,7 +31,12 @@ $('.search-form form').submit(function(){
 )); ?>
 </div><!-- search-form -->
 
+<style>
+    .CGridViewContainer {overflow: auto;
+overflow-y: hidden; }
+</style>
 
+<div class="CGridViewContainer">
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'trabajo-grid',
 	'dataProvider'=>$model->search(),
@@ -105,6 +110,9 @@ $('.search-form form').submit(function(){
 		
 	),
 ));
+                    ?>
+  </div>
+    <?php
    
         $baseUrl = Yii::app()->theme->baseUrl; 
         $normalImageSrc = "{$baseUrl}/images/excel.png";
@@ -115,4 +123,5 @@ $('.search-form form').submit(function(){
         
                     
 ?>
+
 

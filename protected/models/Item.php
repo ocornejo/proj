@@ -14,7 +14,9 @@
  * @property Nota[] $notas
  */
 class Item extends CActiveRecord
-{
+{       
+        public $id_trabajo;
+        public $notas;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -46,7 +48,7 @@ class Item extends CActiveRecord
 			array('NOMBRE', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('ID_ITEM, NOMBRE, EVALUACION_ID_EVALUACION', 'safe', 'on'=>'search'),
+			array('ID_ITEM, NOMBRE, EVALUACION_ID_EVALUACION,id_trabajo,notas', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -73,6 +75,8 @@ class Item extends CActiveRecord
 			'ID_ITEM' => 'ID Item',
 			'NOMBRE' => 'Nombre',
 			'EVALUACION_ID_EVALUACION' => 'Evaluacion',
+                        'id_trabajo'=> 'ID Trabajo',
+                        'notas'=> 'Calificación'
 		);
 	}
 
@@ -93,6 +97,37 @@ class Item extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+		));
+	}
+        public function searchItem()
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+
+		$criteria=new CDbCriteria;
+                
+                $nota_table= Nota::model()->tableName();  
+                $nota_sql= '(select NOTA from '.$nota_table.' where '.$nota_table.'.trabajo_id_trabajo= '.$this->id_trabajo.' and '.$nota_table.'.ITEM_ID_ITEM= t.ID_ITEM limit 1)';
+                
+		$criteria->select = array(
+                    '*',
+                    $nota_sql . " as notas",
+                    
+                );
+                $criteria->compare($nota_sql, $this->notas);
+                $criteria->compare('ID_ITEM',$this->ID_ITEM);
+		$criteria->compare('NOMBRE',$this->NOMBRE,true);
+		$criteria->compare('EVALUACION_ID_EVALUACION',$this->EVALUACION_ID_EVALUACION);
+                $dbCommand = Yii::app()->db->createCommand("
+                    SELECT COUNT(*) as count FROM `item`
+                 ");
+
+                 $data = $dbCommand->queryAll();
+                 $rows = $data[0]['count'];
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+                        'pagination'=>array('pageSize'=>$rows),
 		));
 	}
         public function getOptions()

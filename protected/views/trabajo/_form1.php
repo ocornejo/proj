@@ -182,9 +182,7 @@ document.getElementById("success").style.display=" none";
                                      }
                                  }",
                 'error' => "function(html) {
-
                                     jQuery('#trabajo-form').ajaxvalidationmessages('hide');
-
                                  }",
                 'update' => '#dialogEvaluacion',
                 'beforeSend' => 'function(){                        
