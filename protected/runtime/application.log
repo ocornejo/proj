@@ -3597,3 +3597,238 @@ Stack trace:
 REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
 in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (182)
 in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/22 19:48:00 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:182)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (182)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/22 19:49:57 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:182)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (182)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/22 19:55:31 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:182)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (182)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/22 19:56:39 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:182)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (182)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/22 20:01:26 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:182)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (182)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/22 20:01:45 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php:1118
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('Delete')
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('trabajo/Delete')
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#7 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/Delete
+HTTP_REFERER=http://localhost:8080/proj/index.php?r=trabajo/create
+---
+2013/04/22 20:02:46 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:182)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (182)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/22 20:03:07 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php:1118
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('Delete')
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('trabajo/Delete')
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#7 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/Delete&id=7&render=
+HTTP_REFERER=http://localhost:8080/proj/index.php?r=trabajo/create
+---
+2013/04/22 20:04:22 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:182)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (182)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/22 20:04:45 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php:1118
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('Delete')
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('trabajo/Delete')
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#7 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/Delete&id=8&render=
+HTTP_REFERER=http://localhost:8080/proj/index.php?r=trabajo/create
+---
+2013/04/22 20:04:51 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:182)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (182)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/22 20:09:04 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:182)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (182)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/22 20:09:16 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php:1118
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('Delete')
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('trabajo/Delete')
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#7 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/Delete&id=9&render=false
+HTTP_REFERER=http://localhost:8080/proj/index.php?r=trabajo/create
+---
+2013/04/22 20:14:25 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:182)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (182)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/22 20:14:42 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php:1118
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('Delete')
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('trabajo/Delete')
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#7 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/Delete&id=10&render=false
+HTTP_REFERER=http://localhost:8080/proj/index.php?r=trabajo/create
+---
+2013/04/22 20:17:43 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:182)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (182)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/22 20:18:21 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:182)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (182)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/22 20:19:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/TrabajoController.php:668
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/TrabajoController.php(581): TrabajoController->loadModel('12')
+#1 [internal function]: TrabajoController->actionDelete('12')
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(TrabajoController), Array)
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TrabajoController), Object(ReflectionMethod), Array)
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(1116): CFilterChain->run()
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#10 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('Delete')
+#12 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('trabajo/Delete')
+#13 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/Delete&id=12&render=
+HTTP_REFERER=http://localhost:8080/proj/index.php?r=trabajo/create
+---

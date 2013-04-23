@@ -14,9 +14,24 @@ $this->beginWidget('zii.widgets.jui.CJuiDialog',array(
                     'draggable' => false,
                     'closeOnEscape'=>false,
                    // 'open'=> 'js:function(event, ui) { $(".ui-dialog-titlebar-close").hide(); }',
-                ),
-                ));
+                    'open'=> 'js:function(event, ui) { $(".ui-dialog-titlebar-close").click(function() 
+				{
+                                        $.ajax({
+                                        type: "POST",
+                                        url:    "'.CHtml::normalizeUrl(array('trabajo/Delete','id'=>$id_trabajo,'render'=>false)).'",
+                                        data:  {val1:1,val2:2},
+                                        success: function(msg){
+                                             //alert("Sucess")
+                                            },
+                                        error: function(xhr){
+                                        alert("failure"+xhr.readyState+this.url)
 
+                                        }
+                                      });
+                              }); }',
+                    
+                    ),
+                ));
 
 
    
