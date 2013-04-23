@@ -138,20 +138,7 @@ document.getElementById("success").style.display=" none";
         
         <div class="raw">
             <?php echo $form->labelEx($model, 'OT'); ?>
-            <?php echo $form->textField($model, 'OT', array('style' => 'width:50px', 'maxlength' => 6,'onBlur'=>CHtml::ajax(array(
-                                                                                           'url'=>Yii::app()->createUrl('trabajo/SearchOT'),
-                                                                                           'type'=>'post',                                                        
-                                                                                           'dataType'=>'json',
-                                                                                           //'data'=>array('title' => 'js:this.value'),       
-                                                                                           'success'=>'function(data){ //alert(data[0]);
-                                                                                                                                            if(data[0]=="N");
-                                                                                                                                                //alert(data[1]);
-                                                                                                                                            else{
-                                                                                                                                                alert("OT ingresada ya existe");
-                                                                                                                                                 $("#' . CHtml::activeId($model, 'OT') . '").val("");}
-                                                                                                                                        }',
-                                                                                                                            'error' => "function(data, status){ alert(status); }",
-                                                                                            )))); ?>
+            <?php echo $form->textField($model, 'OT', array('style' => 'width:50px', 'maxlength' => 6)); ?>
             <?php echo $form->error($model, 'OT'); ?>
         </div>
         

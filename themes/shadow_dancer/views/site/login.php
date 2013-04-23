@@ -15,7 +15,7 @@ $this->pageTitle=Yii::app()->name . ' - Login';
 
 <section class="container">
     <div class="login">
-      <h1>Login Aseo-Cabina</h1>
+      <h1>Login Aseos Cabina</h1>
       <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',
 	//'enableClientValidation'=>true,
