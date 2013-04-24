@@ -22,6 +22,7 @@
  * @property string $ARCHIVO1
  * @property string $ARCHIVO2
  * @property string $ARCHIVO3
+ * @property string $flota
  *
  * The followings are the available model relations:
  * @property Nota[] $notas
@@ -43,6 +44,7 @@ class Trabajo extends CActiveRecord
         public $date_first;
         public $date_last;
         public $flota;
+        public $flota_grilla;
         
         public static function model($className=__CLASS__)
 	{
@@ -83,7 +85,7 @@ class Trabajo extends CActiveRecord
 			array('HORA_INICIO, HORA_TERMINO, FECHA', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('ID_TRABAJO, OT, AVION_MATRICULA, USUARIO_BP, PLANIFICADO, HORA_INICIO, HORA_TERMINO, COMENTARIO, FECHA, ULTIMO_ASEO, CALIFICACION, ESTADO_ID_ESTADO, LUGAR_ID_LUGAR, ASEO_ID_ASEO, TURNO_ID_TURNO,date_first,date_last,flota', 'safe', 'on'=>'search'),
+			array('ID_TRABAJO, OT, AVION_MATRICULA, USUARIO_BP, PLANIFICADO, HORA_INICIO, HORA_TERMINO, COMENTARIO, FECHA, ULTIMO_ASEO, CALIFICACION, ESTADO_ID_ESTADO, LUGAR_ID_LUGAR, ASEO_ID_ASEO, TURNO_ID_TURNO,date_first,date_last,flota,flota_grilla', 'safe', 'on'=>'search'),
 		);
 	}
         
@@ -124,15 +126,15 @@ class Trabajo extends CActiveRecord
 		return array(
 			'ID_TRABAJO' => 'ID',
 			'OT' => 'OT',
-			'AVION_MATRICULA' => 'Matrícula',
+			'AVION_MATRICULA' => 'MAT',
 			'USUARIO_BP' => 'BP',
 			'PLANIFICADO' => 'Planificado',
 			'HORA_INICIO' => 'Hora inicio',
 			'HORA_TERMINO' => 'Hora término',
 			'COMENTARIO' => 'Comentario',
 			'FECHA' => 'Fecha',
-			'CALIFICACION' => 'Calificación',
-                        'ULTIMO_ASEO' => 'Días sin aseo',
+			'CALIFICACION' => 'Nota',
+                        'ULTIMO_ASEO' => 'Días s/aseo',
 			'ESTADO_ID_ESTADO' => 'Estado',
 			'LUGAR_ID_LUGAR' => 'Lugar',
 			'ASEO_ID_ASEO' => 'Aseo',
@@ -142,6 +144,7 @@ class Trabajo extends CActiveRecord
                         'ARCHIVO3'=> 'Archivo3',
                         'imagen'=>'Fotos (3 máx)',
                         'flota'=>'Flota',
+                        'flota_grilla'=>'Flota',
 		);
 	}
 
@@ -155,6 +158,15 @@ class Trabajo extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
+                $flota_table= Flota::model()->tableName();
+                $flota_sql= '(select NOMBRE_FLOTA from '.$flota_table.' where '.$flota_table.'.ID_FLOTA = (select FLOTA_ID_FLOTA from AVION where AVION.MATRICULA = t.AVION_MATRICULA) order by NOMBRE_FLOTA asc limit 1)';
+                
+                $criteria->select = array(
+                    '*',
+                    $flota_sql . " as flota_grilla",
+                    
+                );
+                
                 $criteria->with =array('AVION');
                 
 		if((isset($this->date_first) && trim($this->date_first) != "") && (isset($this->date_last) && trim($this->date_last) != ""))
@@ -177,6 +189,7 @@ class Trabajo extends CActiveRecord
                 }
                 
                 
+                $criteria->compare($flota_sql, $this->flota_grilla);
                 $criteria->compare('ID_TRABAJO',$this->ID_TRABAJO);
 		$criteria->compare('OT',$this->OT);
 		$criteria->compare('AVION_MATRICULA',$this->AVION_MATRICULA,true);
@@ -196,6 +209,18 @@ class Trabajo extends CActiveRecord
         	
                $data= new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+                        'sort' => array(
+                                    'defaultOrder' => 't.ID_TRABAJO',
+                                    'attributes' => array(
+
+                                        // order by
+                                        'flota_grilla' => array(
+                                            'asc' => 'flota_grilla ASC',
+                                            'desc' => 'flota_grilla DESC',
+                                        ),
+                                       '*',
+                                    ),
+                        ),
 		));
                 $_SESSION['Lectivo-excel']=$data;
                return $data;
