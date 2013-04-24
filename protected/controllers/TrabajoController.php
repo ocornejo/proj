@@ -578,11 +578,13 @@ class TrabajoController extends Controller {
      * @param integer $id the ID of the model to be deleted
      */
     public function actionDelete($id) {
+        Nota::model()->deleteAll('TRABAJO_ID_TRABAJO=:id_trabajo', array(':id_trabajo'=>$id));
         $this->loadModel($id)->delete();
 
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
         if (!isset($_GET['ajax']))
             $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+        
     }
 
     /**

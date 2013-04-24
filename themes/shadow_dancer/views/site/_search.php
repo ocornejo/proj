@@ -72,15 +72,16 @@
         <fieldset>
         <legend>Información del avión</legend>
             <div class="raw">
-		<?php echo $form->label($model,'AVION_MATRICULA'); ?>
-		<?php $posts2=Avion::model()->findAll(); 
+		<?php echo $form->label($model,'AVION_MATRICULA');  ?>
+		<?php $posts2=Avion::model()->findAll(array('order' => 'FLOTA_ID_FLOTA ASC')); 
                       echo $form->dropDownList($model, 'AVION_MATRICULA', CHtml::listData($posts2, 'MATRICULA', 'MATRICULA',function($posts2) {
                                                 return CHtml::encode($posts2->fLOTAIDFLOTA->NOMBRE_FLOTA);
                                         }), array('empty' => 'Seleccione'));?>
             </div>
         <div class="raw">
             <?php echo $form->label($model,'flota'); ?>
-            <?php echo $form->dropDownList($model, 'flota', CHtml::listData(Flota::model()->findAll(), 'ID_FLOTA', 'NOMBRE_FLOTA'), array('empty' => 'Seleccione')); ?>
+            <?php //echo $form->dropDownList($model, 'flota', CHtml::listData(Flota::model()->findAll(), 'ID_FLOTA', 'NOMBRE_FLOTA'), array('empty' => 'Seleccione')); ?>
+            <?php echo $form->ListBox($model,'flota', CHtml::listData(Flota::model()->findAll(), 'ID_FLOTA', 'NOMBRE_FLOTA'), array('empty' => 'Seleccione','multiple'=>'multiple','style' => 'height: 150px;')); ?>
         </div>
         </fieldset>
         

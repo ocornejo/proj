@@ -179,8 +179,12 @@ class FlotaController extends Controller
             foreach($dataTemp as $value=>$name)
                 $flotaid=$value;
                 
-            $data = Flota::model()->findAll('id_flota=:id_flota',array(':id_flota'=> $flotaid));
+            $data['flota']= Flota::model()->findAll('id_flota=:id_flota',array(':id_flota'=> $flotaid));
+            
+            
+                
             echo CJSON::encode($data);
+            
 
         }
             

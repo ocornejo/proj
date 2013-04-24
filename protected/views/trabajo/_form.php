@@ -13,6 +13,8 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
 
     $(document).ready(function() {
         $("#showDialogEvaluacion").hide();
+        var idFlota = null;
+        var idAseo = null;
         var currentTime = new Date()
         var month = currentTime.getMonth() + 1;
         var day = currentTime.getDate();
@@ -156,9 +158,11 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
                     'type' => 'POST',
                     'url' => CController::createUrl('Flota/GetFlotaByMat'),
                     'dataType' => 'json',
-                    'data' => array('matricula' => 'js:this.value'),
-                    'success' => 'function(data) {
-                                                    $("#flotaId").val(data[0].NOMBRE_FLOTA);
+                    'data' => array('matricula' => 'js:this.value',
+                                    ),
+                    'success' => 'function(data) { 
+                                                    $("#flotaId").val(data.flota[0].NOMBRE_FLOTA);
+                                                    idFlota = data.flota[0].ID_FLOTA;
                                                   }',
                     )));?>
         <?php echo $form->error($model, 'AVION_MATRICULA'); ?>
@@ -178,7 +182,7 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
       </div>
 
     <div class="HideSubmitButton" id="HideSubButton" style="display: none; vertical-align:-10px; float: left; padding-right: 10px;">
-        <?php echo CHtml::submitButton('Guardas', array('name' => 'update','style'=>'width: 95px; height: 35px;background: url(/proj/themes/shadow_dancer/images/small_icons/disk.png) no-repeat 15px 7px; padding-left: 24px; vertical-align: bottom;')); ?>
+        <?php echo CHtml::submitButton('Guardar', array('name' => 'update','style'=>'width: 95px; height: 35px;background: url(/proj/themes/shadow_dancer/images/small_icons/disk.png) no-repeat 15px 7px; padding-left: 24px; vertical-align: bottom;')); ?>
     </div>
     
     <div>

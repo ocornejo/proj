@@ -24,9 +24,11 @@ document.getElementById("success").style.display=" none";
                 'type' => 'POST',
                 'url' => CController::createUrl('Aseo/GetTipoByPond'),
                 'dataType' => 'json',
-                'data' => array('id_aseo' => 'js:this.value'),
+                'data' => array('id_aseo' => 'js:this.value',
+                                'id_flota' => 'js:idFlota'),
                 'success' => 'function(data) {
-                                                        if(data=="1"){
+                                                        idAseo = data.id_aseo;    
+                                                        if(data.resultado=="1"){
                                                             $("#showDialogEvaluacion").show();
                                                             $("#' . CHtml::activeId($model, 'CALIFICACION') . '").show();
                                                             $("#CALIFICACION_LABEL").show();

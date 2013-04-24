@@ -173,16 +173,16 @@ class AseoController extends Controller
         
         public function actionGetTipoByPond()
         {   
-            $dataTemp= Yii::app()->db->createCommand(array(
-                         'select' => 'ASEO_ID_ASEO',
-                         'distinct' => 'true',
-                                   'from' => 'PONDERACION',
-                                               ))->queryColumn();
-            $data=0;  
-            foreach($dataTemp as $value)
-                if($value==(int)$_POST['id_aseo'])
-                    $data=1;
 
+            $dataTemp = Ponderacion::model()->findAll('ASEO_ID_ASEO=:id_aseo AND FLOTA_ID_FLOTA=:id_flota',array(':id_aseo'=>(int)$_POST['id_aseo'],
+                                                                                                                 ':id_flota'=>(int)$_POST['id_flota']));
+            $data['resultado']=0;
+            $data['id_aseo']=$_POST['id_aseo'];
+            foreach($dataTemp as $value)
+                if($value!=null)
+                    $data['resultado'] =1;
+             
+                
             echo CJSON::encode($data);
 
         }

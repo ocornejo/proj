@@ -155,14 +155,28 @@ class Trabajo extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-        $criteria->with =array('AVION');
+                $criteria->with =array('AVION');
                 
 		if((isset($this->date_first) && trim($this->date_first) != "") && (isset($this->date_last) && trim($this->date_last) != ""))
-            $criteria->addBetweenCondition('FECHA', ''.$this->date_first.'', ''.$this->date_last.'');
-        if(isset($this->flota)&& trim($this->flota) != ""){
-            $criteria->addCondition('AVION.FLOTA_ID_FLOTA='.$this->flota);
-        }
+                    $criteria->addBetweenCondition('FECHA', ''.$this->date_first.'', ''.$this->date_last.'');
+                
+//                if(isset($this->flota)){
+//                    //var_dump($this->flota);
+//                    $criteria->addCondition('AVION.FLOTA_ID_FLOTA='.'"2"');
+//                    $criteria->addCondition('AVION.FLOTA_ID_FLOTA='.'"8"');
+//                    
+//                }
+                if(isset($this->flota)){
+                    $flotasReg = implode('|',$this->flota); //Convert to REGEXP 
 
+                    $criteria->mergeWith(array(
+                           'condition'=>'AVION.FLOTA_ID_FLOTA REGEXP :flota',
+                           'params'=>array(':flota'=>$flotasReg),
+                    ));
+                
+                }
+                
+                
                 $criteria->compare('ID_TRABAJO',$this->ID_TRABAJO);
 		$criteria->compare('OT',$this->OT);
 		$criteria->compare('AVION_MATRICULA',$this->AVION_MATRICULA,true);
