@@ -49,7 +49,7 @@ overflow-y: hidden; }
                     
                     'filter'=> Avion::model()->options,
                 ),
-		
+		'flota_grilla',
                 array(
                         'name'=>'USUARIO_BP',
                         'value'=> '$data->uSUARIOBP->NOMBRE',
