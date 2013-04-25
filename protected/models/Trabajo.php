@@ -188,7 +188,7 @@ class Trabajo extends CActiveRecord
                     $flotasReg = implode('|',$this->flota); //Convert to REGEXP 
 
                     $criteria->mergeWith(array(
-                           'condition'=>'AVION.FLOTA_ID_FLOTA REGEXP :flota',
+                           'condition'=>'AVION.FLOTA_ID_FLOTA = :flota',
                            'params'=>array(':flota'=>$flotasReg),
                     ));
                 
