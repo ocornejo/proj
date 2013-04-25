@@ -57,9 +57,45 @@ $('.search-form form').submit(function(){
                              else
                                  return @$data->PLANIFICADO ? "Si" : "No";
                     }),
-		'HORA_INICIO',
-		'HORA_TERMINO',
-		'FECHA',
+		array(
+                    'name'=>'HORA_INICIO',
+                    
+                    'value'=>function($data){
+                             if($data->HORA_INICIO==NULL)
+                                 return "";
+                             else{
+
+	                             $temp_var= explode(':',$data->HORA_INICIO);
+	                             return $temp_var[0].':'.$temp_var[1];
+                             }
+                                 
+                    }),
+               array(
+                    'name'=>'HORA_TERMINO',
+                    
+                    'value'=>function($data){
+                             if($data->HORA_TERMINO==NULL)
+                                 return "";
+                             else{
+
+	                             $temp_var= explode(':',$data->HORA_TERMINO);
+	                             return $temp_var[0].':'.$temp_var[1];
+                             }
+                                 
+                    }),    
+            array(
+                    'name'=>'FECHA',
+                    
+                    'value'=>function($data){
+                             if($data->FECHA==NULL)
+                                 return "";
+                             else{
+
+	                             $temp_var= explode('-',$data->FECHA);
+	                             return $temp_var[2].'-'.$temp_var[1].'-'.$temp_var[0];
+                             }
+                                 
+                    }),
 		'CALIFICACION',
 		array(
                         'name'=>'ESTADO_ID_ESTADO',

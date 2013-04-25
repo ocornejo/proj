@@ -40,12 +40,12 @@ class Trabajo extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return Trabajo the static model class
 	 */
-	public $imagen;
+	 	public $imagen;
         public $date_first;
         public $date_last;
         public $flota;
         public $flota_grilla;
-        
+                
         public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -67,25 +67,30 @@ class Trabajo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-                        array('ESTADO_ID_ESTADO', 'required','on'=>'inicio'),
-			array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA, ASEO_ID_ASEO,LUGAR_ID_LUGAR,PLANIFICADO,OT', 'required','on'=>'ok'),
-			array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA, ASEO_ID_ASEO,PLANIFICADO', 'required','on'=>'laneco'),
-                        array('USUARIO_BP, ESTADO_ID_ESTADO,OT', 'required','on'=>'nula'),
-                        array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA, ASEO_ID_ASEO,PLANIFICADO,LUGAR_ID_LUGAR', 'required','on'=>'bano'),
-                        array('AVION_MATRICULA,USUARIO_BP,ESTADO_ID_ESTADO,ASEO_ID_ASEO','required','on'=>'pendiente'),
-                        //array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA, ASEO_ID_ASEO, TURNO_ID_TURNO,LUGAR_ID_LUGAR','allowEmpty'=>true, 'on'=>'formSubmit'),
-                        array('OT, USUARIO_BP, PLANIFICADO, CALIFICACION, ESTADO_ID_ESTADO, LUGAR_ID_LUGAR, ASEO_ID_ASEO, TURNO_ID_TURNO', 'numerical', 'integerOnly'=>true),
-			array('FECHA','date', 'format'=>'yyyy-MM-dd'),
-                        array('HORA_INICIO', 'date', 'format'=>'HH:mm'),
-                        array('HORA_TERMINO','date', 'format'=>'HH:mm'),
-                        array('imagen', 'file', 'types'=>'jpg, gif, png','allowEmpty'=>true,'on'=>'update,create,ok,laneco,bano,pendiente'),
-                        array('AVION_MATRICULA', 'length', 'max'=>12),
-			array('COMENTARIO', 'length', 'max'=>255),
-                        
-			array('HORA_INICIO, HORA_TERMINO, FECHA', 'safe'),
-			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
-			array('ID_TRABAJO, OT, AVION_MATRICULA, USUARIO_BP, PLANIFICADO, HORA_INICIO, HORA_TERMINO, COMENTARIO, FECHA, ULTIMO_ASEO, CALIFICACION, ESTADO_ID_ESTADO, LUGAR_ID_LUGAR, ASEO_ID_ASEO, TURNO_ID_TURNO,date_first,date_last,flota,flota_grilla', 'safe', 'on'=>'search'),
+                     array('ESTADO_ID_ESTADO', 'required','on'=>'inicio'),
+                     array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA,
+                     		ASEO_ID_ASEO,LUGAR_ID_LUGAR,PLANIFICADO,OT', 'required','on'=>'ok'),
+                     array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA,
+                     		ASEO_ID_ASEO,PLANIFICADO', 'required','on'=>'laneco'),
+                     array('USUARIO_BP, ESTADO_ID_ESTADO,OT', 'required','on'=>'nula'),
+                     array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA,
+                     		ASEO_ID_ASEO,PLANIFICADO,LUGAR_ID_LUGAR', 'required','on'=>'bano'),
+                     array('AVION_MATRICULA,USUARIO_BP,ESTADO_ID_ESTADO,ASEO_ID_ASEO','required','on'=>'pendiente'),
+                     array('OT, USUARIO_BP, PLANIFICADO, CALIFICACION, ESTADO_ID_ESTADO,
+                     		LUGAR_ID_LUGAR, ASEO_ID_ASEO, TURNO_ID_TURNO', 'numerical', 'integerOnly'=>true),
+                     array('FECHA','date', 'format'=>'yyyy-MM-dd'),
+                     array('HORA_INICIO', 'date', 'format'=>'HH:mm'),
+                     array('HORA_TERMINO','date', 'format'=>'HH:mm'),
+                     array('imagen', 'file', 'types'=>'jpg, gif, png','allowEmpty'=>true,'on'=>'update,create,ok,laneco,bano,pendiente'),
+                     array('AVION_MATRICULA', 'length', 'max'=>12),
+                     array('COMENTARIO', 'length', 'max'=>255),   
+                     array('HORA_INICIO, HORA_TERMINO, FECHA', 'safe'),
+					// The following rule is used by search().
+					// Please remove those attributes that should not be searched.
+					array('ID_TRABAJO, OT, AVION_MATRICULA, USUARIO_BP, PLANIFICADO, HORA_INICIO,
+						   HORA_TERMINO, COMENTARIO, FECHA, ULTIMO_ASEO, CALIFICACION,
+						   ESTADO_ID_ESTADO, LUGAR_ID_LUGAR, ASEO_ID_ASEO, TURNO_ID_TURNO,
+						   date_first,date_last,flota,flota_grilla', 'safe', 'on'=>'search'),
 		);
 	}
         
@@ -158,16 +163,17 @@ class Trabajo extends CActiveRecord
 		// should not be searched.
 
 		$criteria=new CDbCriteria;
-                $flota_table= Flota::model()->tableName();
-                $flota_sql= '(select NOMBRE_FLOTA from '.$flota_table.' where '.$flota_table.'.ID_FLOTA = (select FLOTA_ID_FLOTA from AVION where AVION.MATRICULA = t.AVION_MATRICULA) order by NOMBRE_FLOTA asc limit 1)';
-                
-                $criteria->select = array(
-                    '*',
-                    $flota_sql . " as flota_grilla",
-                    
-                );
-                
-                $criteria->with =array('AVION');
+        $flota_table= Flota::model()->tableName();
+        $flota_sql= '(select NOMBRE_FLOTA from '.$flota_table.' where '.$flota_table.'.ID_FLOTA
+        			 = (select FLOTA_ID_FLOTA from AVION where AVION.MATRICULA = t.AVION_MATRICULA) order by NOMBRE_FLOTA asc limit 1)';
+        
+        $criteria->select = array(
+            '*',
+            $flota_sql . " as flota_grilla",
+            
+        );
+        
+        $criteria->with =array('AVION');
                 
 		if((isset($this->date_first) && trim($this->date_first) != "") && (isset($this->date_last) && trim($this->date_last) != ""))
                     $criteria->addBetweenCondition('FECHA', ''.$this->date_first.'', ''.$this->date_last.'');
@@ -191,20 +197,20 @@ class Trabajo extends CActiveRecord
                 
                 $criteria->compare($flota_sql, $this->flota_grilla);
                 $criteria->compare('ID_TRABAJO',$this->ID_TRABAJO);
-		$criteria->compare('OT',$this->OT);
-		$criteria->compare('AVION_MATRICULA',$this->AVION_MATRICULA,true);
-		$criteria->compare('USUARIO_BP',$this->USUARIO_BP);
-		$criteria->compare('PLANIFICADO',$this->PLANIFICADO);
-		$criteria->compare('HORA_INICIO',$this->HORA_INICIO,true);
-		$criteria->compare('HORA_TERMINO',$this->HORA_TERMINO,true);
-		$criteria->compare('COMENTARIO',$this->COMENTARIO,true);
-                $criteria->compare('ULTIMO_ASEO',$this->ULTIMO_ASEO,true);
-		$criteria->compare('FECHA',$this->FECHA,true);
-		$criteria->compare('CALIFICACION',$this->CALIFICACION);
-		$criteria->compare('ESTADO_ID_ESTADO',$this->ESTADO_ID_ESTADO);
-		$criteria->compare('LUGAR_ID_LUGAR',$this->LUGAR_ID_LUGAR);
-		$criteria->compare('ASEO_ID_ASEO',$this->ASEO_ID_ASEO);
-		$criteria->compare('TURNO_ID_TURNO',$this->TURNO_ID_TURNO);
+				$criteria->compare('OT',$this->OT);
+				$criteria->compare('AVION_MATRICULA',$this->AVION_MATRICULA,true);
+				$criteria->compare('USUARIO_BP',$this->USUARIO_BP);
+				$criteria->compare('PLANIFICADO',$this->PLANIFICADO);
+				$criteria->compare('HORA_INICIO',$this->HORA_INICIO,true);
+				$criteria->compare('HORA_TERMINO',$this->HORA_TERMINO,true);
+				$criteria->compare('COMENTARIO',$this->COMENTARIO,true);
+		        $criteria->compare('ULTIMO_ASEO',$this->ULTIMO_ASEO,true);
+				$criteria->compare('FECHA',$this->FECHA,true);
+				$criteria->compare('CALIFICACION',$this->CALIFICACION);
+				$criteria->compare('ESTADO_ID_ESTADO',$this->ESTADO_ID_ESTADO);
+				$criteria->compare('LUGAR_ID_LUGAR',$this->LUGAR_ID_LUGAR);
+				$criteria->compare('ASEO_ID_ASEO',$this->ASEO_ID_ASEO);
+				$criteria->compare('TURNO_ID_TURNO',$this->TURNO_ID_TURNO);
                 
         	
                $data= new CActiveDataProvider($this, array(
