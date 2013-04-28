@@ -259,9 +259,16 @@ class SiteController extends Controller
         $i++;
         
         //populate data array with the required data elements
+
         foreach($d->data as $issue)
-        {
-            $data[$i]['FECHA'] = $issue['FECHA'];
+        {   
+            if($issue['FECHA']!=NULL){
+                $temp_var= explode('-',$issue['FECHA']);
+                $data[$i]['FECHA'] = $temp_var[2].'-'.$temp_var[1].'-'.$temp_var[0];
+            }
+            else
+                $data[$i]['FECHA'] = "";
+            
             $data[$i]['flota'] = $issue['flota'];
             $data[$i]['AVION_MATRICULA'] = $issue['AVION_MATRICULA'];
             $data[$i]['aSEOIDASEO.TIPO_ASEO'] = $issue->aSEOIDASEO->TIPO_ASEO;

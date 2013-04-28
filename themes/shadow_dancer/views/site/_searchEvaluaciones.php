@@ -46,49 +46,6 @@
     </fieldset>
  <fieldset>
         <legend>Información cronológica</legend>
-        <div class="raw">
-		<?php echo $form->label($model,'HORA_INICIO'); ?>
-		<?php $this->widget('application.extensions.jui_timepicker.JTimePicker', array(
-                           'model' => $model,
-                           'attribute' => 'HORA_INICIO',
-                           // additional javascript options for the date picker plugin
-                           'options' => array(
-                               'showPeriod' => true,
-                               'hours' => array('starts' => 0, 'ends' => 23),
-                               'minutes' => array('interval' => 1),
-                               'showPeriodLabels' => false,
-                               'showPeriod' => false,
-                               'hourText' => 'Hora',
-                               'minuteText' => 'Minuto',
-                               'rows' => 6,
-                               'showCloseButton' => true,
-                               'closeButtonText' => 'Listo',
-                           ),
-                           'htmlOptions' => array('size' => 3, 'maxlength' => 5),
-                       )); ?>
-	</div>
-
-	<div class="raw">
-		<?php echo $form->label($model,'HORA_TERMINO'); ?>
-		<?php $this->widget('application.extensions.jui_timepicker.JTimePicker', array(
-                        'model' => $model,
-                        'attribute' => 'HORA_TERMINO',
-                        // additional javascript options for the date picker plugin
-                        'options' => array(
-                            'showPeriod' => true,
-                            'hours' => array('starts' => 0, 'ends' => 23),
-                            'minutes' => array('interval' => 1),
-                            'showPeriodLabels' => false,
-                            'showPeriod' => false,
-                            'hourText' => 'Hora',
-                            'minuteText' => 'Minuto',
-                            'rows' => 6,
-                            'showCloseButton' => true,
-                            'closeButtonText' => 'Listo',
-                        ),
-                        'htmlOptions' => array('size' => 3, 'maxlength' => 5),
-                    )); ?>
-	</div>
 
 	<div class="raw">
 		<?php echo $form->label($model,'Buscar por fecha única:'); ?>

@@ -232,8 +232,7 @@ class Trabajo extends CActiveRecord
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-
-		$criteria=new CDbCriteria;
+        $criteria=new CDbCriteria;
         $flota_table= Flota::model()->tableName();
         $flota_sql= '(select NOMBRE_FLOTA from '.$flota_table.' where '.$flota_table.'.ID_FLOTA
         			 = (select FLOTA_ID_FLOTA from AVION where AVION.MATRICULA = t.AVION_MATRICULA) order by NOMBRE_FLOTA asc limit 1)';
@@ -246,25 +245,22 @@ class Trabajo extends CActiveRecord
         
         $criteria->with =array('AVION');
                 
-		if((isset($this->date_first) && trim($this->date_first) != "") && (isset($this->date_last) && trim($this->date_last) != ""))
-                    $criteria->addBetweenCondition('FECHA', ''.$this->date_first.'', ''.$this->date_last.'');
+	if((isset($this->date_first) && trim($this->date_first) != "") && (isset($this->date_last) && trim($this->date_last) != ""))
+            $criteria->addBetweenCondition('FECHA', ''.$this->date_first.'', ''.$this->date_last.'');
                 
-//                if(isset($this->flota)){
-//                    $criteria->addCondition('AVION.FLOTA_ID_FLOTA='.'"8"');
-//                    
-//                }
+
         if(isset($this->flota)){
-        	$flotasReg = implode('|',$this->flota); //Convert to REGEXP 
+            $flotasReg = implode('|',$this->flota); //Convert to REGEXP 
             $criteria->mergeWith(array(
-						            'condition'=>'AVION.FLOTA_ID_FLOTA = :flota',
-						            'params'=>array(':flota'=>$flotasReg),
-						        ));
+		            'condition'=>'AVION.FLOTA_ID_FLOTA REGEXP :flota',
+		            'params'=>array(':flota'=>$flotasReg),
+	    ));
         }
                 
                 
                 $criteria->compare($flota_sql, $this->flota_grilla);
                 $criteria->compare('ID_TRABAJO',$this->ID_TRABAJO);
-				$criteria->compare('OT',$this->OT);
+		$criteria->compare('OT',$this->OT);
 				$criteria->compare('AVION_MATRICULA',$this->AVION_MATRICULA,true);
 				$criteria->compare('USUARIO_BP',$this->USUARIO_BP);
 				$criteria->compare('PLANIFICADO',$this->PLANIFICADO);
@@ -296,6 +292,7 @@ class Trabajo extends CActiveRecord
                         ),
 		));
                 $_SESSION['Lectivo-excel']=$data;
+                
                return $data;
 	}
 	
@@ -324,17 +321,60 @@ class Trabajo extends CActiveRecord
        $criteria->addCondition('ID_TRABAJO IN (SELECT TRABAJO_ID_TRABAJO FROM NOTA)');
        $criteria->compare('ASEO_ID_ASEO',$this->ASEO_ID_ASEO);
        $criteria->compare('AVION_MATRICULA',$this->AVION_MATRICULA);
-       if(isset($this->flota)){
-        	$criteria->addCondition('AVION.FLOTA_ID_FLOTA='.$this->flota);        
-       }
+       $criteria->compare('FECHA',$this->FECHA,true);
+       $criteria->compare('CALIFICACION',$this->CALIFICACION);
+       
+	if((isset($this->date_first) && trim($this->date_first) != "") && (isset($this->date_last) && trim($this->date_last) != ""))
+            $criteria->addBetweenCondition('FECHA', ''.$this->date_first.'', ''.$this->date_last.'');
+                
+
+        if(isset($this->flota)){
+            $flotasReg = implode('|',$this->flota); //Convert to REGEXP 
+            $criteria->mergeWith(array(
+		            'condition'=>'AVION.FLOTA_ID_FLOTA REGEXP :flota',
+		            'params'=>array(':flota'=>$flotasReg),
+	    ));
+        }
        $dataProvider = new CActiveDataProvider($this, array(
                     'criteria' => $criteria,
-                    'pagination' => false,
+                    'sort' => array(
+                                    'defaultOrder' => 't.ID_TRABAJO',
+                                    'attributes' => array(
+
+                                        // order by
+                                        'flota' => array(
+                                            'asc' => 'flota ASC',
+                                            'desc' => 'flota DESC',
+                                        ),
+                                       '*',
+                                    ),
+                        ),
                 ));
-      $arregloTemp2 = array('FECHA',
+      $arregloTemp2 = array(
+                array(
+                    'name'=>'FECHA',
+                    'value'=>function($data){
+                             if($data->FECHA==NULL)
+                                 return "";
+                             else{
+	                         $temp_var= explode('-',$data->FECHA);
+                                 return $temp_var[2].'-'.$temp_var[1].'-'.$temp_var[0];
+                             }
+                                 
+                    }),
       		'flota',
       		'AVION_MATRICULA',
-                'aSEOIDASEO.TIPO_ASEO',
+                array(
+                    'name'=>'ASEO_ID_ASEO',
+                    'value'=> function($data){
+                            if($data->ASEO_ID_ASEO==NULL)
+                                return "";
+                            else
+                                return $data->aSEOIDASEO->TIPO_ASEO;
+                         },
+                    
+                    'filter'=> Aseo::model()->options,
+                ),
                 'CALIFICACION',
             );
       $arregloTemp3 = array();
@@ -348,7 +388,7 @@ class Trabajo extends CActiveRecord
       $columns = array_merge($arregloTemp2,$arregloTemp3); 
       $_SESSION['Lectivo-excel']=$dataProvider;
       return array($dataProvider,$columns);
-	}
+}
         
         
         
