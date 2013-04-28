@@ -40,11 +40,82 @@ class Trabajo extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return Trabajo the static model class
 	 */
-	 	public $imagen;
+	public $imagen;
         public $date_first;
         public $date_last;
         public $flota;
         public $flota_grilla;
+        public $item_1;
+        public $item_2;
+        public $item_3;
+        public $item_4;
+        public $item_5;
+        public $item_6;
+        public $item_7;
+        public $item_8;
+        public $item_9;
+        public $item_10;
+        public $item_11;
+        public $item_12;
+        public $item_13;
+        public $item_14;
+        public $item_15;
+        public $item_16;
+        public $item_17;
+        public $item_18;
+        public $item_19;
+        public $item_20;
+        public $item_21;
+        public $item_22;
+        public $item_23;
+        public $item_24;
+        public $item_25;
+        public $item_26;
+        public $item_27;
+        public $item_28;
+        public $item_29;
+        public $item_30;
+        public $item_31;
+        public $item_32;
+        public $item_33;
+        public $item_34;
+        public $item_35;
+        public $item_36;
+        public $item_37;
+        public $item_38;
+        public $item_39;
+        public $item_40;
+        public $item_41;
+        public $item_42;
+        public $item_43;
+        public $item_44;
+        public $item_45;
+        public $item_46;
+        public $item_47;
+        public $item_48;
+        public $item_49;
+        public $item_50;
+        public $item_51;
+        public $item_52;
+        public $item_53;
+        public $item_54;
+        public $item_55;
+        public $item_56;
+        public $item_57;
+        public $item_58;
+        public $item_59;
+        public $item_60;
+        public $item_61;
+        public $item_62;
+        public $item_63;
+        public $item_64;
+        public $item_65;
+        public $item_66;
+        public $item_67;
+        public $item_68;
+        
+
+
                 
         public static function model($className=__CLASS__)
 	{
@@ -112,10 +183,10 @@ class Trabajo extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'notas' => array(self::HAS_MANY, 'Nota', 'TRABAJO_ID_TRABAJO'),
+			'NOTA' => array(self::HAS_MANY, 'Nota', 'TRABAJO_ID_TRABAJO'),
 			'aSEOIDASEO' => array(self::BELONGS_TO, 'Aseo', 'ASEO_ID_ASEO'),
 			'AVION' => array(self::BELONGS_TO, 'Avion', 'AVION_MATRICULA'),
-                        'amat' => array(self::HAS_ONE,'Avion','MATRICULA'),
+            'amat' => array(self::HAS_ONE,'Avion','MATRICULA'),
 			'eSTADOIDESTADO' => array(self::BELONGS_TO, 'Estado', 'ESTADO_ID_ESTADO'),
 			'lUGARIDLUGAR' => array(self::BELONGS_TO, 'Lugar', 'LUGAR_ID_LUGAR'),
 			'tURNOIDTURNO' => array(self::BELONGS_TO, 'Turno', 'TURNO_ID_TURNO'),
@@ -139,17 +210,17 @@ class Trabajo extends CActiveRecord
 			'COMENTARIO' => 'Comentario',
 			'FECHA' => 'Fecha',
 			'CALIFICACION' => 'Nota',
-                        'ULTIMO_ASEO' => 'Días S/A',
+            'ULTIMO_ASEO' => 'Días S/A',
 			'ESTADO_ID_ESTADO' => 'Estado',
 			'LUGAR_ID_LUGAR' => 'Lugar',
 			'ASEO_ID_ASEO' => 'Aseo',
 			'TURNO_ID_TURNO' => 'Turno',
-                        'ARCHIVO1'=> 'Archivo1',
-                        'ARCHIVO2'=> 'Archivo2',
-                        'ARCHIVO3'=> 'Archivo3',
-                        'imagen'=>'Fotos (3 máx)',
-                        'flota'=>'Flota',
-                        'flota_grilla'=>'Flota',
+            'ARCHIVO1'=> 'Archivo1',
+            'ARCHIVO2'=> 'Archivo2',
+            'ARCHIVO3'=> 'Archivo3',
+            'imagen'=>'Fotos (3 máx)',
+            'flota'=>'Flota',
+            'flota_grilla'=>'Flota',
 		);
 	}
 
@@ -179,20 +250,16 @@ class Trabajo extends CActiveRecord
                     $criteria->addBetweenCondition('FECHA', ''.$this->date_first.'', ''.$this->date_last.'');
                 
 //                if(isset($this->flota)){
-//                    //var_dump($this->flota);
-//                    $criteria->addCondition('AVION.FLOTA_ID_FLOTA='.'"2"');
 //                    $criteria->addCondition('AVION.FLOTA_ID_FLOTA='.'"8"');
 //                    
 //                }
-                if(isset($this->flota)){
-                    $flotasReg = implode('|',$this->flota); //Convert to REGEXP 
-
-                    $criteria->mergeWith(array(
-                           'condition'=>'AVION.FLOTA_ID_FLOTA = :flota',
-                           'params'=>array(':flota'=>$flotasReg),
-                    ));
-                
-                }
+        if(isset($this->flota)){
+        	$flotasReg = implode('|',$this->flota); //Convert to REGEXP 
+            $criteria->mergeWith(array(
+						            'condition'=>'AVION.FLOTA_ID_FLOTA = :flota',
+						            'params'=>array(':flota'=>$flotasReg),
+						        ));
+        }
                 
                 
                 $criteria->compare($flota_sql, $this->flota_grilla);
@@ -213,7 +280,7 @@ class Trabajo extends CActiveRecord
 				$criteria->compare('TURNO_ID_TURNO',$this->TURNO_ID_TURNO);
                 
         	
-               $data= new CActiveDataProvider($this, array(
+            $data= new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
                         'sort' => array(
                                     'defaultOrder' => 't.ID_TRABAJO',
@@ -230,6 +297,57 @@ class Trabajo extends CActiveRecord
 		));
                 $_SESSION['Lectivo-excel']=$data;
                return $data;
+	}
+	
+	
+	public function searchItem(){
+		$criteria=new CDbCriteria;
+		$criteria->with =array('AVION','NOTA');
+		
+		$flota_sql= '(select NOMBRE_FLOTA from FLOTA where FLOTA.ID_FLOTA
+        			 = (select FLOTA_ID_FLOTA from AVION where AVION.MATRICULA = t.AVION_MATRICULA) order by NOMBRE_FLOTA asc limit 1)';
+        
+        $dbCommand = Yii::app()->db->createCommand('select ID_ITEM,NOMBRE from item');
+        $items_sql = $dbCommand->queryAll();
+        
+        
+        $sql= array();
+        
+        foreach($items_sql as $item)
+        	$sql[]='(select NOTA from NOTA where TRABAJO_ID_TRABAJO= t.ID_TRABAJO
+        			 AND ITEM_ID_ITEM ='.$item['ID_ITEM'].' order by NOTA) as item_'.$item['ID_ITEM'].'';
+        
+       $arregloTemp= array('*', $flota_sql." as flota");
+       $arreglo= array_merge($arregloTemp, $sql);
+       $criteria->select = $arreglo;
+                
+       $criteria->addCondition('ID_TRABAJO IN (SELECT TRABAJO_ID_TRABAJO FROM NOTA)');
+       $criteria->compare('ASEO_ID_ASEO',$this->ASEO_ID_ASEO);
+       $criteria->compare('AVION_MATRICULA',$this->AVION_MATRICULA);
+       if(isset($this->flota)){
+        	$criteria->addCondition('AVION.FLOTA_ID_FLOTA='.$this->flota);        
+       }
+       $dataProvider = new CActiveDataProvider($this, array(
+                    'criteria' => $criteria,
+                    'pagination' => false,
+                ));
+      $arregloTemp2 = array('FECHA',
+      		'flota',
+      		'AVION_MATRICULA',
+                'aSEOIDASEO.TIPO_ASEO',
+                'CALIFICACION',
+            );
+      $arregloTemp3 = array();
+//      foreach($items_sql as $item){
+//            
+//	        $arregloTemp3[] = array(
+//	            'name'=>$item['NOMBRE'],
+//	            'value'=>'$data->item_'.$item['ID_ITEM'],
+//            );
+//       }
+      $columns = array_merge($arregloTemp2,$arregloTemp3); 
+      $_SESSION['Lectivo-excel']=$dataProvider;
+      return array($dataProvider,$columns);
 	}
         
         

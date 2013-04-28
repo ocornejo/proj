@@ -137,6 +137,7 @@ class SiteController extends Controller
 			'model'=>$model,
 		));
 	}
+/*
         public function actionBajarEvaluaciones()
 	{
 
@@ -148,6 +149,16 @@ class SiteController extends Controller
                     $model->attributes=$_GET['Item'];
 		$this->render('bajarevaluaciones',array(
 			'model'=>$model,
+		));
+	}
+*/
+	public function actionBajarEvaluaciones(){
+		$model = new Trabajo('search');
+		$model->unsetAttributes();
+		if(isset($_GET['Trabajo']))
+			$model->attributes=$_GET['Trabajo'];
+		$this->render('bajarevaluaciones',array(
+			'model'=>$model
 		));
 	}
         
@@ -224,6 +235,54 @@ class SiteController extends Controller
             $fecha = new DateTime();
             $xls->generateXML('Resumen_Aseo-Cabina_'.$fecha->format('d-m-Y_H:i')); //export into a .xls file
         }
+        
+        
+        
+        
+        public function actionDownloadExcelEval(){
+            
+         $d = $_SESSION['Lectivo-excel'];
+         $i = 0;
+         $dbCommand = Yii::app()->db->createCommand('select ID_ITEM,NOMBRE from item');
+         $items_sql = $dbCommand->queryAll();
+         
+ 
+          
+        $data[$i]['FECHA'] = 'Fecha';
+        $data[$i]['flota'] = 'Flota';
+        $data[$i]['AVION_MATRICULA'] = 'Matrícula';
+        $data[$i]['aSEOIDASEO.TIPO_ASEO'] = 'Aseo';
+        $data[$i]['CALIFICACION'] = 'Calificación';
+        foreach($items_sql as $item){
+	         $data[$i]['item_'.$item['ID_ITEM']] = $item['NOMBRE'];
+        }        
+        $i++;
+        
+        //populate data array with the required data elements
+        foreach($d->data as $issue)
+        {
+            $data[$i]['FECHA'] = $issue['FECHA'];
+            $data[$i]['flota'] = $issue['flota'];
+            $data[$i]['AVION_MATRICULA'] = $issue['AVION_MATRICULA'];
+            $data[$i]['aSEOIDASEO.TIPO_ASEO'] = $issue->aSEOIDASEO->TIPO_ASEO;
+            $data[$i]['CALIFICACION'] = $issue['CALIFICACION'];
+            
+            
+            foreach($items_sql as $item){
+	         $data[$i]['item_'.$item['ID_ITEM']] = $issue['item_'.$item['ID_ITEM']];
+	         }
+            $i++;
+        }
+
+            Yii::import('application.extensions.phpexcel.JPhpExcel');
+            $xls = new JPhpExcel('UTF-8', false, 'test');
+            $xls->addArray($data);
+            $fecha = new DateTime();
+            $xls->generateXML('Resumen_Evaluaciones_'.$fecha->format('d-m-Y_H:i')); //export into a .xls file
+        }
+
+        
+             
  
         public function actionSendExcel(){
             

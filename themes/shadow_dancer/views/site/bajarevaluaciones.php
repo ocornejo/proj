@@ -11,45 +11,32 @@ $this->breadcrumbs=array(
 
 <h1>Bajar evaluaciones</h1>
 
+<div class="search-form" style="">
+<?php $this->renderPartial('_searchEvaluaciones',array(
+	'model'=>$model,
+)); ?>
 
+</div>
 
-
-<style>
-    .CGridViewContainer {overflow: auto;
-overflow-y: hidden; }
-</style>
-
-
-<div class="CGridViewContainer">
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'item-grid',
-	'dataProvider'=>$model->searchItem(),
+<div style="">
+<?php 
+	list($dataProvider,$columns) = $model->searchItem();
 	
-	'columns'=>array(
-		'NOMBRE',
-                array(
-                            'name'=> 'EVALUACION_ID_EVALUACION',
-                            'header'=>'Evaluación',
-                            'value'=>'$data->eVALUACIONIDEVALUACION->NOMBRE', // this will access the current group's 1st member and give out the firstname of that member
-                            'filter'=>  Evaluacion::model()->options,
-                            'htmlOptions'=>array('style' => 'text-align: left;'),
-                             ),
-                'notas'
-		
-	),
-));
-                    ?>
-  </div>
-    <?php
-   
-        $baseUrl = Yii::app()->theme->baseUrl; 
-        $normalImageSrc = "{$baseUrl}/images/excel.png";
-        $image = CHtml::image($normalImageSrc,"",array('style' => 'vertical-align:10px;')).'Descargar datos filtrados';
-        //"",array("width"=>20,"heigth"=>20,'style' => 'vertical-align:10px;')
 
-        echo CHtml::link($image, array('site/DownloadExcel'));            
-        
-                    
+
+	$this->widget('zii.widgets.grid.CGridView',array(
+	'id'=>'item-grid',
+	'dataProvider'=>$dataProvider,
+	'columns'=>$columns,
+	
+	));
 ?>
-
+</div>
+<?php
+	$baseUrl = Yii::app()->theme->baseUrl; 
+    $normalImageSrc = "{$baseUrl}/images/excel.png";
+    $image = CHtml::image($normalImageSrc,"",array('style' => 'vertical-align:10px;')).'Descargar datos filtrados';
+    echo CHtml::link($image, array('site/DownloadExcelEval'));            
+       
+?>
 
