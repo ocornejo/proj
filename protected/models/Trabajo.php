@@ -213,7 +213,7 @@ class Trabajo extends CActiveRecord
 			'LUGAR_ID_LUGAR' => 'Lugar',
 			'ASEO_ID_ASEO' => 'Aseo',
 			'TURNO_ID_TURNO' => 'Turno',
-            'ARCHIVO1'=> 'Fotoz',
+            'ARCHIVO1'=> 'Foto',
             'ARCHIVO2'=> 'Archivo2',
             'ARCHIVO3'=> 'Archivo3',
             'imagen'=>'Fotos (3 máx)',
