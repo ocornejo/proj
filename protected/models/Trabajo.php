@@ -114,9 +114,7 @@ class Trabajo extends CActiveRecord
         public $item_67;
         public $item_68;
         
-
-
-                
+        
         public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -215,7 +213,7 @@ class Trabajo extends CActiveRecord
 			'LUGAR_ID_LUGAR' => 'Lugar',
 			'ASEO_ID_ASEO' => 'Aseo',
 			'TURNO_ID_TURNO' => 'Turno',
-            'ARCHIVO1'=> 'Archivo1',
+            'ARCHIVO1'=> 'Fotoz',
             'ARCHIVO2'=> 'Archivo2',
             'ARCHIVO3'=> 'Archivo3',
             'imagen'=>'Fotos (3 máx)',

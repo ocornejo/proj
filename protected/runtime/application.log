@@ -5840,3 +5840,27 @@ REQUEST_URI=/proj/index.php?r=site/bajarevaluaciones
 in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/themes/shadow_dancer/views/site/bajarevaluaciones.php (32)
 in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/SiteController.php (162)
 in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/29 09:36:17 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:182)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (182)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/04/29 09:37:03 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:182)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (182)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)

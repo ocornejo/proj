@@ -144,6 +144,17 @@ overflow-y: hidden; }
                                  return @$data->tURNOIDTURNO->FECHA.' '.$data->tURNOIDTURNO->tIPOTURNOIDTIPOTURNO->TIPO;
                     },
                     ),
+                    array(
+                    'name'=>'ARCHIVO1',
+                    //'filter'=>  Turno::model()->options,
+                    'value'=>function($data){
+                             if($data->ARCHIVO1==NULL)
+                                 return "";
+                             else
+                                 return CHtml::link("Ver",array("trabajo/view",'id'=>$data->ID_TRABAJO),array("style"=>"font-weight:bold;"));
+                    },
+                    'type'=>'raw',
+                    ),
 		
 	),
 ));

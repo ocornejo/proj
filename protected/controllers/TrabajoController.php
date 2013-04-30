@@ -617,10 +617,13 @@ class TrabajoController extends Controller {
         if (isset($_GET['Trabajo']))
             $model->attributes = $_GET['Trabajo'];
         $today= date('Y-m-d');
+/*
         $from= date('Y-m-d', strtotime($today . ' - 1 day'));
         $to= date('Y-m-d', strtotime($from . ' + 2 day'));
         $model->date_first=$from;
         $model->date_last=$to;
+*/
+        $model->FECHA=$today;
         $model->PLANIFICADO=1;
         $this->render('admin', array(
             'model' => $model,
@@ -631,11 +634,13 @@ class TrabajoController extends Controller {
         $model->unsetAttributes();  // clear any default values
         if (isset($_GET['Trabajo']))
             $model->attributes = $_GET['Trabajo'];
+/*
         $today= date('Y-m-d');
         $from= date('Y-m-d', strtotime($today . ' - 1 day'));
         $to= date('Y-m-d', strtotime($from . ' + 2 day'));
         $model->date_first=$from;
         $model->date_last=$to;
+*/
         $model->ESTADO_ID_ESTADO=2;
         $this->render('admin', array(
             'model' => $model,
@@ -647,11 +652,32 @@ class TrabajoController extends Controller {
         if (isset($_GET['Trabajo']))
             $model->attributes = $_GET['Trabajo'];
         $today= date('Y-m-d');
+/*
         $from= date('Y-m-d', strtotime($today . ' - 1 day'));
         $to= date('Y-m-d', strtotime($from . ' + 2 day'));
         $model->date_first=$from;
         $model->date_last=$to;
+*/
+		$model->FECHA=$today;
         $model->ESTADO_ID_ESTADO=array(3,4,5,6,7,8);
+        $this->render('admin', array(
+            'model' => $model,
+        ));
+    }
+        public function actionAdminOk() {
+        $model = new Trabajo('search');
+        $model->unsetAttributes();  // clear any default values
+        if (isset($_GET['Trabajo']))
+            $model->attributes = $_GET['Trabajo'];
+        $today= date('Y-m-d');
+/*
+        $from= date('Y-m-d', strtotime($today . ' - 1 day'));
+        $to= date('Y-m-d', strtotime($from . ' + 2 day'));
+        $model->date_first=$from;
+        $model->date_last=$to;
+*/
+		$model->FECHA=$today;
+        $model->ESTADO_ID_ESTADO=1;
         $this->render('admin', array(
             'model' => $model,
         ));

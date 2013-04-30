@@ -199,6 +199,7 @@ class SiteController extends Controller
         $data[$i]['FECHA'] = 'Fecha';
         $data[$i]['ULTIMO_ASEO'] = 'Días sin aseo';
         $data[$i]['CALIFICACION'] = 'Calificacion';
+        $data[$i]['COMENTARIO'] = 'Comentario';
         
         $i++;
         
@@ -226,6 +227,8 @@ class SiteController extends Controller
             $data[$i]['FECHA'] =$issue['FECHA'];
             $data[$i]['ULTIMO_ASEO']=$issue['ULTIMO_ASEO'];
             $data[$i]['CALIFICACION'] = $issue['CALIFICACION'];
+            $data[$i]['COMENTARIO'] = $issue['COMENTARIO'];
+
             $i++;
         }
 
@@ -243,10 +246,18 @@ class SiteController extends Controller
             
          $d = $_SESSION['Lectivo-excel'];
          $i = 0;
-         $dbCommand = Yii::app()->db->createCommand('select ID_ITEM,NOMBRE from item');
+         $dbCommand = Yii::app()->db->createCommand('select ID_ITEM,NOMBRE,EVALUACION_ID_EVALUACION from item');
          $items_sql = $dbCommand->queryAll();
          
- 
+        $data[$i]['FECHA'] = '';
+        $data[$i]['flota'] = '';
+        $data[$i]['AVION_MATRICULA'] = '';
+        $data[$i]['aSEOIDASEO.TIPO_ASEO'] = '';
+        $data[$i]['CALIFICACION'] = '';
+        foreach($items_sql as $item){
+	         $data[$i]['item_'.$item['ID_ITEM']] = Evaluacion::model()->findByPk($item['EVALUACION_ID_EVALUACION'])->NOMBRE;
+        }        
+        $i++;
           
         $data[$i]['FECHA'] = 'Fecha';
         $data[$i]['flota'] = 'Flota';
