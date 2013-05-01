@@ -7,11 +7,24 @@ $this->pageTitle=Yii::app()->name . ' - Bajar evaluaciones';
 $this->breadcrumbs=array(
 	'Bajar evaluaciones',
 );
-?>
+Yii::app()->clientScript->registerScript('search', "
+$('.search-button').click(function(){
+	$('.search-form').toggle();
+	return false;
+});
+$('.search-form form').submit(function(){
+	$('#trabajo-grid').yiiGridView('update', {
+		data: $(this).serialize()
+	});
+	return false;
+});
+");?>
 
 <h1>Bajar evaluaciones</h1>
 
-<div class="search-form" style="">
+<?php echo CHtml::submitButton('Filtros', array('class'=>'search-button','style'=>'background: url(/proj/themes/shadow_dancer/images/small_icons/search-icon.png) no-repeat 6px 1px; padding-left: 24px; vertical-align: bottom;')); ?>
+
+<div class="search-form" style="display: none;">
 <?php $this->renderPartial('_searchEvaluaciones',array(
 	'model'=>$model,
 )); ?>
@@ -39,4 +52,5 @@ $this->breadcrumbs=array(
     echo CHtml::link($image, array('site/DownloadExcelEval'));            
        
 ?>
+
 
