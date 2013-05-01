@@ -153,7 +153,7 @@ class SiteController extends Controller
 	}
 */
 	public function actionBajarEvaluaciones(){
-		$model = new Trabajo('search');
+		$model = new Trabajo('searchItem');
 		$model->unsetAttributes();
 		if(isset($_GET['Trabajo']))
 			$model->attributes=$_GET['Trabajo'];
@@ -162,21 +162,19 @@ class SiteController extends Controller
 		));
 	}
         
-        public function actionReporte()
+    public function actionReporte()
 	{
-                $files = glob(getcwd().'\\temp\\*'); // get all file names
-                    foreach($files as $file){ // iterate files
-                      if(is_file($file))
-                        unlink($file); // delete file
-                }
+    	$files = glob(getcwd().'\\temp\\*'); // get all file names
+        foreach($files as $file){ // iterate files
+        	if(is_file($file))
+            	unlink($file); // delete file
+        }
 
-                $model=new Trabajo('search');
+        $model=new Trabajo('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Trabajo'])){
-                    
-			$model->attributes=$_GET['Trabajo'];
-                        
-                }
+        	$model->attributes=$_GET['Trabajo'];
+        }
 
 		$this->render('reporte',array(
 			'model'=>$model,
@@ -308,7 +306,7 @@ class SiteController extends Controller
            $i = 0;
         
         $data[$i]['OT'] = 'OT';
-        $data[$i]['AVION_MATRICULA'] = 'Matricula';
+        $data[$i]['AVION_MATRICULA'] = 'Mattricula';
         $data[$i]['USUARIO_BP'] = 'BP';
         $data[$i]['ESTADO_ID_ESTADO'] = 'Estado';
         $data[$i]['LUGAR_ID_LUGAR'] = 'Lugar';
@@ -364,7 +362,7 @@ class SiteController extends Controller
             $message = new YiiMailMessage;
             $message->setBody('Se adjunto informe de turno', 'text/html');
             $message->subject = 'Informe de Turno Aseos: '.$fecha->format('d-m-Y');
-            $message->addTo('niccolo.paganini15@gmail.com');
+            $message->addTo('o.cornejo.o@gmail.com');
             $message->from = Yii::app()->params['adminEmail'];
             $filename='Resumen_Aseo-Cabina_'.$fecha->format('d-m-Y');
                         // check that something was actually written to the buffer

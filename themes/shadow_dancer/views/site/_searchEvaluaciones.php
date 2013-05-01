@@ -23,7 +23,7 @@
         <div class="raw">
             <?php echo $form->label($model,'flota'); ?>
             <?php //echo $form->dropDownList($model, 'flota', CHtml::listData(Flota::model()->findAll(), 'ID_FLOTA', 'NOMBRE_FLOTA'), array('empty' => 'Seleccione')); ?>
-            <?php echo $form->ListBox($model,'flota', CHtml::listData(Flota::model()->findAll(), 'ID_FLOTA', 'NOMBRE_FLOTA'), array('empty' => 'Seleccione','multiple'=>'multiple','style' => 'height: 100px; vertical-align: middle;')); ?>
+            <?php echo $form->ListBox($model,'flota', CHtml::listData(Flota::model()->findAll(), 'NOMBRE_FLOTA', 'NOMBRE_FLOTA'), array('empty' =>null,'multiple'=>'multiple','style' => 'height: 100px; vertical-align: middle;')); ?>
         </div>
         </fieldset>
         

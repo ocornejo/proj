@@ -23,6 +23,7 @@
  * @property string $ARCHIVO2
  * @property string $ARCHIVO3
  * @property string $flota
+ * 
  *
  * The followings are the available model relations:
  * @property Nota[] $notas
@@ -40,7 +41,9 @@ class Trabajo extends CActiveRecord
 	 * @param string $className active record class name.
 	 * @return Trabajo the static model class
 	 */
-	public $imagen;
+	 	public $imagen;
+	 	public $fturno;
+	 	public $tturno;
         public $date_first;
         public $date_last;
         public $flota;
@@ -159,7 +162,7 @@ class Trabajo extends CActiveRecord
 					array('ID_TRABAJO, OT, AVION_MATRICULA, USUARIO_BP, PLANIFICADO, HORA_INICIO,
 						   HORA_TERMINO, COMENTARIO, FECHA, ULTIMO_ASEO, CALIFICACION,
 						   ESTADO_ID_ESTADO, LUGAR_ID_LUGAR, ASEO_ID_ASEO, TURNO_ID_TURNO,
-						   date_first,date_last,flota,flota_grilla', 'safe', 'on'=>'search'),
+						   date_first,date_last,flota,flota_grilla,fturno,tturno', 'safe', 'on'=>'search,searchItem'),
 		);
 	}
         
@@ -185,6 +188,7 @@ class Trabajo extends CActiveRecord
 			'aSEOIDASEO' => array(self::BELONGS_TO, 'Aseo', 'ASEO_ID_ASEO'),
 			'AVION' => array(self::BELONGS_TO, 'Avion', 'AVION_MATRICULA'),
             'amat' => array(self::HAS_ONE,'Avion','MATRICULA'),
+  //          'fLOTA'=> array(self::HAS_ONE,'Flota','AVION_MATRICULA', 'through' => 'AVION'),
 			'eSTADOIDESTADO' => array(self::BELONGS_TO, 'Estado', 'ESTADO_ID_ESTADO'),
 			'lUGARIDLUGAR' => array(self::BELONGS_TO, 'Lugar', 'LUGAR_ID_LUGAR'),
 			'tURNOIDTURNO' => array(self::BELONGS_TO, 'Turno', 'TURNO_ID_TURNO'),
@@ -219,6 +223,7 @@ class Trabajo extends CActiveRecord
             'imagen'=>'Fotos (3 máx)',
             'flota'=>'Flota',
             'flota_grilla'=>'Flota',
+            'fturno'=>'Fecha Turno',
 		);
 	}
 
@@ -234,31 +239,41 @@ class Trabajo extends CActiveRecord
         $flota_table= Flota::model()->tableName();
         $flota_sql= '(select NOMBRE_FLOTA from '.$flota_table.' where '.$flota_table.'.ID_FLOTA
         			 = (select FLOTA_ID_FLOTA from AVION where AVION.MATRICULA = t.AVION_MATRICULA) order by NOMBRE_FLOTA asc limit 1)';
-        
         $criteria->select = array(
             '*',
             $flota_sql . " as flota_grilla",
             
         );
         
-        $criteria->with =array('AVION');
+        $criteria->with =array('AVION','tURNOIDTURNO');
                 
-	if((isset($this->date_first) && trim($this->date_first) != "") && (isset($this->date_last) && trim($this->date_last) != ""))
-            $criteria->addBetweenCondition('FECHA', ''.$this->date_first.'', ''.$this->date_last.'');
-                
+        if((isset($this->date_first) && trim($this->date_first) != "") && (isset($this->date_last) && trim($this->date_last) != ""))
+            $criteria->addBetweenCondition('FECHA', ''.$this->date_first.'', ''.$this->date_last.''); 
+        
+        if($this->flota!=""){
 
-        if(isset($this->flota)){
-            $flotasReg = implode('|',$this->flota); //Convert to REGEXP 
-            $criteria->mergeWith(array(
+            $flotasReg = implode('|',$this->flota); //Convert to REGEXP
+/*            $criteria->mergeWith(array(
 		            'condition'=>'AVION.FLOTA_ID_FLOTA REGEXP :flota',
 		            'params'=>array(':flota'=>$flotasReg),
 	    ));
-        }
-                
+*/		$criteria->addCondition('AVION_MATRICULA IN (select matricula from avion where FLOTA_ID_FLOTA = ANY (select id_flota from flota where nombre_FLOTA REGEXP "'.$flotasReg.'"))');
+
+		
+	    }
+	    if($this->fturno!="")
+	    	$criteria->mergeWith(array(
+	    		'condition'=>'tURNOIDTURNO.FECHA = :fturno',
+	    		'params'=>array(':fturno'=>$this->fturno)));
+	    		
+	    if($this->tturno!="")
+	    	$criteria->mergeWith(array(
+	    		'condition'=>'tURNOIDTURNO.TIPO_TURNO_ID_TIPO_TURNO = :tturno',
+	    		'params'=>array(':tturno'=>$this->tturno)));
                 
                 $criteria->compare($flota_sql, $this->flota_grilla);
                 $criteria->compare('ID_TRABAJO',$this->ID_TRABAJO);
-		$criteria->compare('OT',$this->OT);
+                $criteria->compare('OT',$this->OT);
 				$criteria->compare('AVION_MATRICULA',$this->AVION_MATRICULA,true);
 				$criteria->compare('USUARIO_BP',$this->USUARIO_BP);
 				$criteria->compare('PLANIFICADO',$this->PLANIFICADO);
@@ -297,7 +312,7 @@ class Trabajo extends CActiveRecord
 	
 	public function searchItem(){
 		$criteria=new CDbCriteria;
-		$criteria->with =array('AVION','NOTA');
+		$criteria->with =array('AVION','NOTA','tURNOIDTURNO');
 		
 		$flota_sql= '(select NOMBRE_FLOTA from FLOTA where FLOTA.ID_FLOTA
         			 = (select FLOTA_ID_FLOTA from AVION where AVION.MATRICULA = t.AVION_MATRICULA) order by NOMBRE_FLOTA asc limit 1)';
@@ -326,13 +341,18 @@ class Trabajo extends CActiveRecord
             $criteria->addBetweenCondition('FECHA', ''.$this->date_first.'', ''.$this->date_last.'');
                 
 
-        if(isset($this->flota)){
-            $flotasReg = implode('|',$this->flota); //Convert to REGEXP 
-            $criteria->mergeWith(array(
+        if($this->flota!=""){
+
+            $flotasReg = implode('|',$this->flota); //Convert to REGEXP
+/*            $criteria->mergeWith(array(
 		            'condition'=>'AVION.FLOTA_ID_FLOTA REGEXP :flota',
 		            'params'=>array(':flota'=>$flotasReg),
 	    ));
-        }
+*/		$criteria->addCondition('AVION_MATRICULA IN (select matricula from avion where FLOTA_ID_FLOTA = ANY (select id_flota from flota where nombre_FLOTA REGEXP "'.$flotasReg.'"))');
+
+		
+	    }
+	    		
        $dataProvider = new CActiveDataProvider($this, array(
                     'criteria' => $criteria,
                     'sort' => array(

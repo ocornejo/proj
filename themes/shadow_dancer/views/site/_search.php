@@ -20,9 +20,9 @@
         <div class="raw">
 		<?php echo $form->label($model,'Fecha turno: '); 
                 $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-                            'model' => Turno::model(),
-                            'attribute' => 'FECHA',
-                            'name' => 'FECHATE', // This is how it works for me.
+                            'model' => $model,
+                            'attribute' => 'fturno',
+                            'name' => 'fturno', // This is how it works for me.
                             'language' => 'es',
                             // additional javascript options for the date picker plugin
                             'options' => array(
@@ -31,16 +31,6 @@
                             ),
                             'htmlOptions' => array(
                                 'style' => 'width:74px',
-                                'ajax' => array(
-                    'type' => 'POST',
-                    'url' => CController::createUrl('Turno/GetTurnoByTipoTurno'),
-                    'dataType' => 'json',
-                    'data' => array('fecha' => 'js:this.value','tipo_turno_id_tipo_turno'=>'js:$("#'.CHtml::activeId(Turno::model(), 'TIPO_TURNO_ID_TIPO_TURNO').'").val()'),
-                    'success' => 'function(data) {
-                                                    console.log(data);
-                                                    $("#'.CHtml::activeId($model, 'TURNO_ID_TURNO').'").val(data);
-                                                  }',
-                    ),'onBlur'=>'if(this.value=="") $("#'.CHtml::activeId($model, 'TURNO_ID_TURNO').'").val("");',
                             ),
                         ));
                 echo $form->textField($model,'TURNO_ID_TURNO',array('style'=>'display:none;'));
@@ -51,17 +41,7 @@
 
         <div class="raw">
             <?php echo $form->label($model,'Tipo turno: '); ?>
-            <?php echo $form->dropDownList(Turno::model(), 'TIPO_TURNO_ID_TIPO_TURNO',CHtml::listData(TipoTurno::model()->findAll(),'ID_TIPO_TURNO','TIPO'),array('empty' => 'Seleccione',
-                'ajax' => array(
-                    'type' => 'POST',
-                    'url' => CController::createUrl('Turno/GetTurnoByTipoTurno'),
-                    'dataType' => 'json',
-                    'data' => array('tipo_turno_id_tipo_turno' => 'js:this.value','fecha'=>'js:$("#FECHATE").val()'),
-                    'success' => 'function(data) {
-                                                    console.log(data);
-                                                    $("#'.CHtml::activeId($model, 'TURNO_ID_TURNO').'").val(data);
-                                                  }',
-                    )));
+            <?php echo $form->dropDownList($model, 'tturno',CHtml::listData(TipoTurno::model()->findAll(),'ID_TIPO_TURNO','TIPO'),array('empty' => 'Seleccione'));
                ?>
 
         </div>
@@ -81,7 +61,7 @@
         <div class="raw">
             <?php echo $form->label($model,'flota'); ?>
             <?php //echo $form->dropDownList($model, 'flota', CHtml::listData(Flota::model()->findAll(), 'ID_FLOTA', 'NOMBRE_FLOTA'), array('empty' => 'Seleccione')); ?>
-            <?php echo $form->ListBox($model,'flota', CHtml::listData(Flota::model()->findAll(), 'ID_FLOTA', 'NOMBRE_FLOTA'), array('empty' => 'Seleccione','multiple'=>'multiple','style' => 'height: 100px; vertical-align: middle;')); ?>
+            <?php echo $form->ListBox($model,'flota', CHtml::listData(Flota::model()->findAll(), 'NOMBRE_FLOTA', 'NOMBRE_FLOTA'), array('empty' => null,'multiple'=>'multiple','style' => 'height: 100px; vertical-align: middle;')); ?>
         </div>
         </fieldset>
         
