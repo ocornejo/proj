@@ -137,21 +137,6 @@ class SiteController extends Controller
 			'model'=>$model,
 		));
 	}
-/*
-        public function actionBajarEvaluaciones()
-	{
-
-                $model=new Item('search');
-		$model->unsetAttributes();  // clear any default values
-                if(isset($_GET['id_trabajo']))
-                    $model->id_trabajo = $_GET['id_trabajo'];
-		if(isset($_GET['Item']))
-                    $model->attributes=$_GET['Item'];
-		$this->render('bajarevaluaciones',array(
-			'model'=>$model,
-		));
-	}
-*/
 	public function actionBajarEvaluaciones(){
 		$model = new Trabajo('searchItem');
 		$model->unsetAttributes();
@@ -169,7 +154,6 @@ class SiteController extends Controller
         	if(is_file($file))
             	unlink($file); // delete file
         }
-
         $model=new Trabajo('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Trabajo'])){
@@ -362,7 +346,19 @@ class SiteController extends Controller
             $message = new YiiMailMessage;
             $message->setBody('Se adjunto informe de turno', 'text/html');
             $message->subject = 'Informe de Turno Aseos: '.$fecha->format('d-m-Y');
-            $message->addTo('o.cornejo.o@gmail.com');
+
+            $addTo=array();
+	        $mails = simplexml_load_file('mail_contacts.xml');
+		    foreach($mails as $mail){
+			        $addTo[] =(string)$mail->email;
+		     }
+		    $to=implode(", ",$addTo);
+
+            $message->addTo('admin@admin.com');
+            foreach($addTo as $value){
+            	$message->addCC(trim($value));  
+            }
+            
             $message->from = Yii::app()->params['adminEmail'];
             $filename='Resumen_Aseo-Cabina_'.$fecha->format('d-m-Y');
                         // check that something was actually written to the buffer
