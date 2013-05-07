@@ -50,8 +50,8 @@ return array(
              'transportType'=>'smtp',
              'transportOptions'=>array(
                'host'=>'smtp.gmail.com',
-               'username'=>'o.cornejo.o@gmail.com',//contohna nama_email@yahoo.co.id
-               'password'=>'scharrer15',
+               'username'=>'reportes.mejora.continua@gmail.com',
+               'password'=>'12345678mc',
                'port'=>'465',
                'encryption'=>'tls',
              ),
@@ -116,6 +116,6 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'o.cornejo.o@gmail.com',
+		'adminEmail'=>'reportes.mejora.continua@gmail.com',
 	),
 );

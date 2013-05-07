@@ -290,7 +290,8 @@ class Trabajo extends CActiveRecord
                 
         	
             $data= new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
+						'criteria'=>$criteria,
+						
                         'sort' => array(
                                     'defaultOrder' => 't.ID_TRABAJO',
                                     'attributes' => array(
@@ -303,8 +304,11 @@ class Trabajo extends CActiveRecord
                                        '*',
                                     ),
                         ),
-		));
-                $_SESSION['Lectivo-excel']=$data;
+		));	
+                $_SESSION['Lectivo-excel']= new CActiveDataProvider($this, array(
+                							'criteria'=>$criteria,
+                							'pagination'=>false,
+                							));
                 
                return $data;
 	}
@@ -405,6 +409,7 @@ class Trabajo extends CActiveRecord
 //       }
       $columns = array_merge($arregloTemp2,$arregloTemp3); 
       $_SESSION['Lectivo-excel']=$dataProvider;
+      
       return array($dataProvider,$columns);
 }
         

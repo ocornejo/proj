@@ -13,7 +13,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$('#trabajo-grid').yiiGridView('update', {
+	$('#item-grid').yiiGridView('update', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -34,8 +34,6 @@ $('.search-form form').submit(function(){
 <div style="">
 <?php 
 	list($dataProvider,$columns) = $model->searchItem();
-	
-
 
 	$this->widget('zii.widgets.grid.CGridView',array(
 	'id'=>'item-grid',

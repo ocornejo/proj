@@ -36,122 +36,110 @@ $('.search-form form').submit(function(){
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'trabajo-grid',
 	'dataProvider'=>$model->search(),
-	
+	'enablePagination' => true,
 	'columns'=>array(
-		'OT',
-                array(
-                    'name'=>'AVION_MATRICULA',
-                     'value'=> '$data->AVION->MATRICULA',
-                    
-                    'filter'=> Avion::model()->options,
-                ),
+		array(
+			'name'=>'FECHA',
+            'value'=>function($data){
+                 if($data->FECHA==NULL)
+                     return "";
+                 else{
+
+                     $temp_var= explode('-',$data->FECHA);
+                     return $temp_var[2].'-'.$temp_var[1].'-'.$temp_var[0];
+                 }
+                                 
+             }),
+         array(
+            'name'=>'TURNO_ID_TURNO',
+            'value'=>function($data){
+                     if($data->TURNO_ID_TURNO==NULL)
+                         return "";
+                     else{
+                         $temp_var= explode('-',$data->tURNOIDTURNO->FECHA);
+                         return $temp_var[2].'-'.$temp_var[1].'-'.$temp_var[0].' '.$data->tURNOIDTURNO->tIPOTURNOIDTIPOTURNO->TIPO;
+                     }
+            },
+         ),
+         array(
+            'name'=>'AVION_MATRICULA',
+            'value'=> '$data->AVION->MATRICULA',
+        ),
 		'flota_grilla',
-                array(
-                        'name'=>'USUARIO_BP',
-                        'value'=> '$data->uSUARIOBP->NOMBRE',
-                        'filter'=>  Usuario::model()->options
-                ),
-                 array(
-                        'name'=>'ESTADO_ID_ESTADO',
-                        'value'=> '$data->eSTADOIDESTADO->NOMBRE_ESTADO',
-                        'filter'=>  Estado::model()->options),
-   
-                array(
-                    'name'=>'LUGAR_ID_LUGAR',
-                    
-                        'value'=> function($data){
-                            if($data->LUGAR_ID_LUGAR==NULL)
-                                return "";
-                            else
-                                return $data->lUGARIDLUGAR->LUGAR;
-                         },
-                   
-                    'filter'=>  Lugar::model()->options,
-                ),
-                 array(
-                    'name'=>'ASEO_ID_ASEO',
-                     'value'=> function($data){
-                            if($data->ASEO_ID_ASEO==NULL)
-                                return "";
-                            else
-                                return $data->aSEOIDASEO->TIPO_ASEO;
-                         },
-                    
-                    'filter'=> Aseo::model()->options,
-                ),
-                array(
-                    'name'=>'PLANIFICADO',
-                    'filter'=>array(1=>"Si",0=>"No"),
-                    'value'=>function($data){
-                             if($data->PLANIFICADO==NULL)
-                                 return "";
-                             else
-                                 return @$data->PLANIFICADO ? "Si" : "No";
-                    }),
-
-                array(
-                    'name'=>'HORA_INICIO',
-                    
-                    'value'=>function($data){
-                             if($data->HORA_INICIO==NULL)
-                                 return "";
-                             else{
-
-	                             $temp_var= explode(':',$data->HORA_INICIO);
-	                             return $temp_var[0].':'.$temp_var[1];
-                             }
-                                 
-                    }),
-               array(
-                    'name'=>'HORA_TERMINO',
-                    
-                    'value'=>function($data){
-                             if($data->HORA_TERMINO==NULL)
-                                 return "";
-                             else{
-
-	                             $temp_var= explode(':',$data->HORA_TERMINO);
-	                             return $temp_var[0].':'.$temp_var[1];
-                             }
-                                 
-                    }),    
-            array(
-                    'name'=>'FECHA',
-                    
-                    'value'=>function($data){
-                             if($data->FECHA==NULL)
-                                 return "";
-                             else{
-
-	                             $temp_var= explode('-',$data->FECHA);
-	                             return $temp_var[2].'-'.$temp_var[1].'-'.$temp_var[0];
-                             }
-                                 
-                    }),
-                'ULTIMO_ASEO',
-		'CALIFICACION',
-                     array(
-                    'name'=>'TURNO_ID_TURNO',
-                    //'filter'=>  Turno::model()->options,
-                    'value'=>function($data){
-                             if($data->TURNO_ID_TURNO==NULL)
-                                 return "";
-                             else
-                                 return @$data->tURNOIDTURNO->FECHA.' '.$data->tURNOIDTURNO->tIPOTURNOIDTIPOTURNO->TIPO;
-                    },
+        array(
+            'name'=>'LUGAR_ID_LUGAR',
+            'value'=> function($data){
+                if($data->LUGAR_ID_LUGAR==NULL)
+                    return "";
+                else
+                    return $data->lUGARIDLUGAR->LUGAR;
+             },
+        ),
+         array(
+            'name'=>'ASEO_ID_ASEO',
+            'value'=> function($data){
+                    if($data->ASEO_ID_ASEO==NULL)
+                        return "";
+                    else
+                        return $data->aSEOIDASEO->TIPO_ASEO;
+                 },
+        ),
+        array(
+            'name'=>'PLANIFICADO',
+            'filter'=>array(1=>"Si",0=>"No"),
+            'value'=>function($data){
+                     if($data->PLANIFICADO==NULL)
+                         return "";
+                     else
+                         return @$data->PLANIFICADO ? "Si" : "No";
+            }),
+        array(
+            'name'=>'ESTADO_ID_ESTADO',
+            'value'=> '$data->eSTADOIDESTADO->NOMBRE_ESTADO',
+        ),
+        array(
+        'name'=>'HORA_INICIO',
+        
+        'value'=>function($data){
+	                 if($data->HORA_INICIO==NULL)
+	                     return "";
+	                 else{
+	                     $temp_var= explode(':',$data->HORA_INICIO);
+	                     return $temp_var[0].':'.$temp_var[1];
+	                 }
+	             }
+	     ),
+       array(
+            'name'=>'HORA_TERMINO',
+            'value'=>function($data){
+                     if($data->HORA_TERMINO==NULL)
+                         return "";
+                     else{
+                         $temp_var= explode(':',$data->HORA_TERMINO);
+                         return $temp_var[0].':'.$temp_var[1];
+                     }
+                         
+                     }
+      ),  
+      'CALIFICACION',        
+	  'OT',
+	  array(
+        'name'=>'ARCHIVO1',
+        //'filter'=>  Turno::model()->options,
+        'value'=>function($data){
+                 if($data->ARCHIVO1==NULL)
+                     return "";
+                 else
+                     return CHtml::link("Ver",array("trabajo/view",'id'=>$data->ID_TRABAJO),array("style"=>"font-weight:bold;"));
+        },
+        'type'=>'raw',
                     ),
-                    array(
-                    'name'=>'ARCHIVO1',
-                    //'filter'=>  Turno::model()->options,
-                    'value'=>function($data){
-                             if($data->ARCHIVO1==NULL)
-                                 return "";
-                             else
-                                 return CHtml::link("Ver",array("trabajo/view",'id'=>$data->ID_TRABAJO),array("style"=>"font-weight:bold;"));
-                    },
-                    'type'=>'raw',
-                    ),
-		
+        array(
+                'name'=>'USUARIO_BP',
+                'value'=> '$data->uSUARIOBP->NOMBRE',
+                'filter'=>  Usuario::model()->options
+        ),
+
 	),
 ));
                     ?>
