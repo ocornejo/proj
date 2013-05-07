@@ -334,7 +334,13 @@ class SiteController extends Controller
         
         
         $i++;
-        
+        $planificados=0;
+        $realizados=0;
+        $realizadosNR=0;
+        $desLan=0;
+        $desLanNR=0;
+        $desEco =0 ;
+        $desEcoNR=0;
         //populate data array with the required data elements
         foreach($d->data as $issue)
         {
@@ -358,12 +364,36 @@ class SiteController extends Controller
                 $data[$i]['ASEO_ID_ASEO']=$issue->aSEOIDASEO->TIPO_ASEO;
             else 
                 $data[$i]['ASEO_ID_ASEO']="";
-             if($issue['PLANIFICADO']!=NULL) 
-                $data[$i]['PLANIFICADO']="Si";
+            if($issue['PLANIFICADO']!=NULL){ 
+                if($issue['PLANIFICADO'])
+                	$data[$i]['PLANIFICADO']="Si";
+                else
+                	$data[$i]['PLANIFICADO']="No";
+                $planificados = $planificados + (int) $issue['PLANIFICADO'];
+            }
             else 
-                $data[$i]['PLANIFICADO']="No";
+                $data[$i]['PLANIFICADO']="";
             
-            $data[$i]['ESTADO_ID_ESTADO'] = $issue->eSTADOIDESTADO->NOMBRE_ESTADO;
+            if($issue['ESTADO_ID_ESTADO']!=NULL){
+            	$data[$i]['ESTADO_ID_ESTADO'] = $issue->eSTADOIDESTADO->NOMBRE_ESTADO;
+            	if(!strcmp($issue->eSTADOIDESTADO->NOMBRE_ESTADO,"Ok")){
+            		$realizados=$realizados + 1;
+            		if($issue['PLANIFICADO']==0)
+            			$realizadosNR = $realizadosNR +1;
+            	}
+            	if(substr($issue->eSTADOIDESTADO->NOMBRE_ESTADO, 0, 3 ) === "LAN" && strcmp($issue->aSEOIDASEO->TIPO_ASEO,"Terminal")!=0){
+            		$desLan=$desLan + 1;
+            		if($issue['PLANIFICADO']==0)
+            			$desLanNR = $desLanNR +1;
+            	}
+            	if(substr($issue->eSTADOIDESTADO->NOMBRE_ESTADO, 0, 8 ) === "Ecoblanc" && strcmp($issue->aSEOIDASEO->TIPO_ASEO,"Terminal")!=0){
+            		$desEco=$desEco + 1;
+            		if($issue['PLANIFICADO']==0)
+            			$desEcoNR = $desEcoNR +1;
+            	}
+            }
+            else
+            	$data[$i]['ESTADO_ID_ESTADO'] = "";
 
             $data[$i]['HORA_INICIO'] = $issue['HORA_INICIO'];
             $data[$i]['HORA_TERMINO'] = $issue['HORA_TERMINO'];
@@ -397,7 +427,12 @@ class SiteController extends Controller
 
              Yii::import('ext.yii-mail.YiiMailMessage');
             $message = new YiiMailMessage;
-            $message->setBody('Se adjunto informe de turno', 'text/html');
+            $message->setBody('Resumen Informe de Turno: <br/><br/>
+            				   Aseos Planificados: '.$planificados.'<br/>
+            				   Aseos Realizados: '.$realizados.' (NR: '.$realizadosNR.') <br/>
+            				   Desasignados LAN: '.$desLan.' (NR: '.$desLanNR.') <br/>
+            				   Desasignados Ecoblanc: '.$desEco.' (NR: '.$desEcoNR.') <br/><br/>
+            				   No se consideran aseos Terminales desasignados', 'text/html');
             $message->subject = 'Informe de Turno Aseos: '.$fecha->format('d-m-Y');
 
             $addTo=array();
