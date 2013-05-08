@@ -149,11 +149,13 @@ class SiteController extends Controller
         
     public function actionReporte()
 	{
+/*
     	$files = glob(getcwd().'\\temp\\*'); // get all file names
         foreach($files as $file){ // iterate files
         	if(is_file($file))
             	unlink($file); // delete file
         }
+*/
         $model=new Trabajo('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Trabajo'])){
@@ -432,7 +434,7 @@ class SiteController extends Controller
             $out .= ob_get_contents();
             ob_end_flush();
 
-             Yii::import('ext.yii-mail.YiiMailMessage');
+            Yii::import('ext.yii-mail.YiiMailMessage');
             $message = new YiiMailMessage;
 /*
             $message->setBody('Resumen Informe de Turno: <br/><br/>
