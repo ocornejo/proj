@@ -445,17 +445,21 @@ class SiteController extends Controller
 			$message->setBody('Resumen Informe de Turno:', 'text/html');			
             $message->subject = 'Informe de Turno Aseos: '.$fecha->format('d-m-Y');
 
+/*
             $addTo=array();
 	        $mails = simplexml_load_file('mail_contacts.xml');
 		    foreach($mails as $mail){
 			        $addTo[] =(string)$mail->email;
 		     }
 		    $to=implode(", ",$addTo);
+*/
 
             $message->addTo('reportes.mejora.continua@gmail.com');
-            foreach($addTo as $value){
+            /*
+foreach($addTo as $value){
             	$message->addCC(trim($value));  
             }
+*/
             
             $message->from = Yii::app()->params['adminEmail'];
             $filename='Resumen_Aseos_Cabina_'.$fecha->format('d-m-Y');
@@ -468,7 +472,11 @@ class SiteController extends Controller
              fclose($fh);
             }
             $message->attach(Swift_Attachment::fromPath($file), $filename, "xls");
-            Yii::app()->mail->send($message);           
+            Yii::app()->mail->send($message);
+            $this->render('index',array(
+			'model'=>$model,
+            ));
+     
         }
             
         public function actionIndex(){
