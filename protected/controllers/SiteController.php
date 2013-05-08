@@ -462,6 +462,7 @@ foreach($addTo as $value){
 */
             
             $message->from = Yii::app()->params['adminEmail'];
+/*
             $filename='Resumen_Aseos_Cabina_'.$fecha->format('d-m-Y');
                         // check that something was actually written to the buffer
             if (strlen($out) > 0) {
@@ -472,6 +473,7 @@ foreach($addTo as $value){
              fclose($fh);
             }
             $message->attach(Swift_Attachment::fromPath($file), $filename, "xls");
+*/
             Yii::app()->mail->send($message);
      
         }
