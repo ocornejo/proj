@@ -473,9 +473,6 @@ foreach($addTo as $value){
             }
             $message->attach(Swift_Attachment::fromPath($file), $filename, "xls");
             Yii::app()->mail->send($message);
-            $this->render('index',array(
-			'model'=>$model,
-            ));
      
         }
             
