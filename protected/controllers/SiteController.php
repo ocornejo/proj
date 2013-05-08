@@ -434,37 +434,38 @@ class SiteController extends Controller
             $out .= ob_get_contents();
             ob_end_flush();
 
-            Yii::import('ext.yii-mail.YiiMailMessage');
+           /*
+ Yii::import('ext.yii-mail.YiiMailMessage');
             $message = new YiiMailMessage;
-/*
+
             $message->setBody('Resumen Informe de Turno: <br/><br/>
             				   Aseos Planificados: '.$planificados.'<br/>
             				   Aseos Realizados: '.$realizados.' (NR: '.$realizadosNR.') <br/>
             				   Desasignados LAN: '.$desLan.' (NR: '.$desLanNR.') <br/>
             				   Desasignados Ecoblanc: '.$desEco.' (NR: '.$desEcoNR.') <br/><br/>
             				   No se consideran aseos Terminales desasignados', 'text/html');
-*/
+
 			$message->setBody('Resumen Informe de Turno:', 'text/html');			
             $message->subject = 'Informe de Turno Aseos: '.$fecha->format('d-m-Y');
 
-/*
+
             $addTo=array();
 	        $mails = simplexml_load_file('mail_contacts.xml');
 		    foreach($mails as $mail){
 			        $addTo[] =(string)$mail->email;
 		     }
 		    $to=implode(", ",$addTo);
-*/
+
 
             $message->addTo('reportes.mejora.continua@gmail.com');
-            /*
+        
 foreach($addTo as $value){
             	$message->addCC(trim($value));  
             }
-*/
+
             
             $message->from = Yii::app()->params['adminEmail'];
-/*
+
             $filename='Resumen_Aseos_Cabina_'.$fecha->format('d-m-Y');
                         // check that something was actually written to the buffer
             if (strlen($out) > 0) {
@@ -475,8 +476,9 @@ foreach($addTo as $value){
              fclose($fh);
             }
             $message->attach(Swift_Attachment::fromPath($file), $filename, "xls");
-*/
+
             Yii::app()->mail->send($message);
+*/
      
         }
             
