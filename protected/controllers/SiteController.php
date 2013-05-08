@@ -315,6 +315,7 @@ class SiteController extends Controller
            $i = 0;
         
         $data[$i]['FECHA'] = 'Fecha';
+/*
         $data[$i]['TURNO_ID_TURNO']='Turno';
         $data[$i]['AVION_MATRICULA'] = 'Matricula';
         $data[$i]['flota_grilla'] = 'Flota';
@@ -328,19 +329,22 @@ class SiteController extends Controller
         $data[$i]['OT'] = 'OT';
         $data[$i]['COMENTARIO'] = 'Comentario';
         $data[$i]['USUARIO_BP'] = 'BP';
+*/
         //$data[$i]['ARCHIVO1']='Foto';
         //$data[$i]['ULTIMO_ASEO'] = 'Días sin aseo';
         
         
         
         $i++;
-        $planificados=0;
+ /*
+       $planificados=0;
         $realizados=0;
         $realizadosNR=0;
         $desLan=0;
         $desLanNR=0;
         $desEco =0 ;
         $desEcoNR=0;
+*/
         //populate data array with the required data elements
         foreach($d->data as $issue)
         {
@@ -350,6 +354,7 @@ class SiteController extends Controller
             }
             else
             	$data[$i]['FECHA']="";
+/*
             $temp_var=null;
             $temp_var= explode('-',$issue->tURNOIDTURNO->FECHA);
             $data[$i]['TURNO_ID_TURNO']= $temp_var[2].'-'.$temp_var[1].'-'.$temp_var[0].' '.$issue->tURNOIDTURNO->tIPOTURNOIDTIPOTURNO->TIPO;
@@ -403,6 +408,8 @@ class SiteController extends Controller
             $data[$i]['OT'] = $issue['OT'];
             $data[$i]['COMENTARIO'] = $issue['COMENTARIO'];
             $data[$i]['USUARIO_BP'] =$issue->uSUARIOBP->NOMBRE;
+*/
+
 /*
             if($issue['ARCHIVO1']!=null){
 	            $data[$i]['ARCHIVO1']= 'http://localhost:8080/proj/index.php?r=trabajo/view&id='.$issue['ID_TRABAJO'];
@@ -427,12 +434,15 @@ class SiteController extends Controller
 
              Yii::import('ext.yii-mail.YiiMailMessage');
             $message = new YiiMailMessage;
+/*
             $message->setBody('Resumen Informe de Turno: <br/><br/>
             				   Aseos Planificados: '.$planificados.'<br/>
             				   Aseos Realizados: '.$realizados.' (NR: '.$realizadosNR.') <br/>
             				   Desasignados LAN: '.$desLan.' (NR: '.$desLanNR.') <br/>
             				   Desasignados Ecoblanc: '.$desEco.' (NR: '.$desEcoNR.') <br/><br/>
             				   No se consideran aseos Terminales desasignados', 'text/html');
+*/
+			$message->setBody('Resumen Informe de Turno:', 'text/html');			
             $message->subject = 'Informe de Turno Aseos: '.$fecha->format('d-m-Y');
 
             $addTo=array();
