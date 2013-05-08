@@ -439,7 +439,7 @@ class SiteController extends Controller
             				   Desasignados Ecoblanc: '.$desEco.' (NR: '.$desEcoNR.') <br/><br/>
             				   No se consideran aseos Terminales desasignados', 'text/html');
 
-			$message->setBody('Resumen Informe de Turno:', 'text/html');			
+			//$message->setBody('Resumen Informe de Turno:', 'text/html');			
             $message->subject = 'Informe de Turno Aseos: '.$fecha->format('d-m-Y');
 
 
@@ -471,9 +471,9 @@ class SiteController extends Controller
              fclose($fh);
             }
             $message->attach(Swift_Attachment::fromPath($file), $filename, "xls");
-/*
+
             Yii::app()->mail->send($message);
-*/
+
      
         }
             
