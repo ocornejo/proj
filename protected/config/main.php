@@ -23,8 +23,9 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
-                'application.controllers.*',
-                'ext.EDataTables.*',
+        'application.controllers.*',
+        'ext.EDataTables.*',
+        
 	),
        
             'modules'=>array(

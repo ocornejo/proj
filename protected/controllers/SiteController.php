@@ -149,13 +149,11 @@ class SiteController extends Controller
         
     public function actionReporte()
 	{
-/*
     	$files = glob(getcwd().'\\temp\\*'); // get all file names
         foreach($files as $file){ // iterate files
         	if(is_file($file))
             	unlink($file); // delete file
         }
-*/
         $model=new Trabajo('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Trabajo'])){
