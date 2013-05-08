@@ -469,9 +469,9 @@ class SiteController extends Controller
              $fh = fopen($file, 'w');
              fwrite($fh, $out);
              fclose($fh);
-            }/*
+            }
             $message->attach(Swift_Attachment::fromPath($file), $filename, "xls");
-
+/*
             Yii::app()->mail->send($message);
 */
      
