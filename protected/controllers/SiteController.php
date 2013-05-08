@@ -443,7 +443,7 @@ class SiteController extends Controller
             $message->subject = 'Informe de Turno Aseos: '.$fecha->format('d-m-Y');
 
 
-/*
+
             $addTo=array();
 	        $mails = simplexml_load_file('mail_contacts.xml');
 		    foreach($mails as $mail){
@@ -454,7 +454,7 @@ class SiteController extends Controller
 
             $message->addTo('reportes.mejora.continua@gmail.com');
         
-foreach($addTo as $value){
+            foreach($addTo as $value){
             	$message->addCC(trim($value));  
             }
 
@@ -469,7 +469,7 @@ foreach($addTo as $value){
              $fh = fopen($file, 'w');
              fwrite($fh, $out);
              fclose($fh);
-            }
+            }/*
             $message->attach(Swift_Attachment::fromPath($file), $filename, "xls");
 
             Yii::app()->mail->send($message);
