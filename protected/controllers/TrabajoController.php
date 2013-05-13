@@ -13,7 +13,7 @@ class TrabajoController extends Controller {
      */
     public function filters() {
         return array(
-            //'accessControl', // perform access control for CRUD operations
+            'accessControl', // perform access control for CRUD operations
             'postOnly + delete', // we only allow deletion via POST request
         );
     }
@@ -24,21 +24,33 @@ class TrabajoController extends Controller {
      * @return array access control rules
      */
     public function accessRules() {
+    
+    	$isAdmin = "isset(Yii::app()->user->role) && (Yii::app()->user->role==='admin')";
+		$isUser = "isset(Yii::app()->user->role) && ((Yii::app()->user->role==='user') ||
+					 (Yii::app()->user->role==='admin'))";
+		$isAnaliz = "isset(Yii::app()->user->role) && ((Yii::app()->user->role==='analiz') ||
+														 (Yii::app()->user->role==='user') || 
+														 (Yii::app()->user->role==='admin'))";
+		 
+		   
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
-                'users' => array('*'),
+                'actions' => array('index', 'view','adminPlan','AdminOk','adminDesa','adminPend'),
+                'users' => array('@'),
+                'expression'=>$isAnaliz
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update'),
+                'actions' => array('create', 'update','createDialog'),
                 'users' => array('@'),
+                'expression'=>$isUser
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
                 'actions' => array('admin', 'delete'),
-                'users' => array('admin'),
+                'users' => array('@'),
+                'expression'=>$isAdmin,
             ),
             array('deny', // deny all users
-                'users' => array('*'),
+                'users' => array('@'),
             ),
         );
     }
@@ -617,12 +629,6 @@ class TrabajoController extends Controller {
         if (isset($_GET['Trabajo']))
             $model->attributes = $_GET['Trabajo'];
         $today= date('Y-m-d');
-/*
-        $from= date('Y-m-d', strtotime($today . ' - 1 day'));
-        $to= date('Y-m-d', strtotime($from . ' + 2 day'));
-        $model->date_first=$from;
-        $model->date_last=$to;
-*/
         $model->FECHA=$today;
         $model->PLANIFICADO=1;
         $this->render('admin', array(

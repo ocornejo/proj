@@ -28,6 +28,15 @@ class UserIdentity extends CUserIdentity
         else
         {
             $this->_id=$record->BP;
+            /** Define o role de acordo com o usr_tipo **/
+			switch ($record->NIVEL_USUARIO) {
+				case 1: $role = 'admin'; break;
+				case 2: $role = 'user'; break;
+				case 3: $role = 'analiz'; break;
+				default:
+					$role = '';
+			}
+			$this->setState('role', $role);
             $this->setState('title', $record->NOMBRE);
             $this->errorCode=self::ERROR_NONE;
         }

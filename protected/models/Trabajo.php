@@ -281,7 +281,7 @@ class Trabajo extends CActiveRecord
 				$criteria->compare('HORA_TERMINO',$this->HORA_TERMINO,true);
 				$criteria->compare('COMENTARIO',$this->COMENTARIO,true);
 		        $criteria->compare('ULTIMO_ASEO',$this->ULTIMO_ASEO,true);
-				$criteria->compare('FECHA',$this->FECHA,true);
+				$criteria->compare('t.FECHA',$this->FECHA,true);
 				$criteria->compare('CALIFICACION',$this->CALIFICACION);
 				$criteria->compare('ESTADO_ID_ESTADO',$this->ESTADO_ID_ESTADO);
 				$criteria->compare('LUGAR_ID_LUGAR',$this->LUGAR_ID_LUGAR);
@@ -400,21 +400,17 @@ class Trabajo extends CActiveRecord
                 'CALIFICACION',
             );
       $arregloTemp3 = array();
-//      foreach($items_sql as $item){
-//            
-//	        $arregloTemp3[] = array(
-//	            'name'=>$item['NOMBRE'],
-//	            'value'=>'$data->item_'.$item['ID_ITEM'],
-//            );
-//       }
-      $columns = array_merge($arregloTemp2,$arregloTemp3); 
-      $_SESSION['Lectivo-excel']=$dataProvider;
+
+      $columns = array_merge($arregloTemp2,$arregloTemp3);
+      $_SESSION['Lectivo-excel']= new CActiveDataProvider($this, array(
+                							'criteria'=>$criteria,
+                							'pagination'=>false,
+                							));
       
       return array($dataProvider,$columns);
 }
         
-        
-        
+                
 
 
 }

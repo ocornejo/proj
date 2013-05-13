@@ -46,7 +46,7 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		'OT',
 		'AVION_MATRICULA',
-                'flota_grilla',
+        'flota_grilla',
 		'USUARIO_BP',
 		 array(
                     'name'=>'PLANIFICADO',

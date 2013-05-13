@@ -3,6 +3,9 @@
 $baseUrl = Yii::app()->theme->baseUrl; 
 $cs = Yii::app()->getClientScript();
 $cs->registerCssFile($baseUrl.'/css/jquery.css');
+
+
+
 $this->pageTitle=Yii::app()->name . ' - Bajar datos';
 $this->breadcrumbs=array(
 	'Bajar datos',
@@ -19,6 +22,7 @@ $('.search-form form').submit(function(){
 	return false;
 });
 ");?>
+
 
 <h1>Bajar datos</h1>
 
@@ -123,6 +127,8 @@ $('.search-form form').submit(function(){
       ),  
       'CALIFICACION',        
 	  'OT',
+	  'COMENTARIO'
+	  ,
 	  array(
         'name'=>'ARCHIVO1',
         //'filter'=>  Turno::model()->options,
@@ -134,11 +140,7 @@ $('.search-form form').submit(function(){
         },
         'type'=>'raw',
                     ),
-        array(
-                'name'=>'USUARIO_BP',
-                'value'=> '$data->uSUARIOBP->NOMBRE',
-                'filter'=>  Usuario::model()->options
-        ),
+        'USUARIO_BP',
 
 	),
 ));
@@ -155,5 +157,4 @@ $('.search-form form').submit(function(){
         
                     
 ?>
-
 

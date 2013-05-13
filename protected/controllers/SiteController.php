@@ -20,14 +20,56 @@ class SiteController extends Controller
 			),
 		);
 	}
-        
-//        public function behaviors(){
-//               return array(
-//                   'toExcel'=>array(
-//                       'class'=>'ext.eexcelview.EExcelBehavior',
-//                   ),
-//               );
-//           }
+
+/**
+	 * @return array action filters
+	 */
+	public function filters()
+	{
+		return array(
+			'accessControl', // perform access control for CRUD operations
+			'postOnly + delete', // we only allow deletion via POST request
+		);
+	}
+
+	/**
+	 * Specifies the access control rules.
+	 * This method is used by the 'accessControl' filter.
+	 * @return array access control rules
+	 */
+	public function accessRules() {
+    
+    	$isAdmin = "isset(Yii::app()->user->role) && (Yii::app()->user->role==='admin')";
+		$isUser = "isset(Yii::app()->user->role) && ((Yii::app()->user->role==='user') ||
+					 (Yii::app()->user->role==='admin'))";
+		$isAnaliz = "isset(Yii::app()->user->role) && ((Yii::app()->user->role==='analiz') ||
+														 (Yii::app()->user->role==='user') || 
+														 (Yii::app()->user->role==='admin'))";
+		 
+		   
+        return array(
+            array('allow', // allow all users to perform 'index' and 'view' actions
+                'actions' => array('index', 'bajar','bajarevaluaciones',
+                					'criticos','error','reporte','DownloadExcel','DownloadExcelEval','SendExcel','Logout','page'),
+                'users' => array('@'),
+                'expression'=>$isAnaliz
+            ),
+            array('allow', // allow authenticated user to perform 'create' and 'update' actions
+                'actions' => array('login'),
+                'users' => array('*'),
+            ),
+/*
+            array('allow', // allow admin user to perform 'admin' and 'delete' actions
+                'actions' => array('admin', 'delete'),
+                'users' => array('@'),
+                'expression'=>$isAdmin,
+            ),
+*/
+            array('deny', // deny all users
+                'users' => array('@'),
+            ),
+        );
+    }
 
 	/**
 	 * This is the action to handle external exceptions.
@@ -182,7 +224,7 @@ class SiteController extends Controller
         $data[$i]['CALIFICACION'] = 'Calificacion';
         $data[$i]['OT'] = 'OT';
         $data[$i]['COMENTARIO'] = 'Comentario';
-        $data[$i]['USUARIO_BP'] = 'BP';
+        $data[$i]['USUARIO_BP'] = 'Usuario';
         //$data[$i]['ARCHIVO1']='Foto';
         //$data[$i]['ULTIMO_ASEO'] = 'Días sin aseo';
         
@@ -327,7 +369,7 @@ class SiteController extends Controller
         $data[$i]['CALIFICACION'] = 'Calificacion';
         $data[$i]['OT'] = 'OT';
         $data[$i]['COMENTARIO'] = 'Comentario';
-        $data[$i]['USUARIO_BP'] = 'BP';
+        $data[$i]['USUARIO_BP'] = 'Usuario';
         //$data[$i]['ARCHIVO1']='Foto';
         //$data[$i]['ULTIMO_ASEO'] = 'Días sin aseo';
         

@@ -49,8 +49,8 @@ document.getElementById("success").style.display=" none";
       <div class="raw">
           <?php echo $form->labelEx($model, 'LUGAR_ID_LUGAR'); ?>
           <?php 
-          //$pot=Lugar::model()->findAll('filial_id_filial=:filial', array(':filial' => Usuario::model()->findByPk(Yii::app()->user->getId())->FILIAL_ID_FILIAL)); 
-          $pot=Lugar::model()->findAll();
+          $pot=Lugar::model()->findAll('filial_id_filial=:filial', array(':filial' => Usuario::model()->findByPk(Yii::app()->user->getId())->FILIAL_ID_FILIAL)); 
+          //$pot=Lugar::model()->findAll();
           echo $form->dropDownList($model, 'LUGAR_ID_LUGAR', CHtml::listData($pot, 'ID_LUGAR', 'LUGAR',function($pot) {
                                                                     return CHtml::encode($pot->fILIALIDFILIAL->NOMBRE_FILIAL);
                                                                     }), array('empty' => 'Seleccione')); ?>
