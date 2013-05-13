@@ -517,3 +517,270 @@ Stack trace:
 REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
 HTTP_REFERER=http://localhost:8080/proj/index.php?r=trabajo/create
 ---
+2013/05/13 15:11:10 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('GetFlotaByMat')
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Flota/GetFlotaB...')
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+HTTP_REFERER=http://localhost:8080/proj/index.php?r=trabajo/create
+---
+2013/05/13 15:11:15 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('GetFlotaByMat')
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Flota/GetFlotaB...')
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+HTTP_REFERER=http://localhost:8080/proj/index.php?r=trabajo/create
+---
+2013/05/13 15:11:24 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('GetFlotaByMat')
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Flota/GetFlotaB...')
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+HTTP_REFERER=http://localhost:8080/proj/index.php?r=trabajo/create
+---
+2013/05/13 15:11:27 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('GetFlotaByMat')
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Flota/GetFlotaB...')
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+HTTP_REFERER=http://localhost:8080/proj/index.php?r=trabajo/create
+---
+2013/05/13 15:11:34 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('GetFlotaByMat')
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Flota/GetFlotaB...')
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+HTTP_REFERER=http://localhost:8080/proj/index.php?r=trabajo/create
+---
+2013/05/13 15:11:41 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('GetFlotaByMat')
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Flota/GetFlotaB...')
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+HTTP_REFERER=http://localhost:8080/proj/index.php?r=trabajo/create
+---
+2013/05/13 15:11:44 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('GetFlotaByMat')
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Flota/GetFlotaB...')
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+HTTP_REFERER=http://localhost:8080/proj/index.php?r=trabajo/create
+---
+2013/05/13 15:11:52 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('GetFlotaByMat')
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Flota/GetFlotaB...')
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+HTTP_REFERER=http://localhost:8080/proj/index.php?r=trabajo/create
+---
+2013/05/13 15:12:58 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:193)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): FlotaController->filterAccessControl()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (193)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/05/13 15:13:08 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('GetTipoByPond')
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('Aseo/GetTipoByP...')
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/proj/index.php?r=Aseo/GetTipoByPond
+HTTP_REFERER=http://localhost:8080/proj/index.php?r=trabajo/create
+---
+2013/05/13 15:13:40 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:193)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): FlotaController->filterAccessControl()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (193)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/05/13 15:13:50 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('save')
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('trabajo/save')
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/proj/index.php?r=trabajo/save
+HTTP_REFERER=http://localhost:8080/proj/index.php?r=trabajo/create
+---
+2013/05/13 15:13:57 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:193)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): FlotaController->filterAccessControl()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (193)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/05/13 15:14:55 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:193)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): FlotaController->filterAccessControl()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (193)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
+2013/05/13 15:15:14 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('addnewevaluacio...')
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('nota/addneweval...')
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/proj/index.php?r=nota/addnewevaluacion&id_aseo=5&id_flota=2&render=
+HTTP_REFERER=http://localhost:8080/proj/index.php?r=trabajo/create
+---
+2013/05/13 15:17:41 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php:193)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): FlotaController->filterAccessControl()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php(13): CWebApplication->run()
+REQUEST_URI=/proj/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/protected/controllers/FlotaController.php (193)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/proj/index.php (13)
