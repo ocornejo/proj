@@ -50,7 +50,8 @@ class SiteController extends Controller
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
                 'actions' => array('index', 'bajar','bajarevaluaciones',
-                					'criticos','error','reporte','DownloadExcel','DownloadExcelEval','SendExcel','Logout','page'),
+                					'criticos','error','reporte','DownloadExcel',
+                					'DownloadExcelEval','SendExcel','Logout','page','resumen'),
                 'users' => array('@'),
                 'expression'=>$isAnaliz
             ),
@@ -85,7 +86,7 @@ class SiteController extends Controller
 		}
 	}
         
-        public function actionCriticos(){
+    public function actionCriticos(){
             
            
                 $model=new Avion('search');
@@ -206,7 +207,20 @@ class SiteController extends Controller
 			'model'=>$model,
 		));
 	}
-       public function actionDownloadExcel(){
+	
+	public function actionResumen(){
+		$model=new Avion('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Avion'])){
+        	$model->attributes=$_GET['Avion'];
+        }
+
+		$this->render('resumen',array(
+			'model'=>$model,
+		));
+	}
+	
+	public function actionDownloadExcel(){
             
           $d = $_SESSION['Lectivo-excel'];
            $i = 0;

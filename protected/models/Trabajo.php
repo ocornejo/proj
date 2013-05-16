@@ -279,7 +279,7 @@ class Trabajo extends CActiveRecord
 				$criteria->compare('PLANIFICADO',$this->PLANIFICADO);
 				$criteria->compare('HORA_INICIO',$this->HORA_INICIO,true);
 				$criteria->compare('HORA_TERMINO',$this->HORA_TERMINO,true);
-				$criteria->compare('COMENTARIO',$this->COMENTARIO,true);
+				//$criteria->compare('COMENTARIO',$this->COMENTARIO,true);
 		        $criteria->compare('ULTIMO_ASEO',$this->ULTIMO_ASEO,true);
 				$criteria->compare('t.FECHA',$this->FECHA,true);
 				$criteria->compare('CALIFICACION',$this->CALIFICACION);

@@ -127,8 +127,29 @@ $('.search-form form').submit(function(){
       ),  
       'CALIFICACION',        
 	  'OT',
-	  'COMENTARIO'
-	  ,
+
+	  array(
+			
+			'name' => 'COMENTARIO',
+			'type' => 'raw',
+			'value' => function($data){ 
+						if($data->COMENTARIO==NULL)
+							return "";
+						else
+						 return CHtml::link(
+                            "Ver",
+                            "",
+                            array("style" => "cursor: pointer; font-weight:bold;",
+                                  "onclick" => "javascript: txt = '".$data->COMENTARIO."';
+                                                $('#comment-dialog').text(txt);
+                                                $('#comment-dialog').dialog('open');
+                                                $('#comment-dialog').click(function() { $(this).dialog('close'); });"
+                                  )
+									);
+							}
+		),
+		
+/* 		CHtml::link($data->alfombra_count,array("site/bajar",'avion'=>$data->MATRICULA,'aseo'=>2),array("style"=>"color: red;font-weight:bold;font-size:medium;")); */
 	  array(
         'name'=>'ARCHIVO1',
         //'filter'=>  Turno::model()->options,
@@ -144,6 +165,21 @@ $('.search-form form').submit(function(){
 
 	),
 ));
+
+$this->beginWidget('zii.widgets.jui.CJuiDialog', array(
+        'id' => 'comment-dialog',
+        // Additional JavaScript options for the dialog plugin
+        'options'=>array(
+                'title' => 'Comentario',
+                'autoOpen' => false,
+                'modal' => true,
+                'width' => 350,
+        ),
+));
+
+// No content needed - it will be set by the JavaScript in the grid
+
+$this->endWidget('zii.widgets.jui.CJuiDialog');
                     ?>
   </div>
     <?php

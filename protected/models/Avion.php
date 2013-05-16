@@ -107,6 +107,24 @@ class Avion extends CActiveRecord
                     'pagination'=>array('pageSize'=>132),
 		));
 	}
+	
+		public function searchResumen()
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('MATRICULA',$this->MATRICULA,true);
+		$criteria->compare('FLOTA_ID_FLOTA',$this->FLOTA_ID_FLOTA);
+		$criteria->compare('OPERADOR_ID_OPERADOR',$this->OPERADOR_ID_OPERADOR);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+                    'pagination'=>array('pageSize'=>132),
+		));
+	}
+	
         public function searchAvion()
 	{
 		// Warning: Please modify the following code to remove attributes that
