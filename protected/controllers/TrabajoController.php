@@ -186,17 +186,10 @@ class TrabajoController extends Controller {
             $modelT= new Turno;
             // Uncomment the following line if AJAX validation is needed
             $this->performAjaxValidation(array($model, $modelT));
-
-                //$model=$this->loadModel(Yii::app()->getRequest()->getQuery('id')); 
+ 
                 $model->attributes = $_POST['Trabajo'];
                 $modelT->attributes = $_POST['Turno'];
                 
-//                $hinicio_array= explode(':', $model->HORA_INICIO);
-//                $model->HORA_INICIO = $hinicio_array[0].':'.$hinicio_array[1];
-//                $htermino_array= explode(':', $model->HORA_TERMINO);
-//                $model->HORA_TERMINO = $htermino_array[0].':'.$htermino_array[1];
-
-
                 if ($model->ASEO_ID_ASEO === 8)
                     $model->scenario = 'bano';
                 else {
@@ -316,12 +309,6 @@ class TrabajoController extends Controller {
 
             $model->attributes = $_POST['Trabajo'];
             $modelT->attributes = $_POST['Turno'];
-            
-//            $hinicio_array= explode(':', $model->HORA_INICIO);
-//            $model->HORA_INICIO = $hinicio_array[0].':'.$hinicio_array[1];
-//            $htermino_array= explode(':', $model->HORA_TERMINO);
-//            $model->HORA_TERMINO = $htermino_array[0].':'.$htermino_array[1];
-
 
             if ($model->ASEO_ID_ASEO === 8)
                 $model->scenario = 'bano';
@@ -357,7 +344,6 @@ class TrabajoController extends Controller {
                     $dateNow =new DateTime($model->FECHA);
                     $interval= $date->diff($dateNow)->d;
                     $model->ULTIMO_ASEO=$interval;
-                    //var_dump($date->format('Y-m-d H:i:s').":".$dateNow->format('Y-m-d H:i:s').":".$interval);
                     }
                     else{
                        $date= new DateTime($model->FECHA);

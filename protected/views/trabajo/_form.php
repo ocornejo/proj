@@ -7,74 +7,6 @@ $cs = Yii::app()->getClientScript();
 $cs->registerCssFile($baseUrl . '/css/jquery.css');
 $cs->registerCSSFile($baseUrl . '/css/semantic.css');
 ?>
-
-<script type="text/javascript">
-    
-
-    $(document).ready(function() {
-        $("#showDialogEvaluacion").hide();
-        var idFlota = null;
-        var idAseo = null;
-        var currentTime = new Date()
-        var month = currentTime.getMonth() + 1;
-        var day = currentTime.getDate();
-        var year = currentTime.getFullYear();
-        if (day < 10) {
-            day = '0' + day
-        }
-        if (month < 10) {
-            month = '0' + month
-        }
-        currentTime = month + '/' + day + '/' + year;
-        <?php  print('$("#' . CHtml::activeId($modelT, 'FECHA') . '").val(year+ "-" + month+ "-" + day);'); ?>
-        <?php  print('$("#' . CHtml::activeId($model, 'FECHA') . '").val(year+ "-" + month+ "-" + day);'); ?>
-        //console.log($("#<?php echo CHtml::activeId($model, 'AVION_MATRICULA'); ?> option:selected").text());
-        $.post(
-                '<?php echo $this->createUrl("Flota/GetFlotaByMat"); ?>',
-                {'matricula': $("#<?php echo CHtml::activeId($model, 'AVION_MATRICULA'); ?> option:selected").text()},
-        function(data) {
-            $("#flotaId").val(data[0].NOMBRE_FLOTA);
-        }
-        , "json");
-    });
-
-    function updateTag(var1) {
-        final = 0;
-        count = 0;
-        total = 0;
-        notaFinal = 0;
-        var1 = var1 + 1;
-
-        for (var j = 0; j < window.var3.length; j++) {
-            if (window.var3[j]['evaluacion_id_evaluacion'] == var1) {
-                count = count + 1;
-                if (parseInt(window.arreglo[j]) == 101)
-                    total = total + 0;
-                else
-                    total = total + parseInt(window.arreglo[j]);
-                //console.log("total :"+total+" count: "+count+" parse: "+parseFloat(window.arreglo[j]));
-            }
-
-        }
-
-        final = Number((total / count).toFixed(0));
-        window.temp[var1] = (final * window.var2[var1 - 1]['ponderacion']) / 100;
-
-        for (var i = 1; i <= window.tamano; i++) {
-            if (window.temp[i] != null)
-                notaFinal = Number((notaFinal + window.temp[i]).toFixed(0));
-        }
-        var1 = var1 - 1;
-        variable1 = "notaPond[" + var1 + "]";
-
-        document.getElementById(variable1).innerHTML = final + "%";
-        $('#NotaFinal').val(notaFinal + "%");
-<?php print('$("#' . CHtml::activeId($model, 'CALIFICACION') . '").val(notaFinal);'); ?>
-
-
-    }
-
-</script>
 <div class="span-special">
 <div class="form semantic">
 
@@ -174,8 +106,9 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
     </div>
 
   </fieldset>
+  
 <?php $this->renderPartial('_form1',array('form'=>$form,'model'=>$model,'modelT'=>$modelT,'success'=>$success)); ?>
-    
+   
     
       <div class="SubmitButton" id="SubButton" style="vertical-align:-10px; float: left; padding-right: 10px;">
         <?php echo CHtml::submitButton('Guardar', array('name' => 'buttonSubmit','style'=>'width: 95px; height: 35px; background: url(/proj/themes/shadow_dancer/images/small_icons/disk.png) no-repeat 15px 7px; padding-left: 24px; vertical-align: bottom;')); ?>
@@ -193,4 +126,76 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
  
 
     </div>
+    
+    <script type="text/javascript">
+    
+
+    $(document).ready(function() {
+        $("#showDialogEvaluacion").hide();
+        var idFlota = null;
+        var idAseo = null;
+        var currentTime = new Date()
+        var month = currentTime.getMonth() + 1;
+        var day = currentTime.getDate();
+        var year = currentTime.getFullYear();
+        if (day < 10) {
+            day = '0' + day
+        }
+        if (month < 10) {
+            month = '0' + month
+        }
+        currentTime = month + '/' + day + '/' + year;
+        <?php  print('$("#' . CHtml::activeId($modelT, 'FECHA') . '").val(year+ "-" + month+ "-" + day);'); ?>
+        <?php  print('$("#' . CHtml::activeId($model, 'FECHA') . '").val(year+ "-" + month+ "-" + day);'); ?>
+        //console.log($("#<?php echo CHtml::activeId($model, 'AVION_MATRICULA'); ?> option:selected").text());
+        $.post(
+                '<?php echo $this->createUrl("Flota/GetFlotaByMat"); ?>',
+                {'matricula': $("#<?php echo CHtml::activeId($model, 'AVION_MATRICULA'); ?> option:selected").text()},
+        function(data) {
+            $("#flotaId").val(data[0].NOMBRE_FLOTA);
+        }
+        , "json");
+    });
+
+    function updateTag(var1) {
+        final = 0;
+        count = 0;
+        total = 0;
+        notaFinal = 0;
+        var1 = var1 + 1;
+
+        for (var j = 0; j < window.var3.length; j++) {
+            if (window.var3[j]['evaluacion_id_evaluacion'] == var1) {
+                count = count + 1;
+                if (parseInt(window.arreglo[j]) == 101)
+                    total = total + 0;
+                else
+                    total = total + parseInt(window.arreglo[j]);
+                //console.log("total :"+total+" count: "+count+" parse: "+parseFloat(window.arreglo[j]));
+            }
+
+        }
+
+        final = Number((total / count).toFixed(0));
+        window.temp[var1] = (final * window.var2[var1 - 1]['ponderacion']) / 100;
+
+        for (var i = 1; i <= window.tamano; i++) {
+            if (window.temp[i] != null)
+                notaFinal = Number((notaFinal + window.temp[i]).toFixed(0));
+        }
+        var1 = var1 - 1;
+        variable1 = "notaPond[" + var1 + "]";
+
+        document.getElementById(variable1).innerHTML = final + "%";
+        $('#NotaFinal').val(notaFinal + "%");
+<?php print('$("#' . CHtml::activeId($model, 'CALIFICACION') . '").val(notaFinal);'); ?>
+
+
+    }
+
+</script>
 </div>
+
+
+
+
