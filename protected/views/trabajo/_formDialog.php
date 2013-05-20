@@ -4,52 +4,7 @@ $cs = Yii::app()->getClientScript();
 $cs->registerCssFile($baseUrl.'/css/jquery.css');
 ?>
 
-    <script type="text/javascript">
-            window.arreglo = new Array();
-            window.global = 1;
-            window.notasFinales = new Array();
-            window.temp = new Object();
-            window.tamano = 0;
-            window.var2 = new Array();
-            window.var3 = new Array();
 
-            Object.size = function(obj) {
-                var size = 0, key;
-                for (key in obj) {
-                    if (obj.hasOwnProperty(key))
-                        size++;
-                }
-                return size;
-            };
-
-            function inicia(variable2, variable3) {
-                var i;
-                window.var2 = variable3;
-                window.var3 = variable2;
-                for (i = 0; i < window.var3.length; i++) {
-                    window.temp[window.var3[i]['evaluacion_id_evaluacion']] = 0;
-                    window.arreglo[i] = 101;
-                }
-                for (var key in window.temp) {
-                    tamano = parseInt(key);
-                }
-
-            }
-            function updateAll(var2, var3) {
-                for (var i = 1; i <= window.tamano; i++) {
-                    if (window.temp[i] != null)
-                        updateTag(i - 1);
-                }
-
-            }
-            
-            $(document).ready(function() {
-                if (window.global == 1) {
-                    window.global = 0;
-             <?php print("inicia(" . json_encode($sql2) . "," . json_encode($sql) . ");"); ?>
-                }
-            });
-    </script>
 <div class="form" id="evaluacionDialogForm">
     <?php
     $form=$this->beginWidget('CActiveForm', array(
@@ -159,5 +114,50 @@ $cs->registerCssFile($baseUrl.'/css/jquery.css');
     </div>
        
 <?php $this->endWidget(); ?>
- 
+     <script type="text/javascript">
+            window.arreglo = new Array();
+            window.global = 1;
+            window.notasFinales = new Array();
+            window.temp = new Object();
+            window.tamano = 0;
+            window.var2 = new Array();
+            window.var3 = new Array();
+
+            Object.size = function(obj) {
+                var size = 0, key;
+                for (key in obj) {
+                    if (obj.hasOwnProperty(key))
+                        size++;
+                }
+                return size;
+            };
+
+            function inicia(variable2, variable3) {
+                var i;
+                window.var2 = variable3;
+                window.var3 = variable2;
+                for (i = 0; i < window.var3.length; i++) {
+                    window.temp[window.var3[i]['evaluacion_id_evaluacion']] = 0;
+                    window.arreglo[i] = 101;
+                }
+                for (var key in window.temp) {
+                    tamano = parseInt(key);
+                }
+
+            }
+            function updateAll(var2, var3) {
+                for (var i = 1; i <= window.tamano; i++) {
+                    if (window.temp[i] != null)
+                        updateTag(i - 1);
+                }
+
+            }
+            
+            $(document).ready(function() {
+                if (window.global == 1) {
+                    window.global = 0;
+             <?php print("inicia(" . json_encode($sql2) . "," . json_encode($sql) . ");"); ?>
+                }
+            });
+    </script>
 </div>

@@ -299,7 +299,7 @@ class SiteController extends Controller
             $xls = new JPhpExcel('UTF-8', false, 'test');
             $xls->addArray($data);
             $fecha = new DateTime();
-            $xls->generateXML('Resumen_Aseo-Cabina_'.$fecha->format('d-m-Y_H:i')); //export into a .xls file
+            $xls->generateXML('Resumen_Aseo-Cabina_'.$fecha->format('d-m-Y')); //export into a .xls file
         }
         
         
@@ -359,7 +359,7 @@ class SiteController extends Controller
             $xls = new JPhpExcel('UTF-8', false, 'test');
             $xls->addArray($data);
             $fecha = new DateTime();
-            $xls->generateXML('Resumen_Evaluaciones_'.$fecha->format('d-m-Y_H:i')); //export into a .xls file
+            $xls->generateXML('Resumen_Evaluaciones_'.$fecha->format('d-m-Y')); //export into a .xls file
         }
 
         
@@ -478,7 +478,8 @@ class SiteController extends Controller
            
             $out = '';
             ob_start();
-            $xls->generateXML('Resumen_Aseo-Cabina_'.$fecha->format('d-m-Y')); //export into a .xls file
+            $xls->generateXML('Resumen_Aseo-Cabina_'.
+            			$fecha->format('d-m-Y')); 
             $out .= ob_get_contents();
             ob_end_flush();
 
@@ -494,7 +495,7 @@ class SiteController extends Controller
             				   No se consideran aseos Terminales desasignados', 'text/html');
 
 			//$message->setBody('Resumen Informe de Turno:', 'text/html');			
-            $message->subject = 'Informe de Turno Aseos: '.$fecha->format('d-m-Y');
+            $message->subject = 'Informe de Turno Aseos: '.$fecha->format('d-m-Y').': '.Usuario::model()->FindByPk(Yii::app()->user->getId())->NOMBRE;
 
 
 

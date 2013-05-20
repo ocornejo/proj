@@ -179,8 +179,15 @@ class TrabajoController extends Controller {
         
         if(isset($_POST['update'],$_POST['Trabajo'], $_POST['Turno'])){
 
-            if(Trabajo::model()->exists(array('condition'=>'AVION_MATRICULA=:amat AND ASEO_ID_ASEO=:aseoid','params'=>array(':amat'=>$_POST['Trabajo']['AVION_MATRICULA'],':aseoid'=>$_POST['Trabajo']['ASEO_ID_ASEO']))))
-                 $returnId=Trabajo::model()->findAll(array('condition'=>'AVION_MATRICULA=:amat AND ASEO_ID_ASEO=:aseoid','order'=> 'ID_TRABAJO DESC','limit'=>1,'params'=>array(':amat'=>$_POST['Trabajo']['AVION_MATRICULA'],':aseoid'=>$_POST['Trabajo']['ASEO_ID_ASEO'])));
+            if(Trabajo::model()->exists(array('condition'=>
+            'AVION_MATRICULA=:amat AND ASEO_ID_ASEO=:aseoid',
+            'params'=>array(':amat'=>$_POST['Trabajo']['AVION_MATRICULA'],
+            	':aseoid'=>$_POST['Trabajo']['ASEO_ID_ASEO']))))
+            	
+                 $returnId=Trabajo::model()->findAll(array('condition'=>
+                 	'AVION_MATRICULA=:amat AND ASEO_ID_ASEO=:aseoid','order'=> 'ID_TRABAJO DESC',
+                 		'limit'=>1,'params'=>array(':amat'=>$_POST['Trabajo']['AVION_MATRICULA'],
+                 			':aseoid'=>$_POST['Trabajo']['ASEO_ID_ASEO'])));
 
             $model=$this->loadModel($returnId[0]->ID_TRABAJO);
             $modelT= new Turno;

@@ -171,7 +171,6 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
                     total = total + 0;
                 else
                     total = total + parseInt(window.arreglo[j]);
-                //console.log("total :"+total+" count: "+count+" parse: "+parseFloat(window.arreglo[j]));
             }
 
         }
