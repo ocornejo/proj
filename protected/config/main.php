@@ -25,6 +25,7 @@ return array(
 		'application.components.*',
         'application.controllers.*',
         'ext.EDataTables.*',
+        'application.extensions.TabularInputManager',
         
 	),
        

@@ -64,7 +64,10 @@ echo $this->renderPartial('gantt',array(
                                         'variable'=>$variable,
                                         'from'=>$from,
                                         'to'=>$to,
-                                        false,true));?>
+                                        false,true));
+                                       ?>
+                                        
+
 
   
     

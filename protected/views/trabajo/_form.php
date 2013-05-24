@@ -28,7 +28,6 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
         'errorSummaryCssClass' => 'clsErrorSummary'));
     ?>
     
-    <?php //echo $form->errorSummary(array($model,$modelT));  ?>
   
     <fieldset>
     
