@@ -16,7 +16,7 @@ $this->breadcrumbs=array(
 </style>
 <h1>Críticos</h1>
 
-<?php echo $this->renderPartial('rescriticos',array('arreglo'=>$arreglo,false,true)); ?>
+
 
 <div class="CGridViewContainer">
     <div class="span-20">

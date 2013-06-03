@@ -96,7 +96,7 @@ body
 
 #mainmenu ul li
 {
-	display: inline;
+  display: inline;
   background-attachment:initial;
   background-clip:initial;
   background-color:#002955;

@@ -30,7 +30,15 @@
     <p>Pendientes</p>
     <label><?php echo count($pendientes);?></label>
 </div>
-</a>  
+</a>
+
+<?php $baseUrl = Yii::app()->theme->baseUrl;
+            $imageId = "img";
+            $normalImageSrc = "{$baseUrl}/images/linea.png";
+
+            $img = "<div style=\"float:left; padding-top: 20px;\"><img style=\"vertical-align:-10px;\" id=\"{$imageId}\" class=\"showDialogEvaluacion\" src=\"{$normalImageSrc}\"/ ></div>";
+            echo $img;
+?>  
 
 <a href="index.php?r=trabajo/adminPlan">
 <div class="boxes">

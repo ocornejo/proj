@@ -49,7 +49,7 @@ class SiteController extends Controller
 		   
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'bajar','bajarevaluaciones',
+                'actions' => array('index', 'bajar','bajarevaluaciones','ResumenCriticos',
                 					'criticos','error','reporte','DownloadExcel',
                 					'DownloadExcelEval','SendExcel','Logout','page','resumen'),
                 'users' => array('@'),
@@ -296,7 +296,21 @@ class SiteController extends Controller
 		
 		return $arreglo;
 	}
+	
+	
+    
+    public function actionResumenCriticos(){
+            
+			
+		$arreglo = $this->resumen();
+		
+
+		$this->render('resumencriticos',array(
+			'arreglo'=>$arreglo,
+            ));
+        }
         
+            
     public function actionCriticos(){
             
            
