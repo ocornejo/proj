@@ -47,13 +47,23 @@ return array(
 	// application components
 	'components'=>array(
                
-          'mail' => array(
+          // 'mail' => array(
+            // 'class' => 'ext.yii-mail.YiiMail',
+             // 'transportType'=>'smtp',
+             // 'transportOptions'=>array(
+               // 'host'=>'smtp.gmail.com',
+               // 'username'=>'reportes.mejora.continua@gmail.com',
+               // 'password'=>'12345678mc',
+               // 'port'=>'465',
+               // 'encryption'=>'tls',
+             // ),
+			'mail' => array(
             'class' => 'ext.yii-mail.YiiMail',
              'transportType'=>'smtp',
              'transportOptions'=>array(
-               'host'=>'smtp.gmail.com',
-               'username'=>'reportes.mejora.continua@gmail.com',
-               'password'=>'12345678mc',
+               'host'=>'mail.lan.com',
+               'username'=>'diego.paredes',
+               'password'=>'12341234',
                'port'=>'465',
                'encryption'=>'tls',
              ),

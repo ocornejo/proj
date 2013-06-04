@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /* @var $this TrabajoController */
 /* @var $model Trabajo */
 /* @var $form CActiveForm */
@@ -110,15 +110,15 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
    
     
       <div class="SubmitButton" id="SubButton" style="vertical-align:-10px; float: left; padding-right: 10px;">
-        <?php echo CHtml::submitButton('Guardar', array('name' => 'buttonSubmit','style'=>'width: 95px; height: 35px; background: url(/proj/themes/shadow_dancer/images/small_icons/disk.png) no-repeat 15px 7px; padding-left: 24px; vertical-align: bottom;')); ?>
+        <?php echo CHtml::submitButton('Guardar', array('name' => 'buttonSubmit','style'=>'width: 95px; height: 35px; background: url(/aseoscabina/themes/shadow_dancer/images/small_icons/disk.png) no-repeat 15px 7px; padding-left: 24px; vertical-align: bottom;')); ?>
       </div>
 
     <div class="HideSubmitButton" id="HideSubButton" style="display: none; vertical-align:-10px; float: left; padding-right: 10px;">
-        <?php echo CHtml::submitButton('Guardar', array('name' => 'update','style'=>'width: 95px; height: 35px;background: url(/proj/themes/shadow_dancer/images/small_icons/disk.png) no-repeat 15px 7px; padding-left: 24px; vertical-align: bottom;')); ?>
+        <?php echo CHtml::submitButton('Guardar', array('name' => 'update','style'=>'width: 95px; height: 35px;background: url(/aseoscabina/themes/shadow_dancer/images/small_icons/disk.png) no-repeat 15px 7px; padding-left: 24px; vertical-align: bottom;')); ?>
     </div>
     
     <div>
-        <?php echo CHtml::resetButton('Resetear', array('name' => 'update','style'=>'width: 95px; height: 35px;background: url(/proj/themes/shadow_dancer/images/small_icons/arrow_refresh.png) no-repeat 12px 7px; padding-left: 24px; vertical-align: bottom;')); ?>
+        <?php echo CHtml::resetButton('Resetear', array('name' => 'update','style'=>'width: 95px; height: 35px;background: url(/aseoscabina/themes/shadow_dancer/images/small_icons/arrow_refresh.png) no-repeat 12px 7px; padding-left: 24px; vertical-align: bottom;')); ?>
     </div>
 
 <?php $this->endWidget(); ?>
