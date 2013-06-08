@@ -23,7 +23,7 @@ Para enviar un informe, seleccione la fecha de turno y el tipo de turno
 para filtrar los aseos realizados y haga clic en Enviar informe.
 </div>
 
-<?php echo CHtml::submitButton('Filtros', array('class'=>'search-button','style'=>'background: url(/proj/themes/shadow_dancer/images/small_icons/search-icon.png) no-repeat 6px 1px; padding-left: 24px; vertical-align: bottom;')); ?>
+<?php echo CHtml::submitButton('Filtros', array('class'=>'search-button','style'=>'background: url(/aseoscabina/themes/shadow_dancer/images/small_icons/search-icon.png) no-repeat 6px 1px; padding-left: 24px; vertical-align: bottom;')); ?>
 
 <div class="search-form">
 <?php $this->renderPartial('_search_1',array(
@@ -37,22 +37,27 @@ para filtrar los aseos realizados y haga clic en Enviar informe.
 	
 	'columns'=>array(
 		'OT',
-                array(
-                    'name'=>'AVION_MATRICULA',
-                     'value'=> '$data->AVION->MATRICULA',
-                    
-                    'filter'=> Avion::model()->options,
-                ),
+         array(
+            'name'=>'AVION_MATRICULA',
+             'value'=>function($data){
+                     if($data->AVION==NULL)
+                         return "";
+                     else{
+                         return $data->AVION->MATRICULA;
+                     }
+            },
+        ),
 		
-                array(
-                        'name'=>'USUARIO_BP',
-                        'value'=> '$data->uSUARIOBP->NOMBRE',
-                        'filter'=>  Usuario::model()->options
-                ),
-                 array(
-                        'name'=>'ESTADO_ID_ESTADO',
-                        'value'=> '$data->eSTADOIDESTADO->NOMBRE_ESTADO',
-                        'filter'=>  Estado::model()->options),
+        'USUARIO_BP',
+        array(
+            'name'=>'ESTADO_ID_ESTADO',
+            'value'=>function($data){
+                     if($data->ESTADO_ID_ESTADO==NULL)
+                         return "";
+                     else
+                         return $data->eSTADOIDESTADO->NOMBRE_ESTADO;
+            }
+        ),
    
                 array(
                     'name'=>'LUGAR_ID_LUGAR',
@@ -86,9 +91,42 @@ para filtrar los aseos realizados y haga clic en Enviar informe.
                              else
                                  return @$data->PLANIFICADO ? "Si" : "No";
                     }),
-		'HORA_INICIO',
-		'HORA_TERMINO',
-		'FECHA',
+        array(
+        'name'=>'HORA_INICIO',
+        
+        'value'=>function($data){
+	                 if($data->HORA_INICIO==NULL)
+	                     return "";
+	                 else{
+	                     $temp_var= explode(':',$data->HORA_INICIO);
+	                     return $temp_var[0].':'.$temp_var[1];
+	                 }
+	             }
+	     ),
+       array(
+            'name'=>'HORA_TERMINO',
+            'value'=>function($data){
+                     if($data->HORA_TERMINO==NULL)
+                         return "";
+                     else{
+                         $temp_var= explode(':',$data->HORA_TERMINO);
+                         return $temp_var[0].':'.$temp_var[1];
+                     }
+                         
+                     }
+      ),  
+		array(
+			'name'=>'FECHA',
+            'value'=>function($data){
+                 if($data->FECHA==NULL)
+                     return "";
+                 else{
+
+                     $temp_var= explode('-',$data->FECHA);
+                     return $temp_var[2].'-'.$temp_var[1].'-'.$temp_var[0];
+                 }
+                                 
+             }),
                 'ULTIMO_ASEO',
 		'CALIFICACION',
                      array(

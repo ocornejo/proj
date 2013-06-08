@@ -27,7 +27,7 @@ $('.search-form form').submit(function(){
 <h1>Bajar datos</h1>
 
 
-<?php echo CHtml::submitButton('Filtros', array('class'=>'search-button','style'=>'background: url(/proj/themes/shadow_dancer/images/small_icons/search-icon.png) no-repeat 6px 1px; padding-left: 24px; vertical-align: bottom;')); ?>
+<?php echo CHtml::submitButton('Filtros', array('class'=>'search-button','style'=>'background: url(/aseoscabina/themes/shadow_dancer/images/small_icons/search-icon.png) no-repeat 6px 1px; padding-left: 24px; vertical-align: bottom;')); ?>
 
 <div class="search-form" style="display: none;">
 <?php $this->renderPartial('_search',array(
@@ -67,7 +67,13 @@ $('.search-form form').submit(function(){
          ),
          array(
             'name'=>'AVION_MATRICULA',
-            'value'=> '$data->AVION->MATRICULA',
+             'value'=>function($data){
+                     if($data->AVION==NULL)
+                         return "";
+                     else{
+                         return $data->AVION->MATRICULA;
+                     }
+            },
         ),
 		'flota_grilla',
         array(
@@ -97,10 +103,17 @@ $('.search-form form').submit(function(){
                      else
                          return @$data->PLANIFICADO ? "Si" : "No";
             }),
+            
         array(
             'name'=>'ESTADO_ID_ESTADO',
-            'value'=> '$data->eSTADOIDESTADO->NOMBRE_ESTADO',
+            'value'=>function($data){
+                     if($data->ESTADO_ID_ESTADO==NULL)
+                         return "";
+                     else
+                         return $data->eSTADOIDESTADO->NOMBRE_ESTADO;
+            }
         ),
+        
         array(
         'name'=>'HORA_INICIO',
         
@@ -148,8 +161,6 @@ $('.search-form form').submit(function(){
 									);
 							}
 		),
-		
-/* 		CHtml::link($data->alfombra_count,array("site/bajar",'avion'=>$data->MATRICULA,'aseo'=>2),array("style"=>"color: red;font-weight:bold;font-size:medium;")); */
 	  array(
         'name'=>'ARCHIVO1',
         //'filter'=>  Turno::model()->options,
@@ -160,7 +171,7 @@ $('.search-form form').submit(function(){
                      return CHtml::link("Ver",array("trabajo/view",'id'=>$data->ID_TRABAJO),array("style"=>"font-weight:bold;"));
         },
         'type'=>'raw',
-                    ),
+        ),
         'USUARIO_BP',
 
 	),

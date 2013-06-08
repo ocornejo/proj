@@ -121,6 +121,10 @@ class FlotaController extends Controller
 	 */
 	public function actionDelete($id)
 	{
+        Avion::model()->deleteAll('FLOTA_ID_FLOTA=:id_flota', array(':id_flota'=>$id));
+        ItemSeEvalua::model()->deleteAll('FLOTA_ID_FLOTA=:id_flota', array(':id_flota'=>$id));
+        Criticos::model()->deleteAll('FLOTA_ID_FLOTA=:id_flota', array(':id_flota'=>$id));
+        Ponderacion::model()->deleteAll('FLOTA_ID_FLOTA=:id_flota', array(':id_flota'=>$id));
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser

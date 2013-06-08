@@ -467,7 +467,7 @@ class SiteController extends Controller
         $data[$i]['OT'] = 'OT';
         $data[$i]['COMENTARIO'] = 'Comentario';
         $data[$i]['USUARIO_BP'] = 'Usuario';
-        //$data[$i]['ARCHIVO1']='Foto';
+        $data[$i]['ARCHIVO1']='Foto';
         //$data[$i]['ULTIMO_ASEO'] = 'Días sin aseo';
         
         
@@ -512,13 +512,11 @@ class SiteController extends Controller
             $data[$i]['OT'] = $issue['OT'];
             $data[$i]['COMENTARIO'] = $issue['COMENTARIO'];
             $data[$i]['USUARIO_BP'] =$issue->uSUARIOBP->NOMBRE;
-/*
             if($issue['ARCHIVO1']!=null){
-	            $data[$i]['ARCHIVO1']= 'http://localhost:8080/proj/index.php?r=trabajo/view&id='.$issue['ID_TRABAJO'];
+	            $data[$i]['ARCHIVO1']= 'http://localhost:8080/aseoscabina/index.php?r=trabajo/view&id='.$issue['ID_TRABAJO'];
             }
             else
             	$data[$i]['ARCHIVO1'] = "";
-*/
 
             $i++;
         }
@@ -689,7 +687,7 @@ class SiteController extends Controller
 
 /*
             if($issue['ARCHIVO1']!=null){
-	            $data[$i]['ARCHIVO1']= 'http://localhost:8080/proj/
+	            $data[$i]['ARCHIVO1']= 'http://localhost:8080/aseoscabina/
 	            .php?r=trabajo/view&id='.$issue['ID_TRABAJO'];
             }
             else
