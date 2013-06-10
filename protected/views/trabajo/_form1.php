@@ -111,6 +111,52 @@ document.getElementById("success").style.display=" none";
            <?php echo $form->error($model, 'HORA_TERMINO'); ?>
         </div>
         <div class="raw">
+
+        <?php echo $form->labelEx($model, 'PLAN_INICIO'); ?>
+            <?php $this->widget('application.extensions.jui_timepicker.JTimePicker', array(
+                           'model' => $model,
+                           'attribute' => 'PLAN_INICIO',
+                           // additional javascript options for the date picker plugin
+                           'options' => array(
+                               'showPeriod' => true,
+                               'hours' => array('starts' => 0, 'ends' => 23),
+                               'minutes' => array('interval' => 1),
+                               'showPeriodLabels' => false,
+                               'showPeriod' => false,
+                               'hourText' => 'Hora',
+                               'minuteText' => 'Minuto',
+                               'rows' => 6,
+                               'showCloseButton' => true,
+                               'closeButtonText' => 'Listo',
+                           ),
+                           'htmlOptions' => array('size' => 5, 'maxlength' => 5, 'readonly' => 'readonly'),
+                       )); ?>
+            <?php echo $form->error($model, 'PLAN_INICIO'); ?>
+        </div>
+        <div class="raw">
+            <?php echo $form->labelEx($model, 'PLAN_TERMINO'); ?>
+            <?php $this->widget('application.extensions.jui_timepicker.JTimePicker', array(
+                        'model' => $model,
+                        'attribute' => 'PLAN_TERMINO',
+                        // additional javascript options for the date picker plugin
+                        'options' => array(
+                            'showPeriod' => true,
+                            'hours' => array('starts' => 0, 'ends' => 23),
+                            'minutes' => array('interval' => 1),
+                            'showPeriodLabels' => false,
+                            'showPeriod' => false,
+                            'hourText' => 'Hora',
+                            'minuteText' => 'Minuto',
+                            'rows' => 6,
+                            'showCloseButton' => true,
+                            'closeButtonText' => 'Listo',
+                        ),
+                        'htmlOptions' => array('size' => 5, 'maxlength' => 5, 'readonly' => 'readonly'),
+                    )); ?>
+           <?php echo $form->error($model, 'PLAN_TERMINO'); ?>
+        </div>
+
+        <div class="raw">
             <?php echo $form->labelEx($model, 'FECHA'); ?>
             <?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
                 'model' => $model,

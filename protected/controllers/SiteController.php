@@ -319,6 +319,8 @@ class SiteController extends Controller
 		if(isset($_GET['Avion']))
 			$model->attributes=$_GET['Avion'];
 			
+		//$model->MATRICULA='BAG';
+			
 		$arreglo = $this->resumen();
 		
 
@@ -463,6 +465,8 @@ class SiteController extends Controller
         $data[$i]['ESTADO_ID_ESTADO'] = 'Estado';
         $data[$i]['HORA_INICIO'] = 'Hora inicio';
         $data[$i]['HORA_TERMINO'] = 'Hora termino';
+        $data[$i]['PLAN_INICIO'] = 'Planificado inicio';
+        $data[$i]['PLAN_TERMINO'] = 'Planificad termino';
         $data[$i]['CALIFICACION'] = 'Calificacion';
         $data[$i]['OT'] = 'OT';
         $data[$i]['COMENTARIO'] = 'Comentario';
@@ -506,6 +510,8 @@ class SiteController extends Controller
 
             $data[$i]['HORA_INICIO'] = $issue['HORA_INICIO'];
             $data[$i]['HORA_TERMINO'] = $issue['HORA_TERMINO'];
+            $data[$i]['PLAN_INICIO'] = $issue['PLAN_INICIO'];
+            $data[$i]['PLAN_TERMINO'] = $issue['PLAN_TERMINO'];
             
             //$data[$i]['ULTIMO_ASEO']=$issue['ULTIMO_ASEO'];
             $data[$i]['CALIFICACION'] = $issue['CALIFICACION'];
@@ -606,6 +612,8 @@ class SiteController extends Controller
         $data[$i]['ESTADO_ID_ESTADO'] = 'Estado';
         $data[$i]['HORA_INICIO'] = 'Hora inicio';
         $data[$i]['HORA_TERMINO'] = 'Hora termino';
+        $data[$i]['PLAN_INICIO'] = 'Planificado inicio';
+        $data[$i]['PLAN_TERMINO'] = 'Planificad termino';
         $data[$i]['CALIFICACION'] = 'Calificacion';
         $data[$i]['OT'] = 'OT';
         $data[$i]['COMENTARIO'] = 'Comentario';
@@ -678,6 +686,8 @@ class SiteController extends Controller
 
             $data[$i]['HORA_INICIO'] = $issue['HORA_INICIO'];
             $data[$i]['HORA_TERMINO'] = $issue['HORA_TERMINO'];
+            $data[$i]['PLAN_INICIO'] = $issue['PLAN_INICIO'];
+            $data[$i]['PLAN_TERMINO'] = $issue['PLAN_TERMINO'];
             
             //$data[$i]['ULTIMO_ASEO']=$issue['ULTIMO_ASEO'];
             $data[$i]['CALIFICACION'] = $issue['CALIFICACION'];

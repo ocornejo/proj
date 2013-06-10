@@ -11,6 +11,8 @@
  * @property integer $PLANIFICADO
  * @property string $HORA_INICIO
  * @property string $HORA_TERMINO
+ * @property string $PLAN_INICIO
+ * @property string $PLAN_TERMINO
  * @property string $COMENTARIO
  * @property string $FECHA
  * @property integer $CALIFICACION
@@ -153,6 +155,8 @@ class Trabajo extends CActiveRecord
                      array('FECHA','date', 'format'=>'yyyy-MM-dd'),
                      array('HORA_INICIO', 'date', 'format'=>'HH:mm'),
                      array('HORA_TERMINO','date', 'format'=>'HH:mm'),
+                     array('PLAN_INICIO', 'date', 'format'=>'HH:mm'),
+                     array('PLAN_TERMINO','date', 'format'=>'HH:mm'),
                      array('imagen', 'file', 'types'=>'jpg, gif, png','allowEmpty'=>true,'on'=>'update,create,ok,laneco,bano,pendiente'),
                      array('AVION_MATRICULA', 'length', 'max'=>12),
                      array('COMENTARIO', 'length', 'max'=>255),   
@@ -160,7 +164,7 @@ class Trabajo extends CActiveRecord
 					// The following rule is used by search().
 					// Please remove those attributes that should not be searched.
 					array('ID_TRABAJO, OT, AVION_MATRICULA, USUARIO_BP, PLANIFICADO, HORA_INICIO,
-						   HORA_TERMINO, COMENTARIO, FECHA, ULTIMO_ASEO, CALIFICACION,
+						   HORA_TERMINO, PLAN_INICIO,PLAN_TERMINO, COMENTARIO, FECHA, ULTIMO_ASEO, CALIFICACION,
 						   ESTADO_ID_ESTADO, LUGAR_ID_LUGAR, ASEO_ID_ASEO, TURNO_ID_TURNO,
 						   date_first,date_last,flota,flota_grilla,fturno,tturno', 'safe', 'on'=>'search,searchItem'),
 		);
@@ -188,7 +192,6 @@ class Trabajo extends CActiveRecord
 			'aSEOIDASEO' => array(self::BELONGS_TO, 'Aseo', 'ASEO_ID_ASEO'),
 			'AVION' => array(self::BELONGS_TO, 'Avion', 'AVION_MATRICULA'),
             'amat' => array(self::HAS_ONE,'Avion','MATRICULA'),
-  //          'fLOTA'=> array(self::HAS_ONE,'Flota','AVION_MATRICULA', 'through' => 'AVION'),
 			'eSTADOIDESTADO' => array(self::BELONGS_TO, 'Estado', 'ESTADO_ID_ESTADO'),
 			'lUGARIDLUGAR' => array(self::BELONGS_TO, 'Lugar', 'LUGAR_ID_LUGAR'),
 			'tURNOIDTURNO' => array(self::BELONGS_TO, 'Turno', 'TURNO_ID_TURNO'),
@@ -205,10 +208,12 @@ class Trabajo extends CActiveRecord
 			'ID_TRABAJO' => 'ID',
 			'OT' => 'OT',
 			'AVION_MATRICULA' => 'Mat',
-			'USUARIO_BP' => 'Usuario',
+			'USUARIO_BP' => 'BP',
 			'PLANIFICADO' => 'Plan',
 			'HORA_INICIO' => 'Inicio',
 			'HORA_TERMINO' => 'Término',
+			'PLAN_INICIO' => 'Plan Inicio',
+			'PLAN_TERMINO' => 'Plan Término',
 			'COMENTARIO' => 'Comentario',
 			'FECHA' => 'Fecha',
 			'CALIFICACION' => 'Nota',
@@ -279,7 +284,8 @@ class Trabajo extends CActiveRecord
 				$criteria->compare('PLANIFICADO',$this->PLANIFICADO);
 				$criteria->compare('HORA_INICIO',$this->HORA_INICIO,true);
 				$criteria->compare('HORA_TERMINO',$this->HORA_TERMINO,true);
-				//$criteria->compare('COMENTARIO',$this->COMENTARIO,true);
+				$criteria->compare('PLAN_INICIO',$this->PLAN_INICIO,true);
+				$criteria->compare('PLAN_TERMINO',$this->PLAN_TERMINO,true);
 		        $criteria->compare('ULTIMO_ASEO',$this->ULTIMO_ASEO,true);
 				$criteria->compare('t.FECHA',$this->FECHA,true);
 				$criteria->compare('CALIFICACION',$this->CALIFICACION);

@@ -114,7 +114,31 @@ para filtrar los aseos realizados y haga clic en Enviar informe.
                      }
                          
                      }
-      ),  
+      ),
+              array(
+        'name'=>'PLAN_INICIO',
+        
+        'value'=>function($data){
+	                 if($data->PLAN_INICIO==NULL)
+	                     return "";
+	                 else{
+	                     $temp_var= explode(':',$data->PLAN_INICIO);
+	                     return $temp_var[0].':'.$temp_var[1];
+	                 }
+	             }
+	     ),
+       array(
+            'name'=>'PLAN_TERMINO',
+            'value'=>function($data){
+                     if($data->PLAN_TERMINO==NULL)
+                         return "";
+                     else{
+                         $temp_var= explode(':',$data->PLAN_TERMINO);
+                         return $temp_var[0].':'.$temp_var[1];
+                     }
+                         
+                     }
+      ),   
 		array(
 			'name'=>'FECHA',
             'value'=>function($data){
