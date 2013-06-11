@@ -36,7 +36,7 @@ class AvionController extends Controller
 		   
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
+                'actions' => array('index', 'view','GetMatByFlota'),
                 'users' => array('@'),
                 'expression'=>$isAnaliz
             ),
@@ -181,4 +181,22 @@ class AvionController extends Controller
 			Yii::app()->end();
 		}
 	}
+	
+	        public function actionGetMatByFlota()
+        {   
+            $dataTemp = Avion::model()->findAll('matricula=:matricula', array(':matricula'=> $_POST['matricula']));
+            $dataTemp = CHtml::listData($dataTemp,'FLOTA_ID_FLOTA','MATRICULA');
+            
+            foreach($dataTemp as $value=>$name)
+                $flotaid=$value;
+                
+            $data['flota']= Flota::model()->findAll('id_flota=:id_flota',array(':id_flota'=> $flotaid));
+            
+            
+                
+            echo CJSON::encode($data);
+            
+
+        }
+	
 }

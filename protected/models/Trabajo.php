@@ -253,7 +253,7 @@ class Trabajo extends CActiveRecord
         $criteria->with =array('AVION','tURNOIDTURNO');
                 
         if((isset($this->date_first) && trim($this->date_first) != "") && (isset($this->date_last) && trim($this->date_last) != ""))
-            $criteria->addBetweenCondition('FECHA', ''.$this->date_first.'', ''.$this->date_last.''); 
+            $criteria->addBetweenCondition('t.FECHA', ''.$this->date_first.'', ''.$this->date_last.''); 
         
         if($this->flota!=""){
 

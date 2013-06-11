@@ -86,6 +86,8 @@ class SiteController extends Controller
 		}
 	}
 	
+
+	
 	public function resumen(){
 		
 		$arreglo = array(array());
