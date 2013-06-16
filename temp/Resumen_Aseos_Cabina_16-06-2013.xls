@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">
+<Worksheet ss:Name="test">
+<Table>
+<Row>
+<Cell><Data ss:Type="String">Fecha</Data></Cell>
+<Cell><Data ss:Type="String">Turno</Data></Cell>
+<Cell><Data ss:Type="String">Matricula</Data></Cell>
+<Cell><Data ss:Type="String">Flota</Data></Cell>
+<Cell><Data ss:Type="String">Lugar</Data></Cell>
+<Cell><Data ss:Type="String">Aseo</Data></Cell>
+<Cell><Data ss:Type="String">Planificado</Data></Cell>
+<Cell><Data ss:Type="String">Estado</Data></Cell>
+<Cell><Data ss:Type="String">Hora inicio</Data></Cell>
+<Cell><Data ss:Type="String">Hora termino</Data></Cell>
+<Cell><Data ss:Type="String">Planificado inicio</Data></Cell>
+<Cell><Data ss:Type="String">Planificad termino</Data></Cell>
+<Cell><Data ss:Type="String">Calificacion</Data></Cell>
+<Cell><Data ss:Type="String">OT</Data></Cell>
+<Cell><Data ss:Type="String">Comentario</Data></Cell>
+<Cell><Data ss:Type="String">Usuario</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">03-06-2013</Data></Cell>
+<Cell><Data ss:Type="String">03-06-2013 Ma&ntilde;ana</Data></Cell>
+<Cell><Data ss:Type="String">CZW</Data></Cell>
+<Cell><Data ss:Type="String">B767-LA</Data></Cell>
+<Cell><Data ss:Type="String">Base</Data></Cell>
+<Cell><Data ss:Type="String">Profundo</Data></Cell>
+<Cell><Data ss:Type="String">Si</Data></Cell>
+<Cell><Data ss:Type="String">Ok</Data></Cell>
+<Cell><Data ss:Type="String">08:45:00</Data></Cell>
+<Cell><Data ss:Type="String">13:30:00</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">267409</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">2885</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">03-06-2013</Data></Cell>
+<Cell><Data ss:Type="String">03-06-2013 Ma&ntilde;ana</Data></Cell>
+<Cell><Data ss:Type="String">BBC</Data></Cell>
+<Cell><Data ss:Type="String">B787-LA</Data></Cell>
+<Cell><Data ss:Type="String">Base</Data></Cell>
+<Cell><Data ss:Type="String">Terminal</Data></Cell>
+<Cell><Data ss:Type="String">Si</Data></Cell>
+<Cell><Data ss:Type="String">Ok</Data></Cell>
+<Cell><Data ss:Type="String">08:25:00</Data></Cell>
+<Cell><Data ss:Type="String">09:55:00</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">267402</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">2885</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">03-06-2013</Data></Cell>
+<Cell><Data ss:Type="String">03-06-2013 Ma&ntilde;ana</Data></Cell>
+<Cell><Data ss:Type="String">BDM</Data></Cell>
+<Cell><Data ss:Type="String">B767-LA</Data></Cell>
+<Cell><Data ss:Type="String">Base</Data></Cell>
+<Cell><Data ss:Type="String">Terminal</Data></Cell>
+<Cell><Data ss:Type="String">Si</Data></Cell>
+<Cell><Data ss:Type="String">Ok</Data></Cell>
+<Cell><Data ss:Type="String">09:42:00</Data></Cell>
+<Cell><Data ss:Type="String">11:15:00</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">267403</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">2885</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">03-06-2013</Data></Cell>
+<Cell><Data ss:Type="String">03-06-2013 Ma&ntilde;ana</Data></Cell>
+<Cell><Data ss:Type="String">COF</Data></Cell>
+<Cell><Data ss:Type="String">A320-LA</Data></Cell>
+<Cell><Data ss:Type="String">Base</Data></Cell>
+<Cell><Data ss:Type="String">Terminal</Data></Cell>
+<Cell><Data ss:Type="String">Si</Data></Cell>
+<Cell><Data ss:Type="String">Ok</Data></Cell>
+<Cell><Data ss:Type="String">11:30:00</Data></Cell>
+<Cell><Data ss:Type="String">12:35:00</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">267404</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">2885</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">03-06-2013</Data></Cell>
+<Cell><Data ss:Type="String">03-06-2013 Ma&ntilde;ana</Data></Cell>
+<Cell><Data ss:Type="String">BDF</Data></Cell>
+<Cell><Data ss:Type="String">B767-LA</Data></Cell>
+<Cell><Data ss:Type="String">Base</Data></Cell>
+<Cell><Data ss:Type="String">Terminal</Data></Cell>
+<Cell><Data ss:Type="String">Si</Data></Cell>
+<Cell><Data ss:Type="String">Ok</Data></Cell>
+<Cell><Data ss:Type="String">13:05:00</Data></Cell>
+<Cell><Data ss:Type="String">14:48:00</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">267405</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">2885</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">03-06-2013</Data></Cell>
+<Cell><Data ss:Type="String">03-06-2013 Ma&ntilde;ana</Data></Cell>
+<Cell><Data ss:Type="String">CQE</Data></Cell>
+<Cell><Data ss:Type="String">A340-LA</Data></Cell>
+<Cell><Data ss:Type="String">Base</Data></Cell>
+<Cell><Data ss:Type="String">Alas</Data></Cell>
+<Cell><Data ss:Type="String">Si</Data></Cell>
+<Cell><Data ss:Type="String">Ok</Data></Cell>
+<Cell><Data ss:Type="String">10:10:00</Data></Cell>
+<Cell><Data ss:Type="String">13:20:00</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">267407</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">2885</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">03-06-2013</Data></Cell>
+<Cell><Data ss:Type="String">03-06-2013 Ma&ntilde;ana</Data></Cell>
+<Cell><Data ss:Type="String">CQE</Data></Cell>
+<Cell><Data ss:Type="String">A340-LA</Data></Cell>
+<Cell><Data ss:Type="String">Base</Data></Cell>
+<Cell><Data ss:Type="String">Trenes</Data></Cell>
+<Cell><Data ss:Type="String">Si</Data></Cell>
+<Cell><Data ss:Type="String">Ok</Data></Cell>
+<Cell><Data ss:Type="String">10:00:00</Data></Cell>
+<Cell><Data ss:Type="String">13:30:00</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">267408</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">2885</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">03-06-2013</Data></Cell>
+<Cell><Data ss:Type="String">03-06-2013 Ma&ntilde;ana</Data></Cell>
+<Cell><Data ss:Type="String">BBC</Data></Cell>
+<Cell><Data ss:Type="String">B787-LA</Data></Cell>
+<Cell><Data ss:Type="String">Base</Data></Cell>
+<Cell><Data ss:Type="String">Alfombra</Data></Cell>
+<Cell><Data ss:Type="String">Si</Data></Cell>
+<Cell><Data ss:Type="String">Ok</Data></Cell>
+<Cell><Data ss:Type="String">13:20:00</Data></Cell>
+<Cell><Data ss:Type="String">14:05:00</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">267410</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">2885</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">03-06-2013</Data></Cell>
+<Cell><Data ss:Type="String">03-06-2013 Ma&ntilde;ana</Data></Cell>
+<Cell><Data ss:Type="String">CQE</Data></Cell>
+<Cell><Data ss:Type="String">A340-LA</Data></Cell>
+<Cell><Data ss:Type="String">Base</Data></Cell>
+<Cell><Data ss:Type="String">Alfombra</Data></Cell>
+<Cell><Data ss:Type="String">Si</Data></Cell>
+<Cell><Data ss:Type="String">Ok</Data></Cell>
+<Cell><Data ss:Type="String">11:30:00</Data></Cell>
+<Cell><Data ss:Type="String">12:50:00</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">267411</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">2885</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">03-06-2013</Data></Cell>
+<Cell><Data ss:Type="String">03-06-2013 Ma&ntilde;ana</Data></Cell>
+<Cell><Data ss:Type="String">CZT</Data></Cell>
+<Cell><Data ss:Type="String">B767-LA</Data></Cell>
+<Cell><Data ss:Type="String">Losa</Data></Cell>
+<Cell><Data ss:Type="String">Terminal</Data></Cell>
+<Cell><Data ss:Type="String">Si</Data></Cell>
+<Cell><Data ss:Type="String">Ok</Data></Cell>
+<Cell><Data ss:Type="String">08:35:00</Data></Cell>
+<Cell><Data ss:Type="String">09:40:00</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">267412</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">2885</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">03-06-2013</Data></Cell>
+<Cell><Data ss:Type="String">03-06-2013 Ma&ntilde;ana</Data></Cell>
+<Cell><Data ss:Type="String">BDB</Data></Cell>
+<Cell><Data ss:Type="String">B767-LP</Data></Cell>
+<Cell><Data ss:Type="String">Losa</Data></Cell>
+<Cell><Data ss:Type="String">Terminal</Data></Cell>
+<Cell><Data ss:Type="String">Si</Data></Cell>
+<Cell><Data ss:Type="String">Ok</Data></Cell>
+<Cell><Data ss:Type="String">10:00:00</Data></Cell>
+<Cell><Data ss:Type="String">11:12:00</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">267413</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">2885</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">03-06-2013</Data></Cell>
+<Cell><Data ss:Type="String">03-06-2013 Ma&ntilde;ana</Data></Cell>
+<Cell><Data ss:Type="String">N772LA</Data></Cell>
+<Cell><Data ss:Type="String">XXXX</Data></Cell>
+<Cell><Data ss:Type="String">Losa</Data></Cell>
+<Cell><Data ss:Type="String">Terminal</Data></Cell>
+<Cell><Data ss:Type="String">Si</Data></Cell>
+<Cell><Data ss:Type="String">Ok</Data></Cell>
+<Cell><Data ss:Type="String">11:50:00</Data></Cell>
+<Cell><Data ss:Type="String">12:15:00</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">267414</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">2885</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">03-06-2013</Data></Cell>
+<Cell><Data ss:Type="String">03-06-2013 Ma&ntilde;ana</Data></Cell>
+<Cell><Data ss:Type="String">BFE</Data></Cell>
+<Cell><Data ss:Type="String">A320-LA</Data></Cell>
+<Cell><Data ss:Type="String">Losa</Data></Cell>
+<Cell><Data ss:Type="String">Terminal</Data></Cell>
+<Cell><Data ss:Type="String">Si</Data></Cell>
+<Cell><Data ss:Type="String">Ok</Data></Cell>
+<Cell><Data ss:Type="String">10:50:00</Data></Cell>
+<Cell><Data ss:Type="String">13:10:00</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">267415</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">2885</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">03-06-2013</Data></Cell>
+<Cell><Data ss:Type="String">03-06-2013 Ma&ntilde;ana</Data></Cell>
+<Cell><Data ss:Type="String">CQE</Data></Cell>
+<Cell><Data ss:Type="String">A340-LA</Data></Cell>
+<Cell><Data ss:Type="String">Base</Data></Cell>
+<Cell><Data ss:Type="String">Terminal</Data></Cell>
+<Cell><Data ss:Type="String">Si</Data></Cell>
+<Cell><Data ss:Type="String">Ok</Data></Cell>
+<Cell><Data ss:Type="String">09:50:00</Data></Cell>
+<Cell><Data ss:Type="String">13:30:00</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">267416</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">2885</Data></Cell>
+</Row>
+<Row>
+<Cell><Data ss:Type="String">03-06-2013</Data></Cell>
+<Cell><Data ss:Type="String">03-06-2013 Ma&ntilde;ana</Data></Cell>
+<Cell><Data ss:Type="String">CQE</Data></Cell>
+<Cell><Data ss:Type="String">A340-LA</Data></Cell>
+<Cell><Data ss:Type="String">Base</Data></Cell>
+<Cell><Data ss:Type="String">Fuselaje</Data></Cell>
+<Cell><Data ss:Type="String">Si</Data></Cell>
+<Cell><Data ss:Type="String">Ok</Data></Cell>
+<Cell><Data ss:Type="String">10:00:00</Data></Cell>
+<Cell><Data ss:Type="String">13:30:00</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">167406</Data></Cell>
+<Cell><Data ss:Type="String"></Data></Cell>
+<Cell><Data ss:Type="String">2885</Data></Cell>
+</Row>
+</Table>
+</Worksheet>
+</Workbook>

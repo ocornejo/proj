@@ -16,28 +16,19 @@
         <legend>Información del avión</legend>
         
         
-        <div class="raw">
-            <?php echo $form->label($model,'FLOTA_ID_FLOTA'); ?>
-            <?php //echo $form->dropDownList($model, 'flota', CHtml::listData(Flota::model()->findAll(), 'ID_FLOTA', 'NOMBRE_FLOTA'), array('empty' => 'Seleccione')); ?>
-            <?php echo $form->ListBox($model,'FLOTA_ID_FLOTA', CHtml::listData(Flota::model()->findAll(), 'ID_FLOTA', 'NOMBRE_FLOTA'), array('empty' => null,'multiple'=>'multiple','style' => 'height: 100px; vertical-align: middle;',
-            'ajax' => array(
-                    'type' => 'POST',
-                    'url' => CController::createUrl('Avion/GetMatByFlota'),
-                    'dataType' => 'json',
-                    'data' => array('datasds'=> 'js:this.value'),
-                    'success' => 'function(data) { 
-                                                    $("#flotaId").val(data.flota[0].NOMBRE_FLOTA);
-                                                    idFlota = data.flota[0].ID_FLOTA;
-                                                  }',
-
-                    ))); ?>
-        </div>
-            <div class="raw">
-		<?php echo $form->label($model,'MATRICULA'); ?>
-		<?php $posts2=Avion::model()->findAll(); 
-                      echo $form->dropDownList($model, 'MATRICULA', CHtml::listData($posts2, 'MATRICULA', 'MATRICULA',function($posts2) {
-                                                return CHtml::encode($posts2->fLOTAIDFLOTA->NOMBRE_FLOTA);
-                                        }), array('empty' => 'Seleccione'));?>
+      
+            <div class="span-9">
+            <?php $this->widget('application.extensions.multiselects.XMultiSelects',array(
+				    'leftTitle'=>'Flotas disponibles',
+				    'leftName'=>'Flota[disponible][]',
+				    'leftList'=>CHtml::listData(Flota::model()->findAll(),'ID_FLOTA','NOMBRE_FLOTA'),
+				    'rightTitle'=>'Flotas seleccionadas',
+				    'rightName'=>'Flota[selected][]',
+				    'rightList'=>CHtml::listData(Flota::model()->findAll(array('limit'=>0)),'ID_FLOTA','NOMBRE_FLOTA'),
+				    'size'=>9,
+				    'width'=>'100px',
+				));
+			?>
             </div>
 
         </fieldset>

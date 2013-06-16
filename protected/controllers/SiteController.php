@@ -315,21 +315,26 @@ class SiteController extends Controller
             
     public function actionCriticos(){
             
-           
-        $model=new Avion('search');
+          $model=new Avion('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Avion']))
 			$model->attributes=$_GET['Avion'];
+		$arreglo=array();
 			
-		//$model->MATRICULA='BAG';
-			
-		$arreglo = $this->resumen();
-		
+		if(isset($_GET['Flota']['selected']))
+		{
+			foreach ($_GET['Flota']['selected'] as $id)
+				$arreglo[]=$id;
+			$model->FLOTA_ID_FLOTA=$arreglo;
+		}
+		else
+			$model->FLOTA_ID_FLOTA=999;
 
 		$this->render('criticos',array(
-			'model'=>$model, 'arreglo'=>$arreglo,
-            ));
-        }
+			'model'=>$model,
+        ));
+
+    }
 
 	/**
 	 * Displays the contact page
@@ -454,9 +459,8 @@ class SiteController extends Controller
 	
 	public function actionDownloadExcel(){
             
-          $d = $_SESSION['Lectivo-excel'];
-           $i = 0;
-        
+        $d = $_SESSION['Lectivo-excel'];
+        $i = 0;
         $data[$i]['FECHA'] = 'Fecha';
         $data[$i]['TURNO_ID_TURNO']='Turno';
         $data[$i]['AVION_MATRICULA'] = 'Matricula';
@@ -473,7 +477,7 @@ class SiteController extends Controller
         $data[$i]['OT'] = 'OT';
         $data[$i]['COMENTARIO'] = 'Comentario';
         $data[$i]['USUARIO_BP'] = 'Usuario';
-        $data[$i]['ARCHIVO1']='Foto';
+         $data[$i]['ARCHIVO1']='Foto'; 
         //$data[$i]['ULTIMO_ASEO'] = 'Días sin aseo';
         
         
@@ -483,19 +487,23 @@ class SiteController extends Controller
         //populate data array with the required data elements
         foreach($d->data as $issue)
         {
-            if($issue->FECHA!=NULL){
+             if($issue->FECHA!=NULL){
 		        $temp_var= explode('-',$issue->FECHA);
 	            $data[$i]['FECHA'] = $temp_var[2].'-'.$temp_var[1].'-'.$temp_var[0];    
             }
             else
             	$data[$i]['FECHA']="";
             $temp_var=null;
-            $temp_var= explode('-',$issue->tURNOIDTURNO->FECHA);
-            $data[$i]['TURNO_ID_TURNO']= $temp_var[2].'-'.$temp_var[1].'-'.$temp_var[0].' '.$issue->tURNOIDTURNO->tIPOTURNOIDTIPOTURNO->TIPO;
-            
+           if($issue->TURNO_ID_TURNO!=NULL){
+	            $temp_var= explode('-',$issue->tURNOIDTURNO->FECHA);
+	            $data[$i]['TURNO_ID_TURNO']= $temp_var[2].'-'.$temp_var[1].
+	            	'-'.$temp_var[0].' '.$issue->tURNOIDTURNO->tIPOTURNOIDTIPOTURNO->TIPO;
+            }
+            else
+            	$data[$i]['TURNO_ID_TURNO']="";
             $data[$i]['AVION_MATRICULA'] = $issue['AVION_MATRICULA'];
             $data[$i]['flota_grilla'] = $issue['flota_grilla'];
-                        if($issue['LUGAR_ID_LUGAR']!=NULL) 
+            if($issue['LUGAR_ID_LUGAR']!=NULL) 
                 $data[$i]['LUGAR_ID_LUGAR']=$issue->lUGARIDLUGAR->LUGAR; 
             else 
                 $data[$i]['LUGAR_ID_LUGAR']="";
@@ -503,28 +511,44 @@ class SiteController extends Controller
                 $data[$i]['ASEO_ID_ASEO']=$issue->aSEOIDASEO->TIPO_ASEO;
             else 
                 $data[$i]['ASEO_ID_ASEO']="";
-             if($issue['PLANIFICADO']!=NULL) 
+            if($issue['PLANIFICADO']!=NULL) 
                 $data[$i]['PLANIFICADO']="Si";
             else 
                 $data[$i]['PLANIFICADO']="No";
             
-            $data[$i]['ESTADO_ID_ESTADO'] = $issue->eSTADOIDESTADO->NOMBRE_ESTADO;
-
-            $data[$i]['HORA_INICIO'] = $issue['HORA_INICIO'];
-            $data[$i]['HORA_TERMINO'] = $issue['HORA_TERMINO'];
-            $data[$i]['PLAN_INICIO'] = $issue['PLAN_INICIO'];
-            $data[$i]['PLAN_TERMINO'] = $issue['PLAN_TERMINO'];
+            if($issue['ESTADO_ID_ESTADO']!=NULL)
+            	$data[$i]['ESTADO_ID_ESTADO'] = $issue->eSTADOIDESTADO->NOMBRE_ESTADO;
+            else
+            	$data[$i]['ESTADO_ID_ESTADO'] ="";
+            if($issue['HORA_INICIO']!=NULL)
+            	$data[$i]['HORA_INICIO'] = $issue['HORA_INICIO'];
+            else
+            	$data[$i]['HORA_INICIO'] = "";
+            if($issue['HORA_TERMINO']!=NULL)
+            	$data[$i]['HORA_TERMINO'] = $issue['HORA_TERMINO'];
+            else
+            	$data[$i]['HORA_TERMINO'] = "";
+            if($issue['PLAN_INICIO'])
+            	$data[$i]['PLAN_INICIO'] = $issue['PLAN_INICIO'];
+            else
+            	$data[$i]['PLAN_INICIO'] = "";
+            if($issue['PLAN_TERMINO']!=NULL)
+            	$data[$i]['PLAN_TERMINO'] = $issue['PLAN_TERMINO'];
+            else
+            	$data[$i]['PLAN_TERMINO'] = "";
             
             //$data[$i]['ULTIMO_ASEO']=$issue['ULTIMO_ASEO'];
             $data[$i]['CALIFICACION'] = $issue['CALIFICACION'];
             $data[$i]['OT'] = $issue['OT'];
             $data[$i]['COMENTARIO'] = $issue['COMENTARIO'];
-            $data[$i]['USUARIO_BP'] =$issue->uSUARIOBP->NOMBRE;
-            if($issue['ARCHIVO1']!=null){
+            $data[$i]['USUARIO_BP'] =$issue['USUARIO_BP'];
+
+            if($issue['ARCHIVO1']!=NULL){
 	            $data[$i]['ARCHIVO1']= 'http://localhost:8080/aseoscabina/index.php?r=trabajo/view&id='.$issue['ID_TRABAJO'];
             }
             else
             	$data[$i]['ARCHIVO1'] = "";
+
 
             $i++;
         }
@@ -642,9 +666,12 @@ class SiteController extends Controller
             else
             	$data[$i]['FECHA']="";
             $temp_var=null;
-            $temp_var= explode('-',$issue->tURNOIDTURNO->FECHA);
-            $data[$i]['TURNO_ID_TURNO']= $temp_var[2].'-'.$temp_var[1].'-'.$temp_var[0].' '.$issue->tURNOIDTURNO->tIPOTURNOIDTIPOTURNO->TIPO;
-            
+            if($issue->TURNO_ID_TURNO!=NULL){
+	            $temp_var= explode('-',$issue->tURNOIDTURNO->FECHA);
+	            $data[$i]['TURNO_ID_TURNO']= $temp_var[2].'-'.$temp_var[1].'-'.$temp_var[0].' '.$issue->tURNOIDTURNO->tIPOTURNOIDTIPOTURNO->TIPO;
+            }
+            else
+            	$data[$i]['TURNO_ID_TURNO']="";
             $data[$i]['AVION_MATRICULA'] = $issue['AVION_MATRICULA'];
             $data[$i]['flota_grilla'] = $issue['flota_grilla'];
                         if($issue['LUGAR_ID_LUGAR']!=NULL) 
@@ -686,16 +713,28 @@ class SiteController extends Controller
             else
             	$data[$i]['ESTADO_ID_ESTADO'] = "";
 
-            $data[$i]['HORA_INICIO'] = $issue['HORA_INICIO'];
-            $data[$i]['HORA_TERMINO'] = $issue['HORA_TERMINO'];
-            $data[$i]['PLAN_INICIO'] = $issue['PLAN_INICIO'];
-            $data[$i]['PLAN_TERMINO'] = $issue['PLAN_TERMINO'];
+            if($issue['HORA_INICIO']!=NULL)
+            	$data[$i]['HORA_INICIO'] = $issue['HORA_INICIO'];
+            else
+            	$data[$i]['HORA_INICIO'] = "";
+            if($issue['HORA_TERMINO']!=NULL)
+            	$data[$i]['HORA_TERMINO'] = $issue['HORA_TERMINO'];
+            else
+            	$data[$i]['HORA_TERMINO'] = "";
+            if($issue['PLAN_INICIO'])
+            	$data[$i]['PLAN_INICIO'] = $issue['PLAN_INICIO'];
+            else
+            	$data[$i]['PLAN_INICIO'] = "";
+            if($issue['PLAN_TERMINO']!=NULL)
+            	$data[$i]['PLAN_TERMINO'] = $issue['PLAN_TERMINO'];
+            else
+            	$data[$i]['PLAN_TERMINO'] = "";
             
             //$data[$i]['ULTIMO_ASEO']=$issue['ULTIMO_ASEO'];
             $data[$i]['CALIFICACION'] = $issue['CALIFICACION'];
             $data[$i]['OT'] = $issue['OT'];
             $data[$i]['COMENTARIO'] = $issue['COMENTARIO'];
-            $data[$i]['USUARIO_BP'] =$issue->uSUARIOBP->NOMBRE;
+            $data[$i]['USUARIO_BP'] =$issue['USUARIO_BP'];
 
 /*
             if($issue['ARCHIVO1']!=null){

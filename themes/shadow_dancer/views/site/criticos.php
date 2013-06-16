@@ -15,9 +15,11 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
+
 	$('#avion-grid').yiiGridView('update', {
 		data: $(this).serialize()
 	});
+	//$('#avion-grid').load();
 	return false;
 });
 ");?>
@@ -25,21 +27,19 @@ $('.search-form form').submit(function(){
 <h1>Críticos</h1>
 
 
-
 <?php echo CHtml::submitButton('Filtros', array('class'=>'search-button','style'=>'background: url(/aseoscabina/themes/shadow_dancer/images/small_icons/search-icon.png) no-repeat 6px 1px; padding-left: 24px; vertical-align: bottom;')); ?>
+
 
 <div class="search-form" style="display: none;">
 <?php $this->renderPartial('_searchCriticos',array(
 	'model'=>$model,
 )); ?>
-
 </div>
 
 <div class="CGridViewContainer">
     <div class="span-20">
 <?php 
 
-/*
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'avion-grid',
 	'dataProvider'=>$model->searchAvion(),
@@ -211,8 +211,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
             });
         }",
 )); 
-*/
     
 ?>
+    </div>
    </div>
-</div>

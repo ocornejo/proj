@@ -297,7 +297,7 @@ class Trabajo extends CActiveRecord
         	
             $data= new CActiveDataProvider($this, array(
 						'criteria'=>$criteria,
-						
+						//'pagination'=>false,
                         'sort' => array(
                                     'defaultOrder' => 't.ID_TRABAJO',
                                     'attributes' => array(
@@ -311,12 +311,9 @@ class Trabajo extends CActiveRecord
                                     ),
                         ),
 		));	
-                $_SESSION['Lectivo-excel']= new CActiveDataProvider($this, array(
-                							'criteria'=>$criteria,
-                							'pagination'=>false,
-                							));
-                
-               return $data;
+
+        $_SESSION['Lectivo-excel']=$data;
+        return $data;
 	}
 	
 	
