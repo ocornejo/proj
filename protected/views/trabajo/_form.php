@@ -151,7 +151,7 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
                 '<?php echo $this->createUrl("Flota/GetFlotaByMat"); ?>',
                 {'matricula': $("#<?php echo CHtml::activeId($model, 'AVION_MATRICULA'); ?> option:selected").text()},
         function(data) {
-            $("#flotaId").val(data[0].NOMBRE_FLOTA);
+            $("#flotaId").val(data.flota[0].NOMBRE_FLOTA);
         }
         , "json");
     });

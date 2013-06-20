@@ -470,16 +470,19 @@ class TrabajoController extends Controller {
                 $htermino_array= explode(':', $model->HORA_TERMINO);
                 $model->HORA_TERMINO = $htermino_array[0].':'.$htermino_array[1];
             }
+            if($model->PLAN_INICIO!=NULL){
+                $hinicio_array= explode(':', $model->PLAN_INICIO);
+                $model->PLAN_INICIO = $hinicio_array[0].':'.$hinicio_array[1];
+            }
+            if($model->PLAN_TERMINO!=NULL){
+                $htermino_array= explode(':', $model->PLAN_TERMINO);
+                $model->PLAN_TERMINO = $htermino_array[0].':'.$htermino_array[1];
+            }
 		if (isset($_POST['Trabajo'], $_POST['Turno'])) {
 	
 
             $model->attributes = $_POST['Trabajo'];
             $modelT->attributes = $_POST['Turno'];
-            
-//            $hinicio_array= explode(':', $model->HORA_INICIO);
-//            $model->HORA_INICIO = $hinicio_array[0].':'.$hinicio_array[1];
-//            $htermino_array= explode(':', $model->HORA_TERMINO);
-//            $model->HORA_TERMINO = $htermino_array[0].':'.$htermino_array[1];
 
 
             if ($model->ASEO_ID_ASEO === 8)

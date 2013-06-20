@@ -20,10 +20,10 @@
 			$(".gantt").gantt({                            
 				source: [
                             <?php foreach($variable as $value){
-                                    if($value->HORA_INICIO!=NULL && $value->HORA_TERMINO!=NULL){
-                                        $hinicio_array= explode(':', $value->HORA_INICIO);
+                                    if($value->PLAN_INICIO!=NULL && $value->PLAN_TERMINO!=NULL){
+                                        $hinicio_array= explode(':', $value->PLAN_INICIO);
                                         $hinicio = $hinicio_array[0].':00:00';
-                                        $htermino_array= explode(':', $value->HORA_TERMINO);
+                                        $htermino_array= explode(':', $value->PLAN_TERMINO);
                                         $htermino = $htermino_array[0].':00:00';
                                         $horaInicio = date('Y-m-d H:i:s',  strtotime($value->FECHA.' '.$hinicio));
                                         $finalInicio= strtotime($horaInicio)*1000;
@@ -40,7 +40,7 @@
                                         $finalFinal = strtotime($horaFinal.'+ 22 hour')*1000;                                        
                                     }
                                     
-                                    if($value->HORA_INICIO!=NULL && $value->HORA_TERMINO!=NULL){
+                                    if($value->PLAN_INICIO!=NULL && $value->PLAN_TERMINO!=NULL){
                                         print('         
                                       {       name: "'.$value->AVION_MATRICULA.'",
                                               desc: "'.Flota::model()->findByPk(Avion::model()->findByPk($value->AVION_MATRICULA)->FLOTA_ID_FLOTA)->NOMBRE_FLOTA.'",
