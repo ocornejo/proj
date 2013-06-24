@@ -21,6 +21,7 @@ class Avion extends CActiveRecord
         public $profundo_count;
         public $tapiz_count;
         public $banos_count;
+        public $mat_multi;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -52,7 +53,7 @@ class Avion extends CActiveRecord
 			array('MATRICULA', 'length', 'max'=>5),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('MATRICULA, FLOTA_ID_FLOTA, OPERADOR_ID_OPERADOR,alfombra_count,fuselaje_count,profundo_count,tapiz_count,banos_count', 'safe', 'on'=>'search'),
+			array('MATRICULA, FLOTA_ID_FLOTA, OPERADOR_ID_OPERADOR,mat_multi,alfombra_count,fuselaje_count,profundo_count,tapiz_count,banos_count', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -77,8 +78,9 @@ class Avion extends CActiveRecord
 	{
 		return array(
 			'MATRICULA' => 'Matricula',
-			'FLOTA_ID_FLOTA' => 'ID Flota',
-			'OPERADOR_ID_OPERADOR' => 'ID Operador',
+			'FLOTA_ID_FLOTA' => 'Flota',
+			'OPERADOR_ID_OPERADOR' => 'Operador',
+			'mat_multi'=>'Matrículas',
                         'alfombra_count'=>'Alfombra',
                     'fuselaje_count'=>'Fuselaje',
                     'profundo_count'=>'Profundo',
@@ -147,13 +149,21 @@ class Avion extends CActiveRecord
                     $profundo_sql . " as profundo_count",
                     $banos_sql . " as banos_count",
                 );
+
+        if($this->mat_multi!=""){
+
+            $matsReg = implode('|',$this->mat_multi); //Convert to REGEXP
+            $criteria->addCondition('MATRICULA REGEXP "'.$matsReg.'"');
+
+	    }
+
                 $criteria->compare($alfombra_sql, $this->alfombra_count);
                 $criteria->compare($fuselaje_sql, $this->fuselaje_count);
                 $criteria->compare($tapiz_sql, $this->tapiz_count);
                 $criteria->compare($profundo_sql, $this->profundo_count);
                 $criteria->compare($banos_sql, $this->banos_count);
                 $criteria->compare('MATRICULA',$this->MATRICULA,true);
-                $criteria->compare('FLOTA_ID_FLOTA',$this->FLOTA_ID_FLOTA);
+                //$criteria->compare('FLOTA_ID_FLOTA',$this->FLOTA_ID_FLOTA);
                 $criteria->compare('OPERADOR_ID_OPERADOR',$this->OPERADOR_ID_OPERADOR);
 
 		return new CActiveDataProvider($this, array(

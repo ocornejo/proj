@@ -315,20 +315,13 @@ class SiteController extends Controller
             
     public function actionCriticos(){
             
-          $model=new Avion('search');
+        $model=new Avion('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Avion']))
+		if(isset($_GET['Avion'])){
 			$model->attributes=$_GET['Avion'];
-		$arreglo=array();
-			
-		if(isset($_GET['Flota']['selected']))
-		{
-			foreach ($_GET['Flota']['selected'] as $id)
-				$arreglo[]=$id;
-			$model->FLOTA_ID_FLOTA=$arreglo;
 		}
 		else
-			$model->FLOTA_ID_FLOTA=999;
+			$model->MATRICULA='YYYY';
 
 		$this->render('criticos',array(
 			'model'=>$model,

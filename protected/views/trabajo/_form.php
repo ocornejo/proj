@@ -86,15 +86,15 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
                                                 return CHtml::encode($posts->fLOTAIDFLOTA->NOMBRE_FLOTA);
                                         }), array('empty' => 'Seleccione',
                     'ajax' => array(
-                    'type' => 'POST',
-                    'url' => CController::createUrl('Flota/GetFlotaByMat'),
-                    'dataType' => 'json',
-                    'data' => array('matricula' => 'js:this.value',
-                                    ),
-                    'success' => 'function(data) { 
-                                                    $("#flotaId").val(data.flota[0].NOMBRE_FLOTA);
-                                                    idFlota = data.flota[0].ID_FLOTA;
-                                                  }',
+	                    'type' => 'POST',
+	                    'url' => CController::createUrl('Flota/GetFlotaByMat'),
+	                    'dataType' => 'json',
+	                    'data' => array('matricula' => 'js:this.value',
+	                                    ),
+	                    'success' => 'function(data) { 
+	                                                    $("#flotaId").val(data.flota[0].NOMBRE_FLOTA);
+	                                                    idFlota = data.flota[0].ID_FLOTA;
+	                                                  }',
                     )));?>
         <?php echo $form->error($model, 'AVION_MATRICULA'); ?>
     </div>

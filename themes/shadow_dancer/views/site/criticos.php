@@ -19,7 +19,6 @@ $('.search-form form').submit(function(){
 	$('#avion-grid').yiiGridView('update', {
 		data: $(this).serialize()
 	});
-	//$('#avion-grid').load();
 	return false;
 });
 ");?>
@@ -43,7 +42,7 @@ $('.search-form form').submit(function(){
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'avion-grid',
 	'dataProvider'=>$model->searchAvion(),
-	'filter'=>$model,
+	//'filter'=>$model,
 	'columns'=> array(
                         array(
                             'name'=>'MATRICULA',

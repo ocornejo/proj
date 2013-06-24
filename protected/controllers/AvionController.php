@@ -36,7 +36,7 @@ class AvionController extends Controller
 		   
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view','GetMatByFlota'),
+                'actions' => array('index', 'view','GetMatByFlota','LoadMat'),
                 'users' => array('@'),
                 'expression'=>$isAnaliz
             ),
@@ -198,5 +198,44 @@ class AvionController extends Controller
             
 
         }
+        
+     
+        public function actionLoadMat()
+        {   
+        
+			if(isset($_POST['Avion']['FLOTA_ID_FLOTA'])){
+				$flotasReg = implode('|',$_POST['Avion']['FLOTA_ID_FLOTA']);
+				
+			    $dbCommand = Yii::app()->db->createCommand('select MATRICULA from avion where FLOTA_ID_FLOTA = ANY(select id_flota
+			    				from flota where nombre_flota REGEXP "'.$flotasReg.'")');
+			    $mats = $dbCommand->queryAll();
+
+			    foreach($mats as $id=>$value){
+
+				    $optionTags[$value['MATRICULA']] = CHtml::tag('option',
+                               array('value'=>$value['MATRICULA']),CHtml::encode($value["MATRICULA"]),true);
+				//$optionTags[]= $value['matricula'];
+			    }
+			    print_r($optionTags);
+			    //echo json_encode($optionTags);
+		}
+/*
+            $dataTemp = Avion::model()->findAll('matricula=:matricula', array(':matricula'=> $_POST['matricula']));
+            $dataTemp = CHtml::listData($dataTemp,'FLOTA_ID_FLOTA','MATRICULA');
+            
+            foreach($dataTemp as $value=>$name)
+                $flotaid=$value;
+                
+            $data['flota']= Flota::model()->findAll('id_flota=:id_flota',array(':id_flota'=> $flotaid));
+            
+            
+                
+            echo CJSON::encode($data);
+*/
+            
+
+        }
+        
+        
 	
 }
