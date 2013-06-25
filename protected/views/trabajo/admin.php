@@ -124,16 +124,17 @@ $('.search-form form').submit(function(){
                     
                     'filter'=> Aseo::model()->options,
                 ),
-		array(
-                    'name'=>'TURNO_ID_TURNO',
-                    //'filter'=>  Turno::model()->options,
-                    'value'=>function($data){
-                             if($data->TURNO_ID_TURNO==NULL)
-                                 return "";
-                             else
-                                 return @$data->tURNOIDTURNO->FECHA.' '.$data->tURNOIDTURNO->tIPOTURNOIDTIPOTURNO->TIPO;
-                    },
-                    ),
+         array(
+            'name'=>'TURNO_ID_TURNO',
+            'value'=>function($data){
+                     if($data->TURNO_ID_TURNO==NULL)
+                         return "";
+                     else{
+                         $temp_var= explode('-',$data->tURNOIDTURNO->FECHA);
+                         return $temp_var[2].'-'.$temp_var[1].'-'.$temp_var[0].' '.$data->tURNOIDTURNO->tIPOTURNOIDTIPOTURNO->TIPO;
+                     }
+            },
+         ),
 		
 		array(
 			'class'=>'CButtonColumn',
