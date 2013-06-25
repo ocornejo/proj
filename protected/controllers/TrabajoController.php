@@ -69,22 +69,76 @@ class TrabajoController extends Controller {
 	 * Uploads files submitted via CMultiFileUpload widget
 	 * Deletes all old files before uploading new files
 	 */
-	public function actionMasiva()
-	{
+	 
+		public function actionMasiva()
+	{	$error=0;
 		if(isset($_FILES['files']))
-		{
-			// delete old files
-			foreach($this->findFiles() as $filename)
-				unlink(Yii::app()->params['uploadDir'].$filename);
-
+		{	
+			Yii::import('ext.excelreader.JPhpExcelReader');
+			
 			//upload new files
 			foreach($_FILES['files']['name'] as $key=>$filename)
 				move_uploaded_file($_FILES['files']['tmp_name'][$key],Yii::app()->params['uploadDir'].$filename);
-		}
-		$this->render('masiva');
+			
+			$data=new JPhpExcelReader(Yii::app()->params['uploadDir'].$filename);	
+		
+			for($i = 2; $i <= $data->rowcount(); $i++) {
+				
+				$model= new Trabajo;
+				
+				$tiempo = explode("/", $data->val($i,1));
+				
+				$model->FECHA = $tiempo[2].'-'.$tiempo[0].'-'.$tiempo[1];
+				
+				$model->AVION_MATRICULA = $data->val($i,2);
+				
+				$id_aseo = Aseo::model()->findByAttributes(array('TIPO_ASEO'=>$data->val($i,3)))->ID_ASEO;
+				$model->ASEO_ID_ASEO= $id_aseo;
+				
+				$id_lugar = Lugar::model()->findByAttributes(array('LUGAR'=>$data->val($i,4)))->ID_LUGAR;
+				$model->LUGAR_ID_LUGAR= $id_lugar;
+				
+				$model->PLAN_INICIO = $data->val($i,5);
+				
+				$model->PLAN_TERMINO = $data->val($i,6);
+				$model->PLANIFICADO = 1;
+				$model->ESTADO_ID_ESTADO = 2;
+				$model->USUARIO_BP = Yii::app()->user->getId();
+				
+				if($model->validate()){
+                        $model->save(false);
+                        $error=2;
+                }
+                else
+                {
+                  $error = CActiveForm::validate($model);
+                  if($error!='[]')
+                      echo $error;
+                  Yii::app()->end();
+                  $error=1;
+                }
+
+			}
+			
+						
+			// delete old files
+/*
+			foreach($this->findFiles() as $filename)
+				unlink(Yii::app()->params['uploadDir'].$filename);
+*/
+	
+					}
+		else
+			$this->render('masiva');
+			
+		if($error==2)
+			$this->render('masiva');
+				
 	}
 
-    
+
+
+
 
     public function actionSave() {
 
@@ -132,7 +186,7 @@ class TrabajoController extends Controller {
                     $dateNow =new DateTime($model->FECHA);
                     $interval= $date->diff($dateNow)->d;
                     $model->ULTIMO_ASEO=$interval;
-                    //var_dump($date->format('Y-m-d H:i:s').":".$dateNow->format('Y-m-d H:i:s').":".$interval);
+                    
                     }
                     else{
                        $date= new DateTime($model->FECHA);
@@ -458,7 +512,10 @@ class TrabajoController extends Controller {
     public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
-                $modelT= $this->loadModelT($model->TURNO_ID_TURNO);
+        if($model->TURNO_ID_TURNO!=null)
+        	$modelT= $this->loadModelT($model->TURNO_ID_TURNO);
+        else
+        	$modelT = new Turno;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
                 
@@ -594,11 +651,11 @@ class TrabajoController extends Controller {
         
 		}
 
-		$this->render('update',array(
-			'model'=>$model,
-                        'modelT'=>$modelT,
-                        'success'=>false,
-		));
+			$this->render('update',array(
+				'model'=>$model,
+	            'modelT'=>$modelT,
+	            'success'=>false,
+			));		
 	}
 
     /**
