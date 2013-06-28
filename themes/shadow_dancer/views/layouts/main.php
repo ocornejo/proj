@@ -104,11 +104,16 @@ array('label'=>CHtml::image(Yii::app()->theme->baseUrl."/images/big_icons/icon-g
                     'encodeLabel'=>false,
 		));
 	}
-	elseif(isset(Yii::app()->user->role) && (Yii::app()->user->role==='analiz')){
+	elseif(isset(Yii::app()->user->role) && (Yii::app()->user->role==='user')){
 		$this->widget('application.extensions.mbmenu.MbMenu',array(
 			'items'=>array(
 
 array('label'=>CHtml::image(Yii::app()->theme->baseUrl."/images/big_icons/icon-house.png","",array("width"=>20,"heigth"=>20,'style' => 'vertical-align:10px;')). CHtml::label("  Inicio", "",array('style' => 'vertical-align:15px;')), 'url'=>array('/site/index')),
+
+array('label'=>CHtml::image(Yii::app()->theme->baseUrl."/images/big_icons/icon-write.png","",array("width"=>20,"heigth"=>20,'style' => 'vertical-align:10px;')). CHtml::label("  Ingreso datos", "",array('style' => 'vertical-align:15px;')),
+	'items'=>array(array('label'=>'Formulario', 'url'=>array('/trabajo/create')),
+                    array('label'=>'Subida masiva', 'url'=>array('/trabajo/masiva')),   
+					) ),
                 
 
 array('label'=>CHtml::image(Yii::app()->theme->baseUrl."/images/big_icons/icon-down.png","",array("width"=>20,"heigth"=>20,'style' => 'vertical-align:10px;')). CHtml::label("  Descargar", "",array('style' => 'vertical-align:15px;')),
@@ -134,8 +139,6 @@ array('label'=>CHtml::image(Yii::app()->theme->baseUrl."/images/big_icons/icon-c
 			'items'=>array(
 
 array('label'=>CHtml::image(Yii::app()->theme->baseUrl."/images/big_icons/icon-house.png","",array("width"=>20,"heigth"=>20,'style' => 'vertical-align:10px;')). CHtml::label("  Inicio", "",array('style' => 'vertical-align:15px;')), 'url'=>array('/site/index')),
-
-array('label'=>CHtml::image(Yii::app()->theme->baseUrl."/images/big_icons/icon-write.png","",array("width"=>20,"heigth"=>20,'style' => 'vertical-align:10px;')). CHtml::label("  Ingreso datos", "",array('style' => 'vertical-align:15px;')), 'url'=>array('/trabajo/create')),
                 
 
 array('label'=>CHtml::image(Yii::app()->theme->baseUrl."/images/big_icons/icon-down.png","",array("width"=>20,"heigth"=>20,'style' => 'vertical-align:10px;')). CHtml::label("  Descargar", "",array('style' => 'vertical-align:15px;')),

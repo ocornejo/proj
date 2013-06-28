@@ -51,7 +51,7 @@ class SiteController extends Controller
             array('allow', // allow all users to perform 'index' and 'view' actions
                 'actions' => array('index', 'bajar','bajarevaluaciones','ResumenCriticos',
                 					'criticos','error','reporte','DownloadExcel',
-                					'DownloadExcelEval','SendExcel','Logout','page','resumen'),
+                					'DownloadExcelEval','SendExcel','Logout','page','resumen','DownloadPlanFile'),
                 'users' => array('@'),
                 'expression'=>$isAnaliz
             ),
@@ -419,7 +419,25 @@ class SiteController extends Controller
 			'model'=>$model
 		));
 	}
-        
+    public function actionDownloadPlanFile()
+	{
+		$file = 'planificados.xls';
+
+		if (file_exists($file)) {
+		    header('Content-Description: File Transfer');
+		    header('Content-Type: application/octet-stream');
+		    header('Content-Disposition: attachment; filename='.basename($file));
+		    header('Content-Transfer-Encoding: binary');
+		    header('Expires: 0');
+		    header('Cache-Control: must-revalidate');
+		    header('Pragma: public');
+		    header('Content-Length: ' . filesize($file));
+		    ob_clean();
+		    flush();
+		    readfile($file);
+		    exit;
+		}
+	}   
     public function actionReporte()
 	{
     	$files = glob(getcwd().'\\temp\\*'); // get all file names

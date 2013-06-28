@@ -85,30 +85,62 @@ class TrabajoController extends Controller {
 			for($i = 2; $i <= $data->rowcount(); $i++) {
 				
 				$model= new Trabajo;
+				if($data->val($i,1)!=null){
+					$tiempo = explode("/", $data->val($i,1));
+					$model->FECHA = $tiempo[2].'-'.$tiempo[0].'-'.$tiempo[1];
+				}
+				else{
+					$model->FECHA = null;
+					$error=3;
+				}
 				
-				$tiempo = explode("/", $data->val($i,1));
+				if($data->val($i,2)!=NULL)
+					$model->AVION_MATRICULA = $data->val($i,2);
+				else{
+					$model->AVION_MATRICULA = null;
+					$error=3;
+				}
 				
-				$model->FECHA = $tiempo[2].'-'.$tiempo[0].'-'.$tiempo[1];
+				if($data->val($i,3)!=null && Aseo::model()->exists("TIPO_ASEO='".$data->val($i,3)."'")){
+					$id_aseo = Aseo::model()->findByAttributes(array('TIPO_ASEO'=>$data->val($i,3)))->ID_ASEO;
+					$model->ASEO_ID_ASEO= $id_aseo;
+				}
+				else{
+					$model->ASEO_ID_ASEO=null;
+					$error=3;
+					}
+					
+				if($data->val($i,4)!=null && Lugar::model()->exists("LUGAR='".$data->val($i,4)."'")){
+					$id_lugar = Lugar::model()->findByAttributes(array('LUGAR'=>$data->val($i,4)))->ID_LUGAR;
+					$model->LUGAR_ID_LUGAR= $id_lugar;
+				}
+				else{
+					$model->LUGAR_ID_LUGAR= null;
+					$error=3;
+				}
 				
-				$model->AVION_MATRICULA = $data->val($i,2);
+				if($data->val($i,5)!=NULL)
+					$model->PLAN_INICIO = $data->val($i,5);
+				else{
+					$model->PLAN_INICIO =null;
+					$error=3;
+				}
 				
-				$id_aseo = Aseo::model()->findByAttributes(array('TIPO_ASEO'=>$data->val($i,3)))->ID_ASEO;
-				$model->ASEO_ID_ASEO= $id_aseo;
-				
-				$id_lugar = Lugar::model()->findByAttributes(array('LUGAR'=>$data->val($i,4)))->ID_LUGAR;
-				$model->LUGAR_ID_LUGAR= $id_lugar;
-				
-				$model->PLAN_INICIO = $data->val($i,5);
-				
-				$model->PLAN_TERMINO = $data->val($i,6);
+				if($data->val($i,6)!=NULL)
+					$model->PLAN_TERMINO = $data->val($i,6);
+				else{
+					$model->PLAN_TERMINO = null;
+					$error=3;
+				}
 				$model->PLANIFICADO = 1;
 				$model->ESTADO_ID_ESTADO = 2;
 				$model->USUARIO_BP = Yii::app()->user->getId();
 				
-				if($model->validate()){
+				if($model->validate() && $error!=3){
                         $model->save(false);
                         $error=2;
                 }
+/*
                 else
                 {
                   $error = CActiveForm::validate($model);
@@ -117,6 +149,7 @@ class TrabajoController extends Controller {
                   Yii::app()->end();
                   $error=1;
                 }
+*/
 
 			}
 			
@@ -128,11 +161,21 @@ class TrabajoController extends Controller {
 */
 	
 					}
-		else
-			$this->render('masiva');
-			
-		if($error==2)
-			$this->render('masiva');
+		else{
+			$success = false;
+			$this->render('masiva',array(
+			'success'=> $success,
+			));
+		}
+
+		if($error==3)
+			$this->render('masiva',array(
+			'success'=> 'error',
+			));
+		elseif($error==2)
+			$this->render('masiva',array(
+			'success'=> true,
+			));
 				
 	}
 

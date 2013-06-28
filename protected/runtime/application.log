@@ -7012,3 +7012,159 @@ Stack trace:
 REQUEST_URI=/aseoscabina/index.php?r=Flota/GetFlotaByMat
 in /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/protected/controllers/FlotaController.php (197)
 in /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/index.php (13)
+2013/06/27 19:22:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "DownloadPlanFile" solicitada.' in /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(270): CController->missingAction('DownloadPlanFil...')
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('DownloadPlanFil...')
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('trabajo/Downloa...')
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/aseoscabina/index.php?r=trabajo/DownloadPlanFile
+HTTP_REFERER=http://localhost:8080/aseoscabina/index.php?r=trabajo/masiva
+---
+2013/06/27 19:22:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "DownloadPlanFile" solicitada.' in /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(270): CController->missingAction('DownloadPlanFil...')
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('DownloadPlanFil...')
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('trabajo/Downloa...')
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/aseoscabina/index.php?r=trabajo/DownloadPlanFile
+HTTP_REFERER=http://localhost:8080/aseoscabina/index.php?r=trabajo/masiva
+---
+2013/06/27 19:23:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "DownloadPlanFile" solicitada.' in /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(270): CController->missingAction('DownloadPlanFil...')
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('DownloadPlanFil...')
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('trabajo/Downloa...')
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/aseoscabina/index.php?r=trabajo/DownloadPlanFile
+HTTP_REFERER=http://localhost:8080/aseoscabina/index.php?r=trabajo/masiva
+---
+2013/06/27 19:24:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "DownloadPlanFile" solicitada.' in /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(270): CController->missingAction('DownloadPlanFil...')
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('DownloadPlanFil...')
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('trabajo/Downloa...')
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/aseoscabina/index.php?r=trabajo/DownloadPlanFile
+HTTP_REFERER=http://localhost:8080/aseoscabina/index.php?r=trabajo/masiva
+---
+2013/06/27 19:24:15 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('DownloadPlanFil...')
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/DownloadPl...')
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/aseoscabina/index.php?r=site/DownloadPlanFile
+HTTP_REFERER=http://localhost:8080/aseoscabina/index.php?r=trabajo/masiva
+---
+2013/06/27 19:33:35 [error] [php] Trying to get property of non-object (/Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/protected/controllers/TrabajoController.php:95)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): TrabajoController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): TrabajoController->filterAccessControl()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): TrabajoController->runActionWithFilters()
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): TrabajoController->run()
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/index.php(13): CWebApplication->run()
+REQUEST_URI=/aseoscabina/index.php?r=trabajo/masiva
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/protected/controllers/TrabajoController.php (95)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/index.php (13)
+2013/06/27 19:58:39 [error] [system.db.CDbCommand] CDbCommand::fetch() falló: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''Basess' LIMIT 1' at line 1. La sentencia SQL ejecutada fue: SELECT 1 FROM `lugar` `t` WHERE LUGAR'Basess' LIMIT 1.
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/protected/controllers/TrabajoController.php (108)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/index.php (13)
+2013/06/27 19:58:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''Basess' LIMIT 1' at line 1. The SQL statement executed was: SELECT 1 FROM `lugar` `t` WHERE LUGAR'Basess' LIMIT 1' in /Applications/mampstack-5.4.13-2/Yii/framework/db/CDbCommand.php:541
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/db/CDbCommand.php(414): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/db/ar/CActiveRecord.php(1613): CDbCommand->queryRow()
+#2 /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/protected/controllers/TrabajoController.php(108): CActiveRecord->exists('LUGAR'Basess'')
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/actions/CInlineAction.php(49): TrabajoController->actionMasiva()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): CController->run('masiva')
+#13 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController('trabajo/masiva')
+#14 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/aseoscabina/index.php?r=trabajo/masiva
+HTTP_REFERER=http://localhost:8080/aseoscabina/index.php?r=trabajo/masiva
+---
+2013/06/27 20:02:16 [error] [php] Undefined variable: success (/Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/protected/views/trabajo/masiva.php:13)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(869): TrabajoController->renderFile()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(782): TrabajoController->renderPartial()
+#2 /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/protected/controllers/TrabajoController.php(152): TrabajoController->render()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/actions/CInlineAction.php(49): TrabajoController->actionMasiva()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): TrabajoController->runAction()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): TrabajoController->filterAccessControl()
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#11 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): TrabajoController->runActionWithFilters()
+#12 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): TrabajoController->run()
+#13 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/index.php(13): CWebApplication->run()
+REQUEST_URI=/aseoscabina/index.php?r=trabajo/masiva
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/protected/views/trabajo/masiva.php (13)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/protected/controllers/TrabajoController.php (152)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/index.php (13)
+2013/06/28 06:48:00 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/protected/controllers/FlotaController.php:197)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): FlotaController->filterAccessControl()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/index.php(13): CWebApplication->run()
+REQUEST_URI=/aseoscabina/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/protected/controllers/FlotaController.php (197)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/index.php (13)
+2013/06/28 06:55:33 [error] [php] Undefined variable: flotaid (/Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/protected/controllers/FlotaController.php:197)
+Stack trace:
+#0 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(133): FlotaController->runAction()
+#1 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#3 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CInlineFilter.php(58): FlotaController->filterAccessControl()
+#4 /Applications/mampstack-5.4.13-2/Yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/mampstack-5.4.13-2/Yii/framework/web/CController.php(265): FlotaController->runActionWithFilters()
+#7 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(282): FlotaController->run()
+#8 /Applications/mampstack-5.4.13-2/Yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/mampstack-5.4.13-2/Yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/index.php(13): CWebApplication->run()
+REQUEST_URI=/aseoscabina/index.php?r=Flota/GetFlotaByMat
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/protected/controllers/FlotaController.php (197)
+in /Applications/mampstack-5.4.13-2/apache2/htdocs/aseoscabina/index.php (13)

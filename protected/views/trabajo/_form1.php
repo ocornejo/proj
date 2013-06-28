@@ -11,7 +11,7 @@ document.getElementById("success").style.display=" none";
 <hr>
     <?php if($success):?>
         <div class="flash-success" id="success" style="display: block;">El aseo ha sido guardado con éxito.</div>
-        <?php endif;?>
+    <?php endif;?>
     
   <fieldset>
       <legend>Información del Aseo</legend>
