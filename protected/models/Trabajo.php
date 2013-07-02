@@ -142,6 +142,7 @@ class Trabajo extends CActiveRecord
 		// will receive user inputs.
 		return array(
                      array('ESTADO_ID_ESTADO', 'required','on'=>'inicio'),
+                     array('AVION_MATRICULA,PLAN_INICIO,PLAN_TERMINO,FECHA,LUGAR_ID_LUGAR,ASEO_ID_ASEO', 'required','on'=>'excel'),
                      array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA,
                      		ASEO_ID_ASEO,LUGAR_ID_LUGAR,PLANIFICADO,OT', 'required','on'=>'ok'),
                      array('AVION_MATRICULA, USUARIO_BP, ESTADO_ID_ESTADO,FECHA,

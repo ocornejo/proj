@@ -10,28 +10,50 @@ $this->breadcrumbs=array(
 Para subir los aseos planificados use
 <a  href="<?php echo $this->createUrl('site/DownloadPlanFile') ;?>"  target="helperFrame" >esta</a> plantilla excel
 </div>	
-    <?php if($success==true):?>
+    <?php if($success==true && $success!=3):?>
         <div class="flash-success" id="success" style="display: block;">Los aseos han sido guardados con éxito.</div>
     <?php endif;?>
-        <?php if($success=='error'):?>
-        <div class="flash-error" id="error" style="display: block;">La plantilla cargada tiene errores de formato.</div>
+        <?php if($success===3):?>
+        <div class="flash-error" id="failed" style="display: block;">La plantilla cargada posee errores.</div>
     <?php endif;?>
     
-<?php echo CHtml::form($this->createUrl('trabajo/masiva'),'post',array('enctype'=>'multipart/form-data')); ?>
 
-<?php $this->widget('CMultiFileUpload',array(
-	'name'=>'files',
-	'accept'=>'xls',
-	'max'=>3,
-	'remove'=>Yii::t('ui','Remove'),
-	//'denied'=>'', message that is displayed when a file type is not allowed
-	//'duplicate'=>'', message that is displayed when a file appears twice
-	'htmlOptions'=>array('size'=>25),
-)); ?>
-<br />
-<?php echo CHtml::submitButton(Yii::t('ui', 'Cargar')); ?>&nbsp;
+<?php $form=$this->beginWidget('CActiveForm', array(
+		'action'=>Yii::app()->createUrl('trabajo/masiva'),
+        'htmlOptions' => array(
+            'enctype' => 'multipart/form-data'
+        ),
+        'clientOptions' => array(
+            'validateOnSubmit' => true,
+       ))); ?>
 
-<?php echo CHtml::endForm(); ?>
+
+	<?php //echo $form->errorSummary($model); ?>
+
+	<?php $this->widget('CMultiFileUpload',array(
+		'name'=>'files',
+		'accept'=>'xls',
+		'max'=>3,
+		'remove'=>Yii::t('ui','Remove'),
+		//'denied'=>'', message that is displayed when a file type is not allowed
+		//'duplicate'=>'', message that is displayed when a file appears twice
+		'htmlOptions'=>array('size'=>25),
+	)); ?>
+	<br />
+
+	<div class="row buttons">
+		<?php echo CHtml::submitButton('Cargar'); ?>
+	</div>
+
+<?php $this->endWidget(); ?>
+
+
+
+
+
+
+
+
 
 <script type="text/javascript">
 // close the div in 5 secs

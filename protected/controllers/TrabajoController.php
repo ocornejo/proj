@@ -70,8 +70,9 @@ class TrabajoController extends Controller {
 	 * Deletes all old files before uploading new files
 	 */
 	 
-		public function actionMasiva()
-	{	$error=0;
+	public function actionMasiva()
+	{	
+		$success=false;
 		if(isset($_FILES['files']))
 		{	
 			Yii::import('ext.excelreader.JPhpExcelReader');
@@ -83,22 +84,20 @@ class TrabajoController extends Controller {
 			$data=new JPhpExcelReader(Yii::app()->params['uploadDir'].$filename);	
 		
 			for($i = 2; $i <= $data->rowcount(); $i++) {
-				
-				$model= new Trabajo;
+								
+				$model= new Trabajo('excel');
 				if($data->val($i,1)!=null){
 					$tiempo = explode("/", $data->val($i,1));
 					$model->FECHA = $tiempo[2].'-'.$tiempo[0].'-'.$tiempo[1];
 				}
 				else{
 					$model->FECHA = null;
-					$error=3;
 				}
 				
 				if($data->val($i,2)!=NULL)
 					$model->AVION_MATRICULA = $data->val($i,2);
 				else{
 					$model->AVION_MATRICULA = null;
-					$error=3;
 				}
 				
 				if($data->val($i,3)!=null && Aseo::model()->exists("TIPO_ASEO='".$data->val($i,3)."'")){
@@ -107,8 +106,7 @@ class TrabajoController extends Controller {
 				}
 				else{
 					$model->ASEO_ID_ASEO=null;
-					$error=3;
-					}
+				}
 					
 				if($data->val($i,4)!=null && Lugar::model()->exists("LUGAR='".$data->val($i,4)."'")){
 					$id_lugar = Lugar::model()->findByAttributes(array('LUGAR'=>$data->val($i,4)))->ID_LUGAR;
@@ -116,66 +114,50 @@ class TrabajoController extends Controller {
 				}
 				else{
 					$model->LUGAR_ID_LUGAR= null;
-					$error=3;
 				}
 				
 				if($data->val($i,5)!=NULL)
 					$model->PLAN_INICIO = $data->val($i,5);
 				else{
 					$model->PLAN_INICIO =null;
-					$error=3;
 				}
 				
-				if($data->val($i,6)!=NULL)
+				if($data->val($i,6)!=NULL){
 					$model->PLAN_TERMINO = $data->val($i,6);
+					$model->PLANIFICADO = 1;
+					$model->ESTADO_ID_ESTADO = 2;
+					$model->USUARIO_BP = Yii::app()->user->getId();
+				}
 				else{
 					$model->PLAN_TERMINO = null;
-					$error=3;
 				}
-				$model->PLANIFICADO = 1;
-				$model->ESTADO_ID_ESTADO = 2;
-				$model->USUARIO_BP = Yii::app()->user->getId();
 				
-				if($model->validate() && $error!=3){
+				
+				if($model->validate()){
                         $model->save(false);
-                        $error=2;
+                        $success=true;
                 }
-/*
                 else
                 {
                   $error = CActiveForm::validate($model);
-                  if($error!='[]')
-                      echo $error;
-                  Yii::app()->end();
-                  $error=1;
+                  $success=3;
+                  //if($error!='[]')
+                      /* echo $error;  */ 
                 }
-*/
 
 			}
-			
-						
-			// delete old files
-/*
-			foreach($this->findFiles() as $filename)
-				unlink(Yii::app()->params['uploadDir'].$filename);
-*/
-	
-					}
+     		$this->render('masiva',array(
+				'success'=> $success,
+				));
+		}
 		else{
-			$success = false;
+			
 			$this->render('masiva',array(
 			'success'=> $success,
 			));
 		}
 
-		if($error==3)
-			$this->render('masiva',array(
-			'success'=> 'error',
-			));
-		elseif($error==2)
-			$this->render('masiva',array(
-			'success'=> true,
-			));
+
 				
 	}
 
