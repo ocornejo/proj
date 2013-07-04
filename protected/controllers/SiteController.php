@@ -421,7 +421,7 @@ class SiteController extends Controller
 	}
     public function actionDownloadPlanFile()
 	{
-		$file = 'planificados.xls';
+		$file = 'planilla/planificados.xls';
 
 		if (file_exists($file)) {
 		    header('Content-Description: File Transfer');

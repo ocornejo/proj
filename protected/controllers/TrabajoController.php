@@ -68,24 +68,45 @@ class TrabajoController extends Controller {
     	/**
 	 * Uploads files submitted via CMultiFileUpload widget
 	 * Deletes all old files before uploading new files
-	 */
+	 */                                       /*
+ $images_path = realpath(Yii::app()->basePath . '/../images');
+
+                        $i = 1;
+                        foreach ($images as $image => $pic) {
+                            $path = $images_path . '/' . $model->AVION_MATRICULA . "-" . $model->FECHA . "-" . $model->ASEO_ID_ASEO . "-Foto" . $i . ".JPG";
+                            $real_p= Yii::app()->baseUrl.'/images'. '/' . $model->AVION_MATRICULA . "-" . $model->FECHA . "-" . $model->ASEO_ID_ASEO . "-Foto" . $i . ".JPG";
+                            if ($pic->saveAs($path)) {
+                                switch ($i) {
+                                    case 1:
+                                        $model->ARCHIVO1 = $real_p;
+                                        break;
+*/
+
 	 
 	public function actionMasiva()
 	{	
 		$success=-1;
 		$fallidos=-1;
+		
+		//echo Yii::app()->params['uploadDir']."asddsadas";
 		$excel = CUploadedFile::getInstancesByName('files');
          
 		if(isset($excel) && count($excel)>0)
 		{	
 			Yii::import('ext.excelreader.JPhpExcelReader');
+			//print_r($excel[0]->getTempName());
 			
 			//upload new files
-			foreach($_FILES['files']['name'] as $key=>$filename)
-				$data=new JPhpExcelReader(Yii::app()->params['uploadDir'].$filename);
+/*
+			foreach($excel as $key=>$filename){
+				//move_uploaded_file($_FILES['files']['tmp_name'][$key],Yii::app()->params['uploadDir'].$filename);
+				
+				$data=new JPhpExcelReader($filename);
 			
+			}
 			
-			//$data=new JPhpExcelReader(Yii::app()->params['uploadDir'].$filename);	
+*/
+			$data=new JPhpExcelReader($excel[0]->getTempName());	
 			$success=0;
 			$fallidos=0;
 				
