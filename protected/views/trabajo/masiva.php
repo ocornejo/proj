@@ -10,11 +10,11 @@ $this->breadcrumbs=array(
 Para subir los aseos planificados use
 <a  href="<?php echo $this->createUrl('site/DownloadPlanFile') ;?>"  target="helperFrame" >esta</a> plantilla excel
 </div>	
-    <?php if($success==true && $success!=3):?>
-        <div class="flash-success" id="success" style="display: block;">Los aseos han sido guardados con éxito.</div>
+    <?php if($success>0 && $fallidos==-1):?>
+        <div class="flash-success" id="success" style="display: block;"><?php echo $success;?> aseos han sido guardados con éxito.</div>
     <?php endif;?>
-        <?php if($success===3):?>
-        <div class="flash-error" id="failed" style="display: block;">La plantilla cargada posee errores.</div>
+        <?php if($fallidos>0):?>
+        <div class="flash-error" id="failed" style="display: block;">Se cargaron sólo <?php echo $success;?> aseos. Hay <?php echo $fallidos;?> aseos con errores de formato. Revisar <a  href="<?php echo $this->createUrl('trabajo/adminPend') ;?>" >aquí</a> los aseos cargados con éxito.</div>
     <?php endif;?>
     
 
@@ -40,6 +40,7 @@ Para subir los aseos planificados use
 		'htmlOptions'=>array('size'=>25),
 	)); ?>
 	<br />
+	
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Cargar'); ?>

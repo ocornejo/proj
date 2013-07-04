@@ -72,8 +72,11 @@ class TrabajoController extends Controller {
 	 
 	public function actionMasiva()
 	{	
-		$success=false;
-		if(isset($_FILES['files']))
+		$success=-1;
+		$fallidos=-1;
+		$excel = CUploadedFile::getInstancesByName('files');
+         
+		if(isset($excel) && count($excel)>0)
 		{	
 			Yii::import('ext.excelreader.JPhpExcelReader');
 			
@@ -81,11 +84,15 @@ class TrabajoController extends Controller {
 			foreach($_FILES['files']['name'] as $key=>$filename)
 				move_uploaded_file($_FILES['files']['tmp_name'][$key],Yii::app()->params['uploadDir'].$filename);
 			
+			
 			$data=new JPhpExcelReader(Yii::app()->params['uploadDir'].$filename);	
-		
+			$success=0;
+			$fallidos=0;
+				
 			for($i = 2; $i <= $data->rowcount(); $i++) {
 								
 				$model= new Trabajo('excel');
+				
 				if($data->val($i,1)!=null){
 					$tiempo = explode("/", $data->val($i,1));
 					$model->FECHA = $tiempo[2].'-'.$tiempo[0].'-'.$tiempo[1];
@@ -135,25 +142,25 @@ class TrabajoController extends Controller {
 				
 				if($model->validate()){
                         $model->save(false);
-                        $success=true;
+                        $success++;
                 }
                 else
                 {
                   $error = CActiveForm::validate($model);
-                  $success=3;
-                  //if($error!='[]')
-                      /* echo $error;  */ 
+                  $fallidos++;
                 }
 
 			}
      		$this->render('masiva',array(
 				'success'=> $success,
+				'fallidos'=>$fallidos,
 				));
 		}
 		else{
 			
 			$this->render('masiva',array(
 			'success'=> $success,
+			'fallidos'=>$fallidos,
 			));
 		}
 
