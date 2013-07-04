@@ -82,10 +82,10 @@ class TrabajoController extends Controller {
 			
 			//upload new files
 			foreach($_FILES['files']['name'] as $key=>$filename)
-				move_uploaded_file($_FILES['files']['tmp_name'][$key],Yii::app()->params['uploadDir'].$filename);
+				$data=new JPhpExcelReader(Yii::app()->params['uploadDir'].$filename);
 			
 			
-			$data=new JPhpExcelReader(Yii::app()->params['uploadDir'].$filename);	
+			//$data=new JPhpExcelReader(Yii::app()->params['uploadDir'].$filename);	
 			$success=0;
 			$fallidos=0;
 				

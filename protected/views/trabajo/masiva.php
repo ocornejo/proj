@@ -33,7 +33,7 @@ Para subir los aseos planificados use
 	<?php $this->widget('CMultiFileUpload',array(
 		'name'=>'files',
 		'accept'=>'xls',
-		'max'=>3,
+		'max'=>1,
 		'remove'=>Yii::t('ui','Remove'),
 		//'denied'=>'', message that is displayed when a file type is not allowed
 		//'duplicate'=>'', message that is displayed when a file appears twice
