@@ -156,6 +156,11 @@ class Avion extends CActiveRecord
             $criteria->addCondition('MATRICULA REGEXP "'.$matsReg.'"');
 
 	    }
+	    
+	    if($this->FLOTA_ID_FLOTA!=""){
+		    $flotsReg = implode('|',$this->FLOTA_ID_FLOTA); //Convert to REGEXP
+            $criteria->addCondition('FLOTA_ID_FLOTA = ANY (select id_flota from flota where nombre_FLOTA REGEXP "'.$flotsReg.'")');
+	    }
 
                 $criteria->compare($alfombra_sql, $this->alfombra_count);
                 $criteria->compare($fuselaje_sql, $this->fuselaje_count);

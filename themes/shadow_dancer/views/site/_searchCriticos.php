@@ -41,8 +41,8 @@ $this->widget('application.extensions.multiselects.XMultiSelects',array(
 -->
 
 		<div class="raw">
-            <?php echo $form->label(Avion::model(),'FLOTA_ID_FLOTA'); ?>
-            <?php echo $form->ListBox(Avion::model(),'FLOTA_ID_FLOTA', CHtml::listData(Flota::model()->findAll(), 'NOMBRE_FLOTA', 'NOMBRE_FLOTA'), array('class'=>'listBuilder','empty' => null,'multiple'=>'multiple','style' => 'height: 100px; vertical-align: middle;')); ?>
+            <?php echo $form->label($model,'FLOTA_ID_FLOTA'); ?>
+            <?php echo $form->ListBox($model,'FLOTA_ID_FLOTA', CHtml::listData(Flota::model()->findAll(), 'NOMBRE_FLOTA', 'NOMBRE_FLOTA'), array('class'=>'listBuilder','empty' => null,'multiple'=>'multiple','style' => 'height: 100px; vertical-align: middle;')); ?>
         </div>
    
            <div class="raw">

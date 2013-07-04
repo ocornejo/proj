@@ -259,11 +259,7 @@ class Trabajo extends CActiveRecord
         if($this->flota!=""){
 
             $flotasReg = implode('|',$this->flota); //Convert to REGEXP
-/*            $criteria->mergeWith(array(
-		            'condition'=>'AVION.FLOTA_ID_FLOTA REGEXP :flota',
-		            'params'=>array(':flota'=>$flotasReg),
-	    ));
-*/		$criteria->addCondition('AVION_MATRICULA IN (select matricula from avion where FLOTA_ID_FLOTA = ANY (select id_flota from flota where nombre_FLOTA REGEXP "'.$flotasReg.'"))');
+		$criteria->addCondition('AVION_MATRICULA IN (select matricula from avion where FLOTA_ID_FLOTA = ANY (select id_flota from flota where nombre_FLOTA REGEXP "'.$flotasReg.'"))');
 
 		
 	    }

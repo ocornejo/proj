@@ -59,11 +59,11 @@ $this->menu=array(
                             'htmlOptions'=>array('style' => 'text-align: center;'),
                         ),
                 array(
-                            'name'=> 'TURNO_ID_TURNO',
-                            'header'=>'Turno',
-                            'value'=>$model->tURNOIDTURNO->FECHA." ".$model->tURNOIDTURNO->tIPOTURNOIDTIPOTURNO->TIPO, // this will access the current group's 1st member and give out the firstname of that member
-                            'htmlOptions'=>array('style' => 'text-align: center;'),
-                        ),
+		            'name'=>'TURNO_ID_TURNO',
+		            'header'=>'Turno',
+		            'value'=>$model->TURNO_ID_TURNO ? $model->tURNOIDTURNO->FECHA." ".$model->tURNOIDTURNO->tIPOTURNOIDTIPOTURNO->TIPO : NULL,
+		            'htmlOptions'=>array('style' => 'text-align: center;'),
+		         ),
                 array( 
 
                 'label'=>'Foto 1',

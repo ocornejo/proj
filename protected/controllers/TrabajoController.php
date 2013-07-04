@@ -88,13 +88,12 @@ class TrabajoController extends Controller {
 		$success=-1;
 		$fallidos=-1;
 		
-		//echo Yii::app()->params['uploadDir']."asddsadas";
 		$excel = CUploadedFile::getInstancesByName('files');
          
 		if(isset($excel) && count($excel)>0)
 		{	
 			Yii::import('ext.excelreader.JPhpExcelReader');
-			//print_r($excel[0]->getTempName());
+			// print_r($excel[0]->getTempName());
 			
 			//upload new files
 /*
