@@ -10,7 +10,7 @@ $this->breadcrumbs=array(
 Para subir los aseos planificados use
 <a  href="<?php echo $this->createUrl('site/DownloadPlanFile') ;?>"  target="helperFrame" >esta</a> plantilla excel
 </div>	
-    <?php if($success>0 && $fallidos==-1):?>
+    <?php if($success>0 && $fallidos==0):?>
         <div class="flash-success" id="success" style="display: block;"><?php echo $success;?> aseos han sido guardados con éxito.</div>
     <?php endif;?>
         <?php if($fallidos>0):?>
