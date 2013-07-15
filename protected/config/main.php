@@ -46,6 +46,9 @@ return array(
    
 	// application components
 	'components'=>array(
+		'mailto'=>array(
+				'class' =>'application.extensions.mailto.Mailto'
+		),
                
           // 'mail' => array(
             // 'class' => 'ext.yii-mail.YiiMail',

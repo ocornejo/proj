@@ -31,7 +31,17 @@ para filtrar los aseos realizados y haga clic en Enviar informe.
 )); ?>
 </div>
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<?php 
+       
+        $baseUrl = Yii::app()->theme->baseUrl; 
+        $normalImageSrc = "{$baseUrl}/images/mail.png";
+        $image = CHtml::image($normalImageSrc,"",array('style' => 'vertical-align:10px;')).'Enviar informe';
+        echo CHtml::link($image, array('site/SendExcel'));  
+
+
+
+
+$this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'trabajo-grid',
 	'dataProvider'=>$model->search(),
 	
@@ -147,28 +157,27 @@ para filtrar los aseos realizados y haga clic en Enviar informe.
                  else{
 
                      $temp_var= explode('-',$data->FECHA);
+                     
                      return $temp_var[2].'-'.$temp_var[1].'-'.$temp_var[0];
                  }
                                  
              }),
-                'ULTIMO_ASEO',
-		'CALIFICACION',
+                //'ULTIMO_ASEO',
+                'CALIFICACION',
                      array(
                     'name'=>'TURNO_ID_TURNO',
-                    //'filter'=>  Turno::model()->options,
                     'value'=>function($data){
                              if($data->TURNO_ID_TURNO==NULL)
                                  return "";
-                             else
-                                 return @$data->tURNOIDTURNO->FECHA.' '.$data->tURNOIDTURNO->tIPOTURNOIDTIPOTURNO->TIPO;
+                             else{
+                                 $temp_var= explode('-',$data->tURNOIDTURNO->FECHA);
+                                 return $temp_var[2].'-'.$temp_var[1].'-'.$temp_var[0].' '.$data->tURNOIDTURNO->tIPOTURNOIDTIPOTURNO->TIPO;
+                             }
                     },
                     ),
 		
 	),
 ));
                     
-        $baseUrl = Yii::app()->theme->baseUrl; 
-        $normalImageSrc = "{$baseUrl}/images/mail.png";
-        $image = CHtml::image($normalImageSrc,"",array('style' => 'vertical-align:10px;')).'Enviar informe';
-        echo CHtml::link($image, array('site/SendExcel'));   ?>
-
+ ?>
+ 

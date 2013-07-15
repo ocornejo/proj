@@ -127,10 +127,8 @@ class Avion extends CActiveRecord
 		));
 	}
 	
-        public function searchAvion()
+    public function searchAvion()
 	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
 
 		$criteria=new CDbCriteria;
                 $alfombra_table= Trabajo::model()->tableName();
@@ -168,7 +166,6 @@ class Avion extends CActiveRecord
                 $criteria->compare($profundo_sql, $this->profundo_count);
                 $criteria->compare($banos_sql, $this->banos_count);
                 $criteria->compare('MATRICULA',$this->MATRICULA,true);
-                //$criteria->compare('FLOTA_ID_FLOTA',$this->FLOTA_ID_FLOTA);
                 $criteria->compare('OPERADOR_ID_OPERADOR',$this->OPERADOR_ID_OPERADOR);
 
 		return new CActiveDataProvider($this, array(

@@ -634,10 +634,10 @@ class SiteController extends Controller
         
              
  
-        public function actionSendExcel(){
-            
-          $d = $_SESSION['Lectivo-excel'];
-           $i = 0;
+   public function actionSendExcel(){
+          
+        $d = $_SESSION['Lectivo-excel'];
+        $i = 0;
         
         $data[$i]['FECHA'] = 'Fecha';
         $data[$i]['TURNO_ID_TURNO']='Turno';

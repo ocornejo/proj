@@ -130,7 +130,13 @@ $cs->registerCSSFile($baseUrl . '/css/semantic.css');
     
 
     $(document).ready(function() {
-        $("#showDialogEvaluacion").hide();
+        
+        var aseoTemp= <?php  print('$("#' . CHtml::activeId($model, 'ASEO_ID_ASEO') . '").val();'); ?>
+        if(aseoTemp==7 || aseoTemp==5);
+        else
+        	$("#showDialogEvaluacion").hide();
+        	
+       
         var idFlota = null;
         var idAseo = null;
         var currentTime = new Date()
