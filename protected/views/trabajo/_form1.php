@@ -185,10 +185,34 @@ document.getElementById("success").style.display=" none";
         </div>
         
         <div class="raw">
+            <?php //echo $form->labelEx($model, 'OT'); ?>
+            <?php //echo $form->textField($model, 'OT', array('style' => 'width:50px', 'maxlength' => 6)); ?>
+            <?php //echo $form->error($model, 'OT'); ?>
+        </div>
+        
+        
+        <div class="raw">
             <?php echo $form->labelEx($model, 'OT'); ?>
-            <?php echo $form->textField($model, 'OT', array('style' => 'width:50px', 'maxlength' => 6)); ?>
+            <?php echo $form->textField($model, 'OT', array('style' => 'width:50px',
+
+            							 'maxlength' => 6,'onBlur'=>CHtml::ajax(array(
+                                                            'url'=>Yii::app()->createUrl('trabajo/SearchOT'),
+                                                            'type'=>'post',                                                        
+                                                            'dataType'=>'json',
+                                                            //'data'=>array('title' => 'js:this.value'),       
+                                                            'success'=>'function(data){
+                                                           					if(data[0]=="N");
+                                                           					else{
+                                                           						alert("OT ingresada ya existe");
+                                                           						$("#' . CHtml::activeId($model, 'OT') . '").val("");
+                                                           					}
+                                                            			}'))
+                                                            )
+                                       );?>
+
             <?php echo $form->error($model, 'OT'); ?>
         </div>
+        
         
         <div class="raw">
             <?php echo $form->labelEx($model, 'CALIFICACION', array('id' => 'CALIFICACION_LABEL')); ?>

@@ -35,7 +35,7 @@ class TrabajoController extends Controller {
 		   
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view','adminPlan','AdminOk','adminDesa','adminPend'),
+                'actions' => array('index', 'view','adminPlan','AdminOk','adminDesa','adminPend','SearchOT'),
                 'users' => array('@'),
                 'expression'=>$isAnaliz
             ),
@@ -849,7 +849,6 @@ class TrabajoController extends Controller {
         {   
                 $regForm = $_POST["Trabajo"];
                 $ot = $regForm["OT"];
-                //echo $ot;
                 if($ot!='')
                     $dataTemp= Trabajo::model()->findAll('OT=:ot',array(':ot'=>$ot));
                 else

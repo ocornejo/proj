@@ -43,7 +43,7 @@ class Item extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ID_ITEM,NOMBRE ,EVALUACION_ID_EVALUACION', 'required'),
+			array('NOMBRE ,EVALUACION_ID_EVALUACION', 'required'),
 			array('ID_ITEM, EVALUACION_ID_EVALUACION', 'numerical', 'integerOnly'=>true),
 			array('NOMBRE', 'length', 'max'=>45),
 			// The following rule is used by search().
